@@ -1,9 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
-<script>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: {
+          description: 'Collection of information about how visitors use our website.',
+        },
+        purposes: {
+          analytics: 'Analytics',
+        },
+      },
+    },
+    services: [
+      {
+        name: 'analytics',
+        title: 'Analytics & Tracking',
+        purposes: ['analytics'],
+        required: false,
+      },
+    ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<!-- Google tag (gtag.js) — loaded only after analytics consent via Klaro above -->
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -906,7 +946,9 @@ docker compose up</pre>
       <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
       <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
       <a href="/">Build A Harness</a>
+      <a href="/privacy.html">Privacy</a>
       <a href="/impressum.html">Impressum</a>
+      <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
     </div>
     <div class="footer-tag">
       Build your harness. Ship it anywhere.

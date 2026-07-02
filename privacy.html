@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impressum — Build A Harness</title>
+<title>Privacy Policy — Build A Harness</title>
 <meta name="robots" content="noindex">
-<link rel="canonical" href="https://buildaharness.com/impressum.html">
+<link rel="canonical" href="https://buildaharness.com/privacy.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#4F46E5">
@@ -99,7 +99,16 @@ h1 em {
   font-size: 15px;
   color: var(--ink-2);
   line-height: 1.7;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.section ul {
+  margin: 0 0 12px 20px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .section strong {
@@ -139,6 +148,7 @@ footer {
 .footer-links {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -146,6 +156,7 @@ footer {
   color: var(--ink-2);
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .footer-links a:hover { color: var(--ink); }
@@ -162,6 +173,54 @@ footer {
   .content { margin: 40px auto; }
 }
 </style>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: {
+          description: 'Collection of information about how visitors use our website.',
+        },
+        purposes: {
+          analytics: 'Analytics',
+        },
+      },
+    },
+    services: [
+      {
+        name: 'analytics',
+        title: 'Analytics & Tracking',
+        purposes: ['analytics'],
+        required: false,
+      },
+    ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<!-- Google tag (gtag.js) — loaded only after analytics consent via Klaro above -->
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3KMR8T0N');
+</script>
 </head>
 <body>
 
@@ -173,43 +232,36 @@ footer {
 
 <div class="content">
   <p class="eyebrow">Legal</p>
-  <h1>Imprint <em>(Impressum)</em></h1>
+  <h1>Privacy <em>Policy</em></h1>
 
   <div class="section">
-    <h2>Information according to § 5 TMG</h2>
-    <p><strong>3IVIS GmbH</strong></p>
-    <p>Plöner Str. 25</p>
-    <p>14193 Berlin</p>
-    <p>Germany</p>
-    <br>
-    <p>Commercial Register: HRB 170881</p>
-    <p>Register Court: Amtsgericht Charlottenburg</p>
-    <br>
-    <p>Managing Director:<br><strong>Dr. Seyed Ali Nezamoddini</strong></p>
+    <h2>Controller</h2>
+    <p><strong>3IVIS GmbH</strong><br>
+    Plöner Str. 25<br>
+    14193 Berlin, Germany<br>
+    E-Mail: <a href="mailto:contact@3ivis.com">contact@3ivis.com</a></p>
+    <p>See our <a href="/impressum.html">Impressum</a> for full company details.</p>
   </div>
 
   <div class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:contact@3ivis.com">contact@3ivis.com</a></p>
+    <h2>Cookie consent</h2>
+    <p>This site uses <strong>Klaro</strong>, an open-source consent management tool, to ask for your permission before loading any non-essential cookies. No analytics cookies are set until you actively accept them via the consent banner shown on your first visit — declining is just as easy as accepting, and nothing is tracked by default.</p>
+    <p>You can change or withdraw your choice at any time using the <strong>"Cookie Settings"</strong> link in the footer of every page.</p>
   </div>
 
   <div class="section">
-    <h2>VAT Identification Number</h2>
-    <p>VAT identification number according to §27 a of the German VAT Act:</p>
-    <p><strong>DE304631216</strong></p>
+    <h2>Cookies and analytics</h2>
+    <p>If you accept analytics cookies, this site uses <strong>Google Analytics (GA4)</strong> to collect anonymized statistics about how visitors use the site (pages viewed, approximate location, device type). This helps us understand what content is useful.</p>
+    <ul>
+      <li><strong>klaro</strong> — stores your cookie consent choice. Essential, set regardless of consent. Expires after 365 days.</li>
+      <li><strong>_ga, _ga_*</strong> — set by Google Analytics only if you accept analytics cookies. Used to distinguish visitors and sessions. Expires after up to 2 years.</li>
+    </ul>
+    <p>Google Analytics is provided by Google Ireland Limited and may involve transfer of data to Google LLC in the United States under the EU-U.S. Data Privacy Framework / standard contractual clauses. Legal basis: your consent (Art. 6(1)(a) GDPR). You can revoke consent at any time via "Cookie Settings" in the footer, which also deletes the associated cookies going forward.</p>
   </div>
 
   <div class="section">
-    <h2>Responsible for Content according to § 55 Abs. 2 RStV</h2>
-    <p><strong>3IVIS GmbH</strong></p>
-    <p>Plöner Str. 25</p>
-    <p>14193 Berlin</p>
-    <p>Germany</p>
-    <br>
-    <p>Commercial Register: HRB 170881</p>
-    <p>Register Court: Amtsgericht Charlottenburg</p>
-    <br>
-    <p>Managing Director:<br><strong>Dr. Seyed Ali Nezamoddini</strong></p>
+    <h2>Your rights</h2>
+    <p>Under the GDPR you have the right to access, rectify, or erase your personal data, to restrict or object to processing, and to data portability. To exercise these rights, or to lodge a complaint with a supervisory authority, contact us at <a href="mailto:contact@3ivis.com">contact@3ivis.com</a>.</p>
   </div>
 </div>
 
@@ -221,7 +273,6 @@ footer {
       <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
       <a href="/ai_agent_frameworks.html">Agent Frameworks</a>
       <a href="/ai_agent_memory_frameworks.html">Memory Frameworks</a>
-      <a href="/privacy.html">Privacy</a>
       <a href="/impressum.html">Impressum</a>
       <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
     </div>
