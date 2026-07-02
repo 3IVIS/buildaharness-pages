@@ -87,18 +87,67 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://buildaharness.com/ai_agent_frameworks.html",
-  "name": "AI Agent Frameworks Observatory",
-  "description": "Ranked, searchable index of open-source AI agent frameworks with live GitHub stats. Stars, forks, language, license, and topics refreshed daily via GitHub Actions.",
-  "url": "https://buildaharness.com/ai_agent_frameworks.html",
-  "isPartOf": { "@id": "https://buildaharness.com/#website" },
-  "publisher": { "@type": "Organization", "name": "3IVIS", "url": "https://buildaharness.com" },
-  "about": {
-    "@type": "Thing",
-    "name": "AI agent frameworks",
-    "description": "Open-source software frameworks for building and orchestrating AI agents and multi-agent systems"
-  }
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://buildaharness.com/ai_agent_frameworks.html",
+      "name": "AI Agent Frameworks Observatory",
+      "description": "Ranked, searchable index of open-source AI agent frameworks with live GitHub stats. Stars, forks, language, license, and topics refreshed daily via GitHub Actions.",
+      "url": "https://buildaharness.com/ai_agent_frameworks.html",
+      "isPartOf": { "@id": "https://buildaharness.com/#website" },
+      "publisher": { "@type": "Organization", "name": "3IVIS", "url": "https://buildaharness.com" },
+      "about": {
+        "@type": "Thing",
+        "name": "AI agent frameworks",
+        "description": "Open-source software frameworks for building and orchestrating AI agents and multi-agent systems"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an AI agent framework?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A library or platform for building software where an LLM decides what to do next and the framework executes that decision — calling tools, managing state across steps, and looping until the task completes. LangChain, CrewAI, LangGraph, and Mastra are all examples, though they differ in how much control-flow detail they expose versus abstract away." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between an AI agent framework and an orchestration framework?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In practice the terms overlap heavily. \"Orchestration framework\" more precisely refers to the control-flow layer — the graph or state machine deciding which step or agent runs next — while \"agent framework\" is the broader umbrella that also includes prompt templating, tool-calling conventions, and memory. Most tools people call agent frameworks include an orchestration layer internally." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between an AI agent framework and a harness?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A framework gives you the building blocks — agents, tools, an execution loop. A harness is the full production wrapper around those blocks: a world model, control state, verification before acting, recovery from failures, and observability across the whole run. A harness typically compiles to one or more agent frameworks rather than replacing them." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is LangGraph an AI agent framework or an orchestration framework?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both terms are used for it in practice. LangGraph is a low-level graph/state-machine layer for controlling multi-step and multi-agent execution, which is why it's often described specifically as an orchestration framework — and it's frequently used underneath higher-level agent abstractions rather than on its own." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a multi-agent framework and a single-agent framework?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A single-agent framework runs one LLM loop with tools and memory. A multi-agent framework coordinates several agents, each with its own role, prompt, and tools, communicating toward a shared goal — useful when a task naturally splits into specialized sub-tasks rather than one generalist agent handling everything." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are open-source AI agent frameworks free to use commercially?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depends entirely on the license, not on being \"open source.\" MIT and Apache-2.0 — the majority of frameworks in this index — are unrestricted for commercial use. Copyleft licenses like GPL or AGPL carry obligations that can affect proprietary products. Always check the license column rather than assuming." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI agent framework should I use for Python vs TypeScript vs C#?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Python has the largest share of the ecosystem, including LangChain, CrewAI, and LangGraph's primary SDK. TypeScript/JavaScript options include Mastra and LangGraph.js. C#/.NET is covered primarily by the Microsoft Agent Framework." }
+        },
+        {
+          "@type": "Question",
+          "name": "How current is this list?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Stars, forks, and topics are refreshed daily via GitHub Actions." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -421,6 +470,53 @@ tbody td {
   color: var(--red); letter-spacing: .03em;
 }
 
+/* ── CONTENT SECTIONS ── */
+.content-section { border-top: 1px solid var(--border); padding: 3.5rem 2rem; }
+.content-section.alt { background: var(--bg-alt); }
+.content-inner { max-width: var(--max); margin: 0 auto; }
+.content-eyebrow {
+  font-family: var(--mono); font-size: .7rem; color: var(--amber);
+  letter-spacing: .14em; text-transform: uppercase; opacity: .7;
+  margin-bottom: .75rem; display: block;
+}
+.content-inner h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--text); margin-bottom: 1rem; }
+.content-inner h3 { font-size: .95rem; color: var(--text); margin-bottom: .4rem; }
+.content-inner p { font-size: .9rem; line-height: 1.75; margin-bottom: 1rem; max-width: 720px; }
+.content-inner p:last-child { margin-bottom: 0; }
+
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.cat-card { border: 1px solid var(--border); border-radius: var(--r); background: var(--bg-card); padding: 1.1rem 1.25rem; }
+.cat-card h3 { margin-bottom: .4rem; }
+.cat-card p { font-size: .8rem; margin: 0; max-width: none; }
+
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.compare-card { border: 1px solid var(--border); border-radius: var(--r); padding: 1.25rem; background: var(--bg-card); }
+.compare-card.highlight { border-color: var(--bwarm); background: var(--amber-dim); }
+.compare-card h3 { margin-bottom: .6rem; }
+.compare-card p { font-size: .82rem; margin: 0; max-width: none; }
+
+.choose-list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.choose-item { display: flex; gap: 1rem; }
+.choose-num {
+  font-family: var(--mono); font-size: .75rem; color: var(--amber);
+  border: 1px solid var(--bwarm); border-radius: 50%;
+  width: 1.6rem; height: 1.6rem; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.choose-item h3 { margin-bottom: .25rem; }
+.choose-item p { font-size: .82rem; margin: 0; max-width: none; }
+
+.faq-list { margin-top: 1.75rem; display: flex; flex-direction: column; }
+.faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.faq-item:first-child { padding-top: 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-item h3 { margin-bottom: .5rem; }
+.faq-item p { font-size: .85rem; margin: 0; max-width: none; }
+
+@media (max-width: 720px) {
+  .content-section { padding: 2.5rem 1.25rem; }
+}
+
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 2rem; }
 .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
@@ -477,6 +573,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
   <div class="nav-right">
     <a href="/">Home</a>
     <a href="ai_agent_memory_frameworks.html">Memory Frameworks</a>
+    <a href="/harness-engineering">Harness Engineering</a>
     <div class="freshness-nav">
       <span class="pulse-dot unknown" id="pulse-dot"></span>
       <span id="freshness-text">—</span>
@@ -558,6 +655,119 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
   </div>
 </div>
 
+<!-- ── WHAT IS ── -->
+<section class="content-section" id="what-is">
+  <div class="content-inner">
+    <span class="content-eyebrow">Definitions</span>
+    <h2>What is an AI agent framework?</h2>
+    <p>An AI agent framework is a library or platform for building software that uses an LLM to decide what to do next, then acts on that decision — calling tools, reading and writing state, and looping until a task is done. In practice that means three things: a way to define tools the model can call, a way to hold state across steps (the conversation, intermediate results, task memory), and a runtime loop that keeps calling the model until the task finishes or fails.</p>
+    <p>The term covers a wide range of designs. Some frameworks (LangChain, CrewAI) give you high-level abstractions — agents, roles, crews — and hide the loop underneath. Others (LangGraph) expose the control flow directly as a graph or state machine so you can route between steps, tools, and multiple agents explicitly. Others still (Mastra, Microsoft Agent Framework) are runtime-specific SDKs tied to a particular language ecosystem. The table above indexes all of them side by side with live GitHub signal — stars, forks, language, license — so you can compare by what actually matters for a production decision rather than by marketing copy.</p>
+  </div>
+</section>
+
+<!-- ── CATEGORIES ── -->
+<section class="content-section alt" id="categories">
+  <div class="content-inner">
+    <span class="content-eyebrow">Taxonomy</span>
+    <h2>Categories in this index</h2>
+    <p>Every framework above is tagged by design pattern, not just popularity. Use the Topic filter to isolate any of these — or read on for what each one actually means.</p>
+    <div class="cat-grid">
+      <div class="cat-card"><h3>Orchestration</h3><p>Manages control flow between LLM calls, tools, and steps — chains, graphs, or state machines that decide what runs next.</p></div>
+      <div class="cat-card"><h3>Multi-agent</h3><p>Coordinates several agents with distinct roles, prompts, and tools, communicating toward a shared goal.</p></div>
+      <div class="cat-card"><h3>Swarm</h3><p>Lightweight patterns for loosely-coupled agents that hand off tasks to each other without a central orchestrator.</p></div>
+      <div class="cat-card"><h3>RAG</h3><p>Focused on retrieval-augmented generation — indexing, retrieving, and grounding agent output in external documents or data.</p></div>
+      <div class="cat-card"><h3>No-code / Visual</h3><p>Drag-and-drop or visual-canvas tools for composing agent workflows without hand-writing the orchestration code.</p></div>
+      <div class="cat-card"><h3>Autonomous</h3><p>Aimed at long-running, goal-directed agents that plan and execute multi-step tasks with minimal human intervention.</p></div>
+      <div class="cat-card"><h3>Code-generation</h3><p>Specialized for agents whose primary tool is writing, running, and debugging code.</p></div>
+      <div class="cat-card"><h3>Microsoft</h3><p>Published or maintained by Microsoft, including the Microsoft Agent Framework and its predecessors (AutoGen, Semantic Kernel).</p></div>
+      <div class="cat-card"><h3>Memory</h3><p>Adds persistent or long-term memory to agents. See the <a href="ai_agent_memory_frameworks.html">Memory Frameworks index</a> for a deeper, dedicated comparison.</p></div>
+      <div class="cat-card"><h3>Research</h3><p>Experimental or academic frameworks exploring new agent architectures, not yet aimed at production use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FRAMEWORK VS ORCHESTRATION VS HARNESS ── -->
+<section class="content-section" id="framework-vs-harness">
+  <div class="content-inner">
+    <span class="content-eyebrow">Terminology</span>
+    <h2>Agent framework vs orchestration framework vs harness</h2>
+    <p>These three terms get used interchangeably, but they describe different layers of the stack.</p>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Agent framework</h3>
+        <p>A library for building one or more LLM-driven agents: prompt templates, tool calling, and an execution loop. Examples: LangChain, CrewAI, Mastra.</p>
+      </div>
+      <div class="compare-card">
+        <h3>Orchestration framework</h3>
+        <p>The control-flow layer that decides which step, tool, or agent runs next — usually a graph, DAG, or state machine. LangGraph is the clearest example; the term is often used as a synonym for "agent framework" in casual usage.</p>
+      </div>
+      <div class="compare-card highlight">
+        <h3>Harness</h3>
+        <p>The full production wrapper around a model or agent framework — world model, control state, verification, recovery, and observability. A harness can compile down to any of the frameworks above. <a href="/harness-engineering">Read the full breakdown →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO CHOOSE ── -->
+<section class="content-section alt" id="how-to-choose">
+  <div class="content-inner">
+    <span class="content-eyebrow">Evaluation</span>
+    <h2>How to choose an AI agent framework</h2>
+    <p>Six things worth checking before committing to one, roughly in the order they tend to eliminate options.</p>
+    <div class="choose-list">
+      <div class="choose-item"><span class="choose-num">1</span><div><h3>Language & runtime</h3><p>Does it match your stack — Python, TypeScript, C#/.NET, Go? Switching later means a rewrite, not a config change.</p></div></div>
+      <div class="choose-item"><span class="choose-num">2</span><div><h3>Orchestration model</h3><p>Graph-based (LangGraph), role/crew-based (CrewAI), or a plain code-first agent loop? This decides how explicit your control flow will be.</p></div></div>
+      <div class="choose-item"><span class="choose-num">3</span><div><h3>License</h3><p>MIT and Apache-2.0 are unrestricted for commercial use. GPL/AGPL and source-available licenses carry real obligations — check the License column above before adopting.</p></div></div>
+      <div class="choose-item"><span class="choose-num">4</span><div><h3>Memory & state</h3><p>Built-in short/long-term memory, or does it expect you to bring your own (Mem0, Zep, Letta)? See the <a href="ai_agent_memory_frameworks.html">memory frameworks index</a>.</p></div></div>
+      <div class="choose-item"><span class="choose-num">5</span><div><h3>Observability</h3><p>Native tracing and eval hooks, or bolt-on? Debugging a multi-step agent without traces is largely guesswork.</p></div></div>
+      <div class="choose-item"><span class="choose-num">6</span><div><h3>Maturity signal</h3><p>Stars, forks, and issue activity in the table above are a faster proxy for production-readiness than a project's own marketing.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section" id="faq">
+  <div class="content-inner">
+    <span class="content-eyebrow">FAQ</span>
+    <h2>Questions, answered</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What is an AI agent framework?</h3>
+        <p>A library or platform for building software where an LLM decides what to do next and the framework executes that decision — calling tools, managing state across steps, and looping until the task completes. LangChain, CrewAI, LangGraph, and Mastra are all examples, though they differ in how much control-flow detail they expose versus abstract away.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between an AI agent framework and an orchestration framework?</h3>
+        <p>In practice the terms overlap heavily. "Orchestration framework" more precisely refers to the control-flow layer — the graph or state machine deciding which step or agent runs next — while "agent framework" is the broader umbrella that also includes prompt templating, tool-calling conventions, and memory. Most tools people call agent frameworks include an orchestration layer internally.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between an AI agent framework and a harness?</h3>
+        <p>A framework gives you the building blocks — agents, tools, an execution loop. A harness is the full production wrapper around those blocks: a world model, control state, verification before acting, recovery from failures, and observability across the whole run. A harness typically compiles to one or more agent frameworks rather than replacing them. See <a href="/harness-engineering">harness engineering</a> for the full distinction.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is LangGraph an AI agent framework or an orchestration framework?</h3>
+        <p>Both terms are used for it in practice. LangGraph is a low-level graph/state-machine layer for controlling multi-step and multi-agent execution, which is why it's often described specifically as an orchestration framework — and it's frequently used underneath higher-level agent abstractions rather than on its own.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between a multi-agent framework and a single-agent framework?</h3>
+        <p>A single-agent framework runs one LLM loop with tools and memory. A multi-agent framework coordinates several agents, each with its own role, prompt, and tools, communicating toward a shared goal — useful when a task naturally splits into specialized sub-tasks (research, coding, review) rather than one generalist agent handling everything.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are open-source AI agent frameworks free to use commercially?</h3>
+        <p>Depends entirely on the license, not on being "open source." MIT and Apache-2.0 — the majority of frameworks in this index — are unrestricted for commercial use. Copyleft licenses like GPL or AGPL carry obligations that can affect proprietary products. Always check the License column above rather than assuming.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which AI agent framework should I use for Python vs TypeScript vs C#?</h3>
+        <p>Python has the largest share of the ecosystem, including LangChain, CrewAI, and LangGraph's primary SDK. TypeScript/JavaScript options include Mastra and LangGraph.js. C#/.NET is covered primarily by the Microsoft Agent Framework. Filter by Language in the table above to see current options per ecosystem.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How current is this list?</h3>
+        <p>Stars, forks, and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
@@ -566,6 +776,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
       <nav class="flinks">
         <a href="/">Home</a>
         <a href="ai_agent_memory_frameworks.html">Memory Frameworks</a>
+        <a href="/harness-engineering">Harness Engineering</a>
         <a href="https://github.com/3IVIS/buildaharness" target="_blank" rel="noopener">GitHub</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/impressum.html">Impressum</a>

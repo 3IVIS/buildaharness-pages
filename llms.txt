@@ -13,6 +13,7 @@ A live-updated, ranked, and searchable index of open-source AI agent frameworks 
 - **Source list**: repos.txt in the buildaharness-pages repository (owner/repo format with optional manual tags)
 - **Sorting**: by stars (default), forks, name, language, license
 - **Filtering**: by programming language and GitHub topic tags
+- **Also on the page**: a definitions section (what an AI agent framework is), a category breakdown, a framework-vs-orchestration-framework-vs-harness comparison, an evaluation checklist, and an FAQ covering licensing, language choice, and LangGraph's classification as an orchestration layer
 
 ## AI Agent Memory Frameworks Observatory
 
@@ -22,6 +23,7 @@ A curated index of open-source memory frameworks for AI agents, classified by la
 - **Data coverage**: ~24 frameworks as of June 2026
 - **Source list**: memory-repos.txt in the buildaharness-pages repository (pipe-delimited: url | layer | memoryClass | architecture | license | maturity)
 - **Notable entries**: mem0, Letta, Zep, Graphiti, LangMem, LlamaIndex, Cognee, MemOS, Chroma
+- **Also on the page**: a definitions section (what a memory framework is vs a vector database), a layer breakdown (Framework/Infra/Research), a memory-class and architecture breakdown (Personalization/Institutional/Both, vector/knowledge-graph/temporal-graph/tiered/version-controlled), an evaluation checklist, and an FAQ covering mem0 self-hosting, temporal knowledge graphs, and short- vs long-term memory
 
 ## Harness engineering
 

@@ -87,18 +87,67 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://buildaharness.com/ai_agent_memory_frameworks.html",
-  "name": "AI Agent Memory Frameworks Observatory",
-  "description": "Curated index of open-source memory frameworks for AI agents, classified by layer (Framework, Infra, Research), memory class, architecture pattern, license, and maturity.",
-  "url": "https://buildaharness.com/ai_agent_memory_frameworks.html",
-  "isPartOf": { "@id": "https://buildaharness.com/#website" },
-  "publisher": { "@type": "Organization", "name": "3IVIS", "url": "https://buildaharness.com" },
-  "about": {
-    "@type": "Thing",
-    "name": "AI agent memory frameworks",
-    "description": "Open-source frameworks and infrastructure for adding persistent memory to AI agents and multi-agent systems"
-  }
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://buildaharness.com/ai_agent_memory_frameworks.html",
+      "name": "AI Agent Memory Frameworks Observatory",
+      "description": "Curated index of open-source memory frameworks for AI agents, classified by layer (Framework, Infra, Research), memory class, architecture pattern, license, and maturity.",
+      "url": "https://buildaharness.com/ai_agent_memory_frameworks.html",
+      "isPartOf": { "@id": "https://buildaharness.com/#website" },
+      "publisher": { "@type": "Organization", "name": "3IVIS", "url": "https://buildaharness.com" },
+      "about": {
+        "@type": "Thing",
+        "name": "AI agent memory frameworks",
+        "description": "Open-source frameworks and infrastructure for adding persistent memory to AI agents and multi-agent systems"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an AI agent memory framework?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Software that gives an agent state beyond its context window — storing facts, preferences, or events from one run and retrieving them in a later one. It covers how memory is indexed (vector, graph, key-value), how it's retrieved, and often how it's consolidated or forgotten over time." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a memory framework and a vector database?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A vector database (like chroma) is a storage primitive — it stores embeddings and answers similarity queries, with no opinion on agent memory. A memory framework (like mem0) adds the layer on top: deciding what's worth remembering, when to retrieve it, how to merge conflicting facts, and when to forget. Several entries in this index are storage layers rather than full memory systems." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between personalization and institutional memory?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Personalization memory tracks one user or session — preferences, history, continuity. Institutional memory tracks shared knowledge used consistently across many users or agents, closer to a knowledge base. Most production frameworks now support both at once rather than picking one." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between short-term and long-term memory in AI agents?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Short-term memory is the model's context window — it holds the current conversation and vanishes when the session ends. Long-term memory is what a memory framework adds: state that's written to persistent storage and retrieved in a future session, independent of context window size." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is mem0 open source and can it be self-hosted?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. mem0 is Apache-2.0 licensed and can be run fully self-hosted; a managed cloud version is also offered separately." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's a temporal knowledge graph and which frameworks use it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A knowledge graph where facts carry validity windows, so the system can answer \"what was true at time X\" rather than only \"what's true now.\" Zep and Graphiti are the reference implementations." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this differ from the AI Agent Frameworks index?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The AI Agent Frameworks index covers general orchestration — how an agent decides what to do next. This index is narrower: frameworks and infrastructure specifically for giving an agent persistent memory across runs." }
+        },
+        {
+          "@type": "Question",
+          "name": "How current is this list?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Stars, forks, and topics are refreshed daily via GitHub Actions; layer, memory class, architecture, and maturity are manually curated and updated as the ecosystem changes." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -380,6 +429,53 @@ tbody td {
 .empty-state p { font-size: .9rem; margin-bottom: .4rem; }
 .empty-state small { font-family: var(--mono); font-size: .72rem; color: var(--dim); }
 
+/* ── CONTENT SECTIONS ── */
+.content-section { border-top: 1px solid var(--border); padding: 3.5rem 2rem; }
+.content-section.alt { background: var(--bg-alt); }
+.content-inner { max-width: var(--max); margin: 0 auto; }
+.content-eyebrow {
+  font-family: var(--mono); font-size: .7rem; color: var(--accent);
+  letter-spacing: .14em; text-transform: uppercase; opacity: .7;
+  margin-bottom: .75rem; display: block;
+}
+.content-inner h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--text); margin-bottom: 1rem; }
+.content-inner h3 { font-size: .95rem; color: var(--text); margin-bottom: .4rem; }
+.content-inner p { font-size: .9rem; line-height: 1.75; margin-bottom: 1rem; max-width: 720px; }
+.content-inner p:last-child { margin-bottom: 0; }
+
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.cat-card { border: 1px solid var(--border); border-radius: var(--r); background: var(--bg-card); padding: 1.1rem 1.25rem; }
+.cat-card h3 { margin-bottom: .4rem; }
+.cat-card p { font-size: .8rem; margin: 0; max-width: none; }
+
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.compare-card { border: 1px solid var(--border); border-radius: var(--r); padding: 1.25rem; background: var(--bg-card); }
+.compare-card.highlight { border-color: var(--bwarm); background: var(--accent-dim); }
+.compare-card h3 { margin-bottom: .6rem; }
+.compare-card p { font-size: .82rem; margin: 0; max-width: none; }
+
+.choose-list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.choose-item { display: flex; gap: 1rem; }
+.choose-num {
+  font-family: var(--mono); font-size: .75rem; color: var(--accent);
+  border: 1px solid var(--bwarm); border-radius: 50%;
+  width: 1.6rem; height: 1.6rem; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.choose-item h3 { margin-bottom: .25rem; }
+.choose-item p { font-size: .82rem; margin: 0; max-width: none; }
+
+.faq-list { margin-top: 1.75rem; display: flex; flex-direction: column; }
+.faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.faq-item:first-child { padding-top: 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-item h3 { margin-bottom: .5rem; }
+.faq-item p { font-size: .85rem; margin: 0; max-width: none; }
+
+@media (max-width: 720px) {
+  .content-section { padding: 2.5rem 1.25rem; }
+}
+
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 2rem; }
 .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
@@ -506,6 +602,108 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
     </table>
   </div>
 </div>
+
+<!-- ── WHAT IS ── -->
+<section class="content-section" id="what-is">
+  <div class="content-inner">
+    <span class="content-eyebrow">Definitions</span>
+    <h2>What is an AI agent memory framework?</h2>
+    <p>An AI agent memory framework gives an agent state that survives past its context window: facts, preferences, or events stored during one run and retrieved in a later one. A model's context window is short-term memory — it disappears when the conversation ends. A memory framework adds the layer underneath: what gets stored, how it's indexed (vector similarity, a knowledge graph, key-value), how it's retrieved when relevant, and — in the more complete implementations — how it's consolidated or forgotten over time so it doesn't grow unbounded.</p>
+    <p>This is a narrower, more specific problem than general agent orchestration, which is why it has its own ecosystem and its own index here rather than living inside the <a href="ai_agent_frameworks.html">AI Agent Frameworks list</a>. Some entries (mem0, Letta, Zep) are purpose-built memory layers you drop into any agent stack. Others (LlamaIndex, Haystack, AutoGen) are broader frameworks where memory is one capability among several. A few (chroma, dolt) are storage primitives that memory frameworks are frequently built on top of, rather than memory systems themselves.</p>
+  </div>
+</section>
+
+<!-- ── LAYERS ── -->
+<section class="content-section alt" id="layers">
+  <div class="content-inner">
+    <span class="content-eyebrow">Taxonomy</span>
+    <h2>Framework, Infra, and Research layers</h2>
+    <p>Every entry above is classified by which layer of the memory stack it occupies — use the Layer filter to isolate one.</p>
+    <div class="cat-grid">
+      <div class="cat-card"><h3>Framework</h3><p>A purpose-built API for agent memory — store, retrieve, consolidate, forget. Drops into an existing agent loop. Most entries in this index (mem0, Letta, Zep, Graphiti, LangMem, cognee) sit here.</p></div>
+      <div class="cat-card"><h3>Infra</h3><p>A lower-level storage or versioning substrate that memory frameworks are often built on top of — a vector database, a versioned relational store, or an OS-style unified memory layer (chroma, dolt, MemOS).</p></div>
+      <div class="cat-card"><h3>Research</h3><p>Early, single-paper implementations exploring a new memory architecture, not yet aimed at production adoption.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEMORY CLASS & ARCHITECTURE ── -->
+<section class="content-section" id="memory-class">
+  <div class="content-inner">
+    <span class="content-eyebrow">Classification</span>
+    <h2>Memory class and architecture patterns</h2>
+    <p>Beyond layer, each framework is tagged by <strong>who</strong> the memory is for and <strong>how</strong> it's structured underneath.</p>
+    <div class="cat-grid">
+      <div class="cat-card"><h3>Personalization</h3><p>Remembers facts about one user or session — preferences, history, prior conversations — for continuity in a single-user experience.</p></div>
+      <div class="cat-card"><h3>Institutional</h3><p>Remembers shared knowledge across users or sessions — a domain knowledge base or organizational fact store used consistently by many agents.</p></div>
+      <div class="cat-card"><h3>Both</h3><p>Supports personalization and institutional patterns at once. The majority of production-grade frameworks in this index — mem0, Letta, Zep, Graphiti — fall here.</p></div>
+      <div class="cat-card"><h3>Vector-based</h3><p>Similarity search over embeddings. The oldest and simplest retrieval pattern, and the one most storage-layer tools (chroma) implement directly.</p></div>
+      <div class="cat-card"><h3>Knowledge graph</h3><p>Facts and relationships stored as a graph rather than embeddings — better for multi-hop reasoning, harder to keep consistent at scale.</p></div>
+      <div class="cat-card"><h3>Temporal knowledge graph</h3><p>A knowledge graph where facts carry validity windows, so the system can reason about what was true when. Zep and Graphiti are the reference implementations.</p></div>
+      <div class="cat-card"><h3>Tiered / OS-inspired</h3><p>Memory organized into layers by recency or importance, modeled on operating-system memory hierarchies (Letta, MemOS).</p></div>
+      <div class="cat-card"><h3>Version-controlled</h3><p>Memory as a versioned, git-like history rather than a mutable store — useful for auditability and rollback (dolt, Memoria).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO CHOOSE ── -->
+<section class="content-section alt" id="how-to-choose">
+  <div class="content-inner">
+    <span class="content-eyebrow">Evaluation</span>
+    <h2>How to choose a memory framework</h2>
+    <p>Six things worth checking before committing to one.</p>
+    <div class="choose-list">
+      <div class="choose-item"><span class="choose-num">1</span><div><h3>Memory class fit</h3><p>Personalization (per-user continuity), institutional (shared knowledge base), or both? This decides more than any other factor.</p></div></div>
+      <div class="choose-item"><span class="choose-num">2</span><div><h3>Architecture</h3><p>Vector similarity, knowledge graph, temporal graph, or tiered/OS-style — trades off recall precision against latency and implementation complexity.</p></div></div>
+      <div class="choose-item"><span class="choose-num">3</span><div><h3>Layer</h3><p>A full framework (mem0, Letta) gives you a memory API. An infra primitive (chroma, dolt) gives you storage you still have to wire into an agent loop yourself.</p></div></div>
+      <div class="choose-item"><span class="choose-num">4</span><div><h3>Agent framework integration</h3><p>Does it have a native adapter for the orchestration layer you're already using — see the <a href="ai_agent_frameworks.html">agent frameworks index</a> — or do you build the plumbing yourself?</p></div></div>
+      <div class="choose-item"><span class="choose-num">5</span><div><h3>License</h3><p>Apache-2.0 and MIT cover most of this index unrestricted for commercial use. Check for mixed or copyleft licensing (some entries carry AGPL-3.0 or split licensing) before adopting.</p></div></div>
+      <div class="choose-item"><span class="choose-num">6</span><div><h3>Maturity signal</h3><p>The Maturity column (Production, Emerging, Research, Experimental) reflects real-world adoption more reliably than star count alone.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section" id="faq">
+  <div class="content-inner">
+    <span class="content-eyebrow">FAQ</span>
+    <h2>Questions, answered</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What is an AI agent memory framework?</h3>
+        <p>Software that gives an agent state beyond its context window — storing facts, preferences, or events from one run and retrieving them in a later one. It covers how memory is indexed (vector, graph, key-value), how it's retrieved, and often how it's consolidated or forgotten over time.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between a memory framework and a vector database?</h3>
+        <p>A vector database (like chroma) is a storage primitive — it stores embeddings and answers similarity queries, with no opinion on agent memory. A memory framework (like mem0) adds the layer on top: deciding what's worth remembering, when to retrieve it, how to merge conflicting facts, and when to forget. Several entries in this index are storage layers rather than full memory systems — check the Layer column.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between personalization and institutional memory?</h3>
+        <p>Personalization memory tracks one user or session — preferences, history, continuity. Institutional memory tracks shared knowledge used consistently across many users or agents, closer to a knowledge base. Most production frameworks now support both at once rather than picking one.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the difference between short-term and long-term memory in AI agents?</h3>
+        <p>Short-term memory is the model's context window — it holds the current conversation and vanishes when the session ends. Long-term memory is what a memory framework adds: state that's written to persistent storage and retrieved in a future session, independent of context window size.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is mem0 open source and can it be self-hosted?</h3>
+        <p>Yes. mem0 is Apache-2.0 licensed and can be run fully self-hosted; a managed cloud version is also offered separately. Check the License column above for the current licensing of any entry before adopting it commercially.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's a temporal knowledge graph and which frameworks use it?</h3>
+        <p>A knowledge graph where facts carry validity windows, so the system can answer "what was true at time X" rather than only "what's true now." Zep and Graphiti are the reference implementations in this index.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does this differ from the AI Agent Frameworks index?</h3>
+        <p>The <a href="ai_agent_frameworks.html">AI Agent Frameworks index</a> covers general orchestration — how an agent decides what to do next. This index is narrower: frameworks and infrastructure specifically for giving an agent persistent memory across runs. Some tools (AutoGen, LlamaIndex) appear conceptually in both spaces but are indexed here for their memory capability specifically.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How current is this list?</h3>
+        <p>Stars, forks, and topics are refreshed daily via GitHub Actions; layer, memory class, architecture, and maturity are manually curated and updated as the ecosystem changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── FOOTER ── -->
 <footer>
