@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: { description: 'Collection of information about how visitors use our website.' },
+        purposes: { analytics: 'Analytics' },
+      },
+    },
+    services: [ { name: 'analytics', title: 'Analytics & Tracking', purposes: ['analytics'], required: false } ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3KMR8T0N');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same Loop, Three Harnesses — Hermes, Kilo Code, OpenClaw Compared</title>
+
+<meta name="description" content="Hermes Agent, Kilo Code, and OpenClaw run the same commodity loop. Mapped against the 11-layer harness architecture, here's what each one actually built.">
+
+<link rel="canonical" href="https://buildaharness.com/harness-comparison">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://buildaharness.com/harness-comparison">
+<meta property="og:site_name" content="Build A Harness">
+<meta property="og:title" content="Same Loop, Three Harnesses — Hermes, Kilo Code, OpenClaw Compared">
+<meta property="og:description" content="Three of the most-used open-source AI agents, mapped layer by layer against the 11-layer harness architecture. The loop is identical. The harness is where they differ.">
+<meta property="og:image" content="https://buildaharness.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Build A Harness — comparing the harness architecture of Hermes Agent, Kilo Code, and OpenClaw.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Same Loop, Three Harnesses — Hermes, Kilo Code, OpenClaw Compared">
+<meta name="twitter:description" content="Three of the most-used open-source AI agents, mapped layer by layer against the 11-layer harness architecture.">
+<meta name="twitter:image" content="https://buildaharness.com/og-image.png">
+<meta name="twitter:image:alt" content="Build A Harness — comparing the harness architecture of Hermes Agent, Kilo Code, and OpenClaw.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="3IVIS">
+<meta name="keywords" content="harness comparison, Hermes Agent, Kilo Code, OpenClaw, AI agent harness, agent loop, harness engineering, agent architecture">
+
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#4F46E5">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://buildaharness.com/harness-comparison#article",
+      "headline": "Same Loop, Three Harnesses — Hermes, Kilo Code, OpenClaw Compared",
+      "description": "Hermes Agent, Kilo Code, and OpenClaw run the same commodity loop. Mapped against the 11-layer harness architecture, here's what each one actually built.",
+      "datePublished": "2026-07-04",
+      "dateModified": "2026-07-04",
+      "author": { "@id": "https://buildaharness.com/#org" },
+      "publisher": { "@id": "https://buildaharness.com/#org" },
+      "mainEntityOfPage": "https://buildaharness.com/harness-comparison"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://buildaharness.com/harness-comparison#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Build A Harness", "item": "https://buildaharness.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Harness Comparison", "item": "https://buildaharness.com/harness-comparison" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://buildaharness.com/#org",
+      "name": "3IVIS",
+      "url": "https://github.com/3IVIS",
+      "sameAs": ["https://github.com/3IVIS/buildaharness", "https://designaloop.com"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why compare Hermes Agent, Kilo Code, and OpenClaw specifically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one explicitly describes its own core loop as a conventional, commodity pattern in its own docs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which of the three has the best harness?",
+          "acceptedAnswer": { "@type": "Answer", "text": "None covers more than 2 of 11 canonical harness layers at full strength. Hermes leads on Memory and Learning (persistent cross-session memory, self-improving skills). Kilo Code leads on Execution (git-based checkpoints, tool-call reliability plumbing). OpenClaw leads on reach (messaging apps, device control), but its broad, weakly-gated action surface lines up with its documented security incidents — an RCE CVE and a marketplace incident involving over a thousand malicious skills." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 11-layer harness architecture?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The canonical architecture used across Build A Harness: Caller State, World Model, Reasoning, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and Output & Reviewer Pass. See buildaharness.com/harness-engineering for the full definition of each layer." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:oklch(.972 .008 270);
+  --bg-2:oklch(.948 .012 270);
+  --paper:oklch(.985 .008 270);
+  --ink:oklch(.19 .024 270);
+  --ink-2:oklch(.37 .02 270);
+  --ink-3:oklch(.55 .018 270);
+  --line:oklch(.84 .014 270);
+  --accent:oklch(.46 .16 268);
+  --accent-ink:oklch(.36 .16 270);
+  --green:oklch(.38 .12 148);
+  --series-hermes:#2a78d6;
+  --series-kilo:#1baf7a;
+  --series-openclaw:#eda100;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+body{font-family:"IBM Plex Sans",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+.prose{max-width:740px;}
+
+header{border-bottom:1px solid var(--line);background:var(--paper);}
+.site-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.brand .name{font-family:"IBM Plex Mono",monospace;font-size:15px;white-space:nowrap;}
+.nav{display:flex;gap:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;}
+.nav a{text-decoration:none;color:var(--ink-2);}
+.nav a:hover{color:var(--ink);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:6px;text-decoration:none;background:var(--ink);color:white;font-family:"IBM Plex Mono",monospace;font-size:12px;border:1px solid var(--ink);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--ink);}
+
+.breadcrumb{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin-bottom:32px;}
+.breadcrumb a{color:var(--ink-3);text-decoration:none;}
+.breadcrumb span{margin:0 6px;}
+
+.eyebrow{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.16em;color:var(--accent-ink);margin-bottom:22px;}
+
+.page-hero{padding:60px 0 68px;background:var(--paper);border-bottom:1px solid var(--line);}
+h1{font-size:52px;line-height:1.06;letter-spacing:-.04em;font-weight:300;margin:0 0 24px;max-width:860px;}
+h1 em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--accent-ink);font-weight:400;}
+.hero-lede{font-size:18px;font-weight:300;color:var(--ink-2);max-width:680px;margin:0 0 36px;line-height:1.55;}
+
+.stat-row{display:flex;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:32px;max-width:820px;}
+.stat{flex:1;padding:20px 22px;background:var(--bg);border-right:1px solid var(--line);}
+.stat:last-child{border-right:none;}
+.stat-n{display:block;font-size:30px;font-weight:300;letter-spacing:-.03em;color:var(--accent-ink);font-family:"IBM Plex Mono",monospace;margin-bottom:6px;}
+.stat-l{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.4;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+.section{padding:56px 0;background:var(--paper);}
+.section.alt{background:var(--bg);}
+h2{font-size:32px;font-weight:300;letter-spacing:-.03em;margin:0 0 18px;line-height:1.15;}
+h2 em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--accent-ink);font-weight:400;}
+.section-label{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:10.5px;letter-spacing:.18em;color:var(--ink-3);margin-bottom:16px;}
+p{font-size:16px;color:var(--ink-2);line-height:1.7;margin:0 0 18px;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--ink);font-weight:600;}
+
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;flex-shrink:0;}
+.agent-label{display:inline-flex;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;color:var(--ink);}
+
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.agent-card{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:20px 20px 22px;border-top:3px solid var(--line);}
+.agent-card .agent-label{font-size:14px;margin-bottom:14px;}
+.agent-meta{display:flex;flex-direction:column;gap:8px;}
+.agent-meta-row{display:flex;justify-content:space-between;gap:10px;font-size:13px;}
+.agent-meta-k{color:var(--ink-3);}
+.agent-meta-v{color:var(--ink);text-align:right;font-weight:500;}
+
+.chart-box{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:26px 28px;margin-top:24px;max-width:720px;}
+.chart-title{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:20px;}
+.bar-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.bar-row:last-child{margin-bottom:0;}
+.bar-label{width:150px;flex-shrink:0;font-family:"IBM Plex Mono",monospace;font-size:12.5px;display:flex;align-items:center;}
+.bar-track{flex:1;background:var(--bg-2);border-radius:4px;height:16px;position:relative;}
+.bar-fill{height:16px;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;min-width:44px;}
+.bar-val{font-family:"IBM Plex Mono",monospace;font-size:11px;color:white;font-weight:500;}
+.chart-note{margin-top:16px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px;}
+
+.coverage-legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font-size:12.5px;color:var(--ink-3);}
+.coverage-legend span{display:inline-flex;align-items:center;gap:7px;}
+.glyph{font-family:"IBM Plex Mono",monospace;font-size:14px;width:16px;display:inline-block;text-align:center;flex-shrink:0;vertical-align:top;margin-right:8px;}
+.glyph-present{color:var(--ink);}
+.glyph-partial{color:var(--ink-2);}
+.glyph-absent{color:var(--ink-3);}
+.matrix-callout{margin-top:24px;padding:16px 20px;border:1px solid var(--line);border-radius:6px;background:var(--bg);}
+.matrix-callout p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.6;}
+
+.cmp-table{width:100%;border-collapse:collapse;margin-top:24px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:13.5px;}
+.cmp-table th, .cmp-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;}
+.cmp-table th:last-child, .cmp-table td:last-child{border-right:none;}
+.cmp-table tr:last-child td{border-bottom:none;}
+.cmp-table thead th{background:var(--bg-2);font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:500;}
+.cmp-table td.row-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);background:var(--bg-2);white-space:nowrap;}
+.cmp-table td{color:var(--ink-2);line-height:1.55;}
+.cmp-table td.cell{white-space:normal;}
+.cmp-table td.cell .cell-text{display:inline-block;width:calc(100% - 26px);vertical-align:top;font-size:12.5px;line-height:1.5;}
+
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.steps-card{border:1px solid var(--line);border-radius:6px;background:var(--paper);border-top:3px solid var(--line);}
+.steps-card summary{cursor:pointer;padding:16px 18px;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.steps-card summary::-webkit-details-marker{display:none;}
+.steps-card summary::after{content:"+";color:var(--ink-3);font-size:16px;}
+.steps-card[open] summary::after{content:"–";}
+.steps-card ol{margin:0;padding:4px 18px 18px 34px;display:flex;flex-direction:column;gap:8px;}
+.steps-card li{font-size:12.5px;color:var(--ink-2);line-height:1.55;}
+
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.quote-card{border:1px solid var(--line);border-left:3px solid var(--line);border-radius:6px;background:var(--bg);padding:18px 20px;}
+.quote-card p{font-size:13.5px;font-style:italic;color:var(--ink-2);margin-bottom:10px;}
+.quote-card p:last-child{margin-bottom:0;}
+
+.faq-list{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:24px;}
+.faq-item{padding:20px 24px;border-bottom:1px solid var(--line);background:var(--paper);}
+.faq-item:last-child{border-bottom:none;}
+.faq-item h3{font-size:16px;font-weight:500;letter-spacing:-.01em;color:var(--ink);margin:0 0 8px;}
+.faq-item p{font-size:14px;}
+
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+.sources-card{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:16px 18px;border-top:3px solid var(--line);}
+.sources-card .agent-label{font-size:12.5px;margin-bottom:10px;}
+.sources-card ul{margin:0;padding:0 0 0 16px;display:flex;flex-direction:column;gap:6px;}
+.sources-card li{font-size:11.5px;line-height:1.5;}
+.sources-card a{color:var(--accent-ink);text-decoration:none;}
+.sources-card a:hover{text-decoration:underline;}
+
+.cta-section{padding:56px 0;border-top:1px solid var(--line);background:var(--paper);}
+.cta-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.cta-text h2{margin-bottom:12px;}
+.cta-text p{max-width:540px;}
+.cta-actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0;padding-top:8px;}
+
+footer{padding:32px 0;border-top:1px solid var(--line);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-links a{text-decoration:none;color:var(--ink-2);font-family:"IBM Plex Mono",monospace;font-size:12px;}
+.footer-tag{font-family:"Instrument Serif",serif;color:var(--ink-3);font-style:italic;}
+
+@media(max-width:900px){
+  .agent-grid, .steps-grid, .sources-grid, .quote-grid{grid-template-columns:1fr;}
+}
+@media(max-width:760px){
+  .wrap{padding:0 22px;}
+  h1{font-size:34px;}
+  h2{font-size:26px;}
+  .stat-row{flex-direction:column;}
+  .stat{border-right:none;border-bottom:1px solid var(--line);}
+  .stat:last-child{border-bottom:none;}
+  .cmp-table{font-size:12px;}
+  .cmp-table th, .cmp-table td{padding:10px;}
+  .nav{display:none;}
+  .cta-inner{flex-direction:column;}
+  .bar-label{width:110px;font-size:11px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap site-inner">
+    <a class="brand" href="/" aria-label="Build A Harness home">
+      <span class="name">Build A Harness</span>
+    </a>
+    <nav class="nav">
+      <a href="/#why">Harness</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/harness-comparison" style="color:var(--accent-ink);">Harness comparison</a>
+      <a href="/ai_agent_frameworks.html">Frameworks index</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="https://github.com/3IVIS/buildaharness">GitHub</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Harness Comparison</span>
+    </nav>
+
+    <div class="eyebrow">CASE STUDY · THREE OF THE MOST-USED OPEN-SOURCE AI AGENTS</div>
+
+    <h1>Three popular agents.<br><em>One thin harness, three ways.</em></h1>
+
+    <p class="hero-lede">
+      Hermes Agent, Kilo Code, and OpenClaw all run the same commodity ReAct loop — each project's own documentation says so. Mapped against the eleven-layer harness architecture, here's what each one actually built around that loop, and what all three still leave thin.
+      <a href="https://designaloop.com/loop-comparison" style="color:var(--accent-ink);">Read the loop-first version on Design a Loop →</a>
+    </p>
+
+    <div class="stat-row" role="list">
+      <div class="stat" role="listitem">
+        <span class="stat-n">8/11</span>
+        <span class="stat-l">harness layers where none of the three agents reaches full coverage</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-n">2</span>
+        <span class="stat-l">layers where any agent reaches full coverage at all — Execution (Kilo) and Memory/Learning (Hermes)</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-n">0/3</span>
+        <span class="stat-l">ship a formal output/reviewer-pass quality gate before a reply goes out</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="#the-harness">See the harness ↓</a>
+      <a class="btn btn-ghost" href="#the-loop">See the loop ↓</a>
+      <a class="btn btn-ghost" href="#sources">Sources ↓</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="at-a-glance">
+  <div class="wrap">
+    <div class="section-label">AT A GLANCE</div>
+    <h2>Three agents, three <em>very different scales.</em></h2>
+    <p class="prose" style="margin-bottom:0;">Each project reports its own headline numbers in its own units — stars, users, tokens — so the cards below show each on its own terms.</p>
+
+    <div class="agent-grid">
+      <div class="agent-card" style="border-top-color:var(--series-hermes);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</div>
+        <div class="agent-meta">
+          <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Nous Research</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Feb 2026</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">MIT</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~140,000 (in 3 mo.)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">770B tokens/day</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">CLI · messaging · IDE · API</span></div>
+        </div>
+      </div>
+      <div class="agent-card" style="border-top-color:var(--series-kilo);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</div>
+        <div class="agent-meta">
+          <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Kilo (fork of Roo/Cline)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Mar 2025</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">Open source + hosted gateway</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Users</span><span class="agent-meta-v">1.5M+ (3M+ "Kilo Coders")</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Tokens processed</span><span class="agent-meta-v">40T+ (cumulative)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">235B tokens/day</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">VS Code · JetBrains · CLI · mobile</span></div>
+        </div>
+      </div>
+      <div class="agent-card" style="border-top-color:var(--series-openclaw);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</div>
+        <div class="agent-meta">
+          <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Peter Steinberger</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Nov 2025 (as Clawdbot)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">MIT</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~247,000</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">161B tokens/day</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">Messaging apps · device nodes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <div class="chart-title">OpenRouter daily token volume — global app rankings</div>
+      <div class="bar-row">
+        <div class="bar-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</div>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--series-hermes);"><span class="bar-val">770B/day</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</div>
+        <div class="bar-track"><div class="bar-fill" style="width:31%;background:var(--series-kilo);"><span class="bar-val">235B/day</span></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</div>
+        <div class="bar-track"><div class="bar-fill" style="width:21%;background:var(--series-openclaw);"><span class="bar-val">161B/day</span></div></div>
+      </div>
+      <div class="chart-note">Live figures from OpenRouter's global app rankings (openrouter.ai/apps), accessed July 2026 — all three now report through OpenRouter, correcting an earlier assumption on this page that Kilo Code was gateway-only. Hermes overtook OpenClaw on this metric back in mid-May 2026 and has grown substantially since. For context, Claude Code (not one of the three agents covered here) ranks between Kilo Code and OpenClaw at 218B/day.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="the-harness">
+  <div class="wrap">
+    <div class="section-label">THE HARNESS</div>
+    <h2>Mapped against <em>the eleven-layer harness.</em></h2>
+    <p class="prose" style="margin-bottom:0;">
+      Each agent's documented behavior mapped against the same <a href="/harness-engineering#layers" style="color:var(--accent-ink);">eleven canonical layers</a> used across Build A Harness — not an ad hoc feature list.
+    </p>
+
+    <div class="coverage-legend">
+      <span><span class="glyph glyph-present">●</span> present — a real, documented mechanism</span>
+      <span><span class="glyph glyph-partial">◐</span> partial — an ad hoc or static substitute</span>
+      <span><span class="glyph glyph-absent">○</span> not described in public docs</span>
+    </div>
+
+    <div style="overflow-x:auto;">
+    <table class="cmp-table" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Harness layer</th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-label">1. Caller State</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Agent "modes" (code/ask/plan/debug) fix tools + instructions per task</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Messaging channel/persona selects context — not a formal constraint system</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">2. World Model</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Raw history only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static Memory Bank files</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static persona/bootstrap files</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">3. Reasoning</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">4. Control State</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Binary approval gate, not a tiered resolver</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Queueing prevents races, isn't a risk control</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">5. Planning</td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Subagents get their own capped budget via delegate_task — no full dependency graph</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Subagent delegation for isolated subtasks</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">6. Execution</td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">70+ tools, ~28 toolsets, 6 backends, concurrent dispatch</span></td>
+          <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Git-snapshot checkpoints + diff-repair + tool-call translation</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Broadest action surface (device/OS tools), weakly gated</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">7. Verification</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Informal completion check + diff-repair</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">8. Recovery</td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Provider fallback, fixed iteration budget</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Checkpoint rollback, diff-repair</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry only</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">9. Memory</td>
+          <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">SQLite+FTS5, context compression with a 20-message floor</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Memory Bank, context condensing</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Raw JSONL transcript, token-limit + compaction reserve</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">10. Learning</td>
+          <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Self-improving skills — the project's headline differentiator</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Explicitly static — no self-improvement</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">11. Output &amp; Reviewer Pass</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described — human review substitutes</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Reply shaping is cosmetic, not a quality gate</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="matrix-callout">
+      <p><strong>Reading the pattern:</strong> Execution (Kilo's checkpoints) and Memory/Learning (Hermes's persistent skills) are the only layers where any agent reaches full coverage. Reasoning gets zero coverage across all three. Caller State, Control State, Planning, Verification, and Output &amp; Reviewer Pass are thin or absent everywhere — which is a fair description of where most production agents are today, popular or not.</p>
+    </div>
+
+    <h2 style="margin-top:48px;">What it's actually like <em>to run one.</em></h2>
+    <p class="prose" style="margin-bottom:0;">Beyond the layer-by-layer mapping, each project reads differently in practice:</p>
+
+    <div style="overflow-x:auto;">
+    <table class="cmp-table" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Practical dimension</th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-label">Model / provider breadth</td>
+          <td>18+ providers, open-weight models</td>
+          <td>500+ models, 60+ providers via the Kilo Gateway</td>
+          <td>Claude, GPT, DeepSeek, or local — OAuth piggyback on existing subscriptions</td>
+        </tr>
+        <tr>
+          <td class="row-label">Primary reach</td>
+          <td>CLI, 20 messaging platforms, IDE (ACP), API, cron</td>
+          <td>VS Code, JetBrains, CLI, cloud agent, mobile</td>
+          <td>WhatsApp, Telegram, Discord, Signal, iMessage, Slack, Teams, native device apps</td>
+        </tr>
+        <tr>
+          <td class="row-label">Business model</td>
+          <td>Free, MIT; runs on a few-dollar-a-month VPS</td>
+          <td>Free/BYOK or Kilo credits, zero markup on provider rates; $8M seed round</td>
+          <td>Free, MIT, self-hosted; foundation stewardship after the founder joined OpenAI</td>
+        </tr>
+        <tr>
+          <td class="row-label">Known risk</td>
+          <td>Newest of the three (Feb 2026) — memory and self-improving skills lack a long track record</td>
+          <td>Parsing reliability is a constant fight across a 500-model matrix — not a novel loop, an inherited one</td>
+          <td>RCE CVE (CVSS 8.8), 1,000+ malicious marketplace skills reported, prompt-injection susceptible; restricted for state use in China</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tool-callout" style="margin-top:24px;padding:14px 18px;border:1px solid var(--line);border-radius:6px;background:var(--bg);display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:2px;">In Build A Harness</div>
+      <p style="margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5;">All 11 layers ship as drawable, composable canvas nodes — Reasoning, Control State, Verification, and Output &amp; Reviewer Pass included, the four layers thinnest across all three agents above. <a href="/harness-engineering" style="color:var(--accent-ink);">See the full architecture →</a></p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="the-loop">
+  <div class="wrap">
+    <div class="section-label">THE LOOP</div>
+    <h2>Same commodity loop, <em>underneath all three.</em></h2>
+    <p class="prose" style="margin-bottom:0;">
+      Every layer above wraps around a loop that, on its own, isn't a differentiator. Each project's own documentation says as much — and mapped against the same <a href="https://designaloop.com/loop-engineering#anatomy" style="color:var(--accent-ink);">seven-stage loop</a>, the pattern is clear.
+    </p>
+
+    <div class="coverage-legend">
+      <span><span class="glyph glyph-present">●</span> present</span>
+      <span><span class="glyph glyph-partial">◐</span> partial</span>
+      <span><span class="glyph glyph-absent">○</span> not described</span>
+    </div>
+
+    <div style="overflow-x:auto;">
+    <table class="cmp-table" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Loop stage</th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</span></th>
+          <th><span class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-label">1. Perceive</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Raw session history, no typed beliefs</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static Memory Bank files</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static bootstrap/persona files</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">2. Reason</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">3. Decide</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Provider fallback only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Binary human-approval gate</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Queueing, not risk-tiering</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">4. Act</td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Concurrent tool dispatch, no risk review</span></td>
+          <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Git checkpoint before every edit</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Broad device/OS action surface</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">5. Verify</td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Informal check + diff-repair</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Cosmetic reply shaping only</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">6. Recover</td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Fallback provider, iteration budget</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Checkpoint rollback, diff-repair</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry only</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">7. Learn &amp; Repeat</td>
+          <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Persistent memory + self-improving skills</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Memory Bank persists across sessions</span></td>
+          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Static — explicitly no self-improvement</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <details class="steps-card" style="margin-top:32px;border-top-color:var(--line);">
+      <summary>See each agent's full, unsimplified step list</summary>
+      <div class="steps-grid" style="padding:0 18px 18px;">
+        <div>
+          <div class="agent-label" style="margin-bottom:10px;"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent — 8 steps</div>
+          <ol>
+            <li>Generate a task ID, append the user message</li>
+            <li>Build or reuse the cached system prompt</li>
+            <li>Check whether preflight compression is needed (&gt;50% context full)</li>
+            <li>Build API messages per API mode</li>
+            <li>Inject ephemeral prompt layers (budget/context warnings)</li>
+            <li>Apply prompt caching markers (Anthropic)</li>
+            <li>Make an interruptible API call</li>
+            <li>Parse response: execute tool calls and loop to step 4, or persist + return</li>
+          </ol>
+        </div>
+        <div>
+          <div class="agent-label" style="margin-bottom:10px;"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code — 7 steps</div>
+          <ol>
+            <li>User gives a task, selects an agent mode (code/ask/plan/debug)</li>
+            <li>Kilo assembles context: system prompt, auto-found files, @-mentions, Memory Bank</li>
+            <li>Prompt + tools sent to the configured model via the Kilo Gateway</li>
+            <li>Model replies with reasoning plus typically one tool call</li>
+            <li>State-changing actions pause for user approval unless auto-approved</li>
+            <li>Approved action executes; result captured</li>
+            <li>If complete, present for review; else append observation and loop to step 3</li>
+          </ol>
+        </div>
+        <div>
+          <div class="agent-label" style="margin-bottom:10px;"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw — 7 steps</div>
+          <ol>
+            <li>Intake — Gateway RPC/CLI validates params, returns <code>{runId, acceptedAt}</code> immediately</li>
+            <li>Queue &amp; resolve — serialize via per-session + global queues, resolve model/auth</li>
+            <li>Session &amp; workspace prep — resolve workspace, load skills, inject bootstrap files</li>
+            <li>Prompt assembly — base + skills + bootstrap context, token limits enforced</li>
+            <li>Model inference ⇄ tool execution — stream text/tool-call deltas, execute, repeat</li>
+            <li>Reply shaping — assemble final payload, filter internal tokens</li>
+            <li>Persist &amp; emit — write transcript to JSONL, emit lifecycle:end</li>
+          </ol>
+        </div>
+      </div>
+    </details>
+
+    <div class="quote-grid" style="margin-top:28px;">
+      <div class="quote-card" style="border-left-color:var(--series-hermes);">
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent docs</div>
+        <p>"On its own, this loop is a fairly conventional ReAct-style tool-calling loop — structurally similar to what Claude Code, OpenClaw, and most other agent harnesses do."</p>
+      </div>
+      <div class="quote-card" style="border-left-color:var(--series-kilo);">
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code docs</div>
+        <p>"On its own, this is a conventional ReAct-style tool-calling loop — structurally the same shape used by Cline, Roo Code, Claude Code, Cursor, and most other agent harnesses."</p>
+      </div>
+      <div class="quote-card" style="border-left-color:var(--series-openclaw);">
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw docs</div>
+        <p>"On its own, this is a conventional ReAct-style tool-calling loop... The loop mechanics are not OpenClaw's differentiator."</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="faq">
+  <div class="wrap prose">
+    <div class="section-label">FAQ</div>
+    <h2>Questions, <em>answered.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Why compare Hermes Agent, Kilo Code, and OpenClaw specifically?</h3>
+        <p>They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one explicitly describes its own loop as conventional in its own docs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which of the three has the best harness?</h3>
+        <p>None covers more than 2 of 11 canonical layers at full strength. Hermes leads on Memory and Learning. Kilo Code leads on Execution. OpenClaw leads on reach, but its broad, weakly-gated action surface lines up with its documented security incidents — an RCE CVE and a marketplace incident involving over a thousand malicious skills.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the 11-layer harness architecture?</h3>
+        <p>The canonical architecture used across Build A Harness: Caller State, World Model, Reasoning, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and Output &amp; Reviewer Pass. <a href="/harness-engineering" style="color:var(--accent-ink);">Full definition →</a></p>
+      </div>
+      <div class="faq-item">
+        <h3>Where does Build A Harness fit in?</h3>
+        <p>Build A Harness implements all 11 layers as drawable, composable canvas nodes — so you can build the layers these three agents leave thin (Reasoning, Control State, Verification, Output &amp; Reviewer Pass) without writing that infrastructure yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="sources">
+  <div class="wrap">
+    <div class="section-label">SOURCES</div>
+    <h2>Primary <em>documentation.</em></h2>
+    <p class="prose" style="margin-bottom:0;">This comparison draws on each project's own architecture docs and independent reporting, current as of mid-2026. Token-volume figures are live from <a href="https://openrouter.ai/apps" style="color:var(--accent-ink);">OpenRouter's global app rankings</a>, accessed July 2026 — those numbers move daily and will drift from this snapshot.</p>
+
+    <div class="sources-grid">
+      <div class="sources-card" style="border-top-color:var(--series-hermes);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</div>
+        <ul>
+          <li><a href="https://hermes-agent.nousresearch.com/docs/developer-guide/architecture">Architecture — Hermes Agent docs</a></li>
+          <li><a href="https://hermes-agent.nousresearch.com/docs/developer-guide/agent-loop">Agent Loop Internals — Hermes Agent docs</a></li>
+          <li><a href="https://www.techtimes.com/articles/316694/20260515/nous-researchs-hermes-agent-dethrones-openclaw-worlds-most-used-open-source-ai-agent.htm">Tech Times: Hermes dethrones OpenClaw</a></li>
+        </ul>
+      </div>
+      <div class="sources-card" style="border-top-color:var(--series-kilo);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</div>
+        <ul>
+          <li><a href="https://kilo.ai/docs/code-with-ai/agents/using-agents">Using Agents — Kilo Code docs</a></li>
+          <li><a href="https://kilo.ai/docs/features/checkpoints">Checkpoints — Kilo Code docs</a></li>
+          <li><a href="https://tessl.io/blog/inside-kilo-code-an-open-source-ai-coding-agent-with-plans-to-reshape-software-development/">Inside Kilo Code — Tessl</a></li>
+          <li><a href="https://kilo.ai/kiloclaw/openclaw-vs-hermes">Kilo's own OpenClaw-vs-Hermes page</a> <span style="color:var(--ink-3);">(vendor comparison — corroborating color only)</span></li>
+        </ul>
+      </div>
+      <div class="sources-card" style="border-top-color:var(--series-openclaw);">
+        <div class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</div>
+        <ul>
+          <li><a href="https://docs.openclaw.ai/concepts/agent-loop">Agent loop — OpenClaw docs</a></li>
+          <li><a href="https://docs.openclaw.ai/concepts/architecture">Gateway architecture — OpenClaw docs</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/OpenClaw">OpenClaw — Wikipedia</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:12px;color:var(--ink-3);">The layer-by-layer coverage mapping above is our own reading of each project's public documentation against Build A Harness's canonical taxonomy, not an official audit or a claim endorsed by any of the three projects.</p>
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="section-label">BUILD A HARNESS · v0.8.0 · PUBLIC ALPHA</div>
+        <h2>Build the layers<br>these three <em>leave thin.</em></h2>
+        <p>Reasoning, Control State, Planning, Verification, and Output &amp; Reviewer Pass — the layers where all three of the most-used open-source agents are thinnest — ship as drawable canvas nodes in Build A Harness. Apache 2.0. Runs locally via Docker.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="https://github.com/3IVIS/buildaharness">Star on GitHub</a>
+        <a class="btn btn-ghost" href="/">Explore Build A Harness →</a>
+        <a class="btn btn-ghost" href="https://designaloop.com/loop-comparison">Read the loop-first version →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
+      <a href="https://github.com/3IVIS/buildaharness/tree/main/docs">Documentation</a>
+      <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
+      <a href="/">Build A Harness</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="https://designaloop.com">Design a Loop</a>
+      <a href="/ai_agent_frameworks.html">Frameworks index</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
+    </div>
+    <div class="footer-tag">
+      Build your harness. Ship it anywhere.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
