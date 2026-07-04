@@ -330,8 +330,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <span class="stat-l">harness layers where none of the three agents reaches full coverage</span>
       </div>
       <div class="stat" role="listitem">
-        <span class="stat-n">2</span>
-        <span class="stat-l">layers where any agent reaches full coverage at all — Execution (Kilo) and Memory/Learning (Hermes)</span>
+        <span class="stat-n">3</span>
+        <span class="stat-l">layers where any agent reaches full coverage at all — Execution (Kilo), Memory and Learning (both Hermes)</span>
       </div>
       <div class="stat" role="listitem">
         <span class="stat-n">0/3</span>
@@ -509,7 +509,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </div>
 
     <div class="matrix-callout">
-      <p><strong>Reading the pattern:</strong> Execution (Kilo's checkpoints) and Memory/Learning (Hermes's persistent skills) are the only layers where any agent reaches full coverage. Reasoning gets zero coverage across all three. Caller State, Control State, Planning, Verification, and Output &amp; Reviewer Pass are thin or absent everywhere — which is a fair description of where most production agents are today, popular or not.</p>
+      <p><strong>Reading the pattern:</strong> Execution, Memory, and Learning are the only layers where any agent reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage across all three. The rest — Caller State, World Model, Control State, Planning, Verification, and Recovery — are partial at best everywhere: never fully absent, never fully built out either. Which is a fair description of where most production agents are today, popular or not.</p>
     </div>
 
     <h2 style="margin-top:48px;">What it's actually like <em>to run one.</em></h2>
@@ -680,7 +680,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="quote-grid" style="margin-top:28px;">
       <div class="quote-card" style="border-left-color:var(--series-hermes);">
         <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent docs</div>
-        <p>"On its own, this loop is a fairly conventional ReAct-style tool-calling loop — structurally similar to what Claude Code, OpenClaw, and most other agent harnesses do."</p>
+        <p>"On its own, this loop is a fairly conventional ReAct-style tool-calling loop — structurally similar to what Claude Code, OpenClaw, and most other agent harnesses do..."</p>
       </div>
       <div class="quote-card" style="border-left-color:var(--series-kilo);">
         <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code docs</div>
@@ -766,7 +766,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="cta-text">
         <div class="section-label">BUILD A HARNESS · v0.8.0 · PUBLIC ALPHA</div>
         <h2>Build the layers<br>these three <em>leave thin.</em></h2>
-        <p>Reasoning, Control State, Planning, Verification, and Output &amp; Reviewer Pass — the layers where all three of the most-used open-source agents are thinnest — ship as drawable canvas nodes in Build A Harness. Apache 2.0. Runs locally via Docker.</p>
+        <p>Reasoning, Control State, Verification, and Output &amp; Reviewer Pass — the layers where all three of the most-used open-source agents are thinnest — ship as drawable canvas nodes in Build A Harness. Apache 2.0. Runs locally via Docker.</p>
       </div>
       <div class="cta-actions">
         <a class="btn" href="https://github.com/3IVIS/buildaharness">Star on GitHub</a>

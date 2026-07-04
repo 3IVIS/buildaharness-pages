@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "itsharness-pages",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "4567", "/Users/developer/Documents/Projects/WorkFolder/itsharness-pages"],
+      "port": 4567
+    }
+  ]
+}
