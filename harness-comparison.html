@@ -117,7 +117,7 @@
         {
           "@type": "Question",
           "name": "Which of the three has the best harness?",
-          "acceptedAnswer": { "@type": "Answer", "text": "None covers more than 2 of 11 canonical harness layers at full strength. Hermes leads on Memory and Learning (persistent cross-session memory, self-improving skills). Kilo Code leads on Execution (git-based checkpoints, tool-call reliability plumbing). OpenClaw leads on reach (messaging apps, device control), but its broad, weakly-gated action surface lines up with its documented security incidents — an RCE CVE and a marketplace incident involving over a thousand malicious skills." }
+          "acceptedAnswer": { "@type": "Answer", "text": "None covers more than 2 of 11 canonical harness layers at full strength. Hermes leads on Memory and Learning (persistent cross-session memory, self-improving skills). Kilo Code leads on Execution (git-based checkpoints, tool-call reliability plumbing). OpenClaw leads on reach (messaging apps, device control), but its broad, weakly-gated action surface lines up with its documented security incidents — multiple RCE CVEs (up to CVSS 9.8) and a marketplace incident involving over a thousand malicious skills." }
         },
         {
           "@type": "Question",
@@ -362,7 +362,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Nous Research</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Feb 2026</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">MIT</span></div>
-          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~140,000 (in 3 mo.)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~205,000 (as of late June 2026)</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">770B tokens/day</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">CLI · messaging · IDE · API</span></div>
         </div>
@@ -509,7 +509,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </div>
 
     <div class="matrix-callout">
-      <p><strong>Reading the pattern:</strong> Execution, Memory, and Learning are the only layers where any agent reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage across all three. The rest — Caller State, World Model, Control State, Planning, Verification, and Recovery — are partial at best everywhere: never fully absent, never fully built out either. Which is a fair description of where most production agents are today, popular or not.</p>
+      <p><strong>Reading the pattern:</strong> Execution, Memory, and Learning are the only layers where any agent reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage across all three. Recovery is the one layer where all three have at least a partial mechanism — none reaches full coverage, but none is fully absent either. The remaining five — Caller State, World Model, Control State, Planning, and Verification — are a mix of partial and fully-absent across the three, with no agent building any of them out completely. Which is a fair description of where most production agents are today, popular or not.</p>
     </div>
 
     <h2 style="margin-top:48px;">What it's actually like <em>to run one.</em></h2>
@@ -548,7 +548,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td class="row-label">Known risk</td>
           <td>Newest of the three (Feb 2026) — memory and self-improving skills lack a long track record</td>
           <td>Parsing reliability is a constant fight across a 500-model matrix — not a novel loop, an inherited one</td>
-          <td>RCE CVE (CVSS 8.8), 1,000+ malicious marketplace skills reported, prompt-injection susceptible; restricted for state use in China</td>
+          <td>Multiple RCE CVEs (up to CVSS 9.8), 1,000+ malicious marketplace skills reported, prompt-injection susceptible; restricted for state use in China</td>
         </tr>
       </tbody>
     </table>
@@ -707,7 +707,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
       <div class="faq-item">
         <h3>Which of the three has the best harness?</h3>
-        <p>None covers more than 2 of 11 canonical layers at full strength. Hermes leads on Memory and Learning. Kilo Code leads on Execution. OpenClaw leads on reach, but its broad, weakly-gated action surface lines up with its documented security incidents — an RCE CVE and a marketplace incident involving over a thousand malicious skills.</p>
+        <p>None covers more than 2 of 11 canonical layers at full strength. Hermes leads on Memory and Learning. Kilo Code leads on Execution. OpenClaw leads on reach, but its broad, weakly-gated action surface lines up with its documented security incidents — multiple RCE CVEs (up to CVSS 9.8) and a marketplace incident involving over a thousand malicious skills.</p>
       </div>
       <div class="faq-item">
         <h3>What is the 11-layer harness architecture?</h3>
