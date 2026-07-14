@@ -117,7 +117,7 @@
         {
           "@type": "Question",
           "name": "Which of the three has the best harness?",
-          "acceptedAnswer": { "@type": "Answer", "text": "None covers more than 2 of 11 canonical harness layers at full strength. Hermes leads on Memory and Learning (persistent cross-session memory, self-improving skills). Kilo Code leads on Execution (git-based checkpoints, tool-call reliability plumbing). OpenClaw leads on reach (messaging apps, device control), but its broad, weakly-gated action surface lines up with its documented security incidents — multiple RCE CVEs (up to CVSS 9.8) and a marketplace incident involving over a thousand malicious skills." }
+          "acceptedAnswer": { "@type": "Answer", "text": "None covers more than 2 of 11 canonical harness layers at full strength. Hermes leads on Memory and Learning (persistent cross-session memory, self-improving skills). Kilo Code leads on Execution (git-based checkpoints, tool-call reliability plumbing). OpenClaw leads on reach (messaging apps, device control), but its broad, weakly-gated action surface lines up with its documented security incidents — critical CVEs including a 9.9-severity privilege-escalation-to-RCE flaw and an 8.8 one-click RCE, plus a marketplace campaign that disclosed 341 malicious skills in a single sweep." }
         },
         {
           "@type": "Question",
@@ -549,7 +549,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td class="row-label">Known risk</td>
           <td>Newest of the three (Feb 2026) — memory and self-improving skills lack a long track record</td>
           <td>Parsing reliability is a constant fight across a 500-model matrix — not a novel loop, an inherited one</td>
-          <td>Multiple RCE CVEs (up to CVSS 9.8), 1,000+ malicious marketplace skills reported, prompt-injection susceptible; restricted for state use in China</td>
+          <td>Critical CVEs up to <a href="https://www.armosec.io/blog/cve-2026-32922-openclaw-privilege-escalation-cloud-security/" title="ARMO: CVE-2026-32922, CVSS 9.9, privilege escalation to RCE" style="color:var(--accent-ink);">9.9 CVSS</a>, <a href="https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting" title="Koi Security: ClawHavoc — 341 malicious ClawHub skills disclosed" style="color:var(--accent-ink);">341 malicious marketplace skills</a> disclosed, prompt-injection susceptible; restricted for state use in China</td>
         </tr>
       </tbody>
     </table>
@@ -712,7 +712,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
       <div class="faq-item">
         <h3>Which of the three has the best harness?</h3>
-        <p>None covers more than 2 of 11 canonical layers at full strength. Hermes leads on Memory and Learning. Kilo Code leads on Execution. OpenClaw leads on reach, but its broad, weakly-gated action surface lines up with its documented security incidents — multiple RCE CVEs (up to CVSS 9.8) and a marketplace incident involving over a thousand malicious skills.</p>
+        <p>None covers more than 2 of 11 canonical layers at full strength. Hermes leads on Memory and Learning. Kilo Code leads on Execution. OpenClaw leads on reach, but its broad, weakly-gated action surface lines up with its documented security incidents — critical CVEs including a <a href="https://www.armosec.io/blog/cve-2026-32922-openclaw-privilege-escalation-cloud-security/" title="ARMO: CVE-2026-32922, CVSS 9.9, privilege escalation to RCE via device.token.rotate" style="color:var(--accent-ink);">9.9-severity privilege-escalation-to-RCE flaw</a> and an <a href="https://www.proarch.com/blog/threats-vulnerabilities/openclaw-rce-vulnerability-cve-2026-25253" title="ProArch: CVE-2026-25253, CVSS 8.8, one-click RCE" style="color:var(--accent-ink);">8.8 one-click RCE</a>, plus a marketplace campaign that <a href="https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting" title="Koi Security: ClawHavoc — 341 malicious ClawHub skills disclosed" style="color:var(--accent-ink);">disclosed 341 malicious skills</a> in a single sweep.</p>
       </div>
       <div class="faq-item">
         <h3>What is the 11-layer harness architecture?</h3>
@@ -757,6 +757,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <li><a href="https://docs.openclaw.ai/concepts/agent-loop">Agent loop — OpenClaw docs</a></li>
           <li><a href="https://docs.openclaw.ai/concepts/architecture">Gateway architecture — OpenClaw docs</a></li>
           <li><a href="https://en.wikipedia.org/wiki/OpenClaw">OpenClaw — Wikipedia</a></li>
+          <li><a href="https://www.armosec.io/blog/cve-2026-32922-openclaw-privilege-escalation-cloud-security/">ARMO: CVE-2026-32922 (CVSS 9.9)</a></li>
+          <li><a href="https://www.proarch.com/blog/threats-vulnerabilities/openclaw-rce-vulnerability-cve-2026-25253">ProArch: CVE-2026-25253 (CVSS 8.8)</a></li>
+          <li><a href="https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting">Koi Security: ClawHavoc disclosure (341 skills)</a></li>
         </ul>
       </div>
     </div>
