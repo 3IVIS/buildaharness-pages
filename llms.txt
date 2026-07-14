@@ -37,6 +37,16 @@ Build A Harness is the purpose-built open-source tool for harness engineering. I
 
 **Dedicated page**: https://buildaharness.com/harness-engineering
 
+## Personal Assistant
+
+Personal Assistant (`@buildaharness/personal-assistant`) is Build A Harness's own reference application — a general-purpose, everyday-use chat agent that runs the full 11-layer harness on every turn. It treats each chat message as one objective, one task (rather than decomposing into a multi-task plan), which keeps the harness run cheap per turn — one real LLM call for an ordinary turn, zero for one a pre-harness risk gate blocks — while still walking World Model, Evidence, Hypothesis, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and the Reviewer Pass.
+
+Safety is layered: a keyword-based risk classifier flags consequential messages (send, delete, pay, post, ...) before the harness or any LLM call runs; `write_file` and `run_shell_command` tool calls always stage a proposal rather than executing inline, resolved only by an explicit approval with the matching pending-action ID; shell commands run with an environment allowlist, a timeout, and output truncation; and content fetched from the web or a shell command is wrapped as untrusted before it re-enters the conversation. The harness runtime checkpoints mid-turn so a crash mid-conversation resumes rather than restarts.
+
+Three front ends — a terminal CLI, a browser chat UI, and a native Tauri desktop app — share the identical assistant class and harness, differing only in storage backend (filesystem for CLI/desktop, IndexedDB/Dexie for the browser).
+
+**Dedicated page**: https://buildaharness.com/personal-assistant
+
 ## Who is this for?
 
 Build A Harness is for **AI engineers and platform teams** building production-grade AI agents who need more than a simple prompt-routing workflow. It is a good fit for:

