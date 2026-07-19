@@ -17,17 +17,13 @@
   <rect width="1200" height="630" fill="url(#grid-strong)"></rect>
 
   
-  <text x="80" y="135" font-family="IBM Plex Sans, sans-serif" font-weight="300" font-size="72" fill="#1E1A3D" letter-spacing="-1.5">It&#39;s all about the</text>
-  <text x="592" y="135" font-family="Instrument Serif, Times, serif" font-style="italic" font-size="80" fill="#3D2F8C">harness</text>
-  <text x="853" y="135" font-family="IBM Plex Sans, sans-serif" font-weight="300" font-size="72" fill="#1E1A3D">.</text>
+  <text x="80" y="135" font-family="IBM Plex Sans, sans-serif" font-weight="300" font-size="72" fill="#1E1A3D" letter-spacing="-1.5">Design, test, and deploy</text>
 
-  <text x="80" y="225" font-family="IBM Plex Sans, sans-serif" font-weight="300" font-size="72" fill="#1E1A3D" letter-spacing="-1.5">It&#39;s</text>
-  <text x="200" y="225" font-family="Instrument Serif, Times, serif" font-style="italic" font-size="80" fill="#3D2F8C">AI&#39;s</text>
-  <text x="350" y="225" font-family="IBM Plex Sans, sans-serif" font-weight="300" font-size="72" fill="#1E1A3D">harness.</text>
+  <text x="80" y="225" font-family="Instrument Serif, Times, serif" font-style="italic" font-size="80" fill="#3D2F8C">AI agent harnesses.</text>
 
-  
-  <text x="80" y="295" font-family="IBM Plex Mono, monospace" font-size="22" fill="#564E80" letter-spacing="0">One canvas. One neutral FlowSpec.</text>
-  <text x="80" y="328" font-family="IBM Plex Mono, monospace" font-size="22" fill="#564E80">Four runtimes plus A2A.</text>
+
+  <text x="80" y="295" font-family="IBM Plex Mono, monospace" font-size="22" fill="#564E80" letter-spacing="0">Pick the nodes your agent needs.</text>
+  <text x="80" y="328" font-family="IBM Plex Mono, monospace" font-size="22" fill="#564E80">Draw the graph. Run on any framework.</text>
 
   
   <g transform="translate(80, 400)">
@@ -71,5 +67,5 @@
   </g>
 
   
-  <text x="1120" y="600" text-anchor="end" font-family="IBM Plex Mono" font-size="11" fill="#8478B8" letter-spacing="2">SPEC · 0.1.0 · APACHE 2.0 · DESIGN STAGE</text>
+  <text x="1120" y="600" text-anchor="end" font-family="IBM Plex Mono" font-size="11" fill="#8478B8" letter-spacing="2">OPEN SOURCE · VISUAL CANVAS · APACHE 2.0</text>
 </svg>

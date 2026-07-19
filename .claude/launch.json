@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "itsharness-pages",
+      "name": "buildaharness-pages",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "4567", "/Users/developer/Documents/Projects/WorkFolder/itsharness-pages"],
+      "runtimeArgs": ["serve", "-l", "4567", "/Users/developer/Documents/Projects/WorkFolder/buildaharness-pages"],
       "port": 4567
     }
   ]
