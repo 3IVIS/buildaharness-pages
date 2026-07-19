@@ -188,6 +188,7 @@ body{
 header{
   border-bottom:1px solid var(--line);
   background:var(--paper);
+  position:relative;
 }
 
 .site-inner{
@@ -225,6 +226,30 @@ header{
 
 .nav a:hover{
   color:var(--ink);
+}
+
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  padding:0;
+}
+
+.nav-toggle:hover{
+  border-color:var(--ink-2);
+}
+
+.hdr-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .btn{
@@ -1121,6 +1146,33 @@ footer{
 
   .nav{
     display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:6px 22px 16px;
+    z-index:50;
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .nav a{
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav a:last-child{
+    border-bottom:none;
+  }
+
+  .nav-toggle{
+    display:inline-flex;
   }
 
   .wrap{
@@ -1139,7 +1191,7 @@ footer{
       <span class="name">Build A Harness</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" id="siteNav">
       <a href="#why">Harness</a>
       <a href="#roadmap">Node library</a>
       <a href="#quickstart">Get started</a>
@@ -1153,9 +1205,15 @@ footer{
       <a href="/personal-assistant">Personal Assistant</a>
     </nav>
 
-    <a class="btn" href="https://github.com/3IVIS/buildaharness">
-      GitHub
-    </a>
+    <div class="hdr-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <a class="btn" href="https://github.com/3IVIS/buildaharness">
+        GitHub
+      </a>
+    </div>
 
   </div>
 </header>
@@ -2354,6 +2412,29 @@ docker compose up</pre>
     .then(r=>r.ok?r.json():null)
     .then(d=>{if(!d||typeof d.stargazers_count!=="number")return;paint(d.stargazers_count);try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({n:d.stargazers_count,t:Date.now()}));}catch(e){}})
     .catch(()=>{});
+})();
+</script>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle');
+  var nav=document.getElementById('siteNav');
+  if(!toggle||!nav)return;
+  function close(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}
+  toggle.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A')close();
+  });
+  document.addEventListener('click',function(e){
+    if(!nav.contains(e.target)&&!toggle.contains(e.target))close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')close();
+  });
 })();
 </script>
 </body>
