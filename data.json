@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-21T04:55:53.048Z",
+  "fetchedAt": "2026-07-22T04:55:36.954Z",
   "count": 58,
   "frameworks": [
     {
@@ -7,10 +7,10 @@
       "fullName": "langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 142211,
-      "forks": 23651,
-      "openIssues": 442,
-      "watchers": 142211,
+      "stars": 142290,
+      "forks": 23671,
+      "openIssues": 439,
+      "watchers": 142290,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -63,21 +63,21 @@
         "langgraph",
         "typescript"
       ],
-      "updatedAt": "2026-07-21T04:38:19Z",
-      "pushedAt": "2026-07-21T03:37:38Z",
+      "updatedAt": "2026-07-22T04:45:24Z",
+      "pushedAt": "2026-07-22T03:22:08Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/langchain/",
-      "lastFetchedAt": "2026-07-21T04:55:16.386Z"
+      "lastFetchedAt": "2026-07-22T04:54:47.920Z"
     },
     {
       "name": "langgraph",
       "fullName": "langchain-ai/langgraph",
       "description": "Build resilient agents.",
       "url": "https://github.com/langchain-ai/langgraph",
-      "stars": 37714,
-      "forks": 6324,
+      "stars": 37804,
+      "forks": 6343,
       "openIssues": 636,
-      "watchers": 37714,
+      "watchers": 37804,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -130,21 +130,21 @@
         "python",
         "rag"
       ],
-      "updatedAt": "2026-07-21T04:39:59Z",
-      "pushedAt": "2026-07-20T20:57:26Z",
+      "updatedAt": "2026-07-22T04:53:40Z",
+      "pushedAt": "2026-07-21T21:09:19Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/oss/python/langgraph/",
-      "lastFetchedAt": "2026-07-21T04:55:17.062Z"
+      "lastFetchedAt": "2026-07-22T04:54:48.853Z"
     },
     {
       "name": "pydantic-ai",
       "fullName": "pydantic/pydantic-ai",
       "description": "AI Agent Framework, the Pydantic way",
       "url": "https://github.com/pydantic/pydantic-ai",
-      "stars": 18681,
-      "forks": 2395,
-      "openIssues": 506,
-      "watchers": 18681,
+      "stars": 18721,
+      "forks": 2399,
+      "openIssues": 502,
+      "watchers": 18721,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -167,21 +167,21 @@
         "genai",
         "llm"
       ],
-      "updatedAt": "2026-07-21T03:31:41Z",
-      "pushedAt": "2026-07-21T04:42:51Z",
+      "updatedAt": "2026-07-22T04:00:34Z",
+      "pushedAt": "2026-07-22T04:36:35Z",
       "archived": false,
       "homepage": "https://pydantic.dev/pydantic-ai",
-      "lastFetchedAt": "2026-07-21T04:55:17.876Z"
+      "lastFetchedAt": "2026-07-22T04:54:49.699Z"
     },
     {
       "name": "dspy",
       "fullName": "stanfordnlp/dspy",
       "description": "DSPy: The framework for programming—not prompting—language models",
       "url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36267,
+      "stars": 36296,
       "forks": 3117,
-      "openIssues": 615,
-      "watchers": 36267,
+      "openIssues": 614,
+      "watchers": 36296,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -193,11 +193,11 @@
         "research",
         "optimisation"
       ],
-      "updatedAt": "2026-07-21T04:48:54Z",
+      "updatedAt": "2026-07-22T04:24:41Z",
       "pushedAt": "2026-07-20T15:18:05Z",
       "archived": false,
       "homepage": "https://dspy.ai",
-      "lastFetchedAt": "2026-07-21T04:55:18.476Z"
+      "lastFetchedAt": "2026-07-22T04:54:50.643Z"
     },
     {
       "name": "ControlFlow",
@@ -237,7 +237,7 @@
       "pushedAt": "2025-08-22T13:51:57Z",
       "archived": true,
       "homepage": "https://controlflow.ai",
-      "lastFetchedAt": "2026-07-21T04:55:19.117Z"
+      "lastFetchedAt": "2026-07-22T04:54:51.494Z"
     },
     {
       "name": "flux0",
@@ -276,17 +276,17 @@
       "pushedAt": "2025-09-09T06:59:05Z",
       "archived": false,
       "homepage": "https://flux0.netlify.app",
-      "lastFetchedAt": "2026-07-21T04:55:19.743Z"
+      "lastFetchedAt": "2026-07-22T04:54:52.324Z"
     },
     {
       "name": "pipelex",
       "fullName": "Pipelex/pipelex",
       "description": "Declarative language for composable Al workflows. Devtool for agents and mere humans.",
       "url": "https://github.com/Pipelex/pipelex",
-      "stars": 692,
+      "stars": 691,
       "forks": 56,
       "openIssues": 11,
-      "watchers": 692,
+      "watchers": 691,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -318,21 +318,21 @@
         "automation",
         "dsl"
       ],
-      "updatedAt": "2026-07-19T18:55:05Z",
+      "updatedAt": "2026-07-21T18:43:43Z",
       "pushedAt": "2026-07-20T07:42:13Z",
       "archived": false,
       "homepage": "https://pipelex.com",
-      "lastFetchedAt": "2026-07-21T04:55:20.592Z"
+      "lastFetchedAt": "2026-07-22T04:54:53.232Z"
     },
     {
       "name": "autogen",
       "fullName": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
       "url": "https://github.com/microsoft/autogen",
-      "stars": 59856,
-      "forks": 9009,
-      "openIssues": 967,
-      "watchers": 59856,
+      "stars": 59884,
+      "forks": 9013,
+      "openIssues": 959,
+      "watchers": 59884,
       "language": "Python",
       "license": "CC-BY-4.0",
       "manualTags": [
@@ -367,21 +367,21 @@
         "framework",
         "autogen-ecosystem"
       ],
-      "updatedAt": "2026-07-21T04:16:38Z",
+      "updatedAt": "2026-07-22T04:45:36Z",
       "pushedAt": "2026-04-15T11:59:09Z",
       "archived": false,
       "homepage": "https://microsoft.github.io/autogen/",
-      "lastFetchedAt": "2026-07-21T04:55:21.280Z"
+      "lastFetchedAt": "2026-07-22T04:54:54.137Z"
     },
     {
       "name": "crewAI",
       "fullName": "crewAIInc/crewAI",
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
       "url": "https://github.com/crewAIInc/crewAI",
-      "stars": 55868,
-      "forks": 7897,
-      "openIssues": 657,
-      "watchers": 55868,
+      "stars": 55930,
+      "forks": 7909,
+      "openIssues": 653,
+      "watchers": 55930,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -406,21 +406,21 @@
         "llms",
         "aiagentframework"
       ],
-      "updatedAt": "2026-07-21T04:34:32Z",
-      "pushedAt": "2026-07-20T23:57:52Z",
+      "updatedAt": "2026-07-22T04:28:46Z",
+      "pushedAt": "2026-07-21T19:25:09Z",
       "archived": false,
       "homepage": "https://crewai.com",
-      "lastFetchedAt": "2026-07-21T04:55:21.931Z"
+      "lastFetchedAt": "2026-07-22T04:54:54.967Z"
     },
     {
       "name": "swarm",
       "fullName": "openai/swarm",
       "description": "Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team.",
       "url": "https://github.com/openai/swarm",
-      "stars": 21846,
-      "forks": 2336,
-      "openIssues": 40,
-      "watchers": 21846,
+      "stars": 21853,
+      "forks": 2335,
+      "openIssues": 37,
+      "watchers": 21853,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -434,21 +434,21 @@
         "openai",
         "experimental"
       ],
-      "updatedAt": "2026-07-21T04:46:31Z",
+      "updatedAt": "2026-07-22T03:31:17Z",
       "pushedAt": "2026-04-15T17:10:28Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:22.568Z"
+      "lastFetchedAt": "2026-07-22T04:54:55.819Z"
     },
     {
       "name": "openai-agents-python",
       "fullName": "openai/openai-agents-python",
       "description": "A lightweight, powerful framework for multi-agent workflows",
       "url": "https://github.com/openai/openai-agents-python",
-      "stars": 28048,
-      "forks": 4362,
-      "openIssues": 52,
-      "watchers": 28048,
+      "stars": 28072,
+      "forks": 4366,
+      "openIssues": 54,
+      "watchers": 28072,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -476,11 +476,11 @@
         "python",
         "harness"
       ],
-      "updatedAt": "2026-07-21T04:28:47Z",
-      "pushedAt": "2026-07-21T00:57:41Z",
+      "updatedAt": "2026-07-22T03:51:28Z",
+      "pushedAt": "2026-07-22T04:02:04Z",
       "archived": false,
       "homepage": "https://openai.github.io/openai-agents-python/",
-      "lastFetchedAt": "2026-07-21T04:55:23.228Z"
+      "lastFetchedAt": "2026-07-22T04:54:56.621Z"
     },
     {
       "name": "agency-swarm",
@@ -488,8 +488,8 @@
       "description": "Reliable Multi-Agent Orchestration Framework",
       "url": "https://github.com/VRSEN/agency-swarm",
       "stars": 4495,
-      "forks": 1054,
-      "openIssues": 8,
+      "forks": 1056,
+      "openIssues": 12,
       "watchers": 4495,
       "language": "Python",
       "license": "MIT",
@@ -502,21 +502,21 @@
         "multi-agent",
         "orchestration"
       ],
-      "updatedAt": "2026-07-21T03:39:15Z",
-      "pushedAt": "2026-07-19T17:02:28Z",
+      "updatedAt": "2026-07-22T04:28:51Z",
+      "pushedAt": "2026-07-22T01:08:42Z",
       "archived": false,
       "homepage": "https://agency-swarm.ai/",
-      "lastFetchedAt": "2026-07-21T04:55:23.813Z"
+      "lastFetchedAt": "2026-07-22T04:54:57.364Z"
     },
     {
       "name": "camel",
       "fullName": "camel-ai/camel",
       "description": "🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai.org",
       "url": "https://github.com/camel-ai/camel",
-      "stars": 17449,
+      "stars": 17462,
       "forks": 2014,
-      "openIssues": 467,
-      "watchers": 17449,
+      "openIssues": 457,
+      "watchers": 17462,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -549,21 +549,21 @@
         "cooperative-ai",
         "agent"
       ],
-      "updatedAt": "2026-07-21T04:49:27Z",
-      "pushedAt": "2026-07-20T06:23:38Z",
+      "updatedAt": "2026-07-22T03:17:12Z",
+      "pushedAt": "2026-07-21T09:57:41Z",
       "archived": false,
       "homepage": "https://docs.camel-ai.org/",
-      "lastFetchedAt": "2026-07-21T04:55:24.414Z"
+      "lastFetchedAt": "2026-07-22T04:54:58.154Z"
     },
     {
       "name": "MetaGPT",
       "fullName": "FoundationAgents/MetaGPT",
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
       "url": "https://github.com/FoundationAgents/MetaGPT",
-      "stars": 69451,
+      "stars": 69464,
       "forks": 8854,
-      "openIssues": 141,
-      "watchers": 69451,
+      "openIssues": 140,
+      "watchers": 69464,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -587,21 +587,21 @@
         "llm",
         "metagpt"
       ],
-      "updatedAt": "2026-07-21T04:29:43Z",
+      "updatedAt": "2026-07-22T04:22:42Z",
       "pushedAt": "2026-01-21T10:12:33Z",
       "archived": false,
       "homepage": "https://atoms.dev/",
-      "lastFetchedAt": "2026-07-21T04:55:25.114Z"
+      "lastFetchedAt": "2026-07-22T04:54:59.007Z"
     },
     {
       "name": "agentUniverse",
       "fullName": "agentuniverse-ai/agentUniverse",
       "description": "agentUniverse is a LLM multi-agent framework that allows developers to easily build multi-agent applications. ",
       "url": "https://github.com/agentuniverse-ai/agentUniverse",
-      "stars": 2308,
+      "stars": 2310,
       "forks": 412,
-      "openIssues": 123,
-      "watchers": 2308,
+      "openIssues": 137,
+      "watchers": 2310,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -631,21 +631,21 @@
         "ai-agents",
         "autonomous"
       ],
-      "updatedAt": "2026-07-20T15:49:25Z",
+      "updatedAt": "2026-07-21T18:33:10Z",
       "pushedAt": "2026-07-20T07:30:32Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:25.757Z"
+      "lastFetchedAt": "2026-07-22T04:54:59.866Z"
     },
     {
       "name": "langroid",
       "fullName": "langroid/langroid",
       "description": "Harness LLMs with Multi-Agent Programming",
       "url": "https://github.com/langroid/langroid",
-      "stars": 4079,
+      "stars": 4080,
       "forks": 387,
       "openIssues": 73,
-      "watchers": 4079,
+      "watchers": 4080,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -694,11 +694,11 @@
         "rag",
         "retrieval-augmented-generation"
       ],
-      "updatedAt": "2026-07-20T23:30:29Z",
+      "updatedAt": "2026-07-21T23:43:44Z",
       "pushedAt": "2026-07-12T20:27:58Z",
       "archived": false,
       "homepage": "https://langroid.github.io/langroid/",
-      "lastFetchedAt": "2026-07-21T04:55:26.479Z"
+      "lastFetchedAt": "2026-07-22T04:55:00.754Z"
     },
     {
       "name": "openagents",
@@ -707,10 +707,10 @@
       "url": "https://github.com/OpenAgentsInc/openagents",
       "stars": 441,
       "forks": 60,
-      "openIssues": 31,
+      "openIssues": 10,
       "watchers": 441,
       "language": "TypeScript",
-      "license": "None",
+      "license": "Apache-2.0",
       "manualTags": [
         "multi-agent",
         "platform"
@@ -720,11 +720,11 @@
         "multi-agent",
         "platform"
       ],
-      "updatedAt": "2026-07-21T04:54:57Z",
-      "pushedAt": "2026-07-21T04:54:41Z",
+      "updatedAt": "2026-07-22T04:42:05Z",
+      "pushedAt": "2026-07-22T04:42:01Z",
       "archived": false,
       "homepage": "https://openagents.com",
-      "lastFetchedAt": "2026-07-21T04:55:27.078Z"
+      "lastFetchedAt": "2026-07-22T04:55:01.588Z"
     },
     {
       "name": "LazyLLM",
@@ -733,7 +733,7 @@
       "url": "https://github.com/LazyAGI/LazyLLM",
       "stars": 3855,
       "forks": 399,
-      "openIssues": 44,
+      "openIssues": 46,
       "watchers": 3855,
       "language": "Python",
       "license": "Apache-2.0",
@@ -779,17 +779,17 @@
       "pushedAt": "2026-07-20T09:17:18Z",
       "archived": false,
       "homepage": "https://docs.lazyllm.ai/",
-      "lastFetchedAt": "2026-07-21T04:55:27.675Z"
+      "lastFetchedAt": "2026-07-22T04:55:02.384Z"
     },
     {
       "name": "MindSearch",
       "fullName": "InternLM/MindSearch",
       "description": "🔍 An LLM-based Multi-agent Framework of Web Search Engine (like Perplexity.ai Pro and SearchGPT)",
       "url": "https://github.com/InternLM/MindSearch",
-      "stars": 6894,
+      "stars": 6896,
       "forks": 685,
       "openIssues": 57,
-      "watchers": 6894,
+      "watchers": 6896,
       "language": "JavaScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -821,21 +821,21 @@
         "perplexity-ai",
         "searchgpt"
       ],
-      "updatedAt": "2026-07-20T19:07:52Z",
+      "updatedAt": "2026-07-22T03:12:37Z",
       "pushedAt": "2025-07-04T10:06:45Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:28.250Z"
+      "lastFetchedAt": "2026-07-22T04:55:03.228Z"
     },
     {
       "name": "TradingAgents",
       "fullName": "TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "url": "https://github.com/TauricResearch/TradingAgents",
-      "stars": 93848,
-      "forks": 18138,
-      "openIssues": 297,
-      "watchers": 93848,
+      "stars": 93995,
+      "forks": 18161,
+      "openIssues": 300,
+      "watchers": 93995,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -857,21 +857,21 @@
         "multiagent",
         "trading"
       ],
-      "updatedAt": "2026-07-21T04:52:05Z",
+      "updatedAt": "2026-07-22T04:52:13Z",
       "pushedAt": "2026-07-18T15:55:05Z",
       "archived": false,
       "homepage": "https://arxiv.org/pdf/2412.20138",
-      "lastFetchedAt": "2026-07-21T04:55:28.922Z"
+      "lastFetchedAt": "2026-07-22T04:55:04.080Z"
     },
     {
       "name": "Shannon",
       "fullName": "Kocoro-lab/Shannon",
       "description": "A production-oriented multi-agent orchestration framework.",
       "url": "https://github.com/Kocoro-lab/Shannon",
-      "stars": 2121,
+      "stars": 2125,
       "forks": 335,
       "openIssues": 2,
-      "watchers": 2121,
+      "watchers": 2125,
       "language": "Go",
       "license": "MIT",
       "manualTags": [
@@ -890,21 +890,21 @@
         "ai",
         "multi-agent-systems"
       ],
-      "updatedAt": "2026-07-21T04:10:47Z",
+      "updatedAt": "2026-07-22T04:25:47Z",
       "pushedAt": "2026-06-08T03:32:31Z",
       "archived": false,
       "homepage": "https://shannon.run",
-      "lastFetchedAt": "2026-07-21T04:55:29.539Z"
+      "lastFetchedAt": "2026-07-22T04:55:04.937Z"
     },
     {
       "name": "solace-agent-mesh",
       "fullName": "SolaceLabs/solace-agent-mesh",
       "description": "An event-driven framework designed to build and orchestrate multi-agent AI systems. It enables seamless integration of AI agents with real-world data sources and systems, facilitating complex, multi-step workflows.",
       "url": "https://github.com/SolaceLabs/solace-agent-mesh",
-      "stars": 4966,
+      "stars": 4968,
       "forks": 271,
-      "openIssues": 72,
-      "watchers": 4966,
+      "openIssues": 70,
+      "watchers": 4968,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -956,11 +956,11 @@
         "a2a",
         "mcp"
       ],
-      "updatedAt": "2026-07-21T03:54:17Z",
-      "pushedAt": "2026-07-21T02:49:29Z",
+      "updatedAt": "2026-07-21T23:46:58Z",
+      "pushedAt": "2026-07-21T23:47:03Z",
       "archived": false,
       "homepage": "https://solacelabs.github.io/solace-agent-mesh/",
-      "lastFetchedAt": "2026-07-21T04:55:30.178Z"
+      "lastFetchedAt": "2026-07-22T04:55:05.730Z"
     },
     {
       "name": "CodeFuse-muAgent",
@@ -1002,7 +1002,7 @@
       "pushedAt": "2025-01-15T06:12:34Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:30.795Z"
+      "lastFetchedAt": "2026-07-22T04:55:06.549Z"
     },
     {
       "name": "L2MAC",
@@ -1046,17 +1046,17 @@
       "pushedAt": "2024-12-27T00:50:24Z",
       "archived": false,
       "homepage": "https://samholt.github.io/L2MAC/",
-      "lastFetchedAt": "2026-07-21T04:55:31.431Z"
+      "lastFetchedAt": "2026-07-22T04:55:07.391Z"
     },
     {
       "name": "patchwork",
       "fullName": "patched-codes/patchwork",
       "description": "Agentic AI framework for enterprise workflow automation.",
       "url": "https://github.com/patched-codes/patchwork",
-      "stars": 1570,
+      "stars": 1571,
       "forks": 104,
       "openIssues": 194,
-      "watchers": 1570,
+      "watchers": 1571,
       "language": "Python",
       "license": "AGPL-3.0",
       "manualTags": [
@@ -1083,21 +1083,21 @@
         "automation",
         "hacktoberfest"
       ],
-      "updatedAt": "2026-07-16T08:32:10Z",
+      "updatedAt": "2026-07-21T17:38:29Z",
       "pushedAt": "2026-07-10T16:23:25Z",
       "archived": false,
       "homepage": "https://patched.codes",
-      "lastFetchedAt": "2026-07-21T04:55:32.006Z"
+      "lastFetchedAt": "2026-07-22T04:55:08.171Z"
     },
     {
       "name": "swarms",
       "fullName": "kyegomez/swarms",
       "description": "The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework. Website: https://swarms.ai",
       "url": "https://github.com/kyegomez/swarms",
-      "stars": 6967,
-      "forks": 966,
-      "openIssues": 74,
-      "watchers": 6967,
+      "stars": 6971,
+      "forks": 968,
+      "openIssues": 55,
+      "watchers": 6971,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1148,11 +1148,11 @@
         "agentic-ai",
         "claude-code"
       ],
-      "updatedAt": "2026-07-21T02:05:42Z",
-      "pushedAt": "2026-07-21T00:49:46Z",
+      "updatedAt": "2026-07-22T03:32:36Z",
+      "pushedAt": "2026-07-21T16:59:56Z",
       "archived": false,
       "homepage": "https://docs.swarms.world",
-      "lastFetchedAt": "2026-07-21T04:55:32.647Z"
+      "lastFetchedAt": "2026-07-22T04:55:09.203Z"
     },
     {
       "name": "swarm-tools",
@@ -1221,10 +1221,10 @@
       "fullName": "ruvnet/ruflo",
       "description": "🌊 The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
       "url": "https://github.com/ruvnet/ruflo",
-      "stars": 65340,
-      "forks": 7756,
+      "stars": 65460,
+      "forks": 7772,
       "openIssues": 812,
-      "watchers": 65340,
+      "watchers": 65460,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1276,21 +1276,21 @@
         "ai-agents",
         "harness"
       ],
-      "updatedAt": "2026-07-21T04:47:22Z",
-      "pushedAt": "2026-07-20T23:24:06Z",
+      "updatedAt": "2026-07-22T04:49:01Z",
+      "pushedAt": "2026-07-21T06:13:40Z",
       "archived": false,
       "homepage": "https://Cognitum.One",
-      "lastFetchedAt": "2026-07-21T04:55:33.582Z"
+      "lastFetchedAt": "2026-07-22T04:55:10.501Z"
     },
     {
       "name": "swarms-rs",
       "fullName": "The-Swarm-Corporation/swarms-rs",
       "description": "The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework in Rust",
       "url": "https://github.com/The-Swarm-Corporation/swarms-rs",
-      "stars": 174,
+      "stars": 175,
       "forks": 52,
       "openIssues": 53,
-      "watchers": 174,
+      "watchers": 175,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1342,21 +1342,21 @@
         "rust-agents",
         "rust-crate"
       ],
-      "updatedAt": "2026-07-21T03:34:48Z",
+      "updatedAt": "2026-07-21T13:25:26Z",
       "pushedAt": "2025-12-15T09:30:21Z",
       "archived": false,
       "homepage": "https://docs.rs/swarms-rs/latest/swarms_rs/",
-      "lastFetchedAt": "2026-07-21T04:55:34.214Z"
+      "lastFetchedAt": "2026-07-22T04:55:11.422Z"
     },
     {
       "name": "lux",
       "fullName": "Spectral-Finance/lux",
       "description": "Lux is an open-source framework for building multi-agent, swarmed intelligence built by Spectral Labs. With Beams, Prisms, Lenses, and Signals, it orchestrates AI-driven workflows to create truly autonomous organizations.",
       "url": "https://github.com/Spectral-Finance/lux",
-      "stars": 130,
+      "stars": 131,
       "forks": 128,
-      "openIssues": 513,
-      "watchers": 130,
+      "openIssues": 512,
+      "watchers": 131,
       "language": "Elixir",
       "license": "MIT",
       "manualTags": [
@@ -1375,11 +1375,11 @@
         "llms",
         "web3"
       ],
-      "updatedAt": "2026-07-20T13:38:07Z",
+      "updatedAt": "2026-07-22T02:50:34Z",
       "pushedAt": "2025-12-15T00:13:27Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:34.808Z"
+      "lastFetchedAt": "2026-07-22T04:55:12.193Z"
     },
     {
       "name": "AutoRT",
@@ -1434,17 +1434,17 @@
       "pushedAt": "2024-11-11T07:01:19Z",
       "archived": false,
       "homepage": "https://discord.gg/GYbXvDGevY",
-      "lastFetchedAt": "2026-07-21T04:55:35.506Z"
+      "lastFetchedAt": "2026-07-22T04:55:13.041Z"
     },
     {
       "name": "llama_index",
       "fullName": "run-llama/llama_index",
       "description": "LlamaIndex is the leading document agent and OCR platform",
       "url": "https://github.com/run-llama/llama_index",
-      "stars": 50968,
-      "forks": 7784,
-      "openIssues": 559,
-      "watchers": 50968,
+      "stars": 50993,
+      "forks": 7793,
+      "openIssues": 568,
+      "watchers": 50993,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1479,21 +1479,21 @@
         "vector-database",
         "multi-agents"
       ],
-      "updatedAt": "2026-07-21T04:51:00Z",
-      "pushedAt": "2026-07-21T03:30:55Z",
+      "updatedAt": "2026-07-22T04:00:21Z",
+      "pushedAt": "2026-07-21T23:15:32Z",
       "archived": false,
       "homepage": "https://developers.llamaindex.ai",
-      "lastFetchedAt": "2026-07-21T04:55:36.093Z"
+      "lastFetchedAt": "2026-07-22T04:55:13.881Z"
     },
     {
       "name": "haystack",
       "fullName": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
       "url": "https://github.com/deepset-ai/haystack",
-      "stars": 25960,
-      "forks": 2941,
-      "openIssues": 113,
-      "watchers": 25960,
+      "stars": 25976,
+      "forks": 2946,
+      "openIssues": 115,
+      "watchers": 25976,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1548,21 +1548,21 @@
         "gemini",
         "gpt-4"
       ],
-      "updatedAt": "2026-07-21T02:56:43Z",
-      "pushedAt": "2026-07-20T16:37:18Z",
+      "updatedAt": "2026-07-22T03:12:31Z",
+      "pushedAt": "2026-07-21T14:33:58Z",
       "archived": false,
       "homepage": "https://haystack.deepset.ai",
-      "lastFetchedAt": "2026-07-21T04:55:36.746Z"
+      "lastFetchedAt": "2026-07-22T04:55:14.790Z"
     },
     {
       "name": "dify",
       "fullName": "langgenius/dify",
       "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 149551,
-      "forks": 23572,
-      "openIssues": 1096,
-      "watchers": 149551,
+      "stars": 149706,
+      "forks": 23588,
+      "openIssues": 1061,
+      "watchers": 149706,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1616,21 +1616,21 @@
         "claude",
         "skills"
       ],
-      "updatedAt": "2026-07-21T04:47:26Z",
-      "pushedAt": "2026-07-21T04:53:04Z",
+      "updatedAt": "2026-07-22T04:40:54Z",
+      "pushedAt": "2026-07-22T04:53:16Z",
       "archived": false,
       "homepage": "https://dify.ai",
-      "lastFetchedAt": "2026-07-21T04:55:37.341Z"
+      "lastFetchedAt": "2026-07-22T04:55:15.680Z"
     },
     {
       "name": "Flowise",
       "fullName": "FlowiseAI/Flowise",
       "description": "Build AI Agents, Visually",
       "url": "https://github.com/FlowiseAI/Flowise",
-      "stars": 54777,
-      "forks": 24743,
-      "openIssues": 1010,
-      "watchers": 54777,
+      "stars": 54817,
+      "forks": 24745,
+      "openIssues": 1011,
+      "watchers": 54817,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1679,11 +1679,11 @@
         "agents",
         "multiagent-systems"
       ],
-      "updatedAt": "2026-07-21T03:23:44Z",
-      "pushedAt": "2026-07-17T09:12:26Z",
+      "updatedAt": "2026-07-22T04:27:57Z",
+      "pushedAt": "2026-07-22T04:51:14Z",
       "archived": false,
       "homepage": "https://flowiseai.com",
-      "lastFetchedAt": "2026-07-21T04:55:37.974Z"
+      "lastFetchedAt": "2026-07-22T04:55:16.448Z"
     },
     {
       "name": "LLMStack",
@@ -1734,17 +1734,17 @@
       "pushedAt": "2024-12-11T19:59:51Z",
       "archived": false,
       "homepage": "https://llmstack.trypromptly.com",
-      "lastFetchedAt": "2026-07-21T04:55:38.610Z"
+      "lastFetchedAt": "2026-07-22T04:55:17.318Z"
     },
     {
       "name": "AutoGPT",
       "fullName": "Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 185626,
-      "forks": 46070,
+      "stars": 185649,
+      "forks": 46067,
       "openIssues": 494,
-      "watchers": 185626,
+      "watchers": 185649,
       "language": "Python",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1781,21 +1781,21 @@
         "claude",
         "gpt"
       ],
-      "updatedAt": "2026-07-21T04:52:29Z",
-      "pushedAt": "2026-07-21T04:52:49Z",
+      "updatedAt": "2026-07-22T04:19:39Z",
+      "pushedAt": "2026-07-22T04:50:05Z",
       "archived": false,
       "homepage": "https://agpt.co",
-      "lastFetchedAt": "2026-07-21T04:55:39.246Z"
+      "lastFetchedAt": "2026-07-22T04:55:18.150Z"
     },
     {
       "name": "babyagi",
       "fullName": "yoheinakajima/babyagi",
       "description": "",
       "url": "https://github.com/yoheinakajima/babyagi",
-      "stars": 22338,
-      "forks": 2859,
+      "stars": 22336,
+      "forks": 2858,
       "openIssues": 31,
-      "watchers": 22338,
+      "watchers": 22336,
       "language": "Python",
       "license": "None",
       "manualTags": [
@@ -1809,21 +1809,21 @@
         "pioneer",
         "task-management"
       ],
-      "updatedAt": "2026-07-20T12:44:47Z",
+      "updatedAt": "2026-07-21T20:11:33Z",
       "pushedAt": "2026-01-31T05:05:45Z",
       "archived": false,
       "homepage": "https://babyagi.org/",
-      "lastFetchedAt": "2026-07-21T04:55:39.800Z"
+      "lastFetchedAt": "2026-07-22T04:55:19.043Z"
     },
     {
       "name": "AgentGPT",
       "fullName": "reworkd/AgentGPT",
       "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.",
       "url": "https://github.com/reworkd/AgentGPT",
-      "stars": 36277,
-      "forks": 9297,
+      "stars": 36278,
+      "forks": 9295,
       "openIssues": 219,
-      "watchers": 36277,
+      "watchers": 36278,
       "language": "TypeScript",
       "license": "GPL-3.0",
       "manualTags": [
@@ -1868,21 +1868,21 @@
         "ai",
         "ai-agents"
       ],
-      "updatedAt": "2026-07-21T03:27:01Z",
+      "updatedAt": "2026-07-22T03:51:53Z",
       "pushedAt": "2025-04-29T01:19:32Z",
       "archived": true,
       "homepage": "https://agentgpt.reworkd.ai",
-      "lastFetchedAt": "2026-07-21T04:55:40.434Z"
+      "lastFetchedAt": "2026-07-22T04:55:20.210Z"
     },
     {
       "name": "gpt-engineer",
       "fullName": "AntonOsika/gpt-engineer",
       "description": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
       "url": "https://github.com/AntonOsika/gpt-engineer",
-      "stars": 55190,
-      "forks": 7298,
+      "stars": 55191,
+      "forks": 7300,
       "openIssues": 70,
-      "watchers": 55190,
+      "watchers": 55191,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1917,21 +1917,21 @@
         "codegen",
         "gpt-engineer"
       ],
-      "updatedAt": "2026-07-21T03:32:12Z",
+      "updatedAt": "2026-07-22T03:51:50Z",
       "pushedAt": "2025-05-14T10:15:10Z",
       "archived": true,
       "homepage": "",
-      "lastFetchedAt": "2026-07-21T04:55:41.058Z"
+      "lastFetchedAt": "2026-07-22T04:55:21.008Z"
     },
     {
       "name": "openinterpreter",
       "fullName": "openinterpreter/openinterpreter",
       "description": "A coding agent for open models like Kimi K3",
       "url": "https://github.com/openinterpreter/openinterpreter",
-      "stars": 66968,
-      "forks": 5753,
-      "openIssues": 290,
-      "watchers": 66968,
+      "stars": 67082,
+      "forks": 5760,
+      "openIssues": 291,
+      "watchers": 67082,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1960,21 +1960,21 @@
         "rust",
         "acp"
       ],
-      "updatedAt": "2026-07-21T04:28:28Z",
+      "updatedAt": "2026-07-22T04:55:02Z",
       "pushedAt": "2026-07-18T19:26:26Z",
       "archived": false,
       "homepage": "http://openinterpreter.com/",
-      "lastFetchedAt": "2026-07-21T04:55:41.888Z"
+      "lastFetchedAt": "2026-07-22T04:55:22.226Z"
     },
     {
       "name": "semantic-kernel",
       "fullName": "microsoft/semantic-kernel",
       "description": "Integrate cutting-edge LLM technology quickly and easily into your apps",
       "url": "https://github.com/microsoft/semantic-kernel",
-      "stars": 28335,
-      "forks": 4684,
-      "openIssues": 254,
-      "watchers": 28335,
+      "stars": 28346,
+      "forks": 4687,
+      "openIssues": 255,
+      "watchers": 28346,
       "language": "C#",
       "license": "MIT",
       "manualTags": [
@@ -2001,21 +2001,21 @@
         "openai",
         "sdk"
       ],
-      "updatedAt": "2026-07-20T23:52:33Z",
-      "pushedAt": "2026-07-20T21:18:33Z",
+      "updatedAt": "2026-07-22T04:09:53Z",
+      "pushedAt": "2026-07-21T15:37:21Z",
       "archived": false,
       "homepage": "https://aka.ms/semantic-kernel",
-      "lastFetchedAt": "2026-07-21T04:55:42.570Z"
+      "lastFetchedAt": "2026-07-22T04:55:23.082Z"
     },
     {
       "name": "TaskWeaver",
       "fullName": "microsoft/TaskWeaver",
       "description": "The first \"code-first\" agent framework for seamlessly planning and executing data analytics tasks. ",
       "url": "https://github.com/microsoft/TaskWeaver",
-      "stars": 6174,
+      "stars": 6176,
       "forks": 780,
       "openIssues": 53,
-      "watchers": 6174,
+      "watchers": 6176,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2044,21 +2044,21 @@
         "data-analysis",
         "openai"
       ],
-      "updatedAt": "2026-07-18T18:46:17Z",
+      "updatedAt": "2026-07-21T08:32:00Z",
       "pushedAt": "2026-03-23T06:17:21Z",
       "archived": true,
       "homepage": "https://microsoft.github.io/TaskWeaver/",
-      "lastFetchedAt": "2026-07-21T04:55:43.173Z"
+      "lastFetchedAt": "2026-07-22T04:55:23.921Z"
     },
     {
       "name": "promptflow",
       "fullName": "microsoft/promptflow",
       "description": "Build high-quality LLM apps - from prototyping, testing to production deployment and monitoring.",
       "url": "https://github.com/microsoft/promptflow",
-      "stars": 11186,
-      "forks": 1113,
+      "stars": 11187,
+      "forks": 1112,
       "openIssues": 73,
-      "watchers": 11186,
+      "watchers": 11187,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2089,21 +2089,21 @@
         "ai-application-development",
         "ai-applications"
       ],
-      "updatedAt": "2026-07-20T20:39:29Z",
+      "updatedAt": "2026-07-22T03:49:42Z",
       "pushedAt": "2026-07-09T22:00:22Z",
       "archived": false,
       "homepage": "https://microsoft.github.io/promptflow/",
-      "lastFetchedAt": "2026-07-21T04:55:43.757Z"
+      "lastFetchedAt": "2026-07-22T04:55:24.894Z"
     },
     {
       "name": "agent-framework",
       "fullName": "microsoft/agent-framework",
       "description": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
       "url": "https://github.com/microsoft/agent-framework",
-      "stars": 12262,
-      "forks": 2062,
-      "openIssues": 641,
-      "watchers": 12262,
+      "stars": 12291,
+      "forks": 2061,
+      "openIssues": 636,
+      "watchers": 12291,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2135,21 +2135,21 @@
         "dotnet",
         "python"
       ],
-      "updatedAt": "2026-07-21T04:27:04Z",
-      "pushedAt": "2026-07-20T22:33:44Z",
+      "updatedAt": "2026-07-22T03:12:57Z",
+      "pushedAt": "2026-07-22T00:47:42Z",
       "archived": false,
       "homepage": "https://aka.ms/agent-framework",
-      "lastFetchedAt": "2026-07-21T04:55:44.376Z"
+      "lastFetchedAt": "2026-07-22T04:55:25.827Z"
     },
     {
       "name": "letta",
       "fullName": "letta-ai/letta",
       "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.",
       "url": "https://github.com/letta-ai/letta",
-      "stars": 23892,
-      "forks": 2543,
-      "openIssues": 48,
-      "watchers": 23892,
+      "stars": 23910,
+      "forks": 2544,
+      "openIssues": 49,
+      "watchers": 23910,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2172,21 +2172,21 @@
         "ai",
         "ai-agents"
       ],
-      "updatedAt": "2026-07-21T04:20:09Z",
-      "pushedAt": "2026-07-03T18:53:41Z",
+      "updatedAt": "2026-07-22T02:46:14Z",
+      "pushedAt": "2026-07-22T00:32:52Z",
       "archived": false,
       "homepage": "https://docs.letta.com/",
-      "lastFetchedAt": "2026-07-21T04:55:44.941Z"
+      "lastFetchedAt": "2026-07-22T04:55:26.589Z"
     },
     {
       "name": "SuperAGI",
       "fullName": "TransformerOptimus/SuperAGI",
       "description": "<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
       "url": "https://github.com/TransformerOptimus/SuperAGI",
-      "stars": 17629,
-      "forks": 2223,
-      "openIssues": 270,
-      "watchers": 17629,
+      "stars": 17632,
+      "forks": 2222,
+      "openIssues": 269,
+      "watchers": 17632,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2231,21 +2231,21 @@
         "pinecone",
         "hacktoberfest"
       ],
-      "updatedAt": "2026-07-20T18:16:59Z",
+      "updatedAt": "2026-07-22T04:00:08Z",
       "pushedAt": "2025-01-22T22:14:07Z",
       "archived": false,
       "homepage": "https://superagi.com/",
-      "lastFetchedAt": "2026-07-21T04:55:45.556Z"
+      "lastFetchedAt": "2026-07-22T04:55:27.440Z"
     },
     {
       "name": "agno",
       "fullName": "agno-agi/agno",
       "description": "Build, run, and manage agent platforms.",
       "url": "https://github.com/agno-agi/agno",
-      "stars": 41317,
-      "forks": 5666,
-      "openIssues": 997,
-      "watchers": 41317,
+      "stars": 41335,
+      "forks": 5671,
+      "openIssues": 995,
+      "watchers": 41335,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2272,21 +2272,21 @@
         "ai",
         "ai-agents"
       ],
-      "updatedAt": "2026-07-21T02:23:08Z",
-      "pushedAt": "2026-07-21T04:39:42Z",
+      "updatedAt": "2026-07-22T03:13:12Z",
+      "pushedAt": "2026-07-22T03:02:34Z",
       "archived": false,
       "homepage": "https://docs.agno.com",
-      "lastFetchedAt": "2026-07-21T04:55:46.217Z"
+      "lastFetchedAt": "2026-07-22T04:55:28.278Z"
     },
     {
       "name": "composio",
       "fullName": "ComposioHQ/composio",
       "description": "Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action.",
       "url": "https://github.com/ComposioHQ/composio",
-      "stars": 29299,
-      "forks": 4668,
-      "openIssues": 90,
-      "watchers": 29299,
+      "stars": 29316,
+      "forks": 4666,
+      "openIssues": 81,
+      "watchers": 29316,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -2335,21 +2335,21 @@
         "sse",
         "agentic-ai"
       ],
-      "updatedAt": "2026-07-21T04:44:25Z",
-      "pushedAt": "2026-07-20T20:34:56Z",
+      "updatedAt": "2026-07-22T04:16:49Z",
+      "pushedAt": "2026-07-22T01:18:40Z",
       "archived": false,
       "homepage": "https://docs.composio.dev",
-      "lastFetchedAt": "2026-07-21T04:55:46.855Z"
+      "lastFetchedAt": "2026-07-22T04:55:29.097Z"
     },
     {
       "name": "smolagents",
       "fullName": "huggingface/smolagents",
       "description": "🤗 smolagents: a barebones library for agents that think in code.",
       "url": "https://github.com/huggingface/smolagents",
-      "stars": 28454,
+      "stars": 28482,
       "forks": 2800,
-      "openIssues": 715,
-      "watchers": 28454,
+      "openIssues": 717,
+      "watchers": 28482,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2363,21 +2363,21 @@
         "huggingface",
         "minimal"
       ],
-      "updatedAt": "2026-07-21T02:18:25Z",
-      "pushedAt": "2026-07-14T18:34:47Z",
+      "updatedAt": "2026-07-22T04:40:42Z",
+      "pushedAt": "2026-07-21T18:35:00Z",
       "archived": false,
       "homepage": "https://huggingface.co/docs/smolagents",
-      "lastFetchedAt": "2026-07-21T04:55:47.470Z"
+      "lastFetchedAt": "2026-07-22T04:55:29.901Z"
     },
     {
       "name": "atomic-agents",
       "fullName": "Eigenwise/atomic-agents",
       "description": "Building AI agents, atomically",
       "url": "https://github.com/Eigenwise/atomic-agents",
-      "stars": 6053,
-      "forks": 512,
-      "openIssues": 6,
-      "watchers": 6053,
+      "stars": 6055,
+      "forks": 514,
+      "openIssues": 7,
+      "watchers": 6055,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2406,21 +2406,21 @@
         "openai",
         "openai-api"
       ],
-      "updatedAt": "2026-07-20T22:45:24Z",
+      "updatedAt": "2026-07-22T01:17:41Z",
       "pushedAt": "2026-07-18T08:37:49Z",
       "archived": false,
       "homepage": "https://eigenwise.github.io/atomic-agents/",
-      "lastFetchedAt": "2026-07-21T04:55:48.347Z"
+      "lastFetchedAt": "2026-07-22T04:55:31.081Z"
     },
     {
       "name": "beeai-framework",
       "fullName": "i-am-bee/beeai-framework",
       "description": "Build production-ready AI agents in both Python and Typescript.",
       "url": "https://github.com/i-am-bee/beeai-framework",
-      "stars": 3330,
-      "forks": 465,
-      "openIssues": 30,
-      "watchers": 3330,
+      "stars": 3333,
+      "forks": 466,
+      "openIssues": 22,
+      "watchers": 3333,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2451,21 +2451,21 @@
         "typescript",
         "beeai"
       ],
-      "updatedAt": "2026-07-20T16:09:51Z",
-      "pushedAt": "2026-07-16T14:34:41Z",
+      "updatedAt": "2026-07-22T03:02:41Z",
+      "pushedAt": "2026-07-21T11:34:22Z",
       "archived": false,
       "homepage": "http://framework.beeai.dev",
-      "lastFetchedAt": "2026-07-21T04:55:48.985Z"
+      "lastFetchedAt": "2026-07-22T04:55:31.837Z"
     },
     {
       "name": "ToolBench",
       "fullName": "OpenBMB/ToolBench",
       "description": "[ICLR'24 spotlight] An open platform for training, serving, and evaluating large language model for tool learning.",
       "url": "https://github.com/OpenBMB/ToolBench",
-      "stars": 5702,
+      "stars": 5703,
       "forks": 486,
       "openIssues": 161,
-      "watchers": 5702,
+      "watchers": 5703,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2479,11 +2479,11 @@
         "tools",
         "benchmark"
       ],
-      "updatedAt": "2026-07-21T03:18:36Z",
+      "updatedAt": "2026-07-21T13:21:12Z",
       "pushedAt": "2025-05-21T15:46:59Z",
       "archived": false,
       "homepage": "https://openbmb.github.io/ToolBench/",
-      "lastFetchedAt": "2026-07-21T04:55:49.629Z"
+      "lastFetchedAt": "2026-07-22T04:55:32.669Z"
     },
     {
       "name": "OpenAgents",
@@ -2536,17 +2536,17 @@
       "pushedAt": "2024-11-18T09:39:29Z",
       "archived": false,
       "homepage": "https://arxiv.org/abs/2310.10634",
-      "lastFetchedAt": "2026-07-21T04:55:50.222Z"
+      "lastFetchedAt": "2026-07-22T04:55:33.496Z"
     },
     {
       "name": "AutoAgent",
       "fullName": "HKUDS/AutoAgent",
       "description": "\"AutoAgent: Fully-Automated and Zero-Code LLM Agent Framework\"",
       "url": "https://github.com/HKUDS/AutoAgent",
-      "stars": 9512,
-      "forks": 1333,
+      "stars": 9519,
+      "forks": 1335,
       "openIssues": 69,
-      "watchers": 9512,
+      "watchers": 9519,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2565,21 +2565,21 @@
         "agent",
         "llms"
       ],
-      "updatedAt": "2026-07-21T00:29:59Z",
+      "updatedAt": "2026-07-22T02:08:00Z",
       "pushedAt": "2025-10-16T06:35:28Z",
       "archived": false,
       "homepage": "https://arxiv.org/abs/2502.05957",
-      "lastFetchedAt": "2026-07-21T04:55:50.860Z"
+      "lastFetchedAt": "2026-07-22T04:55:34.253Z"
     },
     {
       "name": "bisheng",
       "fullName": "dataelement/bisheng",
       "description": "BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.",
       "url": "https://github.com/dataelement/bisheng",
-      "stars": 11711,
-      "forks": 1909,
+      "stars": 11733,
+      "forks": 1911,
       "openIssues": 113,
-      "watchers": 11711,
+      "watchers": 11733,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2633,21 +2633,21 @@
         "finetune",
         "sft"
       ],
-      "updatedAt": "2026-07-21T04:06:39Z",
-      "pushedAt": "2026-07-21T03:01:52Z",
+      "updatedAt": "2026-07-22T04:07:33Z",
+      "pushedAt": "2026-07-22T03:59:55Z",
       "archived": false,
       "homepage": "http://www.bisheng.ai",
-      "lastFetchedAt": "2026-07-21T04:55:51.556Z"
+      "lastFetchedAt": "2026-07-22T04:55:35.139Z"
     },
     {
       "name": "ogx",
       "fullName": "ogx-ai/ogx",
       "description": "Open GenAI Stack",
       "url": "https://github.com/ogx-ai/ogx",
-      "stars": 8422,
+      "stars": 8420,
       "forks": 1328,
-      "openIssues": 157,
-      "watchers": 8422,
+      "openIssues": 150,
+      "watchers": 8420,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2661,21 +2661,21 @@
         "inference",
         "safety"
       ],
-      "updatedAt": "2026-07-21T04:47:09Z",
-      "pushedAt": "2026-07-20T16:45:52Z",
+      "updatedAt": "2026-07-21T23:51:49Z",
+      "pushedAt": "2026-07-21T17:48:17Z",
       "archived": false,
       "homepage": "https://ogx-ai.github.io/",
-      "lastFetchedAt": "2026-07-21T04:55:52.174Z"
+      "lastFetchedAt": "2026-07-22T04:55:35.918Z"
     },
     {
       "name": "generative-ai",
       "fullName": "GoogleCloudPlatform/generative-ai",
       "description": "Sample code and notebooks for Generative AI on Google Cloud, with Gemini Enterprise Agent Platform",
       "url": "https://github.com/GoogleCloudPlatform/generative-ai",
-      "stars": 17456,
-      "forks": 4364,
+      "stars": 17481,
+      "forks": 4370,
       "openIssues": 80,
-      "watchers": 17456,
+      "watchers": 17481,
       "language": "Jupyter Notebook",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2719,11 +2719,11 @@
         "large-language-models",
         "agents"
       ],
-      "updatedAt": "2026-07-21T04:23:43Z",
-      "pushedAt": "2026-07-21T02:43:29Z",
+      "updatedAt": "2026-07-22T03:57:06Z",
+      "pushedAt": "2026-07-22T00:52:07Z",
       "archived": false,
       "homepage": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/",
-      "lastFetchedAt": "2026-07-21T04:55:52.797Z"
+      "lastFetchedAt": "2026-07-22T04:55:36.703Z"
     }
   ],
   "fetchErrors": [
