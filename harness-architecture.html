@@ -135,6 +135,9 @@
   --accent-ink:oklch(.36 .16 270);
   --green:oklch(.38 .12 148);
   --green-tint:oklch(.93 .04 148);
+  --assist:oklch(.62 .15 55);
+  --assist-ink:oklch(.48 .16 55);
+  --assist-tint:oklch(.95 .03 55);
 }
 
 *{box-sizing:border-box}
@@ -282,6 +285,67 @@ code{font-family:"IBM Plex Mono",monospace;}
 .loop-pill.top{margin-bottom:8px;}
 .loop-pill.bottom{margin-top:12px;}
 
+/* ── legend ───────────────────────────────────────────────────────────── */
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 4px;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);font-family:"IBM Plex Mono",monospace;}
+.legend-swatch{width:11px;height:11px;border-radius:3px;flex-shrink:0;}
+.legend-swatch.harness{background:var(--accent);}
+.legend-swatch.assistant{background:var(--assist-ink);border:1px dashed var(--assist-ink);background:var(--assist-tint);}
+
+/* ── harness-core boundary ────────────────────────────────────────────── */
+.harness-core-box{
+  border:1px solid var(--line);border-radius:10px;padding:18px 18px 4px;
+  background:oklch(.96 .006 270 / .6);margin:4px 0;
+}
+.harness-core-label{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;
+  color:var(--ink-3);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.harness-core-label::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);flex-shrink:0;}
+
+/* ── assistant nodes ──────────────────────────────────────────────────── */
+.assist-node{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  border:1px dashed var(--assist-ink);border-left:5px solid var(--assist-ink);
+  border-radius:6px;background:var(--assist-tint);padding:14px 18px;cursor:pointer;
+  font-family:inherit;color:var(--ink);
+}
+.assist-node:hover{background:oklch(.92 .045 55);}
+.assist-node:focus-visible{outline:2px solid var(--assist-ink);outline-offset:2px;}
+.assist-node .flow-open{color:var(--assist-ink);border-color:var(--assist-ink);}
+.assist-badge{
+  width:28px;height:28px;border-radius:50%;background:var(--assist-ink);color:#fff;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+.assist-hook{
+  display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+  border:1px dashed var(--assist-ink);border-radius:5px;background:var(--assist-tint);
+  padding:7px 14px;margin-top:6px;cursor:pointer;font-family:inherit;
+  font-size:11.5px;color:var(--assist-ink);
+}
+.assist-hook:hover{background:oklch(.92 .045 55);}
+.assist-hook:focus-visible{outline:2px solid var(--assist-ink);outline-offset:2px;}
+.assist-hook .ah-note{color:var(--ink-3);font-weight:400;}
+
+.scaffold-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.scaffold-chip{
+  border:1px dashed var(--assist-ink);border-radius:20px;background:var(--assist-tint);
+  padding:7px 14px;font-size:11.5px;color:var(--assist-ink);font-family:"IBM Plex Mono",monospace;
+  cursor:pointer;
+}
+.scaffold-chip:hover{background:oklch(.92 .045 55);}
+.scaffold-chip:focus-visible{outline:2px solid var(--assist-ink);outline-offset:2px;}
+
+/* clickable sub-boxes inside a diagram (nested popup triggers) */
+.fm-box-btn{cursor:pointer;font-family:inherit;width:100%;}
+.fm-box-btn:hover{background:var(--bg-2);border-color:var(--ink-3);}
+.fm-box-btn:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px;}
+.fm-box-btn .fm-more{display:block;font-size:9px;color:var(--accent-ink);margin-top:3px;font-family:"IBM Plex Mono",monospace;}
+
+dialog.flow-modal.sub{max-width:460px;width:min(460px,92vw);}
+
 /* ── popup / dialog ───────────────────────────────────────────────────── */
 dialog.flow-modal{
   border:1px solid var(--line);border-radius:10px;padding:0;
@@ -398,7 +462,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   .stat{border-right:none;border-bottom:1px solid var(--line);}
   .stat:last-child{border-bottom:none;}
   .cta-inner{flex-direction:column;}
-  .flow-node{flex-wrap:wrap;}
+  .flow-node,.assist-node{flex-wrap:wrap;}
   .flow-open{margin-left:44px;}
   dialog.flow-modal{width:96vw;max-height:92vh;}
   .fm-body{max-height:calc(92vh - 68px);}
@@ -475,102 +539,134 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="section-label">THE LOOP</div>
     <h2>Eleven layers, <em>one turn.</em></h2>
     <p class="prose" style="margin-bottom:0;">
-      The chain below runs top to bottom on every turn that isn't a trivial one-shot lookup. Click a layer to open its own internal flowchart — five of the eleven decompose into tiers, parallel checks, or a named escalation chain; the rest are a short sequence plus the one branch worth knowing about.
+      The chain below runs top to bottom on every turn that isn't a trivial one-shot lookup. Click a layer to open its own internal flowchart — five of the eleven decompose into tiers, parallel checks, or a named escalation chain; a few of those open a second popup per item for more depth. The dashed amber boxes aren't part of the harness itself — they're what <code style="font-size:13px">packages/personal-assistant/src/*.ts</code> adds around it.
     </p>
+
+    <div class="legend">
+      <span class="legend-item"><span class="legend-swatch harness"></span>Harness core — generic, adapter/harness/ · packages/harness</span>
+      <span class="legend-item"><span class="legend-swatch assistant"></span>Added by Personal Assistant — packages/personal-assistant/src/*.ts</span>
+    </div>
 
     <div class="flowchart">
 
-      <button class="flow-node" style="--nc:oklch(.46 .18 290)" data-target="modal-1">
-        <span class="flow-num-badge">1</span>
-        <span class="flow-name">World Model</span>
-        <span class="flow-desc">Fresh, typed beliefs formed for this turn, stamped with a generation_id.</span>
-        <span class="flow-open">view flow →</span>
+      <button class="assist-node" data-target="amodal-gate">
+        <span class="assist-badge">A</span>
+        <span class="flow-name">Turn-intent classifier</span>
+        <span class="flow-desc">One consolidated call — risk, triviality, decomposition, plan-abandonment, template match. A trivial one-liner returns right here, skipping the harness loop entirely.</span>
+        <span class="flow-open">assistant →</span>
       </button>
       <div class="flow-arrow-down">↓</div>
 
-      <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-2">
-        <span class="flow-num-badge">2</span>
-        <span class="flow-name">Evidence &amp; Reasoning</span>
-        <span class="flow-desc">Evidence weighted by how reliable each tool's results have actually been.</span>
-        <span class="flow-open">view flow →</span>
-      </button>
-      <div class="flow-arrow-down">↓</div>
+      <div class="harness-core-box">
+        <div class="harness-core-label">Harness core — same 11 layers the canvas compiles to</div>
 
-      <button class="flow-node" style="--nc:oklch(.46 .18 310)" data-target="modal-3">
-        <span class="flow-num-badge">3</span>
-        <span class="flow-name">Hypothesis</span>
-        <span class="flow-desc">Candidate readings of an ambiguous message, scored before a reply is drafted.</span>
-        <span class="flow-open">view flow →</span>
-      </button>
-      <div class="flow-arrow-down">↓</div>
+        <button class="flow-node" style="--nc:oklch(.46 .18 290)" data-target="modal-1">
+          <span class="flow-num-badge">1</span>
+          <span class="flow-name">World Model</span>
+          <span class="flow-desc">Fresh, typed beliefs formed for this turn, stamped with a generation_id.</span>
+          <span class="flow-open">view flow →</span>
+        </button>
+        <button class="assist-hook" data-target="amodal-trust"><span class="ah-icon">🤖</span> + trust-tagging <span class="ah-note">— untrusted web content wrapped before it becomes a belief</span></button>
+        <div class="flow-arrow-down">↓</div>
 
-      <button class="flow-node" style="--nc:oklch(.50 .1 25)" data-target="modal-4">
-        <span class="flow-num-badge">4</span>
-        <span class="flow-name">Contradiction</span>
-        <span class="flow-desc">Checks a new belief against ones already on record this session.</span>
-        <span class="flow-open">view flow →</span>
-      </button>
-      <div class="flow-arrow-down">↓</div>
-
-      <button class="flow-node" style="--nc:oklch(.55 .1 90)" data-target="modal-5">
-        <span class="flow-num-badge">5</span>
-        <span class="flow-name">Diagnostics</span>
-        <span class="flow-desc">Twelve health dimensions, normalised to 0–1, feeding Control State.</span>
-        <span class="flow-open">+12 dims →</span>
-      </button>
-      <div class="flow-arrow-down">↓</div>
-
-      <button class="flow-node" style="--nc:oklch(.52 .14 60)" data-target="modal-6">
-        <span class="flow-num-badge">6</span>
-        <span class="flow-name">Control State</span>
-        <span class="flow-desc">Five-tier resolver → NORMAL / CAUTIOUS / BLOCKED.</span>
-        <span class="flow-open">+5 tiers →</span>
-      </button>
-      <div class="flow-arrow-down">↓</div>
-
-      <div class="loop-wrap">
-        <span class="loop-pill top">↺ loop entry</span>
-
-        <button class="flow-node" style="--nc:oklch(.46 .16 240)" data-target="modal-7">
-          <span class="flow-num-badge">7</span>
-          <span class="flow-name">Planning</span>
-          <span class="flow-desc">A task graph with six task states and dependency tracking.</span>
+        <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-2">
+          <span class="flow-num-badge">2</span>
+          <span class="flow-name">Evidence &amp; Reasoning</span>
+          <span class="flow-desc">Evidence weighted by how reliable each tool's results have actually been.</span>
           <span class="flow-open">view flow →</span>
         </button>
         <div class="flow-arrow-down">↓</div>
 
-        <button class="flow-node" style="--nc:oklch(.46 .18 20)" data-target="modal-8">
-          <span class="flow-num-badge">8</span>
-          <span class="flow-name">Execution</span>
-          <span class="flow-desc">VOI estimated, a five-dimension review gate runs, then the action fires.</span>
-          <span class="flow-open">+5 dims →</span>
+        <button class="flow-node" style="--nc:oklch(.46 .18 310)" data-target="modal-3">
+          <span class="flow-num-badge">3</span>
+          <span class="flow-name">Hypothesis</span>
+          <span class="flow-desc">Candidate readings of an ambiguous message, scored before a reply is drafted.</span>
+          <span class="flow-open">view flow →</span>
         </button>
         <div class="flow-arrow-down">↓</div>
 
-        <button class="flow-node" style="--nc:oklch(.46 .12 205)" data-target="modal-9">
-          <span class="flow-num-badge">9</span>
-          <span class="flow-name">Verification</span>
-          <span class="flow-desc">Nine independent checks the draft has to clear before it's trusted.</span>
-          <span class="flow-open">+9 checks →</span>
+        <button class="flow-node" style="--nc:oklch(.50 .1 25)" data-target="modal-4">
+          <span class="flow-num-badge">4</span>
+          <span class="flow-name">Contradiction</span>
+          <span class="flow-desc">Checks a new belief against ones already on record this session.</span>
+          <span class="flow-open">view flow →</span>
+        </button>
+        <button class="assist-hook" data-target="amodal-contradiction"><span class="ah-icon">🤖</span> + semantic backstop <span class="ah-note">— an LLM check for what the free lexical pass wouldn't catch</span></button>
+        <div class="flow-arrow-down">↓</div>
+
+        <button class="flow-node" style="--nc:oklch(.55 .1 90)" data-target="modal-5">
+          <span class="flow-num-badge">5</span>
+          <span class="flow-name">Diagnostics</span>
+          <span class="flow-desc">Twelve health dimensions, normalised to 0–1, feeding Control State.</span>
+          <span class="flow-open">+12 dims →</span>
         </button>
         <div class="flow-arrow-down">↓</div>
 
-        <button class="flow-node" style="--nc:oklch(.52 .14 40)" data-target="modal-10">
-          <span class="flow-num-badge">10</span>
-          <span class="flow-name">Recovery</span>
-          <span class="flow-desc">Six named strategies in a fixed, escalating order.</span>
-          <span class="flow-open">+6 strategies →</span>
+        <button class="flow-node" style="--nc:oklch(.52 .14 60)" data-target="modal-6">
+          <span class="flow-num-badge">6</span>
+          <span class="flow-name">Control State</span>
+          <span class="flow-desc">Five-tier resolver → NORMAL / CAUTIOUS / BLOCKED.</span>
+          <span class="flow-open">+5 tiers →</span>
         </button>
         <div class="flow-arrow-down">↓</div>
 
-        <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-11">
-          <span class="flow-num-badge">11</span>
-          <span class="flow-name">Reviewer Pass</span>
-          <span class="flow-desc">Three-lens final check — can reopen a task and send it back through the loop.</span>
-          <span class="flow-open">+3 lenses →</span>
-        </button>
+        <div class="loop-wrap">
+          <span class="loop-pill top">↺ loop entry</span>
 
-        <span class="loop-pill bottom">↺ Recovery / Reviewer Pass reopen a task → back to Planning</span>
+          <button class="flow-node" style="--nc:oklch(.46 .16 240)" data-target="modal-7">
+            <span class="flow-num-badge">7</span>
+            <span class="flow-name">Planning</span>
+            <span class="flow-desc">A task graph with six task states and dependency tracking.</span>
+            <span class="flow-open">view flow →</span>
+          </button>
+          <div class="flow-arrow-down">↓</div>
+
+          <button class="flow-node" style="--nc:oklch(.46 .18 20)" data-target="modal-8">
+            <span class="flow-num-badge">8</span>
+            <span class="flow-name">Execution</span>
+            <span class="flow-desc">VOI estimated, a five-dimension review gate runs, then the action fires.</span>
+            <span class="flow-open">+5 dims →</span>
+          </button>
+          <button class="assist-hook" data-target="amodal-approval"><span class="ah-icon">🤖</span> + pending-action approval <span class="ah-note">— a write/shell action is staged, not run, until approved</span></button>
+          <div class="flow-arrow-down">↓</div>
+
+          <button class="flow-node" style="--nc:oklch(.46 .12 205)" data-target="modal-9">
+            <span class="flow-num-badge">9</span>
+            <span class="flow-name">Verification</span>
+            <span class="flow-desc">Nine independent checks the draft has to clear before it's trusted.</span>
+            <span class="flow-open">+9 checks →</span>
+          </button>
+          <div class="flow-arrow-down">↓</div>
+
+          <button class="flow-node" style="--nc:oklch(.52 .14 40)" data-target="modal-10">
+            <span class="flow-num-badge">10</span>
+            <span class="flow-name">Recovery</span>
+            <span class="flow-desc">Six named strategies in a fixed, escalating order.</span>
+            <span class="flow-open">+6 strategies →</span>
+          </button>
+          <button class="assist-hook" data-target="amodal-failure"><span class="ah-icon">🤖</span> + semantic failure-mode backstop <span class="ah-note">— matches symptoms to the pattern library by meaning</span></button>
+          <div class="flow-arrow-down">↓</div>
+
+          <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-11">
+            <span class="flow-num-badge">11</span>
+            <span class="flow-name">Reviewer Pass</span>
+            <span class="flow-desc">Three-lens final check — can reopen a task and send it back through the loop.</span>
+            <span class="flow-open">+3 lenses →</span>
+          </button>
+          <button class="assist-hook" data-target="amodal-review"><span class="ah-icon">🤖</span> + semantic review-checker <span class="ah-note">— checks for a real logical conflict, not just topical overlap</span></button>
+
+          <span class="loop-pill bottom">↺ Recovery / Reviewer Pass reopen a task → back to Planning</span>
+        </div>
+
+      </div>
+
+      <div class="flow-arrow-down">↓</div>
+      <div class="scaffold-row">
+        <button class="scaffold-chip" data-target="amodal-compression">🤖 Context compression</button>
+        <button class="scaffold-chip" data-target="amodal-planpersist">🤖 Plan persistence</button>
+        <button class="scaffold-chip" data-target="amodal-memory">🤖 User-fact memory</button>
+        <button class="scaffold-chip" data-target="amodal-spendcap">🤖 Spend cap</button>
+        <button class="scaffold-chip" data-target="amodal-undo">🤖 Undo log</button>
       </div>
 
     </div>
@@ -691,25 +787,25 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="fm-files"><b>Files:</b> diagnostics.py</div>
     <div class="fm-diagram">
       <div class="fm-grid">
-        <div class="fm-box">belief_freshness</div>
-        <div class="fm-box">belief_consistency</div>
-        <div class="fm-box">belief_support</div>
-        <div class="fm-box">symptom_coverage</div>
-        <div class="fm-box">explanation_coverage</div>
-        <div class="fm-box">verification_strength</div>
-        <div class="fm-box">verification_feasibility</div>
-        <div class="fm-box">progress_rate</div>
-        <div class="fm-box">failure_recurrence</div>
-        <div class="fm-box">oscillation_score</div>
-        <div class="fm-box">dep_graph_quality</div>
-        <div class="fm-box">world_model_integrity</div>
+        <button class="fm-box fm-box-btn" data-target="dmodal-1">belief_freshness<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-2">belief_consistency<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-3">belief_support<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-4">symptom_coverage<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-5">explanation_coverage<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-6">verification_strength<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-7">verification_feasibility<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-8">progress_rate<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-9">failure_recurrence<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-10">oscillation_score<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-11">dep_graph_quality<span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="dmodal-12">world_model_integrity<span class="fm-more">+ detail</span></button>
       </div>
       <div class="fm-funnel">normalise() → assert_normalised()</div>
       <div class="fm-agg">Diagnostics</div>
       <div class="fm-funnel">↓</div>
       <div class="fm-agg">Control State (Layer 6)</div>
     </div>
-    <p class="fm-caption">Each dimension below 0.2 maps to a specific recovery action class (e.g. <code>belief_freshness</code> → <code>belief_refresh</code>, <code>dep_graph_quality</code> → <code>dep_graph_refresh</code>) — that mapping is what Control State's Tier 2 and Recovery act on.</p>
+    <p class="fm-caption">Click any dimension for its exact type and definition. Each one below 0.2 maps to a specific recovery action class — that mapping is what Control State's Tier 2 and Recovery act on.</p>
   </div>
 </dialog>
 
@@ -822,15 +918,15 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="fm-diagram">
       <div class="fm-box" style="max-width:none;margin-bottom:8px;">Draft output</div>
       <div class="fm-grid">
-        <div class="fm-box">syntax<span class="fm-sub">linter</span></div>
-        <div class="fm-box">unit<span class="fm-sub">pytest</span></div>
-        <div class="fm-box">integration<span class="fm-sub">integration_runner</span></div>
-        <div class="fm-box">consistency<span class="fm-sub">consistency_checker</span></div>
-        <div class="fm-box">requirements<span class="fm-sub">requirements_checker</span></div>
-        <div class="fm-box">assumptions<span class="fm-sub">assumption_checker</span></div>
-        <div class="fm-box">goal_correctness<span class="fm-sub">goal_checker</span></div>
-        <div class="fm-box">evidence_sufficiency<span class="fm-sub">evidence_checker</span></div>
-        <div class="fm-box">output_contract_partial<span class="fm-sub">contract_checker</span></div>
+        <button class="fm-box fm-box-btn" data-target="vmodal-1">syntax<span class="fm-sub">linter</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-2">unit<span class="fm-sub">pytest</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-3">integration<span class="fm-sub">integration_runner</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-4">consistency<span class="fm-sub">consistency_checker</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-5">requirements<span class="fm-sub">requirements_checker</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-6">assumptions<span class="fm-sub">assumption_checker</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-7">goal_correctness<span class="fm-sub">goal_checker</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-8">evidence_sufficiency<span class="fm-sub">evidence_checker</span><span class="fm-more">+ detail</span></button>
+        <button class="fm-box fm-box-btn" data-target="vmodal-9">output_contract_partial<span class="fm-sub">contract_checker</span><span class="fm-more">+ detail</span></button>
       </div>
       <div class="fm-funnel">tool missing → SKIPPED, never counted as pass</div>
       <div class="fm-agg">has_critical_failure?</div>
@@ -839,6 +935,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-branch"><b>no</b> draft trusted, turn continues</div>
       <div class="fm-branch"><b>yes</b> sent to Recovery (Layer 10)</div>
     </div>
+    <p class="fm-caption">Click any check for what it specifically catches.</p>
   </div>
 </dialog>
 
@@ -890,6 +987,329 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-branch"><b>yes</b> reopens the affected COMPLETE task → loop back to Planning (never writes control_state directly — INV-06)</div>
     </div>
   </div>
+</dialog>
+
+
+<!-- ── Assistant-layer popups (packages/personal-assistant/src/*.ts) ──────── -->
+
+<dialog class="flow-modal sub" id="amodal-gate" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">A</span>
+    <span class="fm-name">Turn-intent classifier</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">One consolidated LLM call, made before the harness ever runs, that classifies five things about the turn at once.</p>
+    <div class="fm-files"><b>Files:</b> turn-intent-classifier.ts</div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>riskLevel</b> LOW / MEDIUM / HIGH, with a stated riskReason</div>
+      <div class="fm-branch"><b>isTrivial</b> only meaningful when riskLevel is LOW — true sends the reply straight back, skipping HarnessRuntime.run() entirely</div>
+      <div class="fm-branch"><b>decomposedTasks</b> a multi-step request broken into an ordered task list, or null</div>
+      <div class="fm-branch"><b>isAbandonRequest / matchedPlanTemplate</b> abandon judgment only asked when a plan is already active; template matching only attempted when it isn't</div>
+      <div class="fm-branch"><b>isReminderRequest / isBulkReminderRequest</b> folded into requiresApproval the same way</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-trust" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Trust-tagging</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Untrusted content is wrapped before it ever has a chance to become a belief in World Model (Layer 1).</p>
+    <div class="fm-files"><b>Files:</b> trust-tagging.ts</div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>web_search / fetch_url results</b> wrapped in an untrusted_external_content tag; the system prompt tells the model that tag is data, never instructions</div>
+      <div class="fm-branch"><b>read_file / list_directory results</b> left untouched — file content is user-owned, not adversarial-by-default</div>
+      <div class="fm-branch"><b>detectInjectionLikelyWithLLM()</b> a secondary check for content that looks like it's trying to issue instructions</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-contradiction" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Semantic contradiction backstop</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">An LLM check layered on top of Contradiction (Layer 4)'s own lexical detector — and skipped whenever that lexical pass already had a fair shot.</p>
+    <div class="fm-files"><b>Files:</b> contradiction-checker.ts</div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>lexical pass (harness)</b> always-on, free — already covers boolean/system-state claims: build passed/failed, file exists/missing, service available/unavailable</div>
+      <div class="fm-branch"><b>semantic pass (assistant)</b> one LLM call, only for candidates the lexical pass wouldn't confidently classify</div>
+      <div class="fm-branch"><b>all-lexical turn</b> if every new belief already looks lexically structured, the LLM call is skipped entirely — no cost</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-approval" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Pending-action approval</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">A proposed file write or shell command is staged, not executed — real user approval is a separate, later step, on top of Execution (Layer 8)'s own review gate.</p>
+    <div class="fm-files"><b>Files:</b> file-tools.ts</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">Proposed action</div><div class="fm-arrow">→</div>
+        <div class="fm-box">stagePendingAction()<span class="fm-sub">recorded, not run</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">user decides</div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>approved</b> applyPendingAction() actually runs it</div>
+      <div class="fm-branch"><b>rejected</b> discardPendingAction() drops it, nothing happens</div>
+      <div class="fm-branch"><b>never answered</b> sweepAbandonedPendingActions() cleans it up later</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-failure" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Semantic failure-mode backstop</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Matches observed symptoms against the curated failure-pattern library by meaning, not exact wording — e.g. "the request took too long and timed out" matches a curated "request timed out" symptom.</p>
+    <div class="fm-files"><b>Files:</b> failure-mode-matcher.ts</div>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Layered on top of Recovery (Layer 10)'s own pattern-library match — one LLM call, only reached when the lexical match doesn't already resolve it.</p>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-review" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Semantic review-checker</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Checks whether a proposed action genuinely conflicts with a high-confidence belief or an active hypothesis's predicted observation — a real logical conflict, not just topical overlap.</p>
+    <div class="fm-files"><b>Files:</b> review-checker.ts</div>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Layered on top of Reviewer Pass (Layer 11)'s own three lenses.</p>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-compression" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Context compression</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Keeps a long conversation inside the model's context window instead of silently truncating it. Runs alongside every turn that reaches the harness — not one of the 11 counted layers, "loop scaffolding" by its own code comment.</p>
+    <div class="fm-files"><b>Files:</b> transcript-compaction.ts</div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-planpersist" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Plan persistence</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">A durable, multi-task plan that survives across turns and crashes — separate from the harness's own per-turn task graph (Layer 7), which starts fresh each turn.</p>
+    <div class="fm-files"><b>Files:</b> plan-store.ts · plan-builder.ts</div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-memory" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">User-fact memory</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Facts stated in one conversation are extracted and carried into future ones.</p>
+    <div class="fm-files"><b>Files:</b> fact-extraction.ts</div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-spendcap" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Spend cap</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">checkSpendCap() runs once per turn, before any LLM call for that turn is made, and can refuse the turn outright if the session is over budget. No harness-core equivalent — the harness itself doesn't track cost.</p>
+    <div class="fm-files"><b>Files:</b> spend-cap.ts · model-pricing.ts</div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-undo" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Undo log</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Every applied action gets a revert plan recorded — "undo that" is a real, code-backed action, not a promise.</p>
+    <div class="fm-files"><b>Files:</b> action-snapshot.ts</div>
+  </div>
+</dialog>
+
+
+<!-- ── Diagnostics sub-popups (Layer 5, click a dimension) ─────────────────── -->
+
+<dialog class="flow-modal sub" id="dmodal-1" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">belief_freshness</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> ratio — 1 − stale_flag_ratio</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">How many beliefs behind the current answer are still fresh vs. flagged stale.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> belief_refresh</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-2" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">belief_consistency</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> ratio — 1 − contradiction_density</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">How much of the current belief set is internally contradiction-free.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> consistency_repair</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-3" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">belief_support</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> ratio — mean reliability weight over beliefs</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">How well-backed the current beliefs are by reliable evidence.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> support_augment</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-4" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">symptom_coverage</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> entropy — fraction of symptoms with a hypothesis</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">How much of the reported problem space has a candidate explanation at all.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> coverage_expand</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-5" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">explanation_coverage</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> entropy — fraction of hypotheses with discriminating evidence</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">How many candidate explanations are actually distinguishable from each other by evidence.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> explanation_expand</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-6" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">verification_strength</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> ratio — fraction of the 9 verification layers passing</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">A direct read of Verification (Layer 9)'s own pass rate.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> verification_pass</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-7" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">verification_feasibility</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> composite — abstraction alignment + tool availability + VOI</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">Whether the checks that should run even can, given the current tool manifest.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> feasibility_check</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-8" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">progress_rate</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> ratio — tasks_completed / total_tasks this iteration</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">Forward motion across the task graph.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> execution_retry</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-9" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">failure_recurrence</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> composite — fraction of iterations ending in the same failure</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">Whether the same failure keeps resurfacing across retries.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> failure_recovery</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-10" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">oscillation_score</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc"><b>Type:</b> composite — fraction of risk_state transitions that are reversals</p>
+    <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0 0 10px;">Whether Control State is flip-flopping rather than converging.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> oscillation_stabilise</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-11" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">dep_graph_quality</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc">Integrity of the task dependency graph — whether the declared dependencies between tasks still hold.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> dep_graph_refresh</div></div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="dmodal-12" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">world_model_integrity</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body">
+    <p class="fm-desc">Overall soundness of the current World Model (Layer 1) — the same dimension a SYSTEM_BREAKING contradiction drives toward zero.</p>
+    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> consistency_repair</div></div>
+  </div>
+</dialog>
+
+
+<!-- ── Verification sub-popups (Layer 9, click a check) ─────────────────── -->
+
+<dialog class="flow-modal sub" id="vmodal-1" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">syntax</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>linter</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches malformed or invalid code before it's even runnable.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-2" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">unit</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>pytest</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches a change that breaks an existing unit test.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-3" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">integration</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>integration_runner</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches breakage that only shows up when components interact, not in isolation.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-4" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">consistency</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>consistency_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches the draft contradicting itself or the World Model (Layer 1).</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-5" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">requirements</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>requirements_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches the draft missing something the task explicitly asked for.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-6" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">assumptions</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>assumption_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches an assumption the draft depends on that was never actually confirmed.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-7" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">goal_correctness</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>goal_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches technically-working output that's still off-target from the actual goal.</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-8" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">evidence_sufficiency</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>evidence_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches a claim in the draft that isn't backed by anything in the evidence store (Layer 2).</p></div>
+</dialog>
+
+<dialog class="flow-modal sub" id="vmodal-9" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head"><span class="fm-badge">9</span><span class="fm-name">output_contract_partial</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
+  <div class="fm-body"><p class="fm-desc">Backing tool: <code>contract_checker</code></p><p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Catches the output's shape not matching what's downstream expects.</p></div>
 </dialog>
 
 
@@ -954,8 +1374,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 })();
 
 (function(){
-  document.querySelectorAll('.flow-node[data-target]').forEach(function(btn){
-    btn.addEventListener('click',function(){
+  document.querySelectorAll('[data-target]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
       var dlg=document.getElementById(btn.getAttribute('data-target'));
       if(dlg)dlg.showModal();
     });
