@@ -280,10 +280,18 @@ code{font-family:"IBM Plex Mono",monospace;}
   display:inline-flex;align-items:center;gap:6px;
   font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--accent-ink);
   border:1px solid var(--accent-ink);border-radius:20px;padding:5px 12px;
-  background:oklch(.95 .018 268);margin-left:-37px;
+  background:oklch(.95 .018 268);
 }
 .loop-pill.top{margin-bottom:8px;}
 .loop-pill.bottom{margin-top:12px;}
+
+.branch-note-row{display:flex;justify-content:center;padding:2px 0;}
+.branch-note{
+  display:inline-flex;align-items:center;gap:6px;text-align:center;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--assist-ink);
+  border:1px dashed var(--assist-ink);border-radius:20px;padding:5px 14px;
+  background:var(--assist-tint);
+}
 
 /* ── legend ───────────────────────────────────────────────────────────── */
 .legend{display:flex;gap:22px;flex-wrap:wrap;margin:22px 0 4px;}
@@ -519,7 +527,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h1>Inside the <em>harness.</em></h1>
 
     <p class="hero-lede">
-      Every turn walks the same eleven layers, in the same order, whether it's the reference Personal Assistant or a flow drawn on the canvas. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer to open its internal flowchart.
+      A <a href="/harness-engineering" style="color:var(--accent-ink);">harness</a> is the code wrapped around an AI model to make it reliable in production. Every turn walks the same eleven layers of it, in the same order, whether it's <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a> (Build A Harness's own reference chat agent) or a flow drawn on <a href="/" style="color:var(--accent-ink);">the canvas</a>. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer below to open its internal flowchart.
     </p>
 
     <div class="stat-row">
@@ -552,10 +560,11 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <button class="assist-node" data-target="amodal-gate">
         <span class="assist-badge">A</span>
         <span class="flow-name">Turn-intent classifier</span>
-        <span class="flow-desc">One consolidated call — risk, triviality, decomposition, plan-abandonment, template match. A trivial one-liner returns right here, skipping the harness loop entirely.</span>
+        <span class="flow-desc">One consolidated call — risk, triviality, decomposition, plan-abandonment, template match.</span>
         <span class="flow-open">assistant →</span>
       </button>
-      <div class="flow-arrow-down">↓</div>
+      <div class="branch-note-row"><span class="branch-note">↩ trivial one-liner → reply goes back immediately, harness never runs</span></div>
+      <div class="flow-arrow-down">↓ not trivial</div>
 
       <div class="harness-core-box">
         <div class="harness-core-label">Harness core — same 11 layers the canvas compiles to</div>
@@ -624,7 +633,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <button class="flow-node" style="--nc:oklch(.46 .18 20)" data-target="modal-8">
             <span class="flow-num-badge">8</span>
             <span class="flow-name">Execution</span>
-            <span class="flow-desc">VOI estimated, a five-dimension review gate runs, then the action fires.</span>
+            <span class="flow-desc">Value-of-information (VOI) estimated, a five-dimension review gate runs, then the action fires.</span>
             <span class="flow-open">+5 dims →</span>
           </button>
           <button class="assist-hook" data-target="amodal-approval"><span class="ah-icon">🤖</span> + pending-action approval <span class="ah-note">— a write/shell action is staged, not run, until approved</span></button>
@@ -695,13 +704,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-chain">
         <div class="fm-box">Message + transcript</div><div class="fm-arrow">→</div>
         <div class="fm-box">Form typed beliefs</div><div class="fm-arrow">→</div>
-        <div class="fm-box">Stamp generation_id</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Stamp generation_id<span class="fm-sub">a per-step counter</span></div><div class="fm-arrow">→</div>
         <div class="fm-box">Published to World Model<span class="fm-sub">read by Layer 4, 6</span></div>
       </div>
     </div>
     <div class="fm-branches">
-      <div class="fm-branch"><b>step id matches</b> downstream read proceeds normally</div>
-      <div class="fm-branch"><b>step id stale</b> raises StalenessError instead of an outdated read</div>
+      <div class="fm-branch"><b>generation_id still current</b> the downstream read proceeds normally</div>
+      <div class="fm-branch"><b>generation_id has moved on</b> raises StalenessError instead of silently returning an outdated belief</div>
     </div>
   </div>
 </dialog>
@@ -724,8 +733,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
     </div>
     <div class="fm-branches">
-      <div class="fm-branch"><b>fn_ref on tool_manifest</b> call proceeds</div>
-      <div class="fm-branch"><b>fn_ref not on tool_manifest</b> rejected before codegen or exec()</div>
+      <div class="fm-branch"><b>tool is on the allowlist</b> (tool_manifest) — call proceeds</div>
+      <div class="fm-branch"><b>tool is not on the allowlist</b> rejected before codegen or exec() ever runs</div>
     </div>
   </div>
 </dialog>
@@ -958,7 +967,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <div class="fm-box">6 · ESCALATE<span class="fm-sub">hand off to a human</span></div>
       </div>
     </div>
-    <p class="fm-caption">An experience-store softmax can bias which strategy is tried first, but always falls back to this fixed order when the store is unavailable (<code>INV-10</code>). A failure-mode pattern library gives advisory bias only — it never overrides a caller's own decision.</p>
+    <p class="fm-caption">Past experience can bias which strategy is tried first, but always falls back to this fixed order when that experience store is unavailable (<code>INV-10</code>). A failure-mode pattern library gives advisory bias only — it never overrides a caller's own decision.</p>
   </div>
 </dialog>
 
