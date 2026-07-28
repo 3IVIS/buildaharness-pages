@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: {
+          description: 'Collection of information about how visitors use our website.',
+        },
+        purposes: {
+          analytics: 'Analytics',
+        },
+      },
+    },
+    services: [
+      {
+        name: 'analytics',
+        title: 'Analytics & Tracking',
+        purposes: ['analytics'],
+        required: false,
+      },
+    ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<!-- Google tag (gtag.js) — loaded only after analytics consent via Klaro above -->
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3KMR8T0N');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harness Architecture — Inside the 11-Layer Control Loop | Build A Harness</title>
+
+<meta name="description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer for the sub-checks, tiers, and strategies underneath it.">
+
+<link rel="canonical" href="https://buildaharness.com/harness-architecture">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildaharness.com/harness-architecture">
+<meta property="og:site_name" content="Build A Harness">
+<meta property="og:title" content="Harness Architecture — Inside the 11-Layer Control Loop">
+<meta property="og:description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer for the sub-checks, tiers, and strategies underneath it.">
+<meta property="og:image" content="https://buildaharness.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Build A Harness — the 11-layer harness control loop.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Harness Architecture — Inside the 11-Layer Control Loop">
+<meta name="twitter:description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass.">
+<meta name="twitter:image" content="https://buildaharness.com/og-image.png">
+<meta name="twitter:image:alt" content="Build A Harness — the 11-layer harness control loop.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="3IVIS">
+<meta name="keywords" content="AI agent harness architecture, harness control loop, world model, control state, verification layers, recovery strategies, reviewer pass, FlowSpec, open source, apache 2.0">
+
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#4F46E5">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://buildaharness.com/harness-architecture#webpage",
+      "url": "https://buildaharness.com/harness-architecture",
+      "name": "Harness Architecture — Inside the 11-Layer Control Loop",
+      "description": "An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass.",
+      "datePublished": "2026-07-28",
+      "dateModified": "2026-07-28",
+      "publisher": { "@id": "https://buildaharness.com/#org" },
+      "breadcrumb": { "@id": "https://buildaharness.com/harness-architecture#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://buildaharness.com/harness-architecture#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Build A Harness", "item": "https://buildaharness.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Harness Architecture", "item": "https://buildaharness.com/harness-architecture" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://buildaharness.com/#org",
+      "name": "3IVIS",
+      "url": "https://github.com/3IVIS",
+      "sameAs": ["https://github.com/3IVIS/buildaharness"]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:oklch(.972 .008 270);
+  --bg-2:oklch(.948 .012 270);
+  --paper:oklch(.985 .008 270);
+  --ink:oklch(.19 .024 270);
+  --ink-2:oklch(.37 .02 270);
+  --ink-3:oklch(.55 .018 270);
+  --line:oklch(.84 .014 270);
+  --accent:oklch(.46 .16 268);
+  --accent-ink:oklch(.36 .16 270);
+  --green:oklch(.38 .12 148);
+  --green-tint:oklch(.93 .04 148);
+}
+
+*{box-sizing:border-box}
+
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+
+body{
+  font-family:"IBM Plex Sans",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+.prose{max-width:740px;}
+
+/* header */
+header{border-bottom:1px solid var(--line);background:var(--paper);position:relative;}
+.site-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.brand .name{font-family:"IBM Plex Mono",monospace;font-size:15px;white-space:nowrap;}
+.nav{display:flex;gap:22px;font-family:"IBM Plex Mono",monospace;font-size:12px;}
+.nav a{text-decoration:none;color:var(--ink-2);}
+.nav a:hover{color:var(--ink);}
+.hdr-actions{display:flex;align-items:center;gap:10px;}
+.nav-toggle{display:none;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--ink);cursor:pointer;padding:0;}
+.nav-toggle:hover{border-color:var(--ink-2);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:6px;text-decoration:none;
+  background:var(--ink);color:white;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+  border:1px solid var(--ink);
+}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--ink);}
+
+/* breadcrumb */
+.breadcrumb{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;
+  color:var(--ink-3);margin-bottom:32px;
+}
+.breadcrumb a{color:var(--ink-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--ink-2);}
+.breadcrumb span{margin:0 6px;}
+
+/* eyebrow */
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;text-transform:uppercase;
+  font-size:11px;letter-spacing:.16em;color:var(--accent-ink);
+  margin-bottom:22px;
+}
+
+/* hero */
+.page-hero{padding:64px 0 72px;background:var(--paper);border-bottom:1px solid var(--line);}
+
+h1{
+  font-size:56px;line-height:1.04;letter-spacing:-.04em;
+  font-weight:300;margin:0 0 24px;max-width:820px;
+}
+h1 em{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  color:var(--accent-ink);font-weight:400;
+}
+
+.hero-lede{
+  font-size:19px;font-weight:300;color:var(--ink-2);
+  max-width:660px;margin:0 0 40px;line-height:1.5;
+}
+
+/* stats */
+.stat-row{
+  display:flex;gap:0;border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;margin-bottom:8px;max-width:920px;
+}
+.stat{
+  flex:1;padding:22px 20px;background:var(--bg);
+  border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none;}
+.stat-n{
+  display:block;font-size:30px;font-weight:300;letter-spacing:-.03em;
+  color:var(--accent-ink);font-family:"IBM Plex Mono",monospace;
+  margin-bottom:6px;
+}
+.stat-l{display:block;font-size:12.5px;color:var(--ink-3);line-height:1.4;}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* content sections */
+.section{padding:64px 0;background:var(--paper);}
+.section.alt{background:var(--bg);}
+
+h2{
+  font-size:36px;font-weight:300;letter-spacing:-.03em;
+  margin:0 0 20px;line-height:1.15;
+}
+h2 em{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  color:var(--accent-ink);font-weight:400;
+}
+
+.section-label{
+  font-family:"IBM Plex Mono",monospace;text-transform:uppercase;
+  font-size:10.5px;letter-spacing:.18em;color:var(--ink-3);
+  margin-bottom:16px;
+}
+
+p{font-size:16px;color:var(--ink-2);line-height:1.7;margin:0 0 18px;}
+p:last-child{margin-bottom:0;}
+strong{color:var(--ink);font-weight:600;}
+code{font-family:"IBM Plex Mono",monospace;}
+
+/* ── pipeline ─────────────────────────────────────────────────────────── */
+.pipeline{max-width:920px;margin-top:36px;}
+.pipeline-row{display:flex;gap:20px;align-items:stretch;}
+.pipeline-rail{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:36px;}
+.pipeline-node{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;
+  color:white;flex-shrink:0;
+}
+.pipeline-line{flex:1;width:2px;background:var(--line);margin:4px 0;min-height:14px;}
+.pipeline-row:last-of-type .pipeline-line{display:none;}
+
+details.layer-card{
+  flex:1;margin-bottom:14px;
+  border:1px solid var(--line);border-radius:6px;
+  background:var(--paper);
+  border-left:4px solid var(--accent);
+  overflow:hidden;
+}
+details.layer-card[open]{background:var(--bg-2);}
+details.layer-card summary{
+  list-style:none;cursor:pointer;padding:16px 20px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+details.layer-card summary::-webkit-details-marker{display:none;}
+details.layer-card summary:hover{background:var(--bg-2);}
+.layer-num{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;
+  flex-shrink:0;white-space:nowrap;
+}
+.layer-name{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em;flex-shrink:0;}
+.layer-desc{font-size:14px;color:var(--ink-2);line-height:1.5;flex:1;min-width:200px;}
+.layer-toggle{
+  margin-left:auto;flex-shrink:0;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:4px;padding:3px 8px;
+  white-space:nowrap;
+}
+details.layer-card[open] .layer-toggle{color:var(--accent-ink);border-color:var(--accent-ink);}
+.toggle-closed{display:inline;}
+.toggle-open{display:none;}
+details.layer-card[open] .toggle-closed{display:none;}
+details.layer-card[open] .toggle-open{display:inline;}
+
+.layer-body{padding:0 20px 22px 20px;border-top:1px solid var(--line);}
+.layer-files{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
+  padding-top:16px;margin-bottom:14px;
+}
+.layer-files b{color:var(--ink-2);font-weight:500;}
+.layer-more{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;}
+.layer-more:last-child{margin-bottom:0;}
+
+.subitems{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.subitem{
+  display:flex;gap:10px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:4px;background:var(--paper);
+  font-size:13.5px;line-height:1.5;
+}
+.subitem-tag{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:1px;
+}
+.subitem-desc{color:var(--ink-2);}
+.subitem-desc code{font-size:12px;background:var(--bg-2);padding:1px 5px;border-radius:3px;color:var(--ink);}
+
+.loop-note{
+  display:flex;align-items:center;gap:14px;
+  margin-top:6px;padding:16px 20px;
+  border:1px dashed var(--line);border-radius:6px;
+  font-size:14px;color:var(--ink-2);
+}
+.loop-note .loop-icon{font-size:20px;color:var(--accent-ink);flex-shrink:0;}
+
+/* invariant callout */
+.tool-callout{
+  margin-top:20px;padding:14px 18px;
+  border:1px solid var(--line);border-radius:6px;
+  background:var(--paper);
+  display:flex;align-items:flex-start;gap:16px;
+}
+.tool-callout-label{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:2px;
+}
+.tool-callout p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+
+/* cta section */
+.cta-section{padding:64px 0;border-top:1px solid var(--line);background:var(--paper);}
+.cta-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.cta-text h2{margin-bottom:12px;}
+.cta-text p{max-width:540px;}
+.cta-actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0;padding-top:8px;}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--line);}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-links{display:flex;gap:18px;}
+.footer-links a{text-decoration:none;color:var(--ink-2);font-family:"IBM Plex Mono",monospace;font-size:12px;}
+.footer-tag{font-family:"Instrument Serif",serif;color:var(--ink-3);font-style:italic;}
+
+@media(max-width:760px){
+  .wrap{padding:0 22px;}
+  h1{font-size:36px;}
+  h2{font-size:26px;}
+  .stat-row{flex-direction:column;}
+  .stat{border-right:none;border-bottom:1px solid var(--line);}
+  .stat:last-child{border-bottom:none;}
+  .cta-inner{flex-direction:column;}
+  .pipeline-row{gap:12px;}
+  .pipeline-rail{width:26px;}
+  .pipeline-node{width:26px;height:26px;font-size:11px;}
+  details.layer-card summary{padding:14px;}
+  .layer-body{padding:0 14px 18px 14px;}
+  .layer-toggle{margin-left:0;}
+  .nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--paper);
+    border-bottom:1px solid var(--line);padding:6px 22px 16px;z-index:50;
+  }
+  .nav.open{display:flex;}
+  .nav a{padding:10px 0;border-bottom:1px solid var(--line);}
+  .nav a:last-child{border-bottom:none;}
+  .nav-toggle{display:inline-flex;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap site-inner">
+    <a class="brand" href="/" aria-label="Build A Harness home">
+      <span class="name">Build A Harness</span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="/#why">Harness</a>
+      <a href="/#roadmap">Node library</a>
+      <a href="/#quickstart">Get started</a>
+      <a href="/#flowspec">How it works</a>
+      <a href="/#runtimes">Frameworks</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/harness-architecture" style="color:var(--accent-ink);">Architecture</a>
+      <a href="/personal-assistant">Personal Assistant</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="hdr-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <a class="btn" href="https://github.com/3IVIS/buildaharness">GitHub</a>
+    </div>
+  </div>
+</header>
+
+
+<section class="page-hero">
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Harness Architecture</span>
+    </nav>
+
+    <div class="eyebrow">BUILD A HARNESS · SYSTEM ANATOMY</div>
+
+    <h1>Inside the <em>harness.</em></h1>
+
+    <p class="hero-lede">
+      Every turn walks the same eleven layers, in the same order, whether it's the reference Personal Assistant or a flow drawn on the canvas. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer below to open what's actually running inside it.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat"><span class="stat-n">11</span><span class="stat-l">control layers walked every non-trivial turn</span></div>
+      <div class="stat"><span class="stat-n">9</span><span class="stat-l">independent verification checks before a draft is trusted</span></div>
+      <div class="stat"><span class="stat-n">6</span><span class="stat-l">named recovery strategies, fixed escalating order</span></div>
+      <div class="stat"><span class="stat-n">12</span><span class="stat-l">diagnostic health dimensions feeding Control State</span></div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="section-label">THE LOOP</div>
+    <h2>Eleven layers, <em>one turn.</em></h2>
+    <p class="prose" style="margin-bottom:0;">
+      The pipeline below runs top to bottom on every turn that isn't a trivial one-shot lookup. Five of the eleven — <strong>Diagnostics</strong>, <strong>Control State</strong>, <strong>Verification</strong>, <strong>Recovery</strong>, and <strong>Reviewer Pass</strong> — decompose into their own sub-checks, tiers, or named strategies; open those for the exact breakdown. The other six are simpler by design, so their panel is just the files and the one thing worth knowing about each.
+    </p>
+
+    <div class="pipeline">
+
+      <!-- 1 World Model -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 290)">1</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .18 290)">
+          <summary>
+            <span class="layer-num">Layer 1</span>
+            <span class="layer-name">World Model</span>
+            <span class="layer-desc">Fresh, typed beliefs formed for this turn, each stamped with a generation_id.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> world_model.py · world_model_ops.py · staleness.py</div>
+            <p class="layer-more">Every belief carries the <code>generation_id</code> it was formed under. Downstream layers that read the world model assert their own step matches that id — read a belief formed under an older step and you get a <code>StalenessError</code> instead of a silently outdated answer. That guarantee is what Contradiction (Layer 4) and Control State (Layer 6) build on.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- 2 Evidence & Reasoning -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .14 148)">2</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .14 148)">
+          <summary>
+            <span class="layer-num">Layer 2</span>
+            <span class="layer-name">Evidence &amp; Reasoning</span>
+            <span class="layer-desc">The evidence store backing the reply, weighted by how reliable each tool's results have actually been.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> evidence.py · tool_reliability.py · tool_manifest.py</div>
+            <p class="layer-more">Not all evidence counts equally — a claim backed by a tool with a poor track record this session is weighted down rather than trusted at face value. The tool manifest is also the allowlist gate: an <code>fn_ref</code> not on it never reaches codegen or <code>exec()</code>.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- 3 Hypothesis -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 310)">3</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .18 310)">
+          <summary>
+            <span class="layer-num">Layer 3</span>
+            <span class="layer-name">Hypothesis</span>
+            <span class="layer-desc">Candidate readings of an ambiguous message, generated and scored before a reply is drafted.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> hypothesis.py</div>
+            <p class="layer-more">The harness doesn't commit to the first plausible reading of a request — it scores competing hypotheses against the evidence store first. Reviewer Pass (Layer 11) later checks the delivered reply against <code>hypothesis_compatibility</code>, so a hypothesis picked here isn't the end of the story if it stops matching what actually got produced.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- 4 Contradiction -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.50 .1 25)">4</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.50 .1 25)">
+          <summary>
+            <span class="layer-num">Layer 4</span>
+            <span class="layer-name">Contradiction</span>
+            <span class="layer-desc">Checks a new belief against ones already on record — "the build is passing" against a "failing" belief from three turns ago.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> contradiction.py · belief_graph.py</div>
+            <p class="layer-more">Most contradictions just get logged and downgrade confidence. One severity — <code>SYSTEM_BREAKING</code> — short-circuits everything downstream: Control State's Tier 1 check (Layer 6) sees it and forces <code>BLOCKED</code> immediately, before any of the coverage or diagnostic math even runs.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- 5 Diagnostics -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.55 .1 90)">5</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.55 .1 90)">
+          <summary>
+            <span class="layer-num">Layer 5</span>
+            <span class="layer-name">Diagnostics</span>
+            <span class="layer-desc">Twelve health dimensions, each normalised to 0–1, computed from the turn so far and fed straight into Control State.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+12 dimensions</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> diagnostics.py</div>
+            <p class="layer-more">Each dimension is one of four types — <code>ratio</code>, <code>composite</code>, <code>entropy</code>, or <code>match_confidence</code> — and every value is run through <code>normalise()</code> then <code>assert_normalised()</code> before anything downstream is allowed to read it. Drop below 0.2 on any of these and Control State's Tier 2 check routes to a specific named recovery action.</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">belief_freshness</span><span class="subitem-desc">how recently the beliefs behind the current answer were formed → <code>belief_refresh</code></span></div>
+              <div class="subitem"><span class="subitem-tag">belief_consistency</span><span class="subitem-desc">agreement across beliefs on record → <code>consistency_repair</code></span></div>
+              <div class="subitem"><span class="subitem-tag">belief_support</span><span class="subitem-desc">evidence backing beliefs currently in play → <code>support_augment</code></span></div>
+              <div class="subitem"><span class="subitem-tag">symptom_coverage</span><span class="subitem-desc">how much of the reported problem space has been examined → <code>coverage_expand</code></span></div>
+              <div class="subitem"><span class="subitem-tag">explanation_coverage</span><span class="subitem-desc">how much of the observed behaviour has a stated cause → <code>explanation_expand</code></span></div>
+              <div class="subitem"><span class="subitem-tag">verification_strength</span><span class="subitem-desc">how thoroughly the current output has actually been checked → <code>verification_pass</code></span></div>
+              <div class="subitem"><span class="subitem-tag">verification_feasibility</span><span class="subitem-desc">whether the checks that should run even can, given available tools → <code>feasibility_check</code></span></div>
+              <div class="subitem"><span class="subitem-tag">progress_rate</span><span class="subitem-desc">forward motion across the task graph → <code>execution_retry</code></span></div>
+              <div class="subitem"><span class="subitem-tag">failure_recurrence</span><span class="subitem-desc">whether the same failure keeps resurfacing → <code>failure_recovery</code></span></div>
+              <div class="subitem"><span class="subitem-tag">oscillation_score</span><span class="subitem-desc">whether the run is flip-flopping between states → <code>oscillation_stabilise</code></span></div>
+              <div class="subitem"><span class="subitem-tag">dep_graph_quality</span><span class="subitem-desc">integrity of the task dependency graph → <code>dep_graph_refresh</code></span></div>
+              <div class="subitem"><span class="subitem-tag">world_model_integrity</span><span class="subitem-desc">overall soundness of the current world model → <code>consistency_repair</code></span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 6 Control State -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.52 .14 60)">6</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.52 .14 60)">
+          <summary>
+            <span class="layer-num">Layer 6</span>
+            <span class="layer-name">Control State</span>
+            <span class="layer-desc">Five-tier resolver → NORMAL / CAUTIOUS / BLOCKED — the sole control input for action selection.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+5 tiers</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> control_state.py</div>
+            <p class="layer-more"><code>resolve_control_state()</code> is the only function allowed to write a new control state (INV-06) — nothing downstream, including a Reviewer Pass re-entry, can set it directly. The five tiers run in strict order and the first one that fires wins:</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">Tier 1</span><span class="subitem-desc">any <code>SYSTEM_BREAKING</code> contradiction on record → <code>BLOCKED</code> immediately, no further tiers evaluated</span></div>
+              <div class="subitem"><span class="subitem-tag">Tier 2</span><span class="subitem-desc">any diagnostic dimension below 0.2 → <code>BLOCKED</code>, tagged with its recovery action; if the resulting block set forms a cycle, <code>detect_deadlock()</code> escalates to <code>HUMAN_REQUIRED</code></span></div>
+              <div class="subitem"><span class="subitem-tag">Tier 3</span><span class="subitem-desc">coverage dimensions between 0.2 and 0.4 → <code>CAUTIOUS</code>, exploration actions still allowed</span></div>
+              <div class="subitem"><span class="subitem-tag">Tier 4</span><span class="subitem-desc">proportional caution elevation — blended with matched-failure-pattern confidence, tips to <code>CAUTIOUS</code> past a small threshold</span></div>
+              <div class="subitem"><span class="subitem-tag">Tier 5</span><span class="subitem-desc">nothing above fired → <code>NORMAL</code></span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 7 Planning -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .16 240)">7</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .16 240)">
+          <summary>
+            <span class="layer-num">Layer 7</span>
+            <span class="layer-name">Planning</span>
+            <span class="layer-desc">A task graph with six task states and dependency tracking, so parallel work doesn't collide.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> task_graph.py · parallel_merge.py</div>
+            <p class="layer-more">Every task moves through <code>PENDING → ACTIVE → VERIFYING → COMPLETE</code>, with <code>FAILED</code> and <code>BLOCKED</code> as the off-ramps Recovery (Layer 10) hooks into. A task also carries its own <code>LOW / MEDIUM / HIGH</code> risk rating, read by Execution's review gate before anything under it runs.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- 8 Execution -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 20)">8</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .18 20)">
+          <summary>
+            <span class="layer-num">Layer 8</span>
+            <span class="layer-name">Execution</span>
+            <span class="layer-desc">Value-of-information estimated, a five-dimension review gate runs, then — and only then — the action fires.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+5 review dims</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> execution.py · voi.py · risk.py · review_gate.py</div>
+            <p class="layer-more">A proposed change is checked against five independent dimensions before it's allowed to run — two consecutive failures on any one of them trips an escalation, not a silent retry:</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">task_alignment</span><span class="subitem-desc">does the change match the task it's supposedly for</span></div>
+              <div class="subitem"><span class="subitem-tag">world_model_consistency</span><span class="subitem-desc">does it agree with current beliefs</span></div>
+              <div class="subitem"><span class="subitem-tag">output_contract_precheck</span><span class="subitem-desc">will the shape of the output satisfy the contract before it's even produced</span></div>
+              <div class="subitem"><span class="subitem-tag">code_quality</span><span class="subitem-desc">baseline quality bar on generated code/output</span></div>
+              <div class="subitem"><span class="subitem-tag">hypothesis_compatibility</span><span class="subitem-desc">does it still match the hypothesis Layer 3 scored highest</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 9 Verification -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .12 205)">9</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .12 205)">
+          <summary>
+            <span class="layer-num">Layer 9</span>
+            <span class="layer-name">Verification</span>
+            <span class="layer-desc">Nine independent checks the draft has to clear before it's trusted — not passed on the model's word.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+9 checks</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> verification.py</div>
+            <p class="layer-more">Each layer maps to a specific backing tool. If that tool isn't available in the tool manifest for the current run, the layer is marked <code>SKIPPED</code> — never silently counted as a pass:</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">syntax</span><span class="subitem-desc">→ <code>linter</code></span></div>
+              <div class="subitem"><span class="subitem-tag">unit</span><span class="subitem-desc">→ <code>pytest</code></span></div>
+              <div class="subitem"><span class="subitem-tag">integration</span><span class="subitem-desc">→ <code>integration_runner</code></span></div>
+              <div class="subitem"><span class="subitem-tag">consistency</span><span class="subitem-desc">→ <code>consistency_checker</code></span></div>
+              <div class="subitem"><span class="subitem-tag">requirements</span><span class="subitem-desc">→ <code>requirements_checker</code></span></div>
+              <div class="subitem"><span class="subitem-tag">assumptions</span><span class="subitem-desc">→ <code>assumption_checker</code></span></div>
+              <div class="subitem"><span class="subitem-tag">goal_correctness</span><span class="subitem-desc">→ <code>goal_checker</code></span></div>
+              <div class="subitem"><span class="subitem-tag">evidence_sufficiency</span><span class="subitem-desc">→ <code>evidence_checker</code></span></div>
+              <div class="subitem"><span class="subitem-tag">output_contract_partial</span><span class="subitem-desc">→ <code>contract_checker</code></span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 10 Recovery -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.52 .14 40)">10</span><span class="pipeline-line"></span></div>
+        <details class="layer-card" style="border-left-color:oklch(.52 .14 40)">
+          <summary>
+            <span class="layer-num">Layer 10</span>
+            <span class="layer-name">Recovery</span>
+            <span class="layer-desc">Six named strategies in a fixed, escalating order — a rollback-and-replan path instead of the run crashing out.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+6 strategies</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> recovery.py · replanning.py · memory.py</div>
+            <p class="layer-more">An experience-store-driven softmax can bias which strategy is tried first, but always falls back to this fixed order when the store is unavailable (INV-10). A failure-mode pattern library gives advisory bias only — it never overrides a caller's own decision:</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">1 · DIRECT_EDIT</span><span class="subitem-desc">smallest possible targeted fix, tried first</span></div>
+              <div class="subitem"><span class="subitem-tag">2 · TRACE_EXEC</span><span class="subitem-desc">trace execution to pin down where it actually went wrong</span></div>
+              <div class="subitem"><span class="subitem-tag">3 · BROADER_SEARCH</span><span class="subitem-desc">widen the search for context or a working reference point</span></div>
+              <div class="subitem"><span class="subitem-tag">4 · REIMPLEMENT</span><span class="subitem-desc">throw out the current approach and rebuild it</span></div>
+              <div class="subitem"><span class="subitem-tag">5 · MINIMAL_FIX</span><span class="subitem-desc">accept a smaller, safer fix over the ideal one</span></div>
+              <div class="subitem"><span class="subitem-tag">6 · ESCALATE</span><span class="subitem-desc">hand off to a human — last resort, not a fallback taken lightly</span></div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 11 Reviewer Pass -->
+      <div class="pipeline-row">
+        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .14 148)">11</span></div>
+        <details class="layer-card" style="border-left-color:oklch(.46 .14 148)">
+          <summary>
+            <span class="layer-num">Layer 11</span>
+            <span class="layer-name">Reviewer Pass</span>
+            <span class="layer-desc">A three-lens final check before the response leaves the harness — and it can send the turn back through the loop.</span>
+            <span class="layer-toggle"><span class="toggle-closed">+3 lenses</span><span class="toggle-open">− close</span></span>
+          </summary>
+          <div class="layer-body">
+            <div class="layer-files"><b>Files:</b> reviewer.py</div>
+            <p class="layer-more">The same output is read through three separate lenses before it's allowed out:</p>
+            <div class="subitems">
+              <div class="subitem"><span class="subitem-tag">implementer</span><span class="subitem-desc">did the work actually do what it set out to do</span></div>
+              <div class="subitem"><span class="subitem-tag">reviewer</span><span class="subitem-desc">a second read for gaps, regressions, and contract misses</span></div>
+              <div class="subitem"><span class="subitem-tag">adversarial</span><span class="subitem-desc">actively tries to break it, seeded by a causal-proximity filter; its findings are ephemeral by design (INV-09) — never persisted outside this pass</span></div>
+            </div>
+            <p class="layer-more" style="margin-top:14px;">Findings here aren't cosmetic: a <strong>propagation drain</strong> reopens any <code>COMPLETE</code> task whose underlying belief just got invalidated, sending it back through the loop. That re-entry still can't write <code>control_state</code> directly (INV-06) — only Layer 6's resolver does that, on the next pass.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+    <div class="loop-note">
+      <span class="loop-icon">↺</span>
+      <span>Recovery and Reviewer Pass are the two re-entry points — a failed action or an invalidated belief sends the run back through Planning or Verification, not out the door with a bad result.</span>
+    </div>
+
+    <div class="tool-callout" style="margin-top:24px;">
+      <div class="tool-callout-label">Skipped on trivial turns</div>
+      <p>A single consolidated classification call up front (risk, triviality, decomposition, plan-abandonment, plan-template matching) flags a genuinely self-contained factual one-liner as trivial — that reply returns directly and none of the eleven layers above run. Everything else walks the full loop. See <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a> for how this applies turn by turn in the reference chat agent.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="section-label">BUILD A HARNESS · v0.8.0 · PUBLIC ALPHA</div>
+        <h2>Draw it once. <em>Ship it anywhere.</em></h2>
+        <p>All eleven layers above are drawable, composable node types on the canvas — tested across 759 harness-layer tests, with 10 architectural invariants enforced as a CI gate. Apache 2.0, runs locally via Docker.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="https://github.com/3IVIS/buildaharness">Star on GitHub</a>
+        <a class="btn btn-ghost" href="/harness-engineering">Read the harness engineering primer →</a>
+        <a class="btn btn-ghost" href="/">Explore Build A Harness →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
+      <a href="https://github.com/3IVIS/buildaharness/tree/main/docs">Documentation</a>
+      <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
+      <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
+      <a href="/">Build A Harness</a>
+      <a href="/personal-assistant">Personal Assistant</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
+    </div>
+    <div class="footer-tag">
+      Build your harness. Ship it anywhere.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.getElementById('navToggle');
+  var nav=document.getElementById('siteNav');
+  if(!toggle||!nav)return;
+  function close(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}
+  toggle.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A')close();
+  });
+  document.addEventListener('click',function(e){
+    if(!nav.contains(e.target)&&!toggle.contains(e.target))close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')close();
+  });
+})();
+</script>
+</body>
+</html>
