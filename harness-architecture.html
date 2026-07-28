@@ -53,7 +53,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harness Architecture — Inside the 11-Layer Control Loop | Build A Harness</title>
 
-<meta name="description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer for the sub-checks, tiers, and strategies underneath it.">
+<meta name="description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer to open its internal flowchart.">
 
 <link rel="canonical" href="https://buildaharness.com/harness-architecture">
 
@@ -61,7 +61,7 @@
 <meta property="og:url" content="https://buildaharness.com/harness-architecture">
 <meta property="og:site_name" content="Build A Harness">
 <meta property="og:title" content="Harness Architecture — Inside the 11-Layer Control Loop">
-<meta property="og:description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer for the sub-checks, tiers, and strategies underneath it.">
+<meta property="og:description" content="An interactive, code-accurate map of Build A Harness's 11-layer control loop — World Model through Reviewer Pass. Click any layer to open its internal flowchart.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -247,81 +247,119 @@ p:last-child{margin-bottom:0;}
 strong{color:var(--ink);font-weight:600;}
 code{font-family:"IBM Plex Mono",monospace;}
 
-/* ── pipeline ─────────────────────────────────────────────────────────── */
-.pipeline{max-width:920px;margin-top:36px;}
-.pipeline-row{display:flex;gap:20px;align-items:stretch;}
-.pipeline-rail{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:36px;}
-.pipeline-node{
-  width:34px;height:34px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;
-  color:white;flex-shrink:0;
-}
-.pipeline-line{flex:1;width:2px;background:var(--line);margin:4px 0;min-height:14px;}
-.pipeline-row:last-of-type .pipeline-line{display:none;}
+/* ── flowchart (main pipeline) ────────────────────────────────────────── */
+.flowchart{max-width:640px;margin-top:36px;display:flex;flex-direction:column;}
+.flow-arrow-down{text-align:center;color:var(--ink-3);font-size:16px;padding:2px 0;line-height:1;}
 
-details.layer-card{
-  flex:1;margin-bottom:14px;
-  border:1px solid var(--line);border-radius:6px;
-  background:var(--paper);
-  border-left:4px solid var(--accent);
-  overflow:hidden;
+.flow-node{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  border:1px solid var(--line);border-left:5px solid var(--nc,var(--accent));
+  border-radius:6px;background:var(--paper);padding:15px 18px;cursor:pointer;
+  font-family:inherit;color:var(--ink);
 }
-details.layer-card[open]{background:var(--bg-2);}
-details.layer-card summary{
-  list-style:none;cursor:pointer;padding:16px 20px;
-  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+.flow-node:hover{background:var(--bg-2);border-color:var(--ink-3);}
+.flow-node:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px;}
+.flow-num-badge{
+  width:30px;height:30px;border-radius:50%;background:var(--nc,var(--accent));color:#fff;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-details.layer-card summary::-webkit-details-marker{display:none;}
-details.layer-card summary:hover{background:var(--bg-2);}
-.layer-num{
-  font-family:"IBM Plex Mono",monospace;font-size:10px;
-  color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;
-  flex-shrink:0;white-space:nowrap;
+.flow-name{font-size:15.5px;font-weight:600;flex-shrink:0;white-space:nowrap;}
+.flow-desc{font-size:13px;color:var(--ink-2);flex:1;min-width:140px;}
+.flow-open{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--accent-ink);
+  white-space:nowrap;flex-shrink:0;border:1px solid var(--line);border-radius:4px;padding:4px 9px;
 }
-.layer-name{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em;flex-shrink:0;}
-.layer-desc{font-size:14px;color:var(--ink-2);line-height:1.5;flex:1;min-width:200px;}
-.layer-toggle{
-  margin-left:auto;flex-shrink:0;
-  font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);
-  border:1px solid var(--line);border-radius:4px;padding:3px 8px;
-  white-space:nowrap;
-}
-details.layer-card[open] .layer-toggle{color:var(--accent-ink);border-color:var(--accent-ink);}
-.toggle-closed{display:inline;}
-.toggle-open{display:none;}
-details.layer-card[open] .toggle-closed{display:none;}
-details.layer-card[open] .toggle-open{display:inline;}
+.flow-node:hover .flow-open{border-color:var(--accent-ink);}
 
-.layer-body{padding:0 20px 22px 20px;border-top:1px solid var(--line);}
-.layer-files{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
-  padding-top:16px;margin-bottom:14px;
+.loop-wrap{border-left:3px dashed var(--accent-ink);padding-left:22px;margin-left:15px;position:relative;}
+.loop-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--accent-ink);
+  border:1px solid var(--accent-ink);border-radius:20px;padding:5px 12px;
+  background:oklch(.95 .018 268);margin-left:-37px;
 }
-.layer-files b{color:var(--ink-2);font-weight:500;}
-.layer-more{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;}
-.layer-more:last-child{margin-bottom:0;}
+.loop-pill.top{margin-bottom:8px;}
+.loop-pill.bottom{margin-top:12px;}
 
-.subitems{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
-.subitem{
-  display:flex;gap:10px;padding:10px 12px;
-  border:1px solid var(--line);border-radius:4px;background:var(--paper);
-  font-size:13.5px;line-height:1.5;
+/* ── popup / dialog ───────────────────────────────────────────────────── */
+dialog.flow-modal{
+  border:1px solid var(--line);border-radius:10px;padding:0;
+  max-width:680px;width:92vw;max-height:86vh;
+  background:var(--paper);color:var(--ink);
+  box-shadow:0 24px 70px rgba(20,20,30,.3);
 }
-.subitem-tag{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
-  color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:1px;
+dialog.flow-modal::backdrop{background:oklch(.15 .01 270 / .6);}
+.fm-head{
+  display:flex;align-items:center;gap:12px;padding:18px 22px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);
 }
-.subitem-desc{color:var(--ink-2);}
-.subitem-desc code{font-size:12px;background:var(--bg-2);padding:1px 5px;border-radius:3px;color:var(--ink);}
+.fm-head .fm-badge{
+  width:32px;height:32px;border-radius:50%;background:var(--nc,var(--accent));color:#fff;
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fm-head .fm-name{font-size:19px;font-weight:600;flex:1;letter-spacing:-.01em;}
+.fm-close{
+  border:1px solid var(--line);background:transparent;border-radius:6px;
+  width:30px;height:30px;cursor:pointer;color:var(--ink-2);font-size:16px;line-height:1;flex-shrink:0;
+}
+.fm-close:hover{border-color:var(--ink-2);color:var(--ink);}
+.fm-body{padding:20px 22px 26px;overflow-y:auto;max-height:calc(86vh - 68px);}
+.fm-desc{font-size:14px;color:var(--ink-2);margin-bottom:6px;line-height:1.6;}
+.fm-files{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);margin-bottom:18px;}
+.fm-files b{color:var(--ink-2);font-weight:500;}
 
-.loop-note{
-  display:flex;align-items:center;gap:14px;
-  margin-top:6px;padding:16px 20px;
-  border:1px dashed var(--line);border-radius:6px;
-  font-size:14px;color:var(--ink-2);
+/* flow diagram primitives inside a popup */
+.fm-diagram{overflow-x:auto;padding-bottom:6px;margin-bottom:4px;}
+.fm-chain{display:flex;align-items:center;gap:0;min-width:max-content;}
+.fm-box{
+  border:1px solid var(--line);border-radius:6px;background:var(--bg);
+  padding:9px 12px;font-size:12px;color:var(--ink);line-height:1.35;
+  text-align:center;max-width:150px;
 }
-.loop-note .loop-icon{font-size:20px;color:var(--accent-ink);flex-shrink:0;}
+.fm-box .fm-sub{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);margin-top:3px;}
+.fm-arrow{flex-shrink:0;color:var(--ink-3);font-size:15px;padding:0 7px;}
+
+.fm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:7px;margin-bottom:2px;}
+.fm-grid .fm-box{max-width:none;}
+.fm-funnel{
+  display:flex;align-items:center;justify-content:center;gap:8px;color:var(--ink-3);
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;padding:8px 0;text-align:center;
+}
+.fm-funnel::before,.fm-funnel::after{content:"";flex:1;height:1px;background:var(--line);}
+
+.fm-agg{
+  border:1px solid var(--accent-ink);border-radius:6px;background:oklch(.95 .018 268);
+  padding:10px 14px;font-size:12.5px;color:var(--ink);text-align:center;font-weight:500;
+}
+
+.fm-branches{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.fm-branch{
+  display:flex;align-items:flex-start;gap:10px;
+  border:1px solid var(--line);border-radius:5px;padding:8px 12px;
+  font-size:12.5px;color:var(--ink-2);background:var(--bg);
+}
+.fm-branch b{
+  color:var(--ink);font-weight:600;flex-shrink:0;white-space:nowrap;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;padding-top:1px;
+}
+
+.fm-cascade{display:flex;flex-direction:column;}
+.fm-tier-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 0;}
+.fm-tier-num{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;color:#fff;background:var(--nc,var(--accent));
+  border-radius:50%;width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+}
+.fm-tier-box{flex:1;min-width:140px;font-size:12.5px;color:var(--ink);}
+.fm-tier-outcome{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--accent-ink);
+  border:1px solid var(--accent-ink);border-radius:4px;padding:4px 9px;white-space:nowrap;background:oklch(.95 .018 268);
+}
+.fm-tier-connector{color:var(--ink-3);font-size:12px;padding-left:11px;font-family:"IBM Plex Mono",monospace;}
+
+.fm-caption{font-size:12px;color:var(--ink-3);margin-top:12px;line-height:1.6;}
+.fm-caption code{font-size:11px;background:var(--bg-2);padding:1px 5px;border-radius:3px;color:var(--ink);}
 
 /* invariant callout */
 .tool-callout{
@@ -359,12 +397,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   .stat{border-right:none;border-bottom:1px solid var(--line);}
   .stat:last-child{border-bottom:none;}
   .cta-inner{flex-direction:column;}
-  .pipeline-row{gap:12px;}
-  .pipeline-rail{width:26px;}
-  .pipeline-node{width:26px;height:26px;font-size:11px;}
-  details.layer-card summary{padding:14px;}
-  .layer-body{padding:0 14px 18px 14px;}
-  .layer-toggle{margin-left:0;}
+  .flow-node{flex-wrap:wrap;}
+  .flow-open{margin-left:44px;}
+  dialog.flow-modal{width:96vw;max-height:92vh;}
+  .fm-body{max-height:calc(92vh - 68px);}
   .nav{
     display:none;position:absolute;top:100%;left:0;right:0;
     flex-direction:column;gap:0;background:var(--paper);
@@ -418,7 +454,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h1>Inside the <em>harness.</em></h1>
 
     <p class="hero-lede">
-      Every turn walks the same eleven layers, in the same order, whether it's the reference Personal Assistant or a flow drawn on the canvas. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer below to open what's actually running inside it.
+      Every turn walks the same eleven layers, in the same order, whether it's the reference Personal Assistant or a flow drawn on the canvas. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer to open its internal flowchart.
     </p>
 
     <div class="stat-row">
@@ -438,265 +474,422 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="section-label">THE LOOP</div>
     <h2>Eleven layers, <em>one turn.</em></h2>
     <p class="prose" style="margin-bottom:0;">
-      The pipeline below runs top to bottom on every turn that isn't a trivial one-shot lookup. Five of the eleven — <strong>Diagnostics</strong>, <strong>Control State</strong>, <strong>Verification</strong>, <strong>Recovery</strong>, and <strong>Reviewer Pass</strong> — decompose into their own sub-checks, tiers, or named strategies; open those for the exact breakdown. The other six are simpler by design, so their panel is just the files and the one thing worth knowing about each.
+      The chain below runs top to bottom on every turn that isn't a trivial one-shot lookup. Click a layer to open its own internal flowchart — five of the eleven decompose into tiers, parallel checks, or a named escalation chain; the rest are a short sequence plus the one branch worth knowing about.
     </p>
 
-    <div class="pipeline">
+    <div class="flowchart">
 
-      <!-- 1 World Model -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 290)">1</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .18 290)">
-          <summary>
-            <span class="layer-num">Layer 1</span>
-            <span class="layer-name">World Model</span>
-            <span class="layer-desc">Fresh, typed beliefs formed for this turn, each stamped with a generation_id.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> world_model.py · world_model_ops.py · staleness.py</div>
-            <p class="layer-more">Every belief carries the <code>generation_id</code> it was formed under. Downstream layers that read the world model assert their own step matches that id — read a belief formed under an older step and you get a <code>StalenessError</code> instead of a silently outdated answer. That guarantee is what Contradiction (Layer 4) and Control State (Layer 6) build on.</p>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.46 .18 290)" data-target="modal-1">
+        <span class="flow-num-badge">1</span>
+        <span class="flow-name">World Model</span>
+        <span class="flow-desc">Fresh, typed beliefs formed for this turn, stamped with a generation_id.</span>
+        <span class="flow-open">view flow →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 2 Evidence & Reasoning -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .14 148)">2</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .14 148)">
-          <summary>
-            <span class="layer-num">Layer 2</span>
-            <span class="layer-name">Evidence &amp; Reasoning</span>
-            <span class="layer-desc">The evidence store backing the reply, weighted by how reliable each tool's results have actually been.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> evidence.py · tool_reliability.py · tool_manifest.py</div>
-            <p class="layer-more">Not all evidence counts equally — a claim backed by a tool with a poor track record this session is weighted down rather than trusted at face value. The tool manifest is also the allowlist gate: an <code>fn_ref</code> not on it never reaches codegen or <code>exec()</code>.</p>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-2">
+        <span class="flow-num-badge">2</span>
+        <span class="flow-name">Evidence &amp; Reasoning</span>
+        <span class="flow-desc">Evidence weighted by how reliable each tool's results have actually been.</span>
+        <span class="flow-open">view flow →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 3 Hypothesis -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 310)">3</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .18 310)">
-          <summary>
-            <span class="layer-num">Layer 3</span>
-            <span class="layer-name">Hypothesis</span>
-            <span class="layer-desc">Candidate readings of an ambiguous message, generated and scored before a reply is drafted.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> hypothesis.py</div>
-            <p class="layer-more">The harness doesn't commit to the first plausible reading of a request — it scores competing hypotheses against the evidence store first. Reviewer Pass (Layer 11) later checks the delivered reply against <code>hypothesis_compatibility</code>, so a hypothesis picked here isn't the end of the story if it stops matching what actually got produced.</p>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.46 .18 310)" data-target="modal-3">
+        <span class="flow-num-badge">3</span>
+        <span class="flow-name">Hypothesis</span>
+        <span class="flow-desc">Candidate readings of an ambiguous message, scored before a reply is drafted.</span>
+        <span class="flow-open">view flow →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 4 Contradiction -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.50 .1 25)">4</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.50 .1 25)">
-          <summary>
-            <span class="layer-num">Layer 4</span>
-            <span class="layer-name">Contradiction</span>
-            <span class="layer-desc">Checks a new belief against ones already on record — "the build is passing" against a "failing" belief from three turns ago.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> contradiction.py · belief_graph.py</div>
-            <p class="layer-more">Most contradictions just get logged and downgrade confidence. One severity — <code>SYSTEM_BREAKING</code> — short-circuits everything downstream: Control State's Tier 1 check (Layer 6) sees it and forces <code>BLOCKED</code> immediately, before any of the coverage or diagnostic math even runs.</p>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.50 .1 25)" data-target="modal-4">
+        <span class="flow-num-badge">4</span>
+        <span class="flow-name">Contradiction</span>
+        <span class="flow-desc">Checks a new belief against ones already on record this session.</span>
+        <span class="flow-open">view flow →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 5 Diagnostics -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.55 .1 90)">5</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.55 .1 90)">
-          <summary>
-            <span class="layer-num">Layer 5</span>
-            <span class="layer-name">Diagnostics</span>
-            <span class="layer-desc">Twelve health dimensions, each normalised to 0–1, computed from the turn so far and fed straight into Control State.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+12 dimensions</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> diagnostics.py</div>
-            <p class="layer-more">Each dimension is one of four types — <code>ratio</code>, <code>composite</code>, <code>entropy</code>, or <code>match_confidence</code> — and every value is run through <code>normalise()</code> then <code>assert_normalised()</code> before anything downstream is allowed to read it. Drop below 0.2 on any of these and Control State's Tier 2 check routes to a specific named recovery action.</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">belief_freshness</span><span class="subitem-desc">how recently the beliefs behind the current answer were formed → <code>belief_refresh</code></span></div>
-              <div class="subitem"><span class="subitem-tag">belief_consistency</span><span class="subitem-desc">agreement across beliefs on record → <code>consistency_repair</code></span></div>
-              <div class="subitem"><span class="subitem-tag">belief_support</span><span class="subitem-desc">evidence backing beliefs currently in play → <code>support_augment</code></span></div>
-              <div class="subitem"><span class="subitem-tag">symptom_coverage</span><span class="subitem-desc">how much of the reported problem space has been examined → <code>coverage_expand</code></span></div>
-              <div class="subitem"><span class="subitem-tag">explanation_coverage</span><span class="subitem-desc">how much of the observed behaviour has a stated cause → <code>explanation_expand</code></span></div>
-              <div class="subitem"><span class="subitem-tag">verification_strength</span><span class="subitem-desc">how thoroughly the current output has actually been checked → <code>verification_pass</code></span></div>
-              <div class="subitem"><span class="subitem-tag">verification_feasibility</span><span class="subitem-desc">whether the checks that should run even can, given available tools → <code>feasibility_check</code></span></div>
-              <div class="subitem"><span class="subitem-tag">progress_rate</span><span class="subitem-desc">forward motion across the task graph → <code>execution_retry</code></span></div>
-              <div class="subitem"><span class="subitem-tag">failure_recurrence</span><span class="subitem-desc">whether the same failure keeps resurfacing → <code>failure_recovery</code></span></div>
-              <div class="subitem"><span class="subitem-tag">oscillation_score</span><span class="subitem-desc">whether the run is flip-flopping between states → <code>oscillation_stabilise</code></span></div>
-              <div class="subitem"><span class="subitem-tag">dep_graph_quality</span><span class="subitem-desc">integrity of the task dependency graph → <code>dep_graph_refresh</code></span></div>
-              <div class="subitem"><span class="subitem-tag">world_model_integrity</span><span class="subitem-desc">overall soundness of the current world model → <code>consistency_repair</code></span></div>
-            </div>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.55 .1 90)" data-target="modal-5">
+        <span class="flow-num-badge">5</span>
+        <span class="flow-name">Diagnostics</span>
+        <span class="flow-desc">Twelve health dimensions, normalised to 0–1, feeding Control State.</span>
+        <span class="flow-open">+12 dims →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 6 Control State -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.52 .14 60)">6</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.52 .14 60)">
-          <summary>
-            <span class="layer-num">Layer 6</span>
-            <span class="layer-name">Control State</span>
-            <span class="layer-desc">Five-tier resolver → NORMAL / CAUTIOUS / BLOCKED — the sole control input for action selection.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+5 tiers</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> control_state.py</div>
-            <p class="layer-more"><code>resolve_control_state()</code> is the only function allowed to write a new control state (INV-06) — nothing downstream, including a Reviewer Pass re-entry, can set it directly. The five tiers run in strict order and the first one that fires wins:</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">Tier 1</span><span class="subitem-desc">any <code>SYSTEM_BREAKING</code> contradiction on record → <code>BLOCKED</code> immediately, no further tiers evaluated</span></div>
-              <div class="subitem"><span class="subitem-tag">Tier 2</span><span class="subitem-desc">any diagnostic dimension below 0.2 → <code>BLOCKED</code>, tagged with its recovery action; if the resulting block set forms a cycle, <code>detect_deadlock()</code> escalates to <code>HUMAN_REQUIRED</code></span></div>
-              <div class="subitem"><span class="subitem-tag">Tier 3</span><span class="subitem-desc">coverage dimensions between 0.2 and 0.4 → <code>CAUTIOUS</code>, exploration actions still allowed</span></div>
-              <div class="subitem"><span class="subitem-tag">Tier 4</span><span class="subitem-desc">proportional caution elevation — blended with matched-failure-pattern confidence, tips to <code>CAUTIOUS</code> past a small threshold</span></div>
-              <div class="subitem"><span class="subitem-tag">Tier 5</span><span class="subitem-desc">nothing above fired → <code>NORMAL</code></span></div>
-            </div>
-          </div>
-        </details>
-      </div>
+      <button class="flow-node" style="--nc:oklch(.52 .14 60)" data-target="modal-6">
+        <span class="flow-num-badge">6</span>
+        <span class="flow-name">Control State</span>
+        <span class="flow-desc">Five-tier resolver → NORMAL / CAUTIOUS / BLOCKED.</span>
+        <span class="flow-open">+5 tiers →</span>
+      </button>
+      <div class="flow-arrow-down">↓</div>
 
-      <!-- 7 Planning -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .16 240)">7</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .16 240)">
-          <summary>
-            <span class="layer-num">Layer 7</span>
-            <span class="layer-name">Planning</span>
-            <span class="layer-desc">A task graph with six task states and dependency tracking, so parallel work doesn't collide.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+ detail</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> task_graph.py · parallel_merge.py</div>
-            <p class="layer-more">Every task moves through <code>PENDING → ACTIVE → VERIFYING → COMPLETE</code>, with <code>FAILED</code> and <code>BLOCKED</code> as the off-ramps Recovery (Layer 10) hooks into. A task also carries its own <code>LOW / MEDIUM / HIGH</code> risk rating, read by Execution's review gate before anything under it runs.</p>
-          </div>
-        </details>
-      </div>
+      <div class="loop-wrap">
+        <span class="loop-pill top">↺ loop entry</span>
 
-      <!-- 8 Execution -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .18 20)">8</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .18 20)">
-          <summary>
-            <span class="layer-num">Layer 8</span>
-            <span class="layer-name">Execution</span>
-            <span class="layer-desc">Value-of-information estimated, a five-dimension review gate runs, then — and only then — the action fires.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+5 review dims</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> execution.py · voi.py · risk.py · review_gate.py</div>
-            <p class="layer-more">A proposed change is checked against five independent dimensions before it's allowed to run — two consecutive failures on any one of them trips an escalation, not a silent retry:</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">task_alignment</span><span class="subitem-desc">does the change match the task it's supposedly for</span></div>
-              <div class="subitem"><span class="subitem-tag">world_model_consistency</span><span class="subitem-desc">does it agree with current beliefs</span></div>
-              <div class="subitem"><span class="subitem-tag">output_contract_precheck</span><span class="subitem-desc">will the shape of the output satisfy the contract before it's even produced</span></div>
-              <div class="subitem"><span class="subitem-tag">code_quality</span><span class="subitem-desc">baseline quality bar on generated code/output</span></div>
-              <div class="subitem"><span class="subitem-tag">hypothesis_compatibility</span><span class="subitem-desc">does it still match the hypothesis Layer 3 scored highest</span></div>
-            </div>
-          </div>
-        </details>
-      </div>
+        <button class="flow-node" style="--nc:oklch(.46 .16 240)" data-target="modal-7">
+          <span class="flow-num-badge">7</span>
+          <span class="flow-name">Planning</span>
+          <span class="flow-desc">A task graph with six task states and dependency tracking.</span>
+          <span class="flow-open">view flow →</span>
+        </button>
+        <div class="flow-arrow-down">↓</div>
 
-      <!-- 9 Verification -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .12 205)">9</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .12 205)">
-          <summary>
-            <span class="layer-num">Layer 9</span>
-            <span class="layer-name">Verification</span>
-            <span class="layer-desc">Nine independent checks the draft has to clear before it's trusted — not passed on the model's word.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+9 checks</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> verification.py</div>
-            <p class="layer-more">Each layer maps to a specific backing tool. If that tool isn't available in the tool manifest for the current run, the layer is marked <code>SKIPPED</code> — never silently counted as a pass:</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">syntax</span><span class="subitem-desc">→ <code>linter</code></span></div>
-              <div class="subitem"><span class="subitem-tag">unit</span><span class="subitem-desc">→ <code>pytest</code></span></div>
-              <div class="subitem"><span class="subitem-tag">integration</span><span class="subitem-desc">→ <code>integration_runner</code></span></div>
-              <div class="subitem"><span class="subitem-tag">consistency</span><span class="subitem-desc">→ <code>consistency_checker</code></span></div>
-              <div class="subitem"><span class="subitem-tag">requirements</span><span class="subitem-desc">→ <code>requirements_checker</code></span></div>
-              <div class="subitem"><span class="subitem-tag">assumptions</span><span class="subitem-desc">→ <code>assumption_checker</code></span></div>
-              <div class="subitem"><span class="subitem-tag">goal_correctness</span><span class="subitem-desc">→ <code>goal_checker</code></span></div>
-              <div class="subitem"><span class="subitem-tag">evidence_sufficiency</span><span class="subitem-desc">→ <code>evidence_checker</code></span></div>
-              <div class="subitem"><span class="subitem-tag">output_contract_partial</span><span class="subitem-desc">→ <code>contract_checker</code></span></div>
-            </div>
-          </div>
-        </details>
-      </div>
+        <button class="flow-node" style="--nc:oklch(.46 .18 20)" data-target="modal-8">
+          <span class="flow-num-badge">8</span>
+          <span class="flow-name">Execution</span>
+          <span class="flow-desc">VOI estimated, a five-dimension review gate runs, then the action fires.</span>
+          <span class="flow-open">+5 dims →</span>
+        </button>
+        <div class="flow-arrow-down">↓</div>
 
-      <!-- 10 Recovery -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.52 .14 40)">10</span><span class="pipeline-line"></span></div>
-        <details class="layer-card" style="border-left-color:oklch(.52 .14 40)">
-          <summary>
-            <span class="layer-num">Layer 10</span>
-            <span class="layer-name">Recovery</span>
-            <span class="layer-desc">Six named strategies in a fixed, escalating order — a rollback-and-replan path instead of the run crashing out.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+6 strategies</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> recovery.py · replanning.py · memory.py</div>
-            <p class="layer-more">An experience-store-driven softmax can bias which strategy is tried first, but always falls back to this fixed order when the store is unavailable (INV-10). A failure-mode pattern library gives advisory bias only — it never overrides a caller's own decision:</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">1 · DIRECT_EDIT</span><span class="subitem-desc">smallest possible targeted fix, tried first</span></div>
-              <div class="subitem"><span class="subitem-tag">2 · TRACE_EXEC</span><span class="subitem-desc">trace execution to pin down where it actually went wrong</span></div>
-              <div class="subitem"><span class="subitem-tag">3 · BROADER_SEARCH</span><span class="subitem-desc">widen the search for context or a working reference point</span></div>
-              <div class="subitem"><span class="subitem-tag">4 · REIMPLEMENT</span><span class="subitem-desc">throw out the current approach and rebuild it</span></div>
-              <div class="subitem"><span class="subitem-tag">5 · MINIMAL_FIX</span><span class="subitem-desc">accept a smaller, safer fix over the ideal one</span></div>
-              <div class="subitem"><span class="subitem-tag">6 · ESCALATE</span><span class="subitem-desc">hand off to a human — last resort, not a fallback taken lightly</span></div>
-            </div>
-          </div>
-        </details>
-      </div>
+        <button class="flow-node" style="--nc:oklch(.46 .12 205)" data-target="modal-9">
+          <span class="flow-num-badge">9</span>
+          <span class="flow-name">Verification</span>
+          <span class="flow-desc">Nine independent checks the draft has to clear before it's trusted.</span>
+          <span class="flow-open">+9 checks →</span>
+        </button>
+        <div class="flow-arrow-down">↓</div>
 
-      <!-- 11 Reviewer Pass -->
-      <div class="pipeline-row">
-        <div class="pipeline-rail"><span class="pipeline-node" style="background:oklch(.46 .14 148)">11</span></div>
-        <details class="layer-card" style="border-left-color:oklch(.46 .14 148)">
-          <summary>
-            <span class="layer-num">Layer 11</span>
-            <span class="layer-name">Reviewer Pass</span>
-            <span class="layer-desc">A three-lens final check before the response leaves the harness — and it can send the turn back through the loop.</span>
-            <span class="layer-toggle"><span class="toggle-closed">+3 lenses</span><span class="toggle-open">− close</span></span>
-          </summary>
-          <div class="layer-body">
-            <div class="layer-files"><b>Files:</b> reviewer.py</div>
-            <p class="layer-more">The same output is read through three separate lenses before it's allowed out:</p>
-            <div class="subitems">
-              <div class="subitem"><span class="subitem-tag">implementer</span><span class="subitem-desc">did the work actually do what it set out to do</span></div>
-              <div class="subitem"><span class="subitem-tag">reviewer</span><span class="subitem-desc">a second read for gaps, regressions, and contract misses</span></div>
-              <div class="subitem"><span class="subitem-tag">adversarial</span><span class="subitem-desc">actively tries to break it, seeded by a causal-proximity filter; its findings are ephemeral by design (INV-09) — never persisted outside this pass</span></div>
-            </div>
-            <p class="layer-more" style="margin-top:14px;">Findings here aren't cosmetic: a <strong>propagation drain</strong> reopens any <code>COMPLETE</code> task whose underlying belief just got invalidated, sending it back through the loop. That re-entry still can't write <code>control_state</code> directly (INV-06) — only Layer 6's resolver does that, on the next pass.</p>
-          </div>
-        </details>
+        <button class="flow-node" style="--nc:oklch(.52 .14 40)" data-target="modal-10">
+          <span class="flow-num-badge">10</span>
+          <span class="flow-name">Recovery</span>
+          <span class="flow-desc">Six named strategies in a fixed, escalating order.</span>
+          <span class="flow-open">+6 strategies →</span>
+        </button>
+        <div class="flow-arrow-down">↓</div>
+
+        <button class="flow-node" style="--nc:oklch(.46 .14 148)" data-target="modal-11">
+          <span class="flow-num-badge">11</span>
+          <span class="flow-name">Reviewer Pass</span>
+          <span class="flow-desc">Three-lens final check — can reopen a task and send it back through the loop.</span>
+          <span class="flow-open">+3 lenses →</span>
+        </button>
+
+        <span class="loop-pill bottom">↺ Recovery / Reviewer Pass reopen a task → back to Planning</span>
       </div>
 
     </div>
 
-    <div class="loop-note">
-      <span class="loop-icon">↺</span>
-      <span>Recovery and Reviewer Pass are the two re-entry points — a failed action or an invalidated belief sends the run back through Planning or Verification, not out the door with a bad result.</span>
-    </div>
-
-    <div class="tool-callout" style="margin-top:24px;">
+    <div class="tool-callout" style="margin-top:28px;">
       <div class="tool-callout-label">Skipped on trivial turns</div>
       <p>A single consolidated classification call up front (risk, triviality, decomposition, plan-abandonment, plan-template matching) flags a genuinely self-contained factual one-liner as trivial — that reply returns directly and none of the eleven layers above run. Everything else walks the full loop. See <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a> for how this applies turn by turn in the reference chat agent.</p>
     </div>
 
   </div>
 </section>
+
+
+<!-- ── Popups ────────────────────────────────────────────────────────────── -->
+
+<dialog class="flow-modal" id="modal-1" style="--nc:oklch(.46 .18 290)">
+  <div class="fm-head">
+    <span class="fm-badge">1</span>
+    <span class="fm-name">World Model</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Fresh, typed beliefs formed for this turn — what the message says, what the transcript already established.</p>
+    <div class="fm-files"><b>Files:</b> world_model.py · world_model_ops.py · staleness.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">Message + transcript</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Form typed beliefs</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Stamp generation_id</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Published to World Model<span class="fm-sub">read by Layer 4, 6</span></div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>step id matches</b> downstream read proceeds normally</div>
+      <div class="fm-branch"><b>step id stale</b> raises StalenessError instead of an outdated read</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-2" style="--nc:oklch(.46 .14 148)">
+  <div class="fm-head">
+    <span class="fm-badge">2</span>
+    <span class="fm-name">Evidence &amp; Reasoning</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">The evidence store backing the reply, weighted by how reliable each tool's results have actually been.</p>
+    <div class="fm-files"><b>Files:</b> evidence.py · tool_reliability.py · tool_manifest.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">Tool call result</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Look up tool_reliability</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Weight the evidence</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Evidence store<span class="fm-sub">feeds Layer 3</span></div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>fn_ref on tool_manifest</b> call proceeds</div>
+      <div class="fm-branch"><b>fn_ref not on tool_manifest</b> rejected before codegen or exec()</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-3" style="--nc:oklch(.46 .18 310)">
+  <div class="fm-head">
+    <span class="fm-badge">3</span>
+    <span class="fm-name">Hypothesis</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Candidate readings of an ambiguous message, generated and scored before a reply is drafted.</p>
+    <div class="fm-files"><b>Files:</b> hypothesis.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">Evidence store</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Generate candidate hypotheses</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Score each against evidence</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Best-scored hypothesis<span class="fm-sub">carried into drafting</span></div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>later</b> Reviewer Pass's <code>hypothesis_compatibility</code> checks the delivered reply still matches the hypothesis picked here</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-4" style="--nc:oklch(.50 .1 25)">
+  <div class="fm-head">
+    <span class="fm-badge">4</span>
+    <span class="fm-name">Contradiction</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Checks a new belief against ones already on record — "the build is passing" against a "failing" belief from three turns ago.</p>
+    <div class="fm-files"><b>Files:</b> contradiction.py · belief_graph.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">New belief</div><div class="fm-arrow">→</div>
+        <div class="fm-box">Compare to beliefs on record</div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>no conflict</b> belief added, nothing else happens</div>
+      <div class="fm-branch"><b>conflict found</b> logged, confidence on the affected belief downgraded</div>
+      <div class="fm-branch"><b>severity = SYSTEM_BREAKING</b> flagged for Control State — Tier 1 forces BLOCKED on the next resolve</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-5" style="--nc:oklch(.55 .1 90)">
+  <div class="fm-head">
+    <span class="fm-badge">5</span>
+    <span class="fm-name">Diagnostics</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Twelve health dimensions, each normalised to 0–1, computed from the turn so far and fed straight into Control State.</p>
+    <div class="fm-files"><b>Files:</b> diagnostics.py</div>
+    <div class="fm-diagram">
+      <div class="fm-grid">
+        <div class="fm-box">belief_freshness</div>
+        <div class="fm-box">belief_consistency</div>
+        <div class="fm-box">belief_support</div>
+        <div class="fm-box">symptom_coverage</div>
+        <div class="fm-box">explanation_coverage</div>
+        <div class="fm-box">verification_strength</div>
+        <div class="fm-box">verification_feasibility</div>
+        <div class="fm-box">progress_rate</div>
+        <div class="fm-box">failure_recurrence</div>
+        <div class="fm-box">oscillation_score</div>
+        <div class="fm-box">dep_graph_quality</div>
+        <div class="fm-box">world_model_integrity</div>
+      </div>
+      <div class="fm-funnel">normalise() → assert_normalised()</div>
+      <div class="fm-agg">Diagnostics</div>
+      <div class="fm-funnel">↓</div>
+      <div class="fm-agg">Control State (Layer 6)</div>
+    </div>
+    <p class="fm-caption">Each dimension below 0.2 maps to a specific recovery action class (e.g. <code>belief_freshness</code> → <code>belief_refresh</code>, <code>dep_graph_quality</code> → <code>dep_graph_refresh</code>) — that mapping is what Control State's Tier 2 and Recovery act on.</p>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-6" style="--nc:oklch(.52 .14 60)">
+  <div class="fm-head">
+    <span class="fm-badge">6</span>
+    <span class="fm-name">Control State</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">The sole control input for action selection (INV-06) — <code>resolve_control_state()</code> is the only function allowed to write it. Five tiers run in strict order; the first one that fires wins.</p>
+    <div class="fm-files"><b>Files:</b> control_state.py</div>
+    <div class="fm-diagram">
+      <div class="fm-cascade">
+        <div class="fm-tier-row">
+          <span class="fm-tier-num">1</span>
+          <span class="fm-tier-box">SYSTEM_BREAKING contradiction on record?</span>
+          <span class="fm-tier-outcome">yes → BLOCKED, stop</span>
+        </div>
+        <div class="fm-tier-connector">↓ no</div>
+        <div class="fm-tier-row">
+          <span class="fm-tier-num">2</span>
+          <span class="fm-tier-box">any diagnostic dimension &lt; 0.2?</span>
+          <span class="fm-tier-outcome">yes → BLOCKED (+ recovery tag; cycle → HUMAN_REQUIRED)</span>
+        </div>
+        <div class="fm-tier-connector">↓ no</div>
+        <div class="fm-tier-row">
+          <span class="fm-tier-num">3</span>
+          <span class="fm-tier-box">coverage dimension 0.2–0.4?</span>
+          <span class="fm-tier-outcome">yes → CAUTIOUS, continues</span>
+        </div>
+        <div class="fm-tier-connector">↓</div>
+        <div class="fm-tier-row">
+          <span class="fm-tier-num">4</span>
+          <span class="fm-tier-box">proportional elevation factor &gt; 0.05?</span>
+          <span class="fm-tier-outcome">yes → CAUTIOUS</span>
+        </div>
+        <div class="fm-tier-connector">↓</div>
+        <div class="fm-tier-row">
+          <span class="fm-tier-num">5</span>
+          <span class="fm-tier-box">nothing above fired</span>
+          <span class="fm-tier-outcome">→ NORMAL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-7" style="--nc:oklch(.46 .16 240)">
+  <div class="fm-head">
+    <span class="fm-badge">7</span>
+    <span class="fm-name">Planning</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">A task graph with six task states and dependency tracking, so parallel work doesn't collide.</p>
+    <div class="fm-files"><b>Files:</b> task_graph.py · parallel_merge.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">PENDING</div><div class="fm-arrow">→</div>
+        <div class="fm-box">ACTIVE</div><div class="fm-arrow">→</div>
+        <div class="fm-box">VERIFYING</div><div class="fm-arrow">→</div>
+        <div class="fm-box">COMPLETE</div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>off-ramp</b> any state can instead move to FAILED or BLOCKED, which Recovery (Layer 10) hooks into</div>
+      <div class="fm-branch"><b>risk rating</b> each task also carries LOW / MEDIUM / HIGH, read by Execution's review gate before it runs</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-8" style="--nc:oklch(.46 .18 20)">
+  <div class="fm-head">
+    <span class="fm-badge">8</span>
+    <span class="fm-name">Execution</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Value-of-information estimated, a five-dimension review gate runs, then — and only then — the action fires.</p>
+    <div class="fm-files"><b>Files:</b> execution.py · voi.py · risk.py · review_gate.py</div>
+    <div class="fm-diagram">
+      <div class="fm-box" style="max-width:none;margin-bottom:8px;">Proposed change</div>
+      <div class="fm-grid">
+        <div class="fm-box">task_alignment</div>
+        <div class="fm-box">world_model_consistency</div>
+        <div class="fm-box">output_contract_precheck</div>
+        <div class="fm-box">code_quality</div>
+        <div class="fm-box">hypothesis_compatibility</div>
+      </div>
+      <div class="fm-funnel">checked in parallel</div>
+      <div class="fm-agg">2 consecutive failures on any dimension?</div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>no</b> action executes</div>
+      <div class="fm-branch"><b>yes</b> escalation triggered — not a silent retry</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-9" style="--nc:oklch(.46 .12 205)">
+  <div class="fm-head">
+    <span class="fm-badge">9</span>
+    <span class="fm-name">Verification</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Nine independent checks the draft has to clear before it's trusted — not passed on the model's word.</p>
+    <div class="fm-files"><b>Files:</b> verification.py</div>
+    <div class="fm-diagram">
+      <div class="fm-box" style="max-width:none;margin-bottom:8px;">Draft output</div>
+      <div class="fm-grid">
+        <div class="fm-box">syntax<span class="fm-sub">linter</span></div>
+        <div class="fm-box">unit<span class="fm-sub">pytest</span></div>
+        <div class="fm-box">integration<span class="fm-sub">integration_runner</span></div>
+        <div class="fm-box">consistency<span class="fm-sub">consistency_checker</span></div>
+        <div class="fm-box">requirements<span class="fm-sub">requirements_checker</span></div>
+        <div class="fm-box">assumptions<span class="fm-sub">assumption_checker</span></div>
+        <div class="fm-box">goal_correctness<span class="fm-sub">goal_checker</span></div>
+        <div class="fm-box">evidence_sufficiency<span class="fm-sub">evidence_checker</span></div>
+        <div class="fm-box">output_contract_partial<span class="fm-sub">contract_checker</span></div>
+      </div>
+      <div class="fm-funnel">tool missing → SKIPPED, never counted as pass</div>
+      <div class="fm-agg">has_critical_failure?</div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>no</b> draft trusted, turn continues</div>
+      <div class="fm-branch"><b>yes</b> sent to Recovery (Layer 10)</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-10" style="--nc:oklch(.52 .14 40)">
+  <div class="fm-head">
+    <span class="fm-badge">10</span>
+    <span class="fm-name">Recovery</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">Six named strategies in a fixed, escalating order — a rollback-and-replan path instead of the run crashing out.</p>
+    <div class="fm-files"><b>Files:</b> recovery.py · replanning.py · memory.py</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">1 · DIRECT_EDIT<span class="fm-sub">smallest targeted fix</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">2 · TRACE_EXEC<span class="fm-sub">pin down where it broke</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">3 · BROADER_SEARCH<span class="fm-sub">widen context search</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">4 · REIMPLEMENT<span class="fm-sub">rebuild the approach</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">5 · MINIMAL_FIX<span class="fm-sub">accept a smaller fix</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">6 · ESCALATE<span class="fm-sub">hand off to a human</span></div>
+      </div>
+    </div>
+    <p class="fm-caption">An experience-store softmax can bias which strategy is tried first, but always falls back to this fixed order when the store is unavailable (<code>INV-10</code>). A failure-mode pattern library gives advisory bias only — it never overrides a caller's own decision.</p>
+  </div>
+</dialog>
+
+<dialog class="flow-modal" id="modal-11" style="--nc:oklch(.46 .14 148)">
+  <div class="fm-head">
+    <span class="fm-badge">11</span>
+    <span class="fm-name">Reviewer Pass</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">A final pass checks the proposed change before it leaves the harness — and can send the turn back through the loop.</p>
+    <div class="fm-files"><b>Files:</b> reviewer.py</div>
+    <div class="fm-diagram">
+      <div class="fm-grid" style="grid-template-columns:repeat(3,1fr);max-width:460px;">
+        <div class="fm-box">implementer<span class="fm-sub">did it do what it set out to do</span></div>
+        <div class="fm-box">reviewer<span class="fm-sub">second read for gaps, regressions</span></div>
+        <div class="fm-box">adversarial<span class="fm-sub">tries to break it — ephemeral, INV-09</span></div>
+      </div>
+      <div class="fm-funnel">findings merged</div>
+      <div class="fm-agg">Propagation drain</div>
+      <div class="fm-funnel">↓</div>
+      <div class="fm-agg">belief just invalidated?</div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>no</b> output released</div>
+      <div class="fm-branch"><b>yes</b> reopens the affected COMPLETE task → loop back to Planning (never writes control_state directly — INV-06)</div>
+    </div>
+  </div>
+</dialog>
 
 
 <section class="cta-section">
@@ -756,6 +949,20 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   });
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape')close();
+  });
+})();
+
+(function(){
+  document.querySelectorAll('.flow-node[data-target]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var dlg=document.getElementById(btn.getAttribute('data-target'));
+      if(dlg)dlg.showModal();
+    });
+  });
+  document.querySelectorAll('dialog.flow-modal').forEach(function(dlg){
+    dlg.addEventListener('click',function(e){
+      if(e.target===dlg)dlg.close();
+    });
   });
 })();
 </script>
