@@ -317,8 +317,9 @@ dialog.flow-modal::backdrop{background:oklch(.15 .01 270 / .6);}
   border:1px solid var(--line);border-radius:6px;background:var(--bg);
   padding:9px 12px;font-size:12px;color:var(--ink);line-height:1.35;
   text-align:center;max-width:150px;
+  overflow-wrap:break-word;word-break:break-word;hyphens:auto;
 }
-.fm-box .fm-sub{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);margin-top:3px;}
+.fm-box .fm-sub{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);margin-top:3px;overflow-wrap:break-word;word-break:break-word;}
 .fm-arrow{flex-shrink:0;color:var(--ink-3);font-size:15px;padding:0 7px;}
 
 .fm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:7px;margin-bottom:2px;}
