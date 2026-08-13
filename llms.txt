@@ -70,7 +70,7 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 
 ## What ships today (v0.8.0)
 
-- **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows
+- **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows — the 13 harness nodes are grouped Observation → State → Policy → Control Flow → Effect in the sidebar; an Expert/Intent toggle swaps the full palette for click-to-insert templates of common flows
 - **Full harness layer** — world model, 5-tier control state, 9-layer verification, 6 recovery strategies, experience store, and adversarial reviewer pass, all implemented and tested (379 tests passing)
 - **FlowSpec v0.2.0** — open, portable JSON format; the runtime-neutral intermediate representation
 - **4 framework adapters**: a single FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — the design never changes, and a compile-time capability check catches what a target runtime can't fully support instead of letting it silently degrade
