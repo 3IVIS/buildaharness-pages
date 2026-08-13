@@ -704,13 +704,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-chain">
         <div class="fm-box">Message + transcript</div><div class="fm-arrow">→</div>
         <div class="fm-box">Form typed beliefs</div><div class="fm-arrow">→</div>
-        <div class="fm-box">Stamp generation_id<span class="fm-sub">a per-step counter</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">Stamp generation_id<span class="fm-sub">monotonic per-step counter, pinned by Plan/Execution/Verification version objects</span></div><div class="fm-arrow">→</div>
         <div class="fm-box">Published to World Model<span class="fm-sub">read by Layer 4, 6</span></div>
       </div>
     </div>
     <div class="fm-branches">
-      <div class="fm-branch"><b>generation_id still current</b> the downstream read proceeds normally</div>
-      <div class="fm-branch"><b>generation_id has moved on</b> raises StalenessError instead of silently returning an outdated belief</div>
+      <div class="fm-branch"><b>pinned generation_id still current</b> the downstream read proceeds normally</div>
+      <div class="fm-branch"><b>world model has advanced past the pinned generation_id</b> raises StalenessError instead of silently returning an outdated belief — the same check for a Plan, an Execution, or a Verification result, not only a direct World Model read</div>
     </div>
   </div>
 </dialog>

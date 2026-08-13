@@ -702,7 +702,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="layer-card" style="border-left-color:oklch(.46 .18 290)">
         <span class="layer-num">Layer 2</span>
         <span class="layer-name">World Model</span>
-        <span class="layer-desc">Typed beliefs about the environment, contradiction detection, and generation_id tracking so the agent knows what it knows — and when that knowledge was formed.</span>
+        <span class="layer-desc">Typed beliefs about the environment, contradiction detection, and a versioned world-model counter — referenced by every Plan, Execution, and Verification result to know when the world has moved on — so the agent knows what it knows, and when that knowledge was formed.</span>
         <span class="layer-without">Without it: the agent acts on stale or contradictory beliefs without knowing it.</span>
       </div>
 
