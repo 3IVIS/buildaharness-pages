@@ -73,7 +73,7 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 - **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows
 - **Full harness layer** — world model, 5-tier control state, 9-layer verification, 6 recovery strategies, experience store, and adversarial reviewer pass, all implemented and tested (379 tests passing)
 - **FlowSpec v0.2.0** — open, portable JSON format; the runtime-neutral intermediate representation
-- **4 framework adapters**: a single FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework without rewriting
+- **4 framework adapters**: a single FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — the design never changes, and a compile-time capability check catches what a target runtime can't fully support instead of letting it silently degrade
 - **Langfuse observability** built in — every run is traced automatically across all 4 runtimes
 - **HITL** (human-in-the-loop) pause and resume
 - **Deployment options**: REST API, MCP server, A2A protocol
@@ -174,16 +174,16 @@ Nine services total. `scripts/setup-env.sh` handles all secrets automatically. Y
 ## Frequently asked questions
 
 **What is Build A Harness?**
-Build A Harness is an open-source (Apache 2.0) visual canvas for designing, testing, and deploying production AI agent harnesses. Draw the full architecture using 27 node types — 14 execution nodes plus 13 harness nodes implementing the complete 11-layer control architecture: world model, 5-tier control state, 9-layer verification, 6 recovery strategies, and cross-run learning. A single FlowSpec export compiles the same design to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework without rewriting. Every run is traced automatically via Langfuse, HITL controls let humans pause and resume any flow, and one API call publishes the harness as a REST endpoint, an MCP tool, and an A2A agent simultaneously. Runs locally via Docker — no cloud account required.
+Build A Harness is an open-source (Apache 2.0) visual canvas for designing, testing, and deploying production AI agent harnesses. Draw the full architecture using 27 node types — 14 execution nodes plus 13 harness nodes implementing the complete 11-layer control architecture: world model, 5-tier control state, 9-layer verification, 6 recovery strategies, and cross-run learning. A single FlowSpec export compiles the same design to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — no rewriting the design, and a compile-time capability check fails fast if a target runtime can't fully support what the spec needs rather than silently degrading it. Every run is traced automatically via Langfuse, HITL controls let humans pause and resume any flow, and one API call publishes the harness as a REST endpoint, an MCP tool, and an A2A agent simultaneously. Runs locally via Docker — no cloud account required.
 
 **What is FlowSpec?**
-FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework without rewriting. FlowSpec v0.2.0 is stable and open for third-party node packs (`@buildaharness/nodes/…`). Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
+FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (`@buildaharness/nodes/…`). Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
 
 **What is a harness vs a workflow?**
 A workflow routes prompts from node to node. A harness governs what the AI believes, what it is allowed to do, how it catches its own mistakes, and what it learns for next time. The 5-tier control state resolver knows when to slow down or stop. Nine verification layers check outputs before they land. Recovery strategies handle failures systematically rather than crashing.
 
 **Why runtime-neutral FlowSpec?**
-Decouples the canvas from any runtime. Adding a new runtime means one adapter file. Canvas features — HITL, observability, versioning — are independent of runtime choice. One flow works across all 4 supported runtimes without rewriting.
+Decouples the canvas from any runtime. Adding a new runtime means one adapter file. Canvas features — HITL, observability, versioning — are independent of runtime choice. One flow works across all 4 supported runtimes with no design changes — a compile-time capability check flags anything a specific runtime can't fully support.
 
 **Why these four runtimes?**
 LangGraph is the production standard for stateful agents. CrewAI has the largest audience for multi-agent team patterns. Mastra is the only TypeScript-native orchestrator with first-class support. Microsoft Agent Framework merged Semantic Kernel and AutoGen, covering enterprise .NET and Python users.

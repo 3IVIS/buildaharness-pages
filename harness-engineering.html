@@ -174,7 +174,7 @@
         {
           "@type": "Question",
           "name": "What is FlowSpec?",
-          "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then runs on LangGraph, CrewAI, Mastra, or Microsoft Agent Framework without rewriting. FlowSpec v0.2.0 is stable and open for third-party node packs." }
+          "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs." }
         }
       ]
     }
@@ -809,7 +809,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="process-step">
         <span class="process-step-n">Step 2 — Compile</span>
         <span class="process-step-title">FlowSpec</span>
-        <span class="process-step-sub">The canvas exports to FlowSpec — a runtime-neutral, portable JSON format. One FlowSpec file runs on any supported framework without rewriting.</span>
+        <span class="process-step-sub">The canvas exports to FlowSpec — a runtime-neutral, portable JSON format. One FlowSpec file runs on any supported framework with no design changes; a compile-time capability check flags anything a specific runtime can't fully support.</span>
         <span class="process-step-detail">
           Open format · version-controlled<br>
           Framework-agnostic<br>
@@ -927,7 +927,7 @@ docker compose up</pre>
 
       <div class="faq-item">
         <h3>What is FlowSpec?</h3>
-        <p>FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then runs on LangGraph, CrewAI, Mastra, or Microsoft Agent Framework without rewriting. FlowSpec v0.2.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
+        <p>FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
       </div>
 
       <div class="faq-item">
