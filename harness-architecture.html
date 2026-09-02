@@ -637,6 +637,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
             <span class="flow-open">+5 dims →</span>
           </button>
           <button class="assist-hook" data-target="amodal-approval"><span class="ah-icon">🤖</span> + pending-action approval <span class="ah-note">— a write/shell action is staged, not run, until approved</span></button>
+          <button class="assist-hook" data-target="amodal-toolpolicy"><span class="ah-icon">🤖</span> + tool-policy gate <span class="ah-note">— every read-only tool call checked against a live ControlState before it runs</span></button>
           <div class="flow-arrow-down">↓</div>
 
           <button class="flow-node" style="--nc:oklch(.46 .12 205)" data-target="modal-9">
@@ -1074,6 +1075,31 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-branch"><b>approved</b> applyPendingAction() actually runs it</div>
       <div class="fm-branch"><b>rejected</b> discardPendingAction() drops it, nothing happens</div>
       <div class="fm-branch"><b>never answered</b> sweepAbandonedPendingActions() cleans it up later</div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="flow-modal sub" id="amodal-toolpolicy" style="--nc:var(--assist-ink)">
+  <div class="fm-head">
+    <span class="fm-badge">🤖</span>
+    <span class="fm-name">Tool-policy gate</span>
+    <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+  </div>
+  <div class="fm-body">
+    <p class="fm-desc">A deterministic, harness-state-informed check before each read-only tool call runs — not just advisory classification checked after the fact. Complements pending-action approval above, which already gates write_file/run_shell_command unconditionally regardless of this check.</p>
+    <div class="fm-files"><b>Files:</b> tool-policy.ts · tool-control-plane.ts</div>
+    <div class="fm-diagram">
+      <div class="fm-chain">
+        <div class="fm-box">Tool call proposed</div><div class="fm-arrow">→</div>
+        <div class="fm-box">evaluateToolPolicy()<span class="fm-sub">checked against live ControlState</span></div><div class="fm-arrow">→</div>
+        <div class="fm-box">ALLOW / DENY / REQUIRE_APPROVAL</div>
+      </div>
+    </div>
+    <div class="fm-branches">
+      <div class="fm-branch"><b>ControlState</b> built fresh each turn and updated after every tool-call outcome (success or failure) via the same gatherEvidence → applyToolReliability → updateWorldModel → resolveControlState sequence the harness core uses — so a developing failure pattern within one turn can trip a real DENY, not just get logged after the fact</div>
+      <div class="fm-branch"><b>ALLOW</b> the default — ControlState permits, or nothing's gone wrong yet this turn</div>
+      <div class="fm-branch"><b>DENY</b> the call is blocked outright, reported back to the model as a tool result</div>
+      <div class="fm-branch"><b>REQUIRE_APPROVAL</b> surfaced as an escalation — a read-only call has no concrete pending mutation to stage the way write/shell do</div>
     </div>
   </div>
 </dialog>
