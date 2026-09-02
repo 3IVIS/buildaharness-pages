@@ -1,8 +1,8 @@
 # Build A Harness
 
-> Open-source visual canvas for production AI agent harnesses. Draw workflows on a canvas, compile to any major AI framework, trace every decision. Apache 2.0.
+> Open-source, self-hosted AI assistant (Aielia) that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
 
-Build A Harness is a **working tool** (v0.8.0, public alpha) — a visual canvas plus four framework adapters plus built-in Langfuse observability. It implements a complete AI agent harness architecture: a system that goes beyond simple prompt routing to give agents a world model, multi-tier control state, structured verification, recovery strategies, and cross-run learning. The full 11-layer harness (22 nodes) is implemented and tested (379 tests passing).
+Build A Harness is a **working tool** (v0.8.0, public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/personal-assistant`, or try it in a browser at https://buildaharness.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, multi-tier control state, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant.
 
 ## AI Agent Frameworks Observatory
 
