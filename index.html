@@ -51,22 +51,22 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Build A Harness — Visual Canvas for AI Agent Harnesses</title>
+<title>Build A Harness — Open-Source AI Assistant That Asks Before It Acts</title>
 
-<meta name="description" content="Apache 2.0 visual canvas for AI agent harnesses. Draw once, run on LangGraph, CrewAI, Mastra, or MS Agent Framework. Langfuse observability, HITL, REST/MCP/A2A.">
+<meta name="description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
 
 <link rel="canonical" href="https://buildaharness.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buildaharness.com/">
 <meta property="og:site_name" content="Build A Harness">
-<meta property="og:title" content="Build A Harness — Visual Canvas for AI Agent Harnesses">
-<meta property="og:description" content="Apache 2.0 visual canvas for AI agent harnesses. Draw once, run on LangGraph, CrewAI, Mastra, or MS Agent Framework. Langfuse observability, HITL, REST/MCP/A2A.">
+<meta property="og:title" content="Build A Harness — Open-Source AI Assistant That Asks Before It Acts">
+<meta property="og:description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Build A Harness — Visual Canvas for AI Agent Harnesses">
-<meta name="twitter:description" content="Apache 2.0 visual canvas for AI agent harnesses. Draw once, run on LangGraph, CrewAI, Mastra, or MS Agent Framework. Langfuse observability, HITL, REST/MCP/A2A.">
+<meta name="twitter:title" content="Build A Harness — Open-Source AI Assistant That Asks Before It Acts">
+<meta name="twitter:description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
 <meta name="twitter:image:alt" content="Build A Harness — visual canvas comparing a simple agent loop with a full 11-layer AI agent harness.">
 
@@ -1192,6 +1192,7 @@ footer{
     </a>
 
     <nav class="nav" id="siteNav">
+      <a href="/try">Try Aielia</a>
       <a href="#why">Harness</a>
       <a href="#roadmap">Node library</a>
       <a href="#quickstart">Get started</a>
@@ -1225,20 +1226,24 @@ footer{
     <div>
 
       <div class="eyebrow">
-        OPEN SOURCE · VISUAL CANVAS · APACHE 2.0
+        OPEN SOURCE · APACHE 2.0 · SELF-HOSTED
       </div>
 
       <h1>
-        Design, test, and deploy<br>
-        <em>AI agent harnesses.</em>
+        An AI assistant that<br>
+        <em>thinks before it acts.</em>
       </h1>
 
       <p class="hero-sub">
-        Pick the nodes your agent needs. Draw the graph. Run on any framework.
+        Meet Aielia — she answers a quick question in one step, and stops for your
+        approval before she sends an email, pays an invoice, or runs a command.
       </p>
 
       <p class="lede">
-        A workflow routes prompts. A harness governs what your agent believes, what it's allowed to do, and how it recovers. Build one on a canvas, compile to any framework, trace every decision with Langfuse, and deploy as a REST endpoint, MCP tool, or A2A agent.
+        Every turn runs the full 11-layer <strong>harness</strong>: a control architecture
+        that governs what the agent believes, what it's allowed to do, how it catches its
+        own mistakes, and what it learns. Underneath the assistant is a visual builder for
+        the same 11 layers — draw the graph, compile to any framework, trace every decision.
       </p>
 
       <div class="runtime-pills">
@@ -1249,12 +1254,18 @@ footer{
       </div>
 
       <div class="cta-row">
-        <a class="btn js-gh-star" href="https://github.com/3IVIS/buildaharness">
-          Star on GitHub<span class="gh-count" data-gh-stars style="padding-left:10px;margin-left:4px;border-left:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.65);font-size:11px;">&#9733; 0</span>
+        <a class="btn" href="/try">
+          Try Aielia in your browser →
         </a>
 
-        <a class="btn" href="#examples" style="background:transparent;color:var(--ink);border-color:var(--line);">
-          See what you can build →
+        <button type="button" class="btn js-copy-cmd" data-copy="npx @buildaharness/personal-assistant"
+          style="background:transparent;color:var(--ink);border-color:var(--line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;cursor:pointer;">
+          npx @buildaharness/personal-assistant
+        </button>
+
+        <a class="btn js-gh-star" href="https://github.com/3IVIS/buildaharness"
+          style="background:transparent;color:var(--ink);border-color:var(--line);">
+          Star on GitHub<span class="gh-count" data-gh-stars style="padding-left:10px;margin-left:4px;border-left:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.65);font-size:11px;">&#9733; 0</span>
         </a>
 
       </div>
@@ -2414,6 +2425,22 @@ docker compose up</pre>
     .then(r=>r.ok?r.json():null)
     .then(d=>{if(!d||typeof d.stargazers_count!=="number")return;paint(d.stargazers_count);try{sessionStorage.setItem(CACHE_KEY,JSON.stringify({n:d.stargazers_count,t:Date.now()}));}catch(e){}})
     .catch(()=>{});
+})();
+</script>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.js-copy-cmd');
+  if(!btns.length||!navigator.clipboard)return;
+  btns.forEach(function(btn){
+    var original=btn.textContent;
+    btn.addEventListener('click',function(){
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')||original.trim()).then(function(){
+        btn.textContent='copied ✓';
+        setTimeout(function(){btn.textContent=original;},1600);
+      }).catch(function(){});
+    });
+  });
 })();
 </script>
 

@@ -51,17 +51,17 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness</title>
+<title>Aielia — Open-Source AI Assistant That Asks Before It Acts | Build A Harness</title>
 
-<meta name="description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+<meta name="description" content="Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. CLI, browser, and desktop. Apache 2.0.">
 
 <link rel="canonical" href="https://buildaharness.com/personal-assistant">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buildaharness.com/personal-assistant">
 <meta property="og:site_name" content="Build A Harness">
-<meta property="og:title" content="Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness">
-<meta property="og:description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+<meta property="og:title" content="Aielia — Open-Source AI Assistant That Asks Before It Acts | Build A Harness">
+<meta property="og:description" content="Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. CLI, browser, and desktop. Apache 2.0.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -69,8 +69,8 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness">
-<meta name="twitter:description" content="Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop. Apache 2.0.">
+<meta name="twitter:title" content="Aielia — Open-Source AI Assistant That Asks Before It Acts | Build A Harness">
+<meta name="twitter:description" content="Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. CLI, browser, and desktop. Apache 2.0.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
 <meta name="twitter:image:alt" content="Build A Harness — visual canvas for harness engineering and AI agent harnesses.">
 
@@ -95,7 +95,8 @@
     {
       "@type": "SoftwareApplication",
       "@id": "https://buildaharness.com/personal-assistant#software",
-      "name": "Personal Assistant",
+      "name": "Aielia",
+      "alternateName": "Build A Harness Personal Assistant",
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "AI chat assistant built on an agent harness",
       "operatingSystem": "Web, macOS, Linux, Windows",
@@ -115,7 +116,7 @@
       "@type": "WebPage",
       "@id": "https://buildaharness.com/personal-assistant#webpage",
       "url": "https://buildaharness.com/personal-assistant",
-      "name": "Build A Harness — Personal Assistant: A Chat Agent Built on the 11-Layer Harness",
+      "name": "Aielia — Open-Source AI Assistant That Asks Before It Acts | Build A Harness",
       "description": "Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop.",
       "datePublished": "2026-07-14",
       "dateModified": "2026-07-14",
@@ -522,6 +523,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <span class="name">Build A Harness</span>
     </a>
     <nav class="nav" id="siteNav">
+      <a href="/try">Try Aielia</a>
       <a href="/#why">Harness</a>
       <a href="/#roadmap">Node library</a>
       <a href="/#runtimes">Frameworks</a>
@@ -548,15 +550,15 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Personal Assistant</span>
     </nav>
 
-    <div class="eyebrow">BUILD A HARNESS · PERSONAL ASSISTANT · APACHE 2.0</div>
+    <div class="eyebrow">BUILD A HARNESS · AIELIA · APACHE 2.0</div>
 
     <h1>
-      A chat assistant with<br>
+      Aielia — a chat assistant with<br>
       <em>an actual harness underneath.</em>
     </h1>
 
     <p class="hero-lede">
-      Personal Assistant is Build A Harness's own reference application — an everyday chat agent that walks the full 11-layer harness on real conversation, skips the bookkeeping entirely for a one-shot fact lookup, and stops to ask before it actually sends that email.
+      Aielia is Build A Harness's own assistant — an everyday chat agent that walks the full 11-layer harness on real conversation, skips the bookkeeping entirely for a one-shot fact lookup, and stops to ask before it actually sends that email.
     </p>
 
     <div class="stat-row" role="list">
@@ -575,8 +577,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </div>
 
     <div class="cta-row">
-      <a class="btn" href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant">Get the package — GitHub</a>
-      <a class="btn btn-ghost" href="/">See Build A Harness →</a>
+      <a class="btn" href="/try">Try in your browser →</a>
+      <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/personal-assistant"
+        style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/personal-assistant</button>
       <a class="btn btn-ghost" href="#design">How it's built ↓</a>
     </div>
 
@@ -705,8 +708,29 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </p>
 
     <div class="tool-callout" style="margin-top:28px;background:var(--paper);">
-      <div class="tool-callout-label">Why it matters</div>
-      <p><a href="/harness-comparison" style="color:var(--accent-ink);">The harness comparison page</a> finds Output &amp; Reviewer Pass shipping in none of Hermes Agent, Kilo Code, or OpenClaw, and Control State at best partial in any of them — never both together, complete, the way every non-trivial turn here gets.</p>
+      <div class="tool-callout-label">vs. the most-used open agents</div>
+      <p>The <a href="/harness-comparison" style="color:var(--accent-ink);">harness comparison</a> maps Hermes Agent, Kilo Code, and OpenClaw against this architecture. None of the three ships both a tiered Control State resolver and a reviewer/output gate. Aielia ships both, plus:</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Hermes · Kilo · OpenClaw</h3>
+        <ul>
+          <li>Tool runs when the model decides to; approval, where it exists, is a coarse allow-list</li>
+          <li>No formal tiered Control State resolver</li>
+          <li>No output/reviewer-pass quality gate before a reply goes out</li>
+          <li>Risk handling is best-effort; a classifier failure is not a defined state</li>
+        </ul>
+      </div>
+      <div class="compare-card highlight">
+        <h3>Aielia</h3>
+        <ul>
+          <li>Every read-only tool call is checked against a per-turn ControlState before it runs — deterministic ALLOW / DENY / REQUIRE_APPROVAL</li>
+          <li>Reviewer Pass — 3-lens review + output-contract validation on the way out</li>
+          <li>Fail-safe classification — a classifier error requires approval, never defaults to low-risk</li>
+          <li>Web results and shell output are wrapped as data the model is told never to obey</li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -976,13 +1000,14 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
   <div class="wrap">
     <div class="cta-inner">
       <div class="cta-text">
-        <div class="section-label">BUILD A HARNESS · PERSONAL ASSISTANT</div>
+        <div class="section-label">BUILD A HARNESS · AIELIA</div>
         <h2>The harness, <em>talking back.</em></h2>
-        <p>A working reference application, not a demo — the same 11-layer harness architecture, risk gating, tool staging, and crash-safe checkpointing running on real everyday conversations. Apache 2.0. Runs from a terminal, a browser tab, or a native desktop app.</p>
+        <p>A working assistant, not a demo — the same 11-layer harness architecture, risk gating, tool staging, and crash-safe checkpointing running on real everyday conversations. Apache 2.0. Runs from a terminal, a browser tab, or a native desktop app.</p>
       </div>
       <div class="cta-actions">
-        <a class="btn" href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant">Get the package — GitHub</a>
-        <a class="btn btn-ghost" href="/harness-engineering">Read the harness engineering discipline →</a>
+        <a class="btn" href="/try">Try in your browser →</a>
+        <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/personal-assistant"
+          style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/personal-assistant</button>
         <a class="btn btn-ghost" href="/harness-comparison">See the harness comparison →</a>
       </div>
     </div>
@@ -1010,6 +1035,22 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.js-copy-cmd');
+  if(!btns.length||!navigator.clipboard)return;
+  btns.forEach(function(btn){
+    var original=btn.textContent;
+    btn.addEventListener('click',function(){
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')||original.trim()).then(function(){
+        btn.textContent='copied ✓';
+        setTimeout(function(){btn.textContent=original;},1600);
+      }).catch(function(){});
+    });
+  });
+})();
+</script>
 
 <script>
 (function(){
