@@ -145,7 +145,9 @@
   --series-hermes:#2a78d6;
   --series-kilo:#1baf7a;
   --series-openclaw:#eda100;
+  --series-aielia:oklch(.46 .16 268);
 }
+.cmp-table th.col-aielia,.cmp-table td.col-aielia{border-left:2px solid var(--series-aielia);background:color-mix(in oklch,var(--series-aielia) 5%,transparent);}
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
@@ -357,7 +359,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
       <div class="stat" role="listitem">
         <span class="stat-n">3</span>
-        <span class="stat-l">layers where any agent reaches full coverage at all — Execution (Kilo), Memory and Learning (both Hermes)</span>
+        <span class="stat-l">layers where any of the three reaches full coverage at all — Execution (Kilo), Memory and Learning (both Hermes)</span>
       </div>
       <div class="stat" role="listitem">
         <span class="stat-n">0/3</span>
@@ -461,6 +463,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <th><span class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</span></th>
           <th><span class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</span></th>
           <th><span class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</span></th>
+          <th class="col-aielia"><span class="agent-label"><span class="dot" style="background:var(--series-aielia);"></span>Aielia <span style="opacity:.6;font-weight:400;">(reference)</span></span></th>
         </tr>
       </thead>
       <tbody>
@@ -469,73 +472,84 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Agent "modes" (code/ask/plan/debug) fix tools + instructions per task</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Messaging channel/persona selects context — not a formal constraint system</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">Per-turn intent classification sets risk level + tool scope; not a formal mode system</span></td>
         </tr>
         <tr>
           <td class="row-label">2. World Model</td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Raw history only</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static Memory Bank files</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static persona/bootstrap files</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">Typed beliefs with provenance + staleness, rebuilt each turn from the persisted fact store</span></td>
         </tr>
         <tr>
           <td class="row-label">3. Reasoning</td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">Hypothesis + evidence + contradiction layers run on every non-trivial turn</span></td>
         </tr>
         <tr>
           <td class="row-label">4. Control State</td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Binary approval gate, not a tiered resolver</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Queueing prevents races, isn't a risk control</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">5-tier resolver → NORMAL / CAUTIOUS / BLOCKED, checked before every tool call</span></td>
         </tr>
         <tr>
           <td class="row-label">5. Planning</td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Subagents get their own capped budget via delegate_task — no full dependency graph</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Subagent delegation for isolated subtasks</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">Task-graph decomposition + templated plans; dependency-aware, not a full scheduler</span></td>
         </tr>
         <tr>
           <td class="row-label">6. Execution</td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">70+ tools, ~28 toolsets, 6 backends, concurrent dispatch</span></td>
           <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Git-snapshot checkpoints + diff-repair + tool-call translation</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Broadest action surface (device/OS tools), weakly gated</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">~7 tools (read / list / write / shell / web_search / fetch_url / send_email) — every mutating one staged for approval</span></td>
         </tr>
         <tr>
           <td class="row-label">7. Verification</td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Informal completion check + diff-repair</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">9-layer verification pass before a result is accepted</span></td>
         </tr>
         <tr>
           <td class="row-label">8. Recovery</td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Provider fallback, fixed iteration budget</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Checkpoint rollback, diff-repair</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry only</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">Replanning + recovery-sequence memory + crash-safe checkpoint resume</span></td>
         </tr>
         <tr>
           <td class="row-label">9. Memory</td>
           <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">SQLite+FTS5, context compression with a 20-message floor</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Memory Bank, context condensing</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Raw JSONL transcript, token-limit + compaction reserve</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">Cross-session transcript + typed fact store; linear search (an inverted index is planned)</span></td>
         </tr>
         <tr>
           <td class="row-label">10. Learning</td>
           <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Self-improving skills — the project's headline differentiator</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Explicitly static — no self-improvement</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">ExperienceStore tunes strategy weights / decompositions / recovery sequences — internal, not authored skills</span></td>
         </tr>
         <tr>
           <td class="row-label">11. Output &amp; Reviewer Pass</td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described — human review substitutes</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Reply shaping is cosmetic, not a quality gate</span></td>
+          <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">3-lens reviewer (consistency, adversarial, abstraction fit) + output-contract validation before a reply leaves</span></td>
         </tr>
       </tbody>
     </table>
     </div>
 
     <div class="matrix-callout">
-      <p><strong>Reading the pattern:</strong> Execution, Memory, and Learning are the only layers where any agent reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage across all three. Recovery is the one layer where all three have at least a partial mechanism — none reaches full coverage, but none is fully absent either. The remaining five — Caller State, World Model, Control State, Planning, and Verification — are a mix of partial and fully-absent across the three, with no agent building any of them out completely. Which is a fair description of where most production agents are today, popular or not.</p>
+      <p><strong>Reading the pattern:</strong> Across the three most-used agents, Execution, Memory, and Learning are the only layers where any reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage. Recovery is the one layer where all three have at least a partial mechanism. The remaining five — Caller State, World Model, Control State, Planning, and Verification — are a mix of partial and fully-absent, with no agent building any of them out completely. Which is a fair description of where most production agents are today, popular or not. The <span style="border-bottom:2px solid var(--series-aielia);">Aielia</span> column is the reference point — Build A Harness's own assistant, included to show what the thin layers look like when something actually ships them (Reasoning, Control State, Verification, and the Reviewer Pass at full coverage); it is the newest and least battle-tested of the four.</p>
     </div>
 
     <h2 style="margin-top:48px;">What it's actually like <em>to run one.</em></h2>
@@ -549,6 +563,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <th><span class="agent-label"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</span></th>
           <th><span class="agent-label"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</span></th>
           <th><span class="agent-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</span></th>
+          <th class="col-aielia"><span class="agent-label"><span class="dot" style="background:var(--series-aielia);"></span>Aielia <span style="opacity:.6;font-weight:400;">(reference)</span></span></th>
         </tr>
       </thead>
       <tbody>
@@ -557,24 +572,28 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td>18+ providers, open-weight models</td>
           <td>500+ models, 60+ providers via the Kilo Gateway</td>
           <td>Claude, GPT, DeepSeek, or local — OAuth piggyback on existing subscriptions</td>
+          <td class="col-aielia">Any Anthropic or OpenAI-compatible endpoint; 300+ models via the OpenRouter backend; keyless through a local <code>claude</code> CLI</td>
         </tr>
         <tr>
           <td class="row-label">Primary reach</td>
           <td>CLI, 20 messaging platforms, IDE (ACP), API, cron</td>
           <td>VS Code, JetBrains, CLI, cloud agent, mobile</td>
           <td>WhatsApp, Telegram, Discord, Signal, iMessage, Slack, Teams, native device apps</td>
+          <td class="col-aielia">CLI, browser (hosted <a href="/try" style="color:var(--accent-ink);">/try</a>), Tauri desktop — no messaging or IDE surface yet</td>
         </tr>
         <tr>
           <td class="row-label">Business model</td>
           <td>Free, MIT; runs on a few-dollar-a-month VPS</td>
           <td>Free/BYOK or Kilo credits, zero markup on provider rates; $8M seed round</td>
           <td>Free, MIT, self-hosted; foundation stewardship after the founder joined OpenAI</td>
+          <td class="col-aielia">Free, Apache 2.0, self-hosted; BYO key or keyless via <code>claude-cli</code>; no funding round</td>
         </tr>
         <tr>
           <td class="row-label">Known risk</td>
           <td>Newest of the three (Feb 2026) — memory and self-improving skills lack a long track record</td>
           <td>Parsing reliability is a constant fight across a 500-model matrix — not a novel loop, an inherited one</td>
           <td>Critical CVEs up to <a href="https://www.armosec.io/blog/cve-2026-32922-openclaw-privilege-escalation-cloud-security/" title="ARMO: CVE-2026-32922, CVSS 9.9, privilege escalation to RCE" style="color:var(--accent-ink);">9.9 CVSS</a>, <a href="https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting" title="Koi Security: ClawHavoc — 341 malicious ClawHub skills disclosed" style="color:var(--accent-ink);">341 malicious marketplace skills</a> disclosed, prompt-injection susceptible; restricted for state use in China</td>
+          <td class="col-aielia">Newest and least battle-tested of the four; early-stage (<code>v0.2.0</code>), not an audited security product — the harness reduces blast radius, it doesn't eliminate it</td>
         </tr>
       </tbody>
     </table>
