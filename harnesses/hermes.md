@@ -1,6 +1,11 @@
 # Hermes Agent
 
-Hermes Agent is an open-source AI agent framework built by Nous Research, released under the MIT license in February 2026. It reportedly hit around 140,000 GitHub stars within its first three months and overtook OpenClaw in mid-May 2026 as the top agent by daily token volume on OpenRouter (roughly 224 billion tokens/day vs. OpenClaw's 186 billion).
+> **Research notes.** Background for the layer-by-layer mapping on
+> [buildaharness.com/harness-comparison](https://buildaharness.com/harness-comparison),
+> which is the canonical, maintained version — token-volume and star figures there
+> are refreshed from OpenRouter and GitHub and take precedence over this file.
+
+Hermes Agent is an open-source AI agent framework built by Nous Research, released under the MIT license in February 2026. By late June 2026 it had roughly 205,000 GitHub stars, and it overtook OpenClaw in mid-May 2026 as the top agent by daily token volume on OpenRouter (around 770 billion tokens/day vs. OpenClaw's 161 billion as of July 2026).
 
 ## Architecture Overview
 

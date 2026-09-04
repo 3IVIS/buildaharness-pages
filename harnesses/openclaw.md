@@ -1,5 +1,9 @@
 # OpenClaw
 
+> **Research notes.** Background for the layer-by-layer mapping on
+> [buildaharness.com/harness-comparison](https://buildaharness.com/harness-comparison),
+> which is the canonical, maintained version — figures there take precedence over this file.
+
 OpenClaw (originally released as Clawdbot in November 2025, briefly renamed Moltbot, then OpenClaw) is a free and open-source autonomous AI agent built by Austrian developer Peter Steinberger, distributed under the MIT license. It runs locally and connects to an external LLM (Claude, GPT, DeepSeek, or a local model), with messaging apps as its primary interface. As of March 2026 the project had roughly 247,000 GitHub stars and 47,700 forks, with an estimated half a million installs worldwide. On February 14, 2026, Steinberger announced he was joining OpenAI, with future stewardship of OpenClaw moving to a non-profit foundation.
 
 ## The Agent Loop

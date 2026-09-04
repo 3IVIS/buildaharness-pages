@@ -169,12 +169,12 @@
         {
           "@type": "Question",
           "name": "How do I get started with harness engineering?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The fastest path is Build A Harness: run ./scripts/setup-env.sh && docker compose up to start all nine services (canvas on localhost:3000, API on localhost:8000, Langfuse on localhost:3001). Five ready-made harnesses are included to fork: RAG Agent, Content Moderation + Human Review, Parallel Risk Assessment, Research Crew, and Debate Agent. Draw your architecture on the canvas, compile to FlowSpec, and run on any supported framework. No cloud account required. Apache 2.0." }
+          "acceptedAnswer": { "@type": "Answer", "text": "The fastest path is Build A Harness: run ./scripts/setup-env.sh && docker compose up to start all twelve services (canvas on localhost:3000, API on localhost:8000, Langfuse on localhost:3001). Five ready-made harnesses are included to fork: RAG Agent, Content Moderation + Human Review, Parallel Risk Assessment, Research Crew, and Debate Agent. Draw your architecture on the canvas, compile to FlowSpec, and run on any supported framework. No cloud account required. Apache 2.0." }
         },
         {
           "@type": "Question",
           "name": "What is FlowSpec?",
-          "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs." }
+          "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs." }
         }
       ]
     }
@@ -512,13 +512,11 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <a href="/try">Try Aielia</a>
       <a href="/#why">Harness</a>
       <a href="/#roadmap">Node library</a>
-      <a href="/#quickstart">Get started</a>
-      <a href="/#flowspec">How it works</a>
       <a href="/#runtimes">Frameworks</a>
-      <a href="/ai_agent_frameworks.html">Frameworks index</a>
-      <a href="/#examples">Examples</a>
-      <a href="/harness-engineering" style="color:var(--accent-ink);">Harness engineering</a>
       <a href="/personal-assistant">Personal Assistant</a>
+      <a href="/harness-comparison">Harness comparison</a>
+      <a href="/harness-engineering" style="color:var(--accent-ink);">Harness engineering</a>
+      <a href="/harness-architecture">Architecture</a>
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="hdr-actions">
@@ -538,7 +536,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Harness Engineering Tool</span>
     </nav>
 
-    <div class="eyebrow">BUILD A HARNESS · THE HARNESS ENGINEERING TOOL · v0.8.0 · APACHE 2.0</div>
+    <div class="eyebrow">BUILD A HARNESS · THE HARNESS ENGINEERING TOOL · APACHE 2.0</div>
 
     <h1>
       The only tool built for<br>
@@ -717,7 +715,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="layer-card" style="border-left-color:oklch(.46 .18 310)">
         <span class="layer-num">Layer 4</span>
         <span class="layer-name">Control State</span>
-        <span class="layer-desc">A five-tier state resolver (NORMAL → CAUTIOUS → RESTRICTED → BLOCKED → HALT), diagnostic health vectors that drive it, and deadlock detection that stops escalation loops.</span>
+        <span class="layer-desc">A five-tier resolver that resolves to one of three states (NORMAL → CAUTIOUS → BLOCKED), diagnostic health vectors that drive it, and deadlock detection that stops escalation loops.</span>
         <span class="layer-without">Without it: no brakes — the agent escalates indefinitely when conditions degrade.</span>
       </div>
 
@@ -731,14 +729,14 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="layer-card" style="border-left-color:oklch(.52 .14 60)">
         <span class="layer-num">Layer 6</span>
         <span class="layer-name">Execution</span>
-        <span class="layer-desc">VOI-gated actions, a pre-execution review gate across five dimensions (safety, relevance, reversibility, resource, and alignment), and reversibility classification before any action fires.</span>
+        <span class="layer-desc">VOI-gated actions, a pre-execution review gate across five dimensions (task alignment, world-model consistency, output-contract precheck, code quality, hypothesis compatibility), and reversibility classification before any action fires.</span>
         <span class="layer-without">Without it: the agent takes irreversible actions without assessing the cost first.</span>
       </div>
 
       <div class="layer-card" style="border-left-color:oklch(.46 .18 20)">
         <span class="layer-num">Layer 7</span>
         <span class="layer-name">Verification</span>
-        <span class="layer-desc">Nine verification layers, an adequacy critic, and an adversarial reviewer pass that checks outputs before they land — catching errors the model itself would not flag.</span>
+        <span class="layer-desc">Nine verification layers (syntax, unit, integration, consistency, requirements, assumptions, goal correctness, evidence sufficiency, output-contract precheck) and an adequacy critic that check outputs before they land — catching errors the model itself would not flag.</span>
         <span class="layer-without">Without it: bad outputs reach users or downstream systems unchecked.</span>
       </div>
 
@@ -766,7 +764,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="layer-card" style="border-left-color:oklch(.46 .14 148)">
         <span class="layer-num">Layer 11</span>
         <span class="layer-name">Output &amp; Reviewer Pass</span>
-        <span class="layer-desc">Output contract validation and a three-lens reviewer pass (correctness, completeness, safety) that signs off on the final response before it leaves the harness.</span>
+        <span class="layer-desc">Output contract validation and a three-lens reviewer pass (consistency, adversarial, abstraction fit) that signs off on the final response before it leaves the harness.</span>
         <span class="layer-without">Without it: outputs that pass verification still reach users without a final quality gate.</span>
       </div>
 
@@ -774,7 +772,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="tool-callout" style="margin-top:28px;background:var(--paper);">
       <div class="tool-callout-label">In Build A Harness</div>
-      <p>All 11 layers are implemented as drawable, composable node types — tested across 759 harness-layer tests. You do not write the infrastructure: Build A Harness ships it. Draw the architecture on the canvas; the tool handles the rest. <a href="/" style="color:var(--accent-ink);">See the full node library →</a></p>
+      <p>All 11 layers are implemented as drawable, composable node types — tested, with 10 architectural invariants enforced as a CI gate. You do not write the infrastructure: Build A Harness ships it. Draw the architecture on the canvas; the tool handles the rest. <a href="/" style="color:var(--accent-ink);">See the full node library →</a></p>
     </div>
 
   </div>
@@ -865,7 +863,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <pre><span style="color:var(--ink-3)"># 1. Generate secrets and configure environment</span>
 ./scripts/setup-env.sh
 
-<span style="color:var(--ink-3)"># 2. Start all nine services</span>
+<span style="color:var(--ink-3)"># 2. Start all twelve services</span>
 docker compose up</pre>
     </div>
 
@@ -928,7 +926,7 @@ docker compose up</pre>
 
       <div class="faq-item">
         <h3>What is FlowSpec?</h3>
-        <p>FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
+        <p>FlowSpec is the runtime-neutral JSON format at the centre of Build A Harness. You design a harness once on the visual canvas and it compiles to a FlowSpec file. That single file then compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
       </div>
 
       <div class="faq-item">
@@ -951,9 +949,9 @@ docker compose up</pre>
   <div class="wrap">
     <div class="cta-inner">
       <div class="cta-text">
-        <div class="section-label">BUILD A HARNESS · v0.8.0 · PUBLIC ALPHA</div>
+        <div class="section-label">BUILD A HARNESS · PUBLIC ALPHA</div>
         <h2>The open-source tool<br>for <em>harness engineering.</em></h2>
-        <p>Visual canvas, 27 node types, 4 framework adapters, built-in Langfuse observability, HITL controls, REST/MCP/A2A deployment, and the full 11-layer harness architecture — implemented and tested (759 harness-layer tests). Apache 2.0. Runs locally via Docker.</p>
+        <p>Visual canvas, 27 node types, 4 framework adapters, built-in Langfuse observability, HITL controls, REST/MCP/A2A deployment, and the full 11-layer harness architecture — implemented and tested, with 10 architectural invariants enforced as a CI gate. Apache 2.0. Runs locally via Docker.</p>
       </div>
       <div class="cta-actions">
         <a class="btn" href="https://github.com/3IVIS/buildaharness">Star on GitHub</a>
