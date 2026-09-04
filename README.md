@@ -1,18 +1,23 @@
 # Build A Harness
 
-Open-source visual canvas for production AI agent harnesses. Draw workflows on a canvas, compile to any major AI framework, trace every decision. Apache 2.0.
+Static marketing site for **Build A Harness** — an open-source AI assistant (Aielia)
+that runs an 11-layer harness every turn and stops for your approval before it acts,
+plus a visual builder for the same architecture that compiles to any major AI framework.
+Apache 2.0.
 
-**Live site:** https://buildaharness.com  
-**Repository:** https://github.com/3IVIS/buildaharness
+**Live site:** https://buildaharness.com
+**Product repository:** https://github.com/3IVIS/buildaharness
 
-## What ships today (v0.8.0)
+## What the product ships today
 
-- Visual canvas with 14 node types
-- FlowSpec v0.2.0 — open, portable JSON format
+- **Aielia**, the personal assistant — `npx @buildaharness/personal-assistant`, or the
+  hosted browser build at https://buildaharness.com/try
+- Visual canvas with 27 node types (14 execution + 13 harness)
+- FlowSpec v1.0.0 — open, portable JSON format
 - 4 framework adapters: LangGraph, CrewAI, Mastra, Microsoft Agent Framework
 - Langfuse observability across all 4 runtimes
 - HITL pause/resume, REST/MCP/A2A deployment
-- 9 services, single `docker compose up`
+- 12 services, single `docker compose up`
 
 ## Supported runtimes
 

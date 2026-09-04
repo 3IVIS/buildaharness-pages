@@ -100,10 +100,11 @@
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "AI chat assistant built on an agent harness",
       "operatingSystem": "Web, macOS, Linux, Windows",
-      "softwareVersion": "0.1.0",
-      "description": "Personal Assistant is a general-purpose, everyday-use chat agent that walks the full 11-layer Build A Harness architecture on real conversation, skips it entirely for a one-shot fact lookup, and gates a real email send or shell command behind explicit approval. Ships as a terminal CLI, a browser chat UI, and a native desktop app, all sharing one core.",
+      "softwareVersion": "0.2.1",
+      "description": "Aielia is a general-purpose, everyday-use chat agent that walks the full 11-layer Build A Harness architecture on real conversation, skips it entirely for a one-shot fact lookup, and gates a real email send or shell command behind explicit approval. Ships as a terminal CLI, a browser chat UI, and a native desktop app, all sharing one core.",
       "url": "https://buildaharness.com/personal-assistant",
-      "downloadUrl": "https://github.com/3IVIS/buildaharness",
+      "downloadUrl": "https://www.npmjs.com/package/@buildaharness/personal-assistant",
+      "installUrl": "https://buildaharness.com/try",
       "softwareRequirements": "Node.js (CLI/browser); Rust toolchain only for building the native desktop app",
       "programmingLanguage": ["TypeScript"],
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -117,9 +118,9 @@
       "@id": "https://buildaharness.com/personal-assistant#webpage",
       "url": "https://buildaharness.com/personal-assistant",
       "name": "Aielia — Open-Source AI Assistant That Asks Before It Acts | Build A Harness",
-      "description": "Personal Assistant is Build A Harness's own reference chat agent — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop.",
+      "description": "Aielia is Build A Harness's own AI assistant — walks the full 11-layer harness on real conversation, gates risky actions behind approval, and shares one core across CLI, browser, and desktop.",
       "datePublished": "2026-07-14",
-      "dateModified": "2026-07-14",
+      "dateModified": "2026-09-04",
       "publisher": { "@id": "https://buildaharness.com/#org" },
       "breadcrumb": { "@id": "https://buildaharness.com/personal-assistant#breadcrumb" }
     },
@@ -169,7 +170,7 @@
         {
           "@type": "Question",
           "name": "What stops file and shell access from being dangerous?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; write_file always stages instead of executing. Shell access is gated on every single call with no 'safe subset', runs with an env allowlist (PATH/HOME/LANG only), a hard timeout, and output truncation. Tool output from the shell or the web is wrapped as untrusted content before it re-enters the conversation. None of that makes shell access risk-free — these mitigations make it safer, not a substitute for deciding whether to enable it at all. This is an early-stage reference app (v0.1.0), not an independently audited security boundary." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; write_file always stages instead of executing. Shell access is gated on every single call with no 'safe subset', runs with an env allowlist (PATH/HOME/LANG only), a hard timeout, and output truncation. Tool output from the shell or the web is wrapped as untrusted content before it re-enters the conversation. None of that makes shell access risk-free — these mitigations make it safer, not a substitute for deciding whether to enable it at all. This is an early-stage project (package v0.2.1), not an independently audited security boundary." }
         }
       ]
     }
@@ -527,10 +528,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <a href="/#why">Harness</a>
       <a href="/#roadmap">Node library</a>
       <a href="/#runtimes">Frameworks</a>
+      <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a>
+      <a href="/harness-comparison">Harness comparison</a>
       <a href="/harness-engineering">Harness engineering</a>
       <a href="/harness-architecture">Architecture</a>
-      <a href="/harness-comparison">Harness comparison</a>
-      <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a>
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="hdr-actions">
@@ -616,7 +617,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </p>
 
     <p>
-      One more piece runs earlier than that, inside the tool-calling loop itself: every read-only tool call the model makes (a search, a file read) is checked first against a live, turn-scoped <code style="font-size:13px">ControlState</code> — deterministic ALLOW / DENY / REQUIRE_APPROVAL, built from the outcomes of every earlier tool call the same turn already made, using the same evidence-and-diagnostics machinery the full harness run uses. A developing failure pattern (several tool calls failing back to back) can trip a real deny mid-turn instead of only showing up after the reply is already assembled. <code style="font-size:13px">write_file</code> and <code style="font-size:13px">run_shell_command</code> stay unconditionally staged for human approval regardless — that gate doesn't change.
+      One more piece runs earlier than that, inside the tool-calling loop itself: every read-only tool call the model makes (a search, a file read) is checked first against a live, turn-scoped <code style="font-size:13px">ControlState</code> — deterministic ALLOW / DENY / REQUIRE_APPROVAL, built from the outcomes of every earlier tool call the same turn already made, using the same evidence-and-diagnostics machinery the full harness run uses. A developing failure pattern (several tool calls failing back to back) can trip a real deny mid-turn instead of only showing up after the reply is already assembled. <code style="font-size:13px">write_file</code>, <code style="font-size:13px">run_shell_command</code>, and <code style="font-size:13px">send_email</code> stay unconditionally staged for human approval regardless — that gate doesn't change.
     </p>
 
   </div>
@@ -752,7 +753,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </p>
 
     <p>
-      <strong>Tool-call staging.</strong> <code style="font-size:14px">write_file</code> and <code style="font-size:14px">run_shell_command</code> never execute inline, regardless of what the message looked like — a request like "organize my notes into a summary file" doesn't trip the message-level gate, yet still performs a real write. Every call stages a proposal instead — the exact path and content, or the exact command and working directory — and the turn returns <code style="font-size:14px">needs_approval</code> with a <code style="font-size:14px">pendingActionId</code>. Approving resumes by ID and applies the <em>exact</em> staged action directly, with no second LLM call able to improvise something different from what was shown for approval.
+      <strong>Tool-call staging.</strong> <code style="font-size:14px">write_file</code>, <code style="font-size:14px">run_shell_command</code>, and <code style="font-size:14px">send_email</code> never execute inline, regardless of what the message looked like — a request like "organize my notes into a summary file" doesn't trip the message-level gate, yet still performs a real write. Every call stages a proposal instead — the exact path and content, the exact command and working directory, or the exact recipient, subject, and body — and the turn returns <code style="font-size:14px">needs_approval</code> with a <code style="font-size:14px">pendingActionId</code>. Approving resumes by ID and applies the <em>exact</em> staged action directly, with no second LLM call able to improvise something different from what was shown for approval. <code style="font-size:14px">send_email</code> is transport-agnostic — the core package ships Resend (HTTP) and SMTP (nodemailer) reference senders, and the hosted <code style="font-size:13px">/try</code> build stages but never actually sends.
     </p>
 
     <div class="quickstart-box">
@@ -889,22 +890,19 @@ await assistant.turn('Summarize this into notes.md', {
   <div class="wrap prose">
 
     <div class="section-label">RUN IT</div>
-    <h2>Three ways to run it — <em>pick the one that fits.</em></h2>
+    <h2>Run it — <em>pick the one that fits.</em></h2>
 
     <p>
-      All three front ends live in the same monorepo and need the same one-time setup first: the two packages Personal Assistant is built on (<code style="font-size:13px">@buildaharness/harness</code>, <code style="font-size:13px">@buildaharness/runtime</code>) ship as compiled output, so they need building once before anything that imports them will run.
+      <strong>Terminal — nothing to clone.</strong> The CLI is published to npm; <code style="font-size:13px">npx</code> fetches it and its dependencies (<code style="font-size:13px">@buildaharness/harness</code>, <code style="font-size:13px">@buildaharness/runtime</code>) for you. First run walks you through picking a model — reuse an existing <code style="font-size:13px">claude</code> CLI login with no API key, or paste an Anthropic / OpenAI / OpenRouter key.
     </p>
 
     <div class="quickstart-box">
-      <div class="quickstart-bar">shell — one-time setup</div>
-      <pre>git clone https://github.com/3IVIS/buildaharness
-<span style="color:var(--ink-3)">cd</span> buildaharness
-npm install
-npm run build:harness && npm run build:runtime</pre>
+      <div class="quickstart-bar">shell — no clone</div>
+      <pre>npx @buildaharness/personal-assistant</pre>
     </div>
 
     <p style="margin-top:28px;">
-      <strong>Browser — no server, no build tooling, easiest to try.</strong> Start the chat UI's own dev server and configure everything from its Settings screen — no <code style="font-size:13px">.env</code> file, no self-hosted proxy, no Rust toolchain needed.
+      <strong>Browser — nothing to install.</strong> Open <a href="/try" style="color:var(--accent-ink);">buildaharness.com/try</a>, paste a key in Settings (it stays in your browser), and go. To run the chat UI locally instead, clone the repo (<code style="font-size:13px">git clone https://github.com/3IVIS/buildaharness &amp;&amp; npm install</code>) and start its dev server — configure everything from the Settings screen, no <code style="font-size:13px">.env</code> file, no self-hosted proxy, no Rust toolchain needed.
     </p>
 
     <div class="quickstart-box">
@@ -915,21 +913,21 @@ npm run build:harness && npm run build:runtime</pre>
     </div>
 
     <p style="margin-top:28px;">
-      <strong>Terminal CLI — real files, no browser.</strong> Transcripts, learned facts, and reminders persist under <code style="font-size:13px">~/.buildaharness/personal-assistant/</code> between runs.
+      The CLI keeps real files — transcripts, learned facts, reminders, and checkpoints persist under <code style="font-size:13px">~/.buildaharness/personal-assistant/</code> between runs. Skip the first-run prompt by setting the backend up front:
     </p>
 
     <div class="quickstart-box">
       <div class="quickstart-bar">shell</div>
       <pre><span style="color:var(--ink-3)"># No API key — shells out to an already-authenticated Claude Code session</span>
-ASSISTANT_LLM_BACKEND=claude-cli npm run cli --workspace=packages/personal-assistant
+ASSISTANT_LLM_BACKEND=claude-cli npx @buildaharness/personal-assistant
 
 <span style="color:var(--ink-3)"># Or a direct provider API key</span>
 ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
-  npm run cli --workspace=packages/personal-assistant</pre>
+  npx @buildaharness/personal-assistant</pre>
     </div>
 
     <p style="margin-top:28px;">
-      <strong>Native desktop app — a real window, not a browser tab.</strong> Same chat UI, wrapped in Tauri. This one needs an actual Rust toolchain (<a href="https://rustup.rs" style="color:var(--accent-ink);">rustup</a>; Tauri 2.11 needs <code style="font-size:13px">rustc &gt;= 1.88</code>) — the browser and CLI paths above don't.
+      <strong>Native desktop app — a real window, not a browser tab.</strong> Same chat UI, wrapped in Tauri, built from a clone of the repo. This one needs an actual Rust toolchain (<a href="https://rustup.rs" style="color:var(--accent-ink);">rustup</a>; Tauri 2.11 needs <code style="font-size:13px">rustc &gt;= 1.88</code>) — the browser and CLI paths above don't.
     </p>
 
     <div class="quickstart-box">
@@ -945,7 +943,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
     </div>
 
     <p style="margin-top:20px;">
-      Whichever one you pick: try a plain question first, then something with real consequence — "send an email to my boss saying I quit" — to see the risk gate return <code style="font-size:14px">needs_approval</code> before a single token is spent. This is an early-stage reference application (v0.1.0), not an audited security product — see the file/shell access sections above for exactly what is and isn't gated before turning either on. Apache 2.0, provided as-is per the license. <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant" style="color:var(--accent-ink);">Full README on GitHub →</a>
+      Whichever one you pick: try a plain question first, then something with real consequence — "send an email to my boss saying I quit" — to see the risk gate return <code style="font-size:14px">needs_approval</code> before a single token is spent. This is an early-stage project (package v0.2.1), not an audited security product — see the file/shell access sections above for exactly what is and isn't gated before turning either on. Apache 2.0, provided as-is per the license. <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant" style="color:var(--accent-ink);">Full README on GitHub →</a>
     </p>
 
   </div>
@@ -987,7 +985,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
 
       <div class="faq-item">
         <h3>What stops file and shell access from being dangerous?</h3>
-        <p>Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; <code style="font-size:13px">write_file</code> always stages instead of executing. Shell access is gated on every single call, runs with an environment allowlist, a hard timeout, and output truncation. Content fetched from the shell or the web is wrapped as untrusted before it re-enters the conversation, so it can't be mistaken for an instruction from the user. None of that makes shell access risk-free — it's a real trust decision these mitigations make <em>safer</em>, not a substitute for deciding whether to turn it on at all. This is an early-stage reference app (v0.1.0), not an independently audited security boundary.</p>
+        <p>Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; <code style="font-size:13px">write_file</code> always stages instead of executing. Shell access is gated on every single call, runs with an environment allowlist, a hard timeout, and output truncation. Content fetched from the shell or the web is wrapped as untrusted before it re-enters the conversation, so it can't be mistaken for an instruction from the user. None of that makes shell access risk-free — it's a real trust decision these mitigations make <em>safer</em>, not a substitute for deciding whether to turn it on at all. This is an early-stage project (package v0.2.1), not an independently audited security boundary.</p>
       </div>
 
     </div>

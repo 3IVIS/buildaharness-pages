@@ -77,7 +77,7 @@
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="3IVIS">
-<meta name="keywords" content="AI agent harness, harness engineering, harness engineering tool, visual canvas, LangGraph, CrewAI, Mastra, Microsoft Agent Framework, Langfuse, MCP, A2A, FlowSpec, open source">
+<meta name="keywords" content="open source AI assistant, self-hosted AI assistant, AI assistant with human approval, OpenClaw alternative, Hermes Agent alternative, AI agent harness, harness engineering, visual canvas, LangGraph, CrewAI, Mastra, Microsoft Agent Framework, Langfuse, MCP, A2A, FlowSpec">
 
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -95,15 +95,38 @@
   "@graph": [
     {
       "@type": "SoftwareApplication",
+      "@id": "https://buildaharness.com/#assistant",
+      "name": "Aielia — Build A Harness Personal Assistant",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "AI assistant",
+      "operatingSystem": "macOS, Linux, Windows, Web",
+      "softwareVersion": "0.2.1",
+      "releaseNotes": "Open-source AI assistant that runs an 11-layer harness every turn and stops for approval before it sends email, pays, or runs commands. CLI, browser, and desktop.",
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-09-04",
+      "image": "https://buildaharness.com/og-image.png",
+      "url": "https://buildaharness.com/personal-assistant",
+      "downloadUrl": "https://www.npmjs.com/package/@buildaharness/personal-assistant",
+      "installUrl": "https://buildaharness.com/try",
+      "programmingLanguage": ["TypeScript"],
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "description": "Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command.",
+      "keywords": "open source AI assistant, self-hosted AI assistant, AI assistant with approval, OpenClaw alternative, Hermes Agent alternative, human-in-the-loop AI agent, npx AI assistant",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://buildaharness.com/#org" },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "SoftwareApplication",
       "@id": "https://buildaharness.com/#software",
       "name": "Build A Harness",
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "AI agent orchestration",
       "operatingSystem": "Docker (Linux, macOS, Windows)",
       "softwareVersion": "0.8.0",
-      "releaseNotes": "Public alpha: visual canvas, 4 framework adapters, and Langfuse observability.",
+      "releaseNotes": "Public alpha: assistant, visual canvas, 4 framework adapters, and Langfuse observability.",
       "datePublished": "2025-01-01",
-      "dateModified": "2026-06-21",
+      "dateModified": "2026-09-04",
       "image": "https://buildaharness.com/og-image.png",
       "url": "https://buildaharness.com/",
       "downloadUrl": "https://github.com/3IVIS/buildaharness",
@@ -137,9 +160,9 @@
       "@id": "https://buildaharness.com/#website",
       "name": "Build A Harness",
       "url": "https://buildaharness.com/",
-      "dateModified": "2026-06-21",
+      "dateModified": "2026-09-04",
       "publisher": { "@id": "https://buildaharness.com/#org" },
-      "description": "Open-source visual canvas for production AI agent harnesses."
+      "description": "Open-source AI assistant that stops before it acts, plus a visual canvas for production AI agent harnesses."
     }
   ]
 }
@@ -1193,17 +1216,18 @@ footer{
 
     <nav class="nav" id="siteNav">
       <a href="/try">Try Aielia</a>
+      <a href="#assistant">Assistant</a>
       <a href="#why">Harness</a>
       <a href="#roadmap">Node library</a>
       <a href="#quickstart">Get started</a>
-      <a href="#flowspec">How it works</a>
       <a href="#runtimes">Frameworks</a>
       <a href="#examples">Examples</a>
       <a href="#involved">Contribute</a>
-      <a href="#faq">FAQ</a>
-      <a href="/harness-engineering">Harness engineering</a>
-      <a href="/harness-comparison">Harness comparison</a>
       <a href="/personal-assistant">Personal Assistant</a>
+      <a href="/harness-comparison">Harness comparison</a>
+      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/harness-architecture">Architecture</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
     <div class="hdr-actions">
@@ -1362,6 +1386,73 @@ footer{
 
 </section>
 
+<section class="section alt" id="assistant">
+
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      THE ASSISTANT · AIELIA
+    </div>
+
+    <h2>
+      Talk to it. It <em>stops before it acts.</em>
+    </h2>
+
+    <p class="section-lede">
+      Aielia is the front door to Build A Harness — a general-purpose chat assistant that
+      walks the full 11-layer harness on every real turn. A quick fact lookup stays light.
+      Anything consequential — sending an email, paying, running a shell command, deleting a
+      file — pauses for your approval <em>before</em> a single token is spent.
+    </p>
+
+    <div class="flow-grid">
+
+      <div class="code-card">
+        <div class="code-bar">the risk gate, in practice</div>
+        <pre><code>&gt; What time zone is Tokyo in?
+Japan Standard Time (UTC+9).
+
+&gt; Send an email to my boss saying I quit.
+⚠ needs approval — this looks consequential (send).
+  Reply "approve" to proceed. No model call was made.</code></pre>
+      </div>
+
+      <div class="feature-box">
+        <h3>Why it's different</h3>
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>Per-tool-call control state</strong>
+            <p>Every read-only tool call is checked against a live 5-tier resolver before it runs — deterministic ALLOW / DENY / REQUIRE_APPROVAL, not an advisory hint.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Fail-safe risk classification</strong>
+            <p>A classifier error resolves to "requires approval" — it never defaults to low-risk. Judged in any language, not just English.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Staged effects</strong>
+            <p><code style="font-size:13px">write_file</code>, <code style="font-size:13px">run_shell_command</code>, and <code style="font-size:13px">send_email</code> stage the exact action for approval — no second model call can improvise a different one.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Untrusted-content boundary</strong>
+            <p>Web results and shell output are wrapped as data the model is told never to obey, and survive a crash mid-turn via checkpoint resume.</p>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top:22px;">
+          <a class="btn" href="/try">Try Aielia in your browser →</a>
+          <a class="btn" href="/personal-assistant" style="background:transparent;color:var(--ink);border-color:var(--line);">How it's built →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:14px;color:var(--ink-3);margin-top:28px;font-family:'IBM Plex Mono',monospace;text-align:center;">
+      npx @buildaharness/personal-assistant · CLI, browser, or desktop · one core, one harness · Apache 2.0
+    </p>
+
+  </div>
+
+</section>
+
 <section class="section" id="why">
 
   <div class="wrap">
@@ -1512,7 +1603,7 @@ footer{
             <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> 4 framework adapters — same spec, any runtime</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Langfuse observability — harness traces, all 4 runtimes</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> HITL pause/resume · REST/MCP/A2A deploy</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> FlowSpec v0.2.0 — open, portable JSON format</div>
+            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> FlowSpec v1.0.0 — open, portable JSON format</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Process concepts — pre-seeded task graph scaffolds</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Expert/Intent sidebar toggle — full palette, or click-to-insert templates for common flows</div>
           </div>
@@ -1675,7 +1766,7 @@ docker compose up</pre>
     </div>
 
     <p style="font-size:15px; color:var(--ink-2); margin-top:28px;">
-      Nine services in total. <code style="font-size:13px">scripts/setup-env.sh</code> handles all the secrets and configuration automatically — you only need to provide your LLM API key (or skip it and use a free local model instead).
+      Twelve services in total. <code style="font-size:13px">scripts/setup-env.sh</code> handles all the secrets and configuration automatically — you only need to provide your LLM API key (or skip it and use a free local model instead).
     </p>
 
   </div>
@@ -1703,12 +1794,12 @@ docker compose up</pre>
 
       <div class="runtime-card">
         <h3>OpenAI</h3>
-        <p>Add your <code style="font-size:12px">OPENAI_API_KEY</code> and use <code style="font-size:12px">gpt-4o</code> or <code style="font-size:12px">gpt-4o-mini</code> in any flow.</p>
+        <p>Add your <code style="font-size:12px">OPENAI_API_KEY</code> and select an OpenAI model in any flow — the LiteLLM config ships <code style="font-size:12px">gpt-4o</code> / <code style="font-size:12px">gpt-4o-mini</code> aliases you can point at any current model.</p>
       </div>
 
       <div class="runtime-card">
         <h3>Anthropic</h3>
-        <p>Add your <code style="font-size:12px">ANTHROPIC_API_KEY</code> and use <code style="font-size:12px">claude-sonnet</code>, <code style="font-size:12px">claude-haiku</code>, or <code style="font-size:12px">claude-opus</code>.</p>
+        <p>Add your <code style="font-size:12px">ANTHROPIC_API_KEY</code> and use the <code style="font-size:12px">claude-sonnet</code>, <code style="font-size:12px">claude-opus</code>, or <code style="font-size:12px">claude-haiku</code> aliases — each maps to a Claude model you can repoint in one config file.</p>
       </div>
 
       <div class="runtime-card">
@@ -2192,7 +2283,7 @@ docker compose up</pre>
   <div class="wrap">
 
     <div class="section-eyebrow">
-      PUBLIC ALPHA · v0.8.0
+      PUBLIC ALPHA
     </div>
 
     <h2>
@@ -2219,7 +2310,7 @@ docker compose up</pre>
       <div style="padding:26px 24px 24px;background:var(--paper);display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line);">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.18em;">track <b style="color:var(--accent-ink);font-weight:500;">A</b> · run &amp; report</div>
         <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-.01em;line-height:1.25;">Run it against real flows</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2);">One <code style="font-size:13px;">docker compose up</code> starts all nine services. Point it at a real flow — your actual use case, not a toy example. When something breaks, crashes silently, or produces wrong output, open a bug report with your FlowSpec JSON, the runtime you used, and the full error. The more specific, the faster it gets fixed.</p>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2);">One <code style="font-size:13px;">docker compose up</code> starts all twelve services. Point it at a real flow — your actual use case, not a toy example. When something breaks, crashes silently, or produces wrong output, open a bug report with your FlowSpec JSON, the runtime you used, and the full error. The more specific, the faster it gets fixed.</p>
         <a href="https://github.com/3IVIS/buildaharness/issues/new?template=bug_report.md" target="_blank" rel="noopener" style="margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--accent-ink);text-decoration:none;border-bottom:1px solid currentColor;align-self:flex-start;padding-bottom:1px;">Report a bug →</a>
       </div>
 
@@ -2233,7 +2324,7 @@ docker compose up</pre>
       <div style="padding:26px 24px 24px;background:var(--paper);display:flex;flex-direction:column;gap:12px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.18em;">track <b style="color:var(--accent-ink);font-weight:500;">C</b> · build with it</div>
         <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-.01em;line-height:1.25;">Build a node pack or contribute a phase</h3>
-        <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2);">FlowSpec v0.2.0 is stable for third-party node packs (<code style="font-size:12px;">@buildaharness/nodes/…</code>). The full harness implementation is public and open for community contribution. The spec, adapter interface, and canvas package are all stable enough to build on today.</p>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2);">FlowSpec v1.0.0 is stable for third-party node packs (<code style="font-size:12px;">@buildaharness/nodes/…</code>). The full harness implementation is public and open for community contribution. The spec, adapter interface, and canvas package are all stable enough to build on today.</p>
         <div style="display:flex;gap:12px;margin-top:auto;flex-wrap:wrap;">
           <a href="https://github.com/3IVIS/buildaharness/tree/main/spec" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--accent-ink);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">Read the spec →</a>
         </div>
@@ -2272,7 +2363,7 @@ docker compose up</pre>
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
         <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">What is FlowSpec?</h3>
-        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
+        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
       </div>
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
@@ -2319,7 +2410,7 @@ docker compose up</pre>
     {
       "@type": "Question",
       "name": "What is FlowSpec?",
-      "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (@buildaharness/nodes/…)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (@buildaharness/nodes/…)." }
     },
     {
       "@type": "Question",

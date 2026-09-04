@@ -2,7 +2,7 @@
 
 > Open-source, self-hosted AI assistant (Aielia) that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
 
-Build A Harness is a **working tool** (v0.8.0, public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/personal-assistant`, or try it in a browser at https://buildaharness.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, multi-tier control state, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant.
+Build A Harness is a **working tool** (public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/personal-assistant`, or try it in a browser at https://buildaharness.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, a 5-tier control state resolver, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant. The npm packages (`@buildaharness/personal-assistant`, `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas`) are published at 0.2.x under Apache 2.0.
 
 ## AI Agent Frameworks Observatory
 
@@ -41,7 +41,7 @@ Build A Harness is the purpose-built open-source tool for harness engineering. I
 
 Aielia (`@buildaharness/personal-assistant`) is Build A Harness's own assistant — a general-purpose, everyday-use chat agent that runs the full 11-layer harness on every turn. Install with `npx @buildaharness/personal-assistant`, or try it in a browser (bring your own key) at https://buildaharness.com/try. Positioned as a runnable open-source alternative to Hermes Agent, Kilo Code, and OpenClaw — it ships both a tiered Control State resolver and a reviewer/output gate, which none of those three do. It treats each chat message as one objective, one task (rather than decomposing into a multi-task plan), which keeps the harness run cheap per turn — one real LLM call for an ordinary turn, zero for one a pre-harness risk gate blocks — while still walking World Model, Evidence, Hypothesis, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and the Reviewer Pass.
 
-Safety is layered: a keyword-based risk classifier flags consequential messages (send, delete, pay, post, ...) before the harness or any LLM call runs; `write_file` and `run_shell_command` tool calls always stage a proposal rather than executing inline, resolved only by an explicit approval with the matching pending-action ID; shell commands run with an environment allowlist, a timeout, and output truncation; and content fetched from the web or a shell command is wrapped as untrusted before it re-enters the conversation. The harness runtime checkpoints mid-turn so a crash mid-conversation resumes rather than restarts.
+Safety is layered: one consolidated classification call every turn judges the message for consequential intent (send, delete, pay, post, ...) — in any language, not just English — before the harness or any LLM call runs, and a classifier error resolves to "requires approval" rather than defaulting to low-risk; `write_file`, `run_shell_command`, and `send_email` tool calls always stage a proposal rather than executing inline, resolved only by an explicit approval with the matching pending-action ID; shell commands run with an environment allowlist, a timeout, and output truncation; and content fetched from the web or a shell command is wrapped as untrusted before it re-enters the conversation. The harness runtime checkpoints mid-turn so a crash mid-conversation resumes rather than restarts.
 
 Three front ends — a terminal CLI, a browser chat UI, and a native Tauri desktop app — share the identical assistant class and harness, differing only in storage backend (filesystem for CLI/desktop, IndexedDB/Dexie for the browser).
 
@@ -62,22 +62,23 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 ## Key facts
 
 - **License**: Apache 2.0
-- **Current version**: v0.8.0
+- **npm packages**: `@buildaharness/personal-assistant` (0.2.1), `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas` (0.2.0)
 - **Repository**: https://github.com/3IVIS/buildaharness
 - **Homepage**: https://buildaharness.com
-- **Status**: Public alpha — canvas, 4 framework adapters, and Langfuse observability are working and ready to use
-- **Deployment**: fully local via Docker (`./scripts/setup-env.sh && docker compose up`); no cloud account required
+- **Status**: Public alpha — the assistant, canvas, 4 framework adapters, and Langfuse observability are working and ready to use
+- **Deployment**: assistant via `npx @buildaharness/personal-assistant` (no clone); full stack via Docker (`./scripts/setup-env.sh && docker compose up`); no cloud account required
 
-## What ships today (v0.8.0)
+## What ships today
 
+- **Aielia**, the personal assistant — `npx @buildaharness/personal-assistant` or the hosted browser build at https://buildaharness.com/try
 - **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows — the 13 harness nodes are grouped Observation → State → Policy → Control Flow → Effect in the sidebar; an Expert/Intent toggle swaps the full palette for click-to-insert templates of common flows
-- **Full harness layer** — world model, 5-tier control state, 9-layer verification, 6 recovery strategies, experience store, and adversarial reviewer pass, all implemented and tested (379 tests passing)
-- **FlowSpec v0.2.0** — open, portable JSON format; the runtime-neutral intermediate representation
+- **Full harness layer** — world model, 5-tier control state resolver, 9-layer verification, 6 recovery strategies, experience store, and a 3-lens reviewer pass (consistency, adversarial, abstraction fit), all implemented and tested, with 10 architectural invariants enforced as a CI gate
+- **FlowSpec v1.0.0** — open, portable JSON format; the runtime-neutral intermediate representation (also accepts `"0.2.0"` for backwards compatibility)
 - **4 framework adapters**: a single FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — the design never changes, and a compile-time capability check catches what a target runtime can't fully support instead of letting it silently degrade
 - **Langfuse observability** built in — every run is traced automatically across all 4 runtimes
 - **HITL** (human-in-the-loop) pause and resume
 - **Deployment options**: REST API, MCP server, A2A protocol
-- 9 services start from a single `docker compose up`
+- 12 services start from a single `docker compose up`
 
 ## Supported runtimes
 
@@ -87,9 +88,9 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 - **Microsoft Agent Framework** (C# / Python / Java, MIT) — covers Semantic Kernel and AutoGen users (Microsoft merged both into one SDK)
 - **A2A protocol** — framework-agnostic invocation interop with Google ADK, OpenAI Agents SDK, Claude Agent SDK, and any A2A-compatible runtime; no custom adapter required
 
-## FlowSpec v0.2.0
+## FlowSpec v1.0.0
 
-The runtime-neutral intermediate representation. A single FlowSpec compiles to any supported adapter. Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
+The runtime-neutral intermediate representation. A single FlowSpec compiles to any supported adapter. `spec_version` accepts `"1.0.0"` or `"0.2.0"` (fully backwards-compatible). Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
 
 ### Node types (27)
 
@@ -115,23 +116,23 @@ Implement the 11-layer control architecture; every node compiles to all four run
 
 A workflow routes prompts from node to node. A harness governs what the AI believes, what it is allowed to do, how it catches its own mistakes, and what it learns for next time.
 
-The full harness target has 11 layers across 22 nodes:
+The full harness target has 11 layers, implemented across the 13 harness node types:
 
 1. **Caller State** — constraints, clarification requests, escalation propagation
 2. **World Model** — typed beliefs, contradictions, generation_id tracking
 3. **Reasoning** — evidence store, hypotheses from 4 generation sources, value-of-information gate before every action
 4. **Control** — 5-tier state resolver (NORMAL → CAUTIOUS → BLOCKED), diagnostic health vectors, deadlock detection
 5. **Planning** — task graph with 6 task states, parallel concurrency management
-6. **Execution** — VOI-gated actions, pre-execution review gate across 5 dimensions, reversibility strategy
-7. **Verification** — 9 verification layers, adequacy critic, adversarial reviewer pass
+6. **Execution** — VOI-gated actions, a pre-execution review gate across 5 dimensions (task alignment, world-model consistency, output-contract precheck, code quality, hypothesis compatibility), reversibility strategy
+7. **Verification** — 9 verification layers, adequacy critic
 8. **Recovery** — 6 named strategies, typed failure library, local vs global replanning scope
 9. **Memory** — context compression, execution journal, budget management
 10. **Learning** — experience store for cross-run structural reuse (optional)
-11. **Output & Reviewer Pass** — output contract validation, 3-lens review
+11. **Output & Reviewer Pass** — output contract validation, 3-lens review (consistency, adversarial, abstraction fit)
 
 ## Architecture phases (all shipped)
 
-All 12 build phases are complete; the full harness is implemented and tested (379 tests passing).
+All 12 build phases are complete; the full harness is implemented and tested, with 10 architectural invariants permanently enforced as a CI gate.
 
 - **Foundation & State Architecture** — shipped
 - **Evidence & Reasoning** — shipped
@@ -150,6 +151,14 @@ Each phase is independently deployable. All flows drawn today are forward-compat
 
 ## Quick start
 
+The assistant needs no clone:
+
+```sh
+npx @buildaharness/personal-assistant
+```
+
+The full canvas + adapter stack runs via Docker:
+
 ```sh
 # 1. Generate secrets and configure environment
 ./scripts/setup-env.sh
@@ -163,13 +172,13 @@ Services that start:
 - **API** — `localhost:8000` (compiles and runs flows)
 - **Langfuse** — `localhost:3001` (observability dashboard)
 
-Nine services total. `scripts/setup-env.sh` handles all secrets automatically. You only need to provide an LLM API key (or skip it and use a local model).
+12 services total. `scripts/setup-env.sh` handles all secrets automatically. You only need to provide an LLM API key (or skip it and use a local model).
 
 ## How to contribute
 
 - **Run it**: `docker compose up`, point it at a real flow, open a bug report with your FlowSpec JSON, the runtime, and the full error
 - **Shape it**: open feature requests on GitHub — concrete use cases carry more weight than abstract asks; phase priority is shaped by community demand
-- **Build with it**: FlowSpec v0.2.0 is stable for third-party node packs (`@buildaharness/nodes/…`); harness phases are open for community contribution
+- **Build with it**: FlowSpec v1.0.0 is stable for third-party node packs (`@buildaharness/nodes/…`); harness phases are open for community contribution
 
 ## Frequently asked questions
 
@@ -177,7 +186,7 @@ Nine services total. `scripts/setup-env.sh` handles all secrets automatically. Y
 Build A Harness is an open-source (Apache 2.0) visual canvas for designing, testing, and deploying production AI agent harnesses. Draw the full architecture using 27 node types — 14 execution nodes plus 13 harness nodes implementing the complete 11-layer control architecture: world model, 5-tier control state, 9-layer verification, 6 recovery strategies, and cross-run learning. A single FlowSpec export compiles the same design to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — no rewriting the design, and a compile-time capability check fails fast if a target runtime can't fully support what the spec needs rather than silently degrading it. Every run is traced automatically via Langfuse, HITL controls let humans pause and resume any flow, and one API call publishes the harness as a REST endpoint, an MCP tool, and an A2A agent simultaneously. Runs locally via Docker — no cloud account required.
 
 **What is FlowSpec?**
-FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v0.2.0 is stable and open for third-party node packs (`@buildaharness/nodes/…`). Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
+FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (`@buildaharness/nodes/…`). Key fields: `spec_version`, `id`, `name`, `description`, `runtime_hints`, `state_schema`, `nodes`, `edges`, `tools`, `agents`, `memory_stores`, `model_defaults`, `flow_config`.
 
 **What is a harness vs a workflow?**
 A workflow routes prompts from node to node. A harness governs what the AI believes, what it is allowed to do, how it catches its own mistakes, and what it learns for next time. The 5-tier control state resolver knows when to slow down or stop. Nine verification layers check outputs before they land. Recovery strategies handle failures systematically rather than crashing.

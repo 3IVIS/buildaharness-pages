@@ -1,5 +1,9 @@
 # Kilo Code
 
+> **Research notes.** Background for the layer-by-layer mapping on
+> [buildaharness.com/harness-comparison](https://buildaharness.com/harness-comparison),
+> which is the canonical, maintained version — figures there take precedence over this file.
+
 Kilo Code is an open source, end-to-end AI coding agent, forked from Roo Code (itself a fork of Cline) and launched in March 2025. It works across VS Code, JetBrains, a standalone CLI, a cloud agent, and mobile apps, and routes to 500+ models across 60+ providers through its own model gateway. By mid-2026 it reported 1.5M+ users, 3M+ "Kilo Coders," 40T+ tokens processed, and an $8M seed round.
 
 ## Architecture Overview
