@@ -534,7 +534,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="stat"><span class="stat-n">11</span><span class="stat-l">control layers walked every non-trivial turn</span></div>
       <div class="stat"><span class="stat-n">9</span><span class="stat-l">independent verification checks before a draft is trusted</span></div>
       <div class="stat"><span class="stat-n">6</span><span class="stat-l">named recovery strategies, fixed escalating order</span></div>
-      <div class="stat"><span class="stat-n">12</span><span class="stat-l">diagnostic health dimensions feeding Control State</span></div>
+      <div class="stat"><span class="stat-n">10</span><span class="stat-l">diagnostic health dimensions feeding Control State</span></div>
     </div>
 
   </div>
@@ -606,8 +606,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <button class="flow-node" style="--nc:oklch(.55 .1 90)" data-target="modal-5">
           <span class="flow-num-badge">5</span>
           <span class="flow-name">Diagnostics</span>
-          <span class="flow-desc">Twelve health dimensions, normalised to 0–1, feeding Control State.</span>
-          <span class="flow-open">+12 dims →</span>
+          <span class="flow-desc">Ten health dimensions, normalised to 0–1, feeding Control State.</span>
+          <span class="flow-open">+10 dims →</span>
         </button>
         <div class="flow-arrow-down">↓</div>
 
@@ -793,7 +793,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
   </div>
   <div class="fm-body">
-    <p class="fm-desc">Twelve health dimensions, each normalised to 0–1, computed from the turn so far and fed straight into Control State.</p>
+    <p class="fm-desc">Ten health dimensions, each normalised to 0–1, computed from the turn so far and fed straight into Control State.</p>
     <div class="fm-files"><b>Files:</b> diagnostics.py</div>
     <div class="fm-diagram">
       <div class="fm-grid">
@@ -807,8 +807,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <button class="fm-box fm-box-btn" data-target="dmodal-8">progress_rate<span class="fm-more">+ detail</span></button>
         <button class="fm-box fm-box-btn" data-target="dmodal-9">failure_recurrence<span class="fm-more">+ detail</span></button>
         <button class="fm-box fm-box-btn" data-target="dmodal-10">oscillation_score<span class="fm-more">+ detail</span></button>
-        <button class="fm-box fm-box-btn" data-target="dmodal-11">dep_graph_quality<span class="fm-more">+ detail</span></button>
-        <button class="fm-box fm-box-btn" data-target="dmodal-12">world_model_integrity<span class="fm-more">+ detail</span></button>
       </div>
       <div class="fm-funnel">normalise() → assert_normalised()</div>
       <div class="fm-agg">Diagnostics</div>
@@ -1283,23 +1281,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   </div>
 </dialog>
 
-<dialog class="flow-modal sub" id="dmodal-11" style="--nc:oklch(.55 .1 90)">
-  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">dep_graph_quality</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
-  <div class="fm-body">
-    <p class="fm-desc">Integrity of the task dependency graph — whether the declared dependencies between tasks still hold.</p>
-    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> dep_graph_refresh</div></div>
-  </div>
-</dialog>
-
-<dialog class="flow-modal sub" id="dmodal-12" style="--nc:oklch(.55 .1 90)">
-  <div class="fm-head"><span class="fm-badge">5</span><span class="fm-name">world_model_integrity</span><button class="fm-close" aria-label="Close" onclick="this.closest('dialog').close()">×</button></div>
-  <div class="fm-body">
-    <p class="fm-desc">Overall soundness of the current World Model (Layer 1) — the same dimension a SYSTEM_BREAKING contradiction drives toward zero.</p>
-    <div class="fm-branches"><div class="fm-branch"><b>&lt; 0.2 →</b> consistency_repair</div></div>
-  </div>
-</dialog>
-
-
 <!-- ── Verification sub-popups (Layer 9, click a check) ─────────────────── -->
 
 <dialog class="flow-modal sub" id="vmodal-1" style="--nc:oklch(.46 .12 205)">
@@ -1354,7 +1335,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="cta-text">
         <div class="section-label">BUILD A HARNESS · PUBLIC ALPHA</div>
         <h2>Draw it once. <em>Ship it anywhere.</em></h2>
-        <p>All eleven layers above are drawable, composable node types on the canvas — tested, with 10 architectural invariants permanently enforced as a CI gate. Apache 2.0, runs locally via Docker.</p>
+        <p>All eleven layers above are drawable, composable node types on the canvas — tested, with 18 architectural invariants permanently enforced as CI gates. Apache 2.0, runs locally via Docker.</p>
       </div>
       <div class="cta-actions">
         <a class="btn" href="https://github.com/3IVIS/buildaharness">Star on GitHub</a>

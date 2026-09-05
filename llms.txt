@@ -72,7 +72,7 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 
 - **Aielia**, the personal assistant — `npx @buildaharness/personal-assistant` or the hosted browser build at https://buildaharness.com/try
 - **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows — the 13 harness nodes are grouped Observation → State → Policy → Control Flow → Effect in the sidebar; an Expert/Intent toggle swaps the full palette for click-to-insert templates of common flows
-- **Full harness layer** — world model, 5-tier control state resolver, 9-layer verification, 6 recovery strategies, experience store, and a 3-lens reviewer pass (consistency, adversarial, abstraction fit), all implemented and tested, with 10 architectural invariants enforced as a CI gate
+- **Full harness layer** — world model, 5-tier control state resolver, 9-layer verification, 6 recovery strategies, experience store, and a 3-lens reviewer pass (consistency, adversarial, abstraction fit), all implemented and tested, with 18 architectural invariants enforced as CI gates
 - **FlowSpec v1.0.0** — open, portable JSON format; the runtime-neutral intermediate representation (also accepts `"0.2.0"` for backwards compatibility)
 - **4 framework adapters**: a single FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework — the design never changes, and a compile-time capability check catches what a target runtime can't fully support instead of letting it silently degrade
 - **Langfuse observability** built in — every run is traced automatically across all 4 runtimes
@@ -132,7 +132,7 @@ The full harness target has 11 layers, implemented across the 13 harness node ty
 
 ## Architecture phases (all shipped)
 
-All 12 build phases are complete; the full harness is implemented and tested, with 10 architectural invariants permanently enforced as a CI gate.
+All 12 build phases are complete; the full harness is implemented and tested, with 18 architectural invariants permanently enforced as CI gates.
 
 - **Foundation & State Architecture** — shipped
 - **Evidence & Reasoning** — shipped
