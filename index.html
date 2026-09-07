@@ -1216,19 +1216,11 @@ footer{
     </a>
 
     <nav class="nav" id="siteNav">
-      <a href="/try">Try Aielia</a>
-      <a href="#assistant">Assistant</a>
-      <a href="#why">Harness</a>
-      <a href="#roadmap">Node library</a>
-      <a href="#quickstart">Get started</a>
-      <a href="#runtimes">Frameworks</a>
-      <a href="#examples">Examples</a>
-      <a href="#involved">Contribute</a>
-      <a href="/personal-assistant">Personal Assistant</a>
-      <a href="/harness-comparison">Harness comparison</a>
-      <a href="/harness-engineering">Harness engineering</a>
+      <a href="/personal-assistant">Aielia</a>
+      <a href="/try">Try it</a>
+      <a href="/build">Build your own</a>
+      <a href="/harness-comparison">Comparison</a>
       <a href="/harness-architecture">Architecture</a>
-      <a href="#faq">FAQ</a>
     </nav>
 
     <div class="hdr-actions">
@@ -1265,20 +1257,12 @@ footer{
       </p>
 
       <p class="lede">
-        A <strong>harness</strong> is a governance and reliability control plane around an
-        autonomous agent — the agent proposes, the harness decides what's allowed to happen
-        next. Every turn runs the full 11-layer implementation: what the agent believes, what
-        it's allowed to do, how it catches its own mistakes, and what it learns. Underneath
-        the assistant is a visual builder for the same 11 layers — draw the graph, compile to
-        any framework, trace every decision.
+        A <strong>harness</strong> is the governance and reliability control plane around an
+        autonomous agent — the agent proposes, the harness decides what happens next. Aielia
+        runs the full 11-layer implementation every turn. Underneath is a visual builder for
+        the same 11 layers you can
+        <a href="/build" style="color:var(--accent-ink);">draw and compile yourself</a>.
       </p>
-
-      <div class="runtime-pills">
-        <span class="rt-pill">LangGraph</span>
-        <span class="rt-pill">CrewAI</span>
-        <span class="rt-pill">Mastra</span>
-        <span class="rt-pill">MS Agent Framework</span>
-      </div>
 
       <div class="cta-row">
         <a class="btn" href="/try">
@@ -1289,12 +1273,6 @@ footer{
           style="background:transparent;color:var(--ink);border-color:var(--line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;cursor:pointer;">
           npx @buildaharness/personal-assistant
         </button>
-
-        <a class="btn js-gh-star" href="https://github.com/3IVIS/buildaharness"
-          style="background:transparent;color:var(--ink);border-color:var(--line);">
-          Star on GitHub<span class="gh-count" data-gh-stars style="padding-left:10px;margin-left:4px;border-left:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.65);font-size:11px;">&#9733; 0</span>
-        </a>
-
       </div>
 
     </div>
@@ -1513,769 +1491,58 @@ Japan Standard Time (UTC+9).
 
 </section>
 
-<section class="section" id="roadmap">
+<section class="section alt" id="build">
 
   <div class="wrap">
 
     <div class="section-eyebrow">
-      HARNESS NODE LIBRARY
+      BUILD YOUR OWN
     </div>
 
     <h2>
-      <em>Every layer you need.</em> Use one or all.
+      Underneath the assistant is
+      <em>a visual builder.</em>
     </h2>
 
     <p class="section-lede">
-      27 node types — 14 execution, 13 harness. Use what your agent needs: a minimal harness might be three nodes, the full stack runs to eleven layers. Both are valid FlowSpec.
-    </p>
-
-    <!-- composability diagram: two valid harness graphs side by side -->
-    <div class="compose-diagram">
-
-      <p class="sr-only">Diagram: the same node types compose into different harness graphs — a minimal harness (input → llm_call → verify_gate → recovery → output) and a full 11-layer harness — both valid FlowSpec that compile to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework.</p>
-
-      <div class="compose-top"><b>Same bricks. Different graphs.</b> · Compose exactly the harness your agent needs — minimal or full.</div>
-
-      <div class="compose-cols">
-
-        <!-- MINIMAL HARNESS -->
-        <div class="compose-col">
-          <div class="compose-col-label">Minimal · just verification + recovery</div>
-
-          <div class="cnode"><span class="cnode-dot" style="background:#0891b2"></span>input</div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#7c3aed"></span>llm_call</div>
-          <div class="carrow"></div>
-          <div class="cnode" style="border-color:#f87171;background:oklch(.99 .008 15);"><span class="cnode-dot" style="background:#f87171"></span>verify_gate<span class="cnode-tag">9 layers</span></div>
-          <div class="carrow"></div>
-          <div class="cnode" style="border-color:#f97316;background:oklch(.99 .008 40);"><span class="cnode-dot" style="background:#f97316"></span>recovery<span class="cnode-tag">6 strategies</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#059669"></span>output</div>
-        </div>
-
-        <!-- SEPARATOR -->
-        <div class="compose-sep">
-          <div class="compose-sep-line"></div>
-          <div class="compose-sep-badge">or</div>
-          <div class="compose-sep-line"></div>
-        </div>
-
-        <!-- FULL HARNESS -->
-        <div class="compose-col">
-          <div class="compose-col-label full">Full Harness · all 11 layers</div>
-
-          <div class="cnode"><span class="cnode-dot" style="background:#0891b2"></span>caller_state<span class="cnode-tag">constraints · escalation</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#7c3aed"></span>world_model<span class="cnode-tag">beliefs · contradictions</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#16a34a"></span>reasoning<span class="cnode-tag">hypotheses · VOI</span></div>
-          <div class="carrow"></div>
-          <div class="cnode" style="border-left:3px solid #a21caf;"><span class="cnode-dot" style="background:#a21caf"></span>control_state<span class="cnode-tag">5-tier resolver</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#2563eb"></span>task_graph<span class="cnode-tag">6-state planning</span></div>
-          <div class="carrow"></div>
-          <div class="cnode-pair">
-            <div class="cnode"><span class="cnode-dot" style="background:#d97706"></span>execution</div>
-            <div class="cnode" style="border-color:#f87171;background:oklch(.99 .008 15);"><span class="cnode-dot" style="background:#f87171"></span>verify_gate</div>
-          </div>
-          <div class="carrow"></div>
-          <div class="cnode-pair">
-            <div class="cnode" style="border-color:#f97316;background:oklch(.99 .008 40);"><span class="cnode-dot" style="background:#f97316"></span>recovery</div>
-            <div class="cnode"><span class="cnode-dot" style="background:#65a30d"></span>memory</div>
-          </div>
-          <div class="carrow"></div>
-          <div class="cnode cnode-opt"><span class="cnode-dot" style="background:#64748b"></span>learning<span class="cnode-tag">optional</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#34d399"></span>reviewer_pass<span class="cnode-tag">3-lens · adversarial</span></div>
-          <div class="carrow"></div>
-          <div class="cnode"><span class="cnode-dot" style="background:#059669"></span>output<span class="cnode-tag">contract validated</span></div>
-        </div>
-
-      </div>
-
-      <div class="compose-bottom">verify_gate and recovery appear in both graphs — same brick, any config · draw on the canvas · FlowSpec compiles to LangGraph, CrewAI, Mastra, or MAF</div>
-
-    </div>
-
-    <div class="vision-box">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);margin-bottom:10px;">Execution layer · 14 node types</div>
-          <div style="display:flex;flex-direction:column;gap:7px;">
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Mix and match — any subset of nodes is valid FlowSpec</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> 4 framework adapters — same spec, any runtime</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Langfuse observability — harness traces, all 4 runtimes</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> HITL pause/resume · REST/MCP/A2A deploy</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> FlowSpec v1.0.0 — open, portable JSON format</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Process concepts — pre-seeded task graph scaffolds</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Expert/Intent sidebar toggle — full palette, or click-to-insert templates for common flows</div>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);margin-bottom:10px;">Harness layer · 13 node types</div>
-          <div style="display:flex;flex-direction:column;gap:7px;">
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> World model · typed beliefs · contradiction detection</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> 5-tier control state resolver · deadlock detection</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Pre-execution review gate · 9-layer verification</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> 6 named recovery strategies · typed failure library</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Experience store — cross-run structural reuse</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Adversarial reviewer pass · output contract validation</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2)"><span style="color:var(--green);font-size:13px">✓</span> Palette grouped Observation → State → Policy → Control Flow → Effect</div>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);">27 nodes · 11 layers · 759 harness-layer tests</span>
-      </div>
-    </div>
-
-    <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" style="width:100%"></div>
-    </div>
-
-    <div class="roadmap-phases">
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <span><strong>Foundation</strong> State Architecture</span>
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Evidence</strong> &amp; Reasoning
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>World Model</strong> &amp; Contradiction
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Diagnostics</strong> &amp; Control State
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Planning</strong> &amp; Task Graph
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Execution</strong> &amp; Verification
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Recovery</strong> &amp; Memory
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Caller State</strong> &amp; Escalation
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Experience</strong> Store
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Reviewer Pass</strong> &amp; Output Contract
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>Canvas</strong> Integration
-      </div>
-
-      <div class="phase-chip done">
-        <span class="phase-dot" style="background:var(--green)"></span>
-        <strong>E2E</strong> Integration &amp; Testing
-      </div>
-
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px;">
-
-      <div style="border:1px solid var(--line);border-top:2px solid var(--green);border-radius:6px;padding:22px;background:var(--paper);">
-        <div style="font-weight:500;font-size:16px;margin-bottom:8px;">Start with state and reasoning</div>
-        <p style="font-size:14px;color:var(--ink-2);margin:0;line-height:1.6;"><code style="font-size:12px">world_model</code>, <code style="font-size:12px">hypothesis_set</code>, <code style="font-size:12px">evidence_store</code>, <code style="font-size:12px">control_state</code>, and a six-state <code style="font-size:12px">task_graph</code> — the infrastructure for an agent that thinks before it acts.</p>
-      </div>
-
-      <div style="border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:6px;padding:22px;background:var(--paper);">
-        <div style="font-weight:500;font-size:16px;margin-bottom:8px;">Add verification and recovery</div>
-        <p style="font-size:14px;color:var(--ink-2);margin:0;line-height:1.6;"><code style="font-size:12px">verify_gate</code> with nine layers, pre-execution review gate, six named recovery strategies via <code style="font-size:12px">recovery</code>, context compression, <code style="font-size:12px">exp_store</code> for cross-run reuse, and adversarial <code style="font-size:12px">reviewer_pass</code>.</p>
-      </div>
-
-      <div style="border:1px solid var(--line);border-top:2px solid oklch(.62 .14 60);border-radius:6px;padding:22px;background:var(--paper);">
-        <div style="font-weight:500;font-size:16px;margin-bottom:8px;">Draw, compile, and deploy</div>
-        <p style="font-size:14px;color:var(--ink-2);margin:0;line-height:1.6;">Thirteen harness node types on the canvas, Langfuse tracing with harness-specific spans, framework adapters for all four runtimes, and end-to-end tests across every combination.</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section alt" id="quickstart">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      GET STARTED
-    </div>
-
-    <h2>
-      Up and running in
-      <em>two commands.</em>
-    </h2>
-
-    <p class="section-lede">
-      Build A Harness runs entirely on your machine via Docker. No cloud account, no sign-up — clone the repo, run two commands, and you're drawing harnesses in minutes.
-    </p>
-
-    <div class="flow-grid">
-
-      <div class="code-card">
-        <div class="code-bar" style="display:flex;align-items:center;gap:10px;"><span style="display:flex;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);"></span><span style="width:8px;height:8px;border-radius:50%;background:var(--line);border:1px solid oklch(.74 .016 270);"></span><span style="width:8px;height:8px;border-radius:50%;background:var(--line);border:1px solid oklch(.74 .016 270);"></span></span>terminal</div>
-<pre># 1. Generate secrets and configure your environment
-./scripts/setup-env.sh
-
-# 2. Start all services
-docker compose up</pre>
-      </div>
-
-      <div class="feature-box">
-        <h3>What starts up</h3>
-        <div class="feature-list">
-          <div class="feature-item">
-            <strong>Canvas — <code style="font-size:13px">localhost:3000</code></strong>
-            <p>The visual harness editor. Design with 27 node types — 14 execution nodes and 13 harness nodes including world model, control state, verify gate, and recovery.</p>
-          </div>
-          <div class="feature-item">
-            <strong>API — <code style="font-size:13px">localhost:8000</code></strong>
-            <p>Compiles FlowSpec to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework and runs your harnesses. Publishes each harness simultaneously as a REST endpoint, MCP tool, and A2A agent.</p>
-          </div>
-          <div class="feature-item">
-            <strong>Langfuse — <code style="font-size:13px">localhost:3001</code></strong>
-            <p>Harness-aware observability dashboard. Every run traced automatically across all 4 frameworks — including world model transitions, control state changes, and recovery strategy activations.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <p style="font-size:15px; color:var(--ink-2); margin-top:28px;">
-      Twelve services in total. <code style="font-size:13px">scripts/setup-env.sh</code> handles all the secrets and configuration automatically — you only need to provide your LLM API key (or skip it and use a free local model instead).
-    </p>
-
-  </div>
-
-</section>
-
-<section class="section" id="models">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      AI MODELS
-    </div>
-
-    <h2>
-      Use OpenAI, Claude, or run
-      <em>completely free locally.</em>
-    </h2>
-
-    <p class="section-lede">
-      Build A Harness routes all AI calls through LiteLLM — a proxy that works with any model provider. You pick the model in your workflow; the rest is handled automatically.
-    </p>
-
-    <div class="runtime-grid">
-
-      <div class="runtime-card">
-        <h3>OpenAI</h3>
-        <p>Add your <code style="font-size:12px">OPENAI_API_KEY</code> and select an OpenAI model in any flow — the LiteLLM config ships <code style="font-size:12px">gpt-4o</code> / <code style="font-size:12px">gpt-4o-mini</code> aliases you can point at any current model.</p>
-      </div>
-
-      <div class="runtime-card">
-        <h3>Anthropic</h3>
-        <p>Add your <code style="font-size:12px">ANTHROPIC_API_KEY</code> and use the <code style="font-size:12px">claude-sonnet</code>, <code style="font-size:12px">claude-opus</code>, or <code style="font-size:12px">claude-haiku</code> aliases — each maps to a Claude model you can repoint in one config file.</p>
-      </div>
-
-      <div class="runtime-card">
-        <h3>Ollama — free &amp; local</h3>
-        <p>Run <code style="font-size:12px">mistral</code>, <code style="font-size:12px">qwen3</code>, or <code style="font-size:12px">qwen2.5-coder</code> locally. No API key, no cost, no data leaving your machine.</p>
-      </div>
-
-      <div class="runtime-card">
-        <h3>Any custom model</h3>
-        <p>Edit one config file to add any OpenAI-compatible model or endpoint — including self-hosted or fine-tuned models.</p>
-      </div>
-
-    </div>
-
-    <div class="obs-box" style="margin-top:28px;">
-      <p class="section-lede" style="margin-bottom:0">
-        <strong style="color:var(--ink)">Want to try it without an API key?</strong> Install <a href="https://ollama.com" style="color:var(--accent-ink);">Ollama</a>, pull a model (<code style="font-size:13px">ollama pull mistral</code>), and run <code style="font-size:13px">./scripts/setup-ollama.sh</code> — it tests all four frameworks end-to-end with no paid account needed.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section alt" id="flowspec">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      HOW IT WORKS
-    </div>
-
-    <h2>
-      Draw your harness once.
-      <em>Run it on any engine.</em>
-    </h2>
-
-    <p class="section-lede">
-      Build A Harness stores every harness in FlowSpec — an open JSON format you own. Draw on the canvas and the spec is written for you. The same file compiles to LangGraph, CrewAI, Mastra, or MAF. Add harness nodes like <code style="font-size:15px">verify_gate</code>, <code style="font-size:15px">world_model</code>, or <code style="font-size:15px">recovery</code> and they compile too — no rewriting, no lock-in.
-    </p>
-
-    <div class="flow-grid">
-
-      <div class="code-card">
-
-        <div class="code-bar" style="display:flex;align-items:center;gap:10px;"><span style="display:flex;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);"></span><span style="width:8px;height:8px;border-radius:50%;background:var(--line);border:1px solid oklch(.74 .016 270);"></span><span style="width:8px;height:8px;border-radius:50%;background:var(--line);border:1px solid oklch(.74 .016 270);"></span></span>support-triage.flow.json</div>
-
-<pre>{
-  "workflow": "support-triage",
-
-  "nodes": [
-    {
-      "type": "llm_call",
-      "prompt": "Classify severity"
-    },
-    {
-      "type": "condition",
-      "route": "high_priority"
-    },
-    {
-      "type": "human_review"
-    }
-  ],
-
-  "telemetry": {
-    "provider": "langfuse"
-  }
-}</pre>
-
-      </div>
-
-      <div class="feature-box">
-
-        <h3>What you can build</h3>
-
-        <div class="feature-list">
-
-          <div class="feature-item">
-            <strong>Composable harness graphs</strong>
-            <p>
-              A minimal harness is just <code style="font-size:12px">input → llm_call → output</code>. Add <code style="font-size:12px">verify_gate</code> and <code style="font-size:12px">recovery</code> when you want them. Every combination is valid FlowSpec.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <strong>Safe by construction</strong>
-            <p>
-              Guardrails, retry logic, and HITL approval checkpoints are first-class node types — not wrappers you bolt on afterwards.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <strong>Shareable and portable</strong>
-            <p>
-              Your harness is a JSON file. Check it in, share it, load it on any canvas, or import into your CI pipeline.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <strong>Observable by default</strong>
-            <p>
-              Langfuse traces every step across all four frameworks — prompts, tool calls, harness transitions, failures, and costs — without any setup.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div style="margin-top:22px;border:1px solid var(--line);border-radius:4px;padding:20px;background:var(--paper);display:flex;flex-direction:column;gap:14px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:10px;"><b style="color:var(--ink-2);font-weight:500;">node taxonomy · execution layer</b><span style="color:var(--accent-ink);font-weight:500;">14 types</span></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">i/o</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>input</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>output</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">llm</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>llm_call</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">tools</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>tool_invoke</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">agents</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>agent_role</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>agent_debate</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">flow control</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>condition</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>parallel_fork</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>parallel_join</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">human</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>hitl_breakpoint</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">memory</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>memory_read</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>memory_write</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);">composition</span><div style="display:flex;flex-wrap:wrap;gap:5px;"><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>subgraph</span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink);"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;display:inline-block;"></span>transform</span></div></div>
-    </div>
-
-    <div style="margin-top:16px;border:1px solid oklch(.85 .03 268);border-left:3px solid var(--accent);border-radius:4px;padding:16px 20px;background:oklch(.96 .008 268);">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ink);margin-bottom:8px;">Harness node palette — 13 node types</div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;">
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#8b5cf6;flex-shrink:0;display:inline-block;"></span>world_model</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#f59e0b;flex-shrink:0;display:inline-block;"></span>hypothesis_set</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#f0abfc;flex-shrink:0;display:inline-block;"></span>control_state</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#60a5fa;flex-shrink:0;display:inline-block;"></span>task_graph</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#f87171;flex-shrink:0;display:inline-block;"></span>verify_gate</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#f97316;flex-shrink:0;display:inline-block;"></span>recovery</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0;display:inline-block;"></span>evidence_store</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#94a3b8;flex-shrink:0;display:inline-block;"></span>exp_store</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#34d399;flex-shrink:0;display:inline-block;"></span>reviewer_pass</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#67e8f9;flex-shrink:0;display:inline-block;"></span>gather_evidence</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#fb923c;flex-shrink:0;display:inline-block;"></span>apply_tool_rel</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#a78bfa;flex-shrink:0;display:inline-block;"></span>update_wm</span>
-        <span style="display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid oklch(.82 .04 268);border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-ink);background:oklch(.94 .015 268);"><span style="width:5px;height:5px;border-radius:50%;background:#14b8a6;flex-shrink:0;display:inline-block;"></span>process_concept</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="runtimes">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      SUPPORTED FRAMEWORKS
-    </div>
-
-    <h2>
-      Use the AI framework your team
-      <em>already knows.</em>
-    </h2>
-
-    <p class="section-lede">
-      Every other visual canvas is tied to one runtime. Build A Harness separates harness design from execution via FlowSpec — so you can experiment, migrate, or compare runtimes without rebuilding your architecture each time.
-    </p>
-
-    <div class="runtime-grid">
-
-      <div class="runtime-card">
-        <h3>LangGraph</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Python · JS · MIT</div>
-        <p>
-          The production standard for stateful agent orchestration. LangGraph's graph model maps cleanly to FlowSpec — conditional edges compile without rewriting, and harness nodes like <code style="font-size:12px">world_model</code>, <code style="font-size:12px">control_state</code>, and <code style="font-size:12px">verify_gate</code> slot in as standard graph nodes with no translation layer.
-        </p>
-        <ul style="margin:12px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:13.5px;color:var(--ink-2);">Checkpoint support is partial today — codegen always uses in-memory <code style="font-size:12px">MemorySaver</code>, not the spec's declared Postgres/Redis backend; a compile-time capability check flags this instead of silently degrading</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Token and graph-update streaming isn't wired into codegen yet</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Best fit: RAG agents, complex multi-step stateful flows</li>
-        </ul>
-      </div>
-
-      <div class="runtime-card">
-        <h3>CrewAI</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Python · MIT</div>
-        <p>
-          The largest community for role-based multi-agent patterns. <code style="font-size:12px">agent_role</code> nodes map directly to CrewAI Crew, Agent, and Task — your canvas design becomes a crew without translation. <code style="font-size:12px">parallel_fork</code> for fan-out, <code style="font-size:12px">memory_read</code> for vector retrieval, and native vector store support included.
-        </p>
-        <ul style="margin:12px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:13.5px;color:var(--ink-2);">Role-based agents compile natively — no wrapping needed</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Full memory (vector) support with top-k and threshold</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Best fit: specialist agent teams, research crews, parallel review</li>
-        </ul>
-      </div>
-
-      <div class="runtime-card">
-        <h3>Mastra</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">TypeScript · Apache 2.0</div>
-        <p>
-          The only TypeScript-native orchestrator with first-class harness support. Full HITL pause and resume and native vector memory — all from the same FlowSpec that also runs on LangGraph or CrewAI if you switch later. Streaming and durable checkpointing aren't implemented in this adapter yet.
-        </p>
-        <ul style="margin:12px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:13.5px;color:var(--ink-2);">Full HITL — pause, inspect state, resume from the canvas</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Native vector memory; streaming and checkpointing not yet implemented</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Best fit: TypeScript / Node.js teams, JS-native stacks</li>
-        </ul>
-      </div>
-
-      <div class="runtime-card">
-        <h3>Microsoft Agent Framework</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">C# · Python · Java · MIT</div>
-        <p>
-          The merger of Semantic Kernel and AutoGen in one SDK, covering enterprise .NET, Python, and Java teams in a single adapter. <code style="font-size:12px">agent_role</code> and <code style="font-size:12px">agent_debate</code> map natively to AgentGroupChat; HITL runs via the <code style="font-size:12px">_HitlPause</code> exception pattern; checkpoint resume via Dapr or Orleans is a documented follow-up, not yet fully implemented.
-        </p>
-        <ul style="margin:12px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:6px;">
-          <li style="font-size:13.5px;color:var(--ink-2);">AgentGroupChat native — debate and role patterns compile directly</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Checkpoint resume via Dapr/Orleans is partial — documented as a follow-up item</li>
-          <li style="font-size:13.5px;color:var(--ink-2);">Best fit: enterprise .NET, Java, or Python teams</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div style="overflow-x:auto;margin-top:28px;">
-    <table style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--paper);min-width:700px;">
-      <thead><tr>
-        <th style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);" style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);width:30%;">Feature</th>
-        <th style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);" style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);color:var(--accent-ink);">LangGraph</th>
-        <th style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);" style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);color:var(--accent-ink);">CrewAI</th>
-        <th style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);" style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);color:var(--accent-ink);">Mastra</th>
-        <th style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);" style="padding:13px 18px;background:var(--bg-2);font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;text-align:left;border-bottom:1px solid var(--line);color:var(--accent-ink);">MS Agent Framework</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">llm_call · structured output</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Prompt templates, model overrides, validators.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">agent_role · agent_debate</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Named personas, multi-agent loops. MAF maps natively to AgentGroupChat.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">via synthesis</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">role native</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">via synthesis</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">AgentGroupChat native</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">condition · parallel_fork / join</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Branching, fan-out, configurable join reducers.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">hitl_breakpoint</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Pause, inspect, edit state, resume.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">partial</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">_HitlPause exception</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">memory · semantic (vector)</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Embeddings, top-k, similarity threshold.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">via plugin</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.92 .040 155);color:oklch(.32 .10 155);">full</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">streaming · tokens / updates</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Token streaming and graph-update events. Declared in FlowSpec's schema; not yet wired into any adapter's codegen.</div></td>
-          <td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">missing</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">missing</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">missing</span></td><td style="padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">missing</span></td>
-        </tr>
-        <tr>
-          <td style="padding:13px 18px;vertical-align:middle;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);">checkpoint · Postgres / Redis</div><div style="font-size:13px;color:var(--ink-2);margin-top:2px;">Durable execution, resume from any node. Graded by reading each adapter's actual codegen, not assumed.</div></td>
-          <td style="padding:13px 18px;vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">partial</span></td><td style="padding:13px 18px;vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">partial</span></td><td style="padding:13px 18px;vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">missing</span></td><td style="padding:13px 18px;vertical-align:middle;"><span style="display:inline-flex;padding:4px 9px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;background:oklch(.93 .045 75);color:oklch(.36 .10 75);">partial</span></td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section alt" id="examples">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      EXAMPLE HARNESSES
-    </div>
-
-    <h2>
-      Five ready-made harnesses to
-      <em>fork and build on.</em>
-    </h2>
-
-    <p class="section-lede">
-      The repo ships with five real, working harnesses. Each demonstrates a different composition of node types — open them in the canvas, run them, and modify them for your use case.
-    </p>
-
-    <div style="border:1px solid var(--line); border-radius:6px; overflow:hidden;">
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; background:var(--bg-2); border-bottom:1px solid var(--line); padding:10px 20px;">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-3);">Flow</span>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-3);">Best framework</span>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-3);">What it shows</span>
-      </div>
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 20px; border-bottom:1px solid var(--line); background:var(--paper); align-items:start; gap:8px;">
-        <div>
-          <div style="font-weight:500; font-size:15px; margin-bottom:4px;">RAG Agent</div>
-          <div style="color:var(--ink-2); font-size:14px;">Search a knowledge base, retrieve the most relevant chunks, and generate a grounded answer.</div>
-        </div>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green);">LangGraph</span>
-        <span style="color:var(--ink-2); font-size:13px;">Memory read, semantic search, caching</span>
-      </div>
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 20px; border-bottom:1px solid var(--line); background:var(--paper); align-items:start; gap:8px;">
-        <div>
-          <div style="font-weight:500; font-size:15px; margin-bottom:4px;">Content Moderation + Human Review</div>
-          <div style="color:var(--ink-2); font-size:14px;">Classify content, auto-approve low-risk items, and pause for a human to review anything flagged as high risk.</div>
-        </div>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green);">Mastra</span>
-        <span style="color:var(--ink-2); font-size:13px;">Human-in-the-loop, structured output</span>
-      </div>
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 20px; border-bottom:1px solid var(--line); background:var(--paper); align-items:start; gap:8px;">
-        <div>
-          <div style="font-weight:500; font-size:15px; margin-bottom:4px;">Parallel Risk Assessment</div>
-          <div style="color:var(--ink-2); font-size:14px;">Three specialist AI agents review a document simultaneously, then their findings are merged into one report.</div>
-        </div>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green);">CrewAI</span>
-        <span style="color:var(--ink-2); font-size:13px;">Parallel agents, fan-out/merge</span>
-      </div>
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 20px; border-bottom:1px solid var(--line); background:var(--paper); align-items:start; gap:8px;">
-        <div>
-          <div style="font-weight:500; font-size:15px; margin-bottom:4px;">Research Crew</div>
-          <div style="color:var(--ink-2); font-size:14px;">A team of AI agents collaborate on a research task, with human approval required before any external tool is used.</div>
-        </div>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green);">CrewAI</span>
-        <span style="color:var(--ink-2); font-size:13px;">Multi-agent, tool approval</span>
-      </div>
-
-      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 20px; background:var(--paper); align-items:start; gap:8px;">
-        <div>
-          <div style="font-weight:500; font-size:15px; margin-bottom:4px;">Debate Agent</div>
-          <div style="color:var(--ink-2); font-size:14px;">Multiple AI agents argue different sides of a question until they reach a conclusion — then the flow is also exposed as an A2A agent other systems can call.</div>
-        </div>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--green);">MS Agent Framework</span>
-        <span style="color:var(--ink-2); font-size:13px;">Multi-agent debate, A2A protocol</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="observability">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      LANGFUSE OBSERVABILITY
-    </div>
-
-    <h2>
-      Know exactly what your AI did —
-      <em>and why it did it.</em>
-    </h2>
-
-    <p class="section-lede">
-      Langfuse is the open-source observability platform built into Build A Harness. Every run is traced automatically across all four runtimes — no configuration required. One dashboard covers every prompt, tool call, decision, failure, and recovery action.
-    </p>
-
-    <div class="obs-box">
-
-      <p style="font-size:15px;color:var(--ink);font-weight:500;line-height:1.5;margin:0 0 20px;">
-        Build A Harness extends Langfuse with harness-specific spans that no standard tracing library produces:
-      </p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
-
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);margin-bottom:12px;">Standard — every AI framework</div>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">llm_call</code> prompt, model, tokens, latency, cost</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">tool_invoke</code> name, inputs, outputs, duration</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">error</code> failure type, node, stack, retry count</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">hitl</code> pause time, who resumed, state diff</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">memory</code> retrieval query, top-k results, scores</div>
-          </div>
-        </div>
-
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);margin-bottom:12px;">Harness-specific — Build A Harness only</div>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">world_model</code> belief delta, generation_id, contradictions</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">control_state</code> tier transition · NORMAL → CAUTIOUS → BLOCKED</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">verify_gate</code> which of 9 layers fired, verdict, score</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">recovery</code> strategy selected, failure type, replanning scope</div>
-            <div style="display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--ink-2);"><code style="font-size:11.5px;flex-shrink:0;color:var(--ink);white-space:nowrap;">reviewer_pass</code> 3-lens score, contract verdict, findings</div>
-          </div>
-        </div>
-
-      </div>
-
-      <p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin:20px 0 0;border-top:1px solid oklch(.80 .06 148);padding-top:16px;">
-        Run the same FlowSpec on LangGraph and Mastra and compare traces side by side. Langfuse runs locally at <code style="font-size:12px">localhost:3001</code> — no data leaves your machine.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section alt" id="deploy">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      DEPLOY &amp; INTEGRATE
-    </div>
-
-    <h2>
-      One click to publish your harness as
-      <em>an API, a Claude tool, or an agent.</em>
-    </h2>
-
-    <p class="section-lede">
-      One API call publishes your harness three ways at once — a REST endpoint, an MCP tool, and an A2A agent — so whatever system needs it can call it the way that makes sense.
+      The same 11 layers Aielia runs are node types on a canvas. Draw the graph and it is
+      written to FlowSpec — an open JSON file you own — and the same file compiles to
+      LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. Use three nodes or all eleven;
+      every subset is valid.
     </p>
 
     <div class="cards">
 
       <div class="card">
-        <h3>REST endpoint</h3>
-        <p>
-          Any app can trigger your flow with a standard HTTP POST. No special SDK needed — a curl command or a fetch call is all it takes to run the full harness.
-        </p>
+        <h3>27 node types</h3>
+        <p>14 execution nodes and 13 harness nodes — world model, 5-tier control state, 9-layer verify gate, six recovery strategies, adversarial reviewer pass. Mix and match any subset.</p>
       </div>
 
       <div class="card">
-        <h3>MCP tool</h3>
-        <p>
-          The Model Context Protocol (MCP) lets AI assistants call external tools during inference. Publishing as an MCP server means Claude Desktop, Cursor, and any MCP client can invoke the full harness — including its 11-layer control architecture — directly from a prompt, with no extra code.
-        </p>
+        <h3>4 framework adapters</h3>
+        <p>One FlowSpec compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. A compile-time capability check flags anything a target runtime can't fully support instead of degrading it silently.</p>
       </div>
 
       <div class="card">
-        <h3>A2A agent</h3>
-        <p>
-          The Agent-to-Agent (A2A) protocol is an open standard for AI agent interoperability. Publishing as an A2A agent means other agents — built on Google ADK, OpenAI Agents SDK, Claude Agent SDK, or any A2A runtime — can discover your harness via its Agent Card and delegate tasks to it without a custom adapter.
-        </p>
+        <h3>Traced and deployable</h3>
+        <p>Every run traced automatically in Langfuse with harness-specific spans. One API call publishes a harness as a REST endpoint, an MCP tool, and an A2A agent at once.</p>
       </div>
 
       <div class="card">
-        <h3>Embeddable canvas</h3>
-        <p>
-          Drop the visual editor into your own app with the <code style="font-size:12px">@buildaharness/canvas</code> npm package.
-        </p>
+        <h3>Runs on your machine</h3>
+        <p><code style="font-size:13px">./scripts/setup-env.sh &amp;&amp; docker compose up</code> — no cloud account. Bring an LLM key or run a free local model with Ollama.</p>
       </div>
 
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
-
-      <div style="border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:24px 26px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ink);margin-bottom:12px;">MCP · Model Context Protocol</div>
-        <p style="font-size:15px;color:var(--ink-2);line-height:1.7;margin:0 0 14px;">
-          MCP is Anthropic's open standard that lets AI assistants call tools and read context during inference. When Build A Harness publishes a harness as an MCP server, each harness is exposed as a callable tool with a typed input and output schema. Any MCP client — Claude Desktop, Cursor, the Claude Agent SDK — can discover and invoke it with no additional setup.
-        </p>
-        <p style="font-size:14px;color:var(--ink-2);line-height:1.7;margin:0;">
-          <strong style="color:var(--ink)">What this means in practice:</strong> a user in Claude Desktop types "summarise this contract and flag unusual clauses" and Claude automatically calls your content-moderation harness — complete with HITL controls, <code style="font-size:12px">verify_gate</code>, and Langfuse tracing — as if it were a local tool.
-        </p>
-      </div>
-
-      <div style="border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:24px 26px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ink);margin-bottom:12px;">A2A · Agent-to-Agent Protocol</div>
-        <p style="font-size:15px;color:var(--ink-2);line-height:1.7;margin:0 0 14px;">
-          A2A is Google's open protocol for AI agent interoperability. An A2A agent publishes an Agent Card — a machine-readable description of its capabilities, inputs, and outputs. Other agents, regardless of their framework, can discover the card and invoke the agent over a standard HTTP interface without needing to know its internal architecture.
-        </p>
-        <p style="font-size:14px;color:var(--ink-2);line-height:1.7;margin:0;">
-          <strong style="color:var(--ink)">What this means in practice:</strong> a research agent built on Google ADK can delegate a "parallel risk assessment" subtask to your Build A Harness flow and receive a structured result — with neither agent needing a custom adapter. Compatible with Google ADK, OpenAI Agents SDK, Claude Agent SDK, and any A2A runtime.
-        </p>
-      </div>
-
+    <div class="cta-row" style="margin-top:32px;">
+      <a class="btn" href="/build">See how it's built →</a>
+      <a class="btn" href="/harness-architecture" style="background:transparent;color:var(--ink);border-color:var(--line);">Inside one turn →</a>
     </div>
+
+    <p style="font-size:14px;color:var(--ink-3);margin-top:24px;font-family:'IBM Plex Mono',monospace;text-align:center;">
+      27 nodes · 11 layers · FlowSpec v1.0.0 · open, portable JSON · Apache 2.0
+    </p>
 
   </div>
 
@@ -2365,18 +1632,8 @@ docker compose up</pre>
       </div>
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
-        <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">What is FlowSpec?</h3>
-        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
-      </div>
-
-      <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
-        <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">Why a runtime-neutral FlowSpec?</h3>
-        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">It decouples the canvas from any single runtime. Adding a new runtime is one adapter file, and canvas features — HITL, observability, versioning — stay independent of your runtime choice. One flow runs across all four supported runtimes with no design changes — a compile-time capability check flags anything a specific runtime can't fully support.</p>
-      </div>
-
-      <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
-        <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">Why these four frameworks?</h3>
-        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">LangGraph is the production standard for stateful agents. CrewAI has the largest audience for multi-agent team patterns. Mastra is the only TypeScript-native orchestrator with first-class support. Microsoft Agent Framework merged Semantic Kernel and AutoGen, covering enterprise .NET and Python users.</p>
+        <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">Can I build my own harness?</h3>
+        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">Yes. <a href="/build" style="color:var(--accent-ink);">Build your own</a> covers the visual canvas, the 27 node types, FlowSpec, the four framework adapters, Langfuse tracing, and REST/MCP/A2A deployment. FlowSpec v1.0.0 is stable and open for third-party node packs (<code style="font-size:13px">@buildaharness/nodes/…</code>).</p>
       </div>
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
@@ -2412,18 +1669,8 @@ docker compose up</pre>
     },
     {
       "@type": "Question",
-      "name": "What is FlowSpec?",
-      "acceptedAnswer": { "@type": "Answer", "text": "FlowSpec is Build A Harness's open, runtime-neutral JSON format for describing AI agent workflows. It is the intermediate representation that sits between the visual canvas and any execution runtime. A single FlowSpec file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework, with a compile-time capability check that catches what a target runtime can't fully support instead of degrading it silently. FlowSpec v1.0.0 is stable and open for third-party node packs (@buildaharness/nodes/…)." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why a runtime-neutral FlowSpec?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It decouples the canvas from any single runtime. Adding a new runtime is one adapter file, and canvas features — HITL, observability, versioning — stay independent of your runtime choice. One flow runs across all four supported runtimes with no design changes — a compile-time capability check flags anything a specific runtime can't fully support." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why these four frameworks?",
-      "acceptedAnswer": { "@type": "Answer", "text": "LangGraph is the production standard for stateful agents. CrewAI has the largest audience for multi-agent team patterns. Mastra is the only TypeScript-native orchestrator with first-class support. Microsoft Agent Framework merged Semantic Kernel and AutoGen, covering enterprise .NET and Python users." }
+      "name": "Can I build my own harness?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Build your own page covers the visual canvas, the 27 node types, FlowSpec, the four framework adapters (LangGraph, CrewAI, Mastra, Microsoft Agent Framework), Langfuse tracing, and REST/MCP/A2A deployment. FlowSpec v1.0.0 is stable and open for third-party node packs (@buildaharness/nodes/…)." }
     },
     {
       "@type": "Question",
@@ -2448,13 +1695,10 @@ docker compose up</pre>
       <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
       <a href="https://github.com/3IVIS/buildaharness/tree/main/docs">Documentation</a>
       <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
-      <a href="https://github.com/3IVIS/buildaharness/blob/main/LICENSE">Apache 2.0</a>
-      <a href="/harness-engineering">Harness engineering</a>
-      <a href="/harness-comparison">Harness comparison</a>
-      <a href="/personal-assistant">Personal Assistant</a>
-      <a href="/ai_agent_frameworks.html">Agent Frameworks</a>
-      <a href="/ai_agent_memory_frameworks.html">Memory Frameworks</a>
-      <a href="https://designaloop.com">Design a Loop</a>
+      <a href="/personal-assistant">Aielia</a>
+      <a href="/build">Build your own</a>
+      <a href="/harness-comparison">Comparison</a>
+      <a href="/ai_agent_frameworks.html">Frameworks</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/impressum.html">Impressum</a>
       <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>

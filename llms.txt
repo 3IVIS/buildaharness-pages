@@ -47,6 +47,12 @@ Three front ends — a terminal CLI, a browser chat UI, and a native Tauri deskt
 
 **Dedicated page**: https://buildaharness.com/personal-assistant
 
+## Build your own harness
+
+The same 11 layers Aielia runs are node types on a visual canvas. Draw the graph and it is written to **FlowSpec** — an open, runtime-neutral JSON format — and the same file compiles to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. 27 node types (14 execution + 13 harness: world model, 5-tier control state, 9-layer verify gate, six recovery strategies, adversarial reviewer pass). A compile-time capability check flags anything a target runtime cannot fully support instead of degrading it silently. Every run is traced automatically in Langfuse with harness-specific spans, and one API call publishes a harness as a REST endpoint, an MCP tool, and an A2A agent at once. Runs entirely on your machine via Docker (`./scripts/setup-env.sh && docker compose up`) — no cloud account; bring an LLM key or run a free local model with Ollama. FlowSpec v1.0.0 is stable and open for third-party node packs (`@buildaharness/nodes/…`).
+
+**Dedicated page**: https://buildaharness.com/build
+
 ## Who is this for?
 
 Build A Harness is for **AI engineers and platform teams** building production-grade AI agents who need more than a simple prompt-routing workflow. It is a good fit for:
