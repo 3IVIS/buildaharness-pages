@@ -53,6 +53,12 @@ The same 11 layers Aielia runs are node types on a visual canvas. Draw the graph
 
 **Dedicated page**: https://buildaharness.com/build
 
+## Harness evaluation — measuring which features earn their cost
+
+Build A Harness runs a controlled benchmark on every reasoning feature in the assistant, and publishes the result whether it is positive or negative. The method: state the hypothesis the feature encodes, build a benchmark arm that toggles exactly that feature, build a stress corpus where it should show value if anywhere, run at least three seeds with an LLM judge, and decide — keep, cut, or expand. A "cut" feature stays merged but flag-gated off; the negative result is recorded, not overridden. First completed audit: the **Trajectory Supervisor** (a stall-edge meta-controller) — measured over 3 seeds and 18 tasks it moved task success -3.7% while adding +34% latency, +32% cost and +48% tokens, and recovered zero extra stalls, so `HARNESS_TRAJECTORY_SUPERVISOR` stays off by default. Twelve more features are queued, starting with harness-vs-no-harness and the one-loop proposer. The corpus, grader, arms and multi-seed runner are all open source under `packages/personal-assistant/eval/`.
+
+**Dedicated page**: https://buildaharness.com/harness-evaluation
+
 ## Who is this for?
 
 Build A Harness is for **AI engineers and platform teams** building production-grade AI agents who need more than a simple prompt-routing workflow. It is a good fit for:
