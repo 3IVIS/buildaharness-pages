@@ -41,7 +41,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OpenClaw vs Hermes vs Kilo Code — and the Harness Alternative (Aielia)</title>
 
-<meta name="description" content="Hermes Agent, Kilo Code, and OpenClaw run the same commodity loop. Mapped against the 11-layer harness architecture — plus Aielia, the open-source assistant that ships the Control State and reviewer-pass layers all three leave thin.">
+<meta name="description" content="Hermes Agent, Kilo Code, and OpenClaw run the same commodity loop. Mapped against the 11-layer harness architecture — plus Aielia, the open-source assistant that ships the tiered Control State and reviewer-pass layers all three leave thin.">
 
 <link rel="canonical" href="https://buildaharness.com/harness-comparison">
 
@@ -112,7 +112,7 @@
         {
           "@type": "Question",
           "name": "Why compare Hermes Agent, Kilo Code, and OpenClaw specifically?",
-          "acceptedAnswer": { "@type": "Answer", "text": "They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one explicitly describes its own core loop as a conventional, commodity pattern in its own docs." }
+          "acceptedAnswer": { "@type": "Answer", "text": "They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one's core loop is a conventional ReAct pattern, per the projects' architecture docs and independent analyses." }
         },
         {
           "@type": "Question",
@@ -346,7 +346,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h1>Three popular agents.<br><em>One thin harness, three ways.</em></h1>
 
     <p class="hero-lede">
-      Hermes Agent, Kilo Code, and OpenClaw all run the same commodity ReAct loop — each project's own documentation says so. Mapped against the eleven-layer harness architecture, here's what each one actually built around that loop, and what all three still leave thin.
+      Hermes Agent, Kilo Code, and OpenClaw all run the same commodity ReAct loop — as their own architecture docs and independent analyses describe. Mapped against the eleven-layer harness architecture, here's what each one actually built around that loop, and what all three still leave thin.
       <a href="https://designaloop.com/loop-comparison" style="color:var(--accent-ink);">Read the loop-first version on Design a Loop →</a>
     </p>
 
@@ -388,7 +388,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Nous Research</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Feb 2026</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">MIT</span></div>
-          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~205,000 (as of late June 2026)</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~235,000 (Aug 2026)</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">770B tokens/day</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">CLI · messaging · IDE · API</span></div>
         </div>
@@ -411,7 +411,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <div class="agent-meta-row"><span class="agent-meta-k">Maker</span><span class="agent-meta-v">Peter Steinberger</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Launched</span><span class="agent-meta-v">Nov 2025 (as Clawdbot)</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">License</span><span class="agent-meta-v">MIT</span></div>
-          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~247,000</span></div>
+          <div class="agent-meta-row"><span class="agent-meta-k">GitHub stars</span><span class="agent-meta-v">~387,000 (Aug 2026) — most-starred repo on GitHub</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">OpenRouter volume</span><span class="agent-meta-v">161B tokens/day</span></div>
           <div class="agent-meta-row"><span class="agent-meta-k">Primary interface</span><span class="agent-meta-v">Messaging apps · device nodes</span></div>
         </div>
@@ -432,7 +432,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <div class="bar-label"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</div>
         <div class="bar-track"><div class="bar-fill" style="width:21%;background:var(--series-openclaw);"><span class="bar-val">161B/day</span></div></div>
       </div>
-      <div class="chart-note">Live figures from OpenRouter's global app rankings (openrouter.ai/apps), accessed July 2026 — all three now report through OpenRouter, correcting an earlier assumption on this page that Kilo Code was gateway-only. Hermes overtook OpenClaw on this metric back in mid-May 2026 and has grown substantially since. For context, Claude Code (not one of the three agents covered here) ranks between Kilo Code and OpenClaw at 218B/day.</div>
+      <div class="chart-note">Live figures from OpenRouter's global app rankings (openrouter.ai/apps), accessed July 2026 — all three now report through OpenRouter, correcting an earlier assumption on this page that Kilo Code was gateway-only. Hermes overtook OpenClaw on this metric back in mid-May 2026 and has grown substantially since. For context, Claude Code (not one of the three agents covered here) sits at #2 on OpenRouter's all-time app leaderboard, above Kilo Code.</div>
     </div>
 
   </div>
@@ -474,7 +474,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         </tr>
         <tr>
           <td class="row-label">2. World Model</td>
-          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Raw history only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static profile + identity-document config; no typed belief model</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static Memory Bank files</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static persona/bootstrap files</span></td>
           <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">Typed beliefs with provenance + staleness, rebuilt each turn from the persisted fact store</span></td>
@@ -488,7 +488,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         </tr>
         <tr>
           <td class="row-label">4. Control State</td>
-          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Not described</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Dangerous-command detection + approval callback; binary, not a tiered resolver</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Binary approval gate, not a tiered resolver</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Queueing prevents races, isn't a risk control</span></td>
           <td class="cell col-aielia"><span class="glyph glyph-present">●</span><span class="cell-text">5-tier resolver → NORMAL / CAUTIOUS / BLOCKED, checked before every read-only tool call</span></td>
@@ -518,7 +518,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td class="row-label">8. Recovery</td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Provider fallback, fixed iteration budget</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Checkpoint rollback, diff-repair</span></td>
-          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry + provider fallback; no checkpoint rollback</span></td>
           <td class="cell col-aielia"><span class="glyph glyph-partial">◐</span><span class="cell-text">Replanning + recovery-sequence memory + crash-safe checkpoint resume</span></td>
         </tr>
         <tr>
@@ -547,7 +547,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </div>
 
     <div class="matrix-callout">
-      <p><strong>Reading the pattern:</strong> Across the three most-used agents, Execution, Memory, and Learning are the only layers where any reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage. Recovery is the one layer where all three have at least a partial mechanism. The remaining five — Caller State, World Model, Control State, Planning, and Verification — are a mix of partial and fully-absent, with no agent building any of them out completely. Which is a fair description of where most production agents are today, popular or not. The <span style="border-bottom:2px solid var(--series-aielia);">Aielia</span> column is the reference point — Build A Harness's own assistant, included to show what the thin layers look like when something actually ships them (Reasoning, Control State, Verification, and the Reviewer Pass at full coverage); it is the newest and least battle-tested of the four.</p>
+      <p><strong>Reading the pattern:</strong> Across the three most-used agents, Execution, Memory, and Learning are the only layers where any reaches full coverage — Kilo's checkpoints, and Hermes's persistent memory and self-improving skills, respectively. Reasoning and Output &amp; Reviewer Pass get zero coverage from all three. Of the remaining layers, none is built out to full coverage by any of the three — they're a patchwork of static substitutes, partial mechanisms, and outright gaps, with World Model and Recovery the only two where all three have at least something, thin as it is. Which is a fair description of where most production agents are today, popular or not. The <span style="border-bottom:2px solid var(--series-aielia);">Aielia</span> column is the reference point — Build A Harness's own assistant, included to show what the thin layers look like when something actually ships them (Reasoning, Control State, Verification, and the Reviewer Pass at full coverage); it is the newest and least battle-tested of the four.</p>
     </div>
 
     <h2 style="margin-top:48px;">What it's actually like <em>to run one.</em></h2>
@@ -599,7 +599,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="tool-callout" style="margin-top:24px;padding:14px 18px;border:1px solid var(--line);border-radius:6px;background:var(--bg);display:flex;gap:16px;align-items:flex-start;">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-ink);white-space:nowrap;flex-shrink:0;padding-top:2px;">In Build A Harness</div>
-      <p style="margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5;">All 11 layers ship as drawable, composable canvas nodes — Reasoning, Control State, Verification, and Output &amp; Reviewer Pass included, the four layers thinnest across all three agents above. <a href="/harness-engineering" style="color:var(--accent-ink);">See the full architecture →</a></p>
+      <p style="margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5;">All 11 layers ship as drawable, composable canvas nodes — Reasoning, a tiered Control State, Verification, and a formal Output &amp; Reviewer Pass included, the layers thinnest across all three agents above. <a href="/harness-engineering" style="color:var(--accent-ink);">See the full architecture →</a></p>
     </div>
 
   </div>
@@ -611,7 +611,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="section-label">THE LOOP</div>
     <h2>Same commodity loop, <em>underneath all three.</em></h2>
     <p class="prose" style="margin-bottom:0;">
-      Every layer above wraps around a loop that, on its own, isn't a differentiator. Each project's own documentation says as much — and mapped against the same <a href="https://designaloop.com/loop-engineering#anatomy" style="color:var(--accent-ink);">seven-stage loop</a>, the pattern is clear.
+      Every layer above wraps around a loop that, on its own, isn't a differentiator — a point the projects' architecture docs and independent write-ups broadly agree on. Mapped against the same <a href="https://designaloop.com/loop-engineering#anatomy" style="color:var(--accent-ink);">seven-stage loop</a>, the pattern is clear.
     </p>
 
     <div class="coverage-legend">
@@ -633,7 +633,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <tbody>
         <tr>
           <td class="row-label">1. Perceive</td>
-          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Raw session history, no typed beliefs</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Session history + static profile/identity config; no typed beliefs</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static Memory Bank files</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Static bootstrap/persona files</span></td>
         </tr>
@@ -645,13 +645,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         </tr>
         <tr>
           <td class="row-label">3. Decide</td>
-          <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Provider fallback only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Dangerous-command approval gate; no risk-tiering</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Binary human-approval gate</span></td>
           <td class="cell"><span class="glyph glyph-absent">○</span><span class="cell-text">Queueing, not risk-tiering</span></td>
         </tr>
         <tr>
           <td class="row-label">4. Act</td>
-          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Concurrent tool dispatch, no risk review</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Concurrent dispatch; binary dangerous-command gate only</span></td>
           <td class="cell"><span class="glyph glyph-present">●</span><span class="cell-text">Git checkpoint before every edit</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Broad device/OS action surface</span></td>
         </tr>
@@ -665,7 +665,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td class="row-label">6. Recover</td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Fallback provider, iteration budget</span></td>
           <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Checkpoint rollback, diff-repair</span></td>
-          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry only</span></td>
+          <td class="cell"><span class="glyph glyph-partial">◐</span><span class="cell-text">Auto-compaction retry + provider fallback</span></td>
         </tr>
         <tr>
           <td class="row-label">7. Learn &amp; Repeat</td>
@@ -726,16 +726,16 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="quote-grid" style="margin-top:28px;">
       <div class="quote-card" style="border-left-color:var(--series-hermes);">
-        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent docs</div>
-        <p>"On its own, this loop is a fairly conventional ReAct-style tool-calling loop — structurally similar to what Claude Code, OpenClaw, and most other agent harnesses do..."</p>
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-hermes);"></span>Hermes Agent</div>
+        <p>Its loop is a refined ReAct implementation — Observation → Reasoning → Action — the same call-model / run-tools / append-results shape Claude Code and most agents use. Nous's own framing puts the differentiation in memory and self-improving skills, not the loop.</p>
       </div>
       <div class="quote-card" style="border-left-color:var(--series-kilo);">
-        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code docs</div>
-        <p>"On its own, this is a conventional ReAct-style tool-calling loop — structurally the same shape used by Cline, Roo Code, Claude Code, Cursor, and most other agent harnesses."</p>
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-kilo);"></span>Kilo Code</div>
+        <p>Kilo is a fork of Roo Code, itself a fork of Cline — the loop is inherited essentially unchanged across the whole lineage. Kilo's stated edge is pricing, model breadth and reliability plumbing, not the loop.</p>
       </div>
       <div class="quote-card" style="border-left-color:var(--series-openclaw);">
-        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw docs</div>
-        <p>"On its own, this is a conventional ReAct-style tool-calling loop... The loop mechanics are not OpenClaw's differentiator."</p>
+        <div class="agent-label" style="margin-bottom:10px;font-size:11.5px;"><span class="dot" style="background:var(--series-openclaw);"></span>OpenClaw</div>
+        <p>Independent architecture write-ups describe OpenClaw's runtime as "just a ReAct loop, a filesystem, sessions, and plain API calls" — the simplicity is deliberate, and by broad agreement the loop is not where its traction comes from.</p>
       </div>
     </div>
 
@@ -750,7 +750,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="faq-list">
       <div class="faq-item">
         <h3>Why compare Hermes Agent, Kilo Code, and OpenClaw specifically?</h3>
-        <p>They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one explicitly describes its own loop as conventional in its own docs.</p>
+        <p>They're three of the most-used open-source AI agents running today, each with public architecture documentation detailed enough to map against a common harness taxonomy — and each one's loop is a conventional ReAct pattern, per the projects' own architecture docs and independent analyses.</p>
       </div>
       <div class="faq-item">
         <h3>Which of the three has the best harness?</h3>
@@ -762,7 +762,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
       <div class="faq-item">
         <h3>Where does Build A Harness fit in?</h3>
-        <p>Build A Harness implements all 11 layers as drawable, composable canvas nodes — so you can build the layers these three agents leave thin (Reasoning, Control State, Verification, Output &amp; Reviewer Pass) without writing that infrastructure yourself.</p>
+        <p>Build A Harness implements all 11 layers as drawable, composable canvas nodes — so you can build the layers these three agents leave thin (Reasoning, a tiered Control State, Verification, Output &amp; Reviewer Pass) without writing that infrastructure yourself.</p>
       </div>
     </div>
   </div>
@@ -843,7 +843,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="cta-text">
         <div class="section-label">BUILD A HARNESS · PUBLIC ALPHA · APACHE 2.0</div>
         <h2>Build the layers<br>these three <em>leave thin.</em></h2>
-        <p>Reasoning, Control State, Verification, and Output &amp; Reviewer Pass — the layers where all three of the most-used open-source agents are thinnest — ship in Aielia today, and as drawable canvas nodes if you want to build your own. Apache 2.0.</p>
+        <p>Reasoning, a tiered Control State, Verification, and a formal Output &amp; Reviewer Pass — the layers where all three of the most-used open-source agents are thinnest — ship in Aielia today, and as drawable canvas nodes if you want to build your own. Apache 2.0.</p>
       </div>
       <div class="cta-actions">
         <a class="btn" href="/try">Try Aielia →</a>
