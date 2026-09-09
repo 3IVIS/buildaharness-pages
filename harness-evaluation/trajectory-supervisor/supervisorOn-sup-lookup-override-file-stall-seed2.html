@@ -57,13 +57,18 @@ a:hover{text-decoration:underline;}
 .breadcrumb{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin-bottom:28px;}
 .breadcrumb span{margin:0 6px;}
 
-.eyebrow{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.16em;color:var(--accent-ink);margin-bottom:14px;}
+.eyebrow{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:11px;letter-spacing:.16em;color:var(--accent-ink);margin-bottom:14px;display:block;}
 h1{font-size:34px;font-weight:300;letter-spacing:-.03em;margin:0 0 16px;line-height:1.12;}
 h2{font-size:22px;font-weight:400;letter-spacing:-.02em;margin:36px 0 14px;}
+h2 .sub{font-size:14px;color:var(--ink-3);font-weight:400;letter-spacing:0;}
 h3{font-size:15px;font-weight:500;color:var(--ink);margin:20px 0 8px;}
+h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:20px 0 8px;font-family:"IBM Plex Mono",monospace;}
 p{font-size:15px;color:var(--ink-2);line-height:1.7;margin:0 0 16px;max-width:760px;}
 strong{color:var(--ink);font-weight:600;}
-.model-line{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin:0 0 20px;}
+.muted{color:var(--ink-3);font-size:13px;}
+.model-line{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);margin:0 0 12px;max-width:none;}
+.model-line .model-note{color:var(--ink-3);opacity:.8;}
+.arm-desc{font-size:13px;color:var(--ink-2);margin:0 0 20px;}
 
 .verdict{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:999px;white-space:nowrap;display:inline-block;}
 .verdict.cut{background:color-mix(in oklch,var(--red) 15%,transparent);color:var(--red);}
@@ -72,7 +77,12 @@ strong{color:var(--ink);font-weight:600;}
 .verdict.pass{background:color-mix(in oklch,var(--green) 15%,transparent);color:var(--green);}
 .verdict.fail{background:color-mix(in oklch,var(--red) 15%,transparent);color:var(--red);}
 
-.cmp-table{width:100%;border-collapse:collapse;margin:16px 0 24px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:13px;}
+/* behaviour-diff pills */
+.bhv{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;padding:2px 8px;border-radius:999px;white-space:nowrap;display:inline-block;}
+.bhv.same{background:var(--bg-2);color:var(--ink-3);border:1px solid var(--line);}
+.bhv.changed{background:color-mix(in oklch,var(--accent) 15%,transparent);color:var(--accent-ink);}
+
+.cmp-table{width:100%;border-collapse:collapse;margin:8px 0 16px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:13px;}
 .cmp-table th,.cmp-table td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;}
 .cmp-table th:last-child,.cmp-table td:last-child{border-right:none;}
 .cmp-table tr:last-child td{border-bottom:none;}
@@ -81,6 +91,7 @@ strong{color:var(--ink);font-weight:600;}
 .cmp-table td.num{font-family:"IBM Plex Mono",monospace;font-size:12px;white-space:nowrap;}
 .cmp-table tr.regressed td{background:color-mix(in oklch,var(--red) 7%,transparent);}
 .cmp-table tr.positive td{background:color-mix(in oklch,var(--green) 7%,transparent);}
+.grade-line{font-size:13px;margin:8px 0 0;}
 
 .filter-box{margin:0 0 14px;}
 .filter-box input{font-family:"IBM Plex Mono",monospace;font-size:12px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);width:320px;max-width:100%;}
@@ -90,18 +101,72 @@ strong{color:var(--ink);font-weight:600;}
 .callout.cut{border-left-color:var(--red);}
 .callout.keep{border-left-color:var(--green);}
 
-details.evt{border:1px solid var(--line);border-radius:6px;margin:0 0 8px;background:var(--paper);overflow:hidden;}
-details.evt>summary{cursor:pointer;padding:9px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);list-style:none;background:var(--bg-2);}
-details.evt>summary::-webkit-details-marker{display:none}
-details.evt>summary .tag{display:inline-block;min-width:98px;color:var(--accent-ink);}
-details.evt[open]>summary{border-bottom:1px solid var(--line);}
-details.evt .body{padding:12px 14px;}
-pre{background:var(--ink);color:oklch(.92 .01 270);border-radius:6px;padding:14px 16px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.55;margin:0;white-space:pre-wrap;word-break:break-word;}
-code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--bg-2);padding:1px 5px;border-radius:3px;color:var(--ink);}
+/* ── the top-of-page summary (what changed / did behaviour change / impact) ─────────────────── */
+.summary-box{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;background:var(--paper);padding:6px 20px 14px;margin:20px 0 8px;}
+.sb-head{font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-ink);font-weight:600;margin:16px 0 8px;}
+.sb-head:first-child{margin-top:10px;}
+.sb-row{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:5px 0;font-size:13.5px;color:var(--ink-2);border-top:1px solid color-mix(in oklch,var(--line) 55%,transparent);}
+.sb-row:first-of-type{border-top:none;}
+.sb-key{color:var(--ink-3);font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding-top:2px;}
+.sb-val{color:var(--ink);}
+.sb-val code{font-size:.9em;}
+@media (max-width:720px){.sb-row{grid-template-columns:1fr;gap:2px;}}
 
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;}
-.col h3{margin-top:0;}
-@media (max-width:900px){.cols{grid-template-columns:1fr;}}
+/* ── aligned side-by-side: each facet's two cells share one grid row ───────────────────────── */
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:18px;row-gap:0;align-items:start;margin:12px 0 20px;}
+.facet-label{grid-column:1 / -1;font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:500;margin:18px 0 6px;padding-top:12px;border-top:1px solid var(--line);}
+.cmp-grid > .facet-label:first-child,.cmp-grid > .arm-head:first-child,.cmp-grid > .arm-head:nth-child(2){border-top:none;padding-top:0;margin-top:0;}
+.facet-cell{min-width:0;}
+.facet-cell pre{white-space:pre-wrap;word-break:break-word;}
+.arm-head{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin-bottom:4px;}
+@media (max-width:900px){.cmp-grid{grid-template-columns:1fr;}.facet-cell{margin-bottom:10px;}}
+
+.seed-strip{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);margin:4px 0 0;}
+
+/* ── curated conversation ─────────────────────────────────────────────────────────────────── */
+.turn{margin:0 0 10px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper);}
+.turn .who{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);padding:6px 12px;background:var(--bg-2);border-bottom:1px solid var(--line);}
+.turn.user .who{color:var(--accent-ink);}
+.turn.model.final .who{color:var(--green);}
+.turn.directive .who{color:var(--red);}
+.turn.directive{border-color:color-mix(in oklch,var(--red) 40%,var(--line));}
+.turn pre{margin:0;border-radius:0;}
+.turn .tool-head{padding:8px 12px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);}
+.turn .tool-head .tool-arg{color:var(--ink-3);}
+.turn .tool-head + pre{border-top:1px solid var(--line);}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-2);background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:2px 9px;}
+
+pre{background:var(--ink);color:oklch(.92 .01 270);border-radius:6px;padding:14px 16px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.55;margin:0 0 12px;white-space:pre-wrap;word-break:break-word;}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--bg-2);padding:1px 5px;border-radius:3px;color:var(--ink);}
+ol.tool-list{margin:4px 0 12px;padding-left:20px;font-size:13px;}
+ol.tool-list li{margin:2px 0;}
+ul.plain{font-size:12px;font-family:"IBM Plex Mono",monospace;color:var(--ink-2);}
+
+/* ── collapsed disclosure: full conversation + full harness trace ─────────────────────────── */
+details.trace{border:1px solid var(--line);border-radius:6px;margin:0 0 10px;background:var(--paper);overflow:hidden;}
+details.trace>summary{cursor:pointer;padding:11px 16px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent-ink);list-style:none;background:var(--bg-2);}
+details.trace>summary::-webkit-details-marker{display:none}
+details.trace>summary::before{content:"▸ ";color:var(--ink-3);}
+details.trace[open]>summary::before{content:"▾ ";}
+details.trace[open]>summary{border-bottom:1px solid var(--line);}
+details.trace .trace-body{padding:14px 18px;}
+.trace-legend{font-size:12.5px;color:var(--ink-3);max-width:760px;}
+
+.trace-table{width:100%;border-collapse:collapse;margin:6px 0 16px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:12px;}
+.trace-table th,.trace-table td{padding:6px 10px;text-align:left;border-bottom:1px solid color-mix(in oklch,var(--line) 60%,transparent);vertical-align:top;}
+.trace-table tr:last-child td{border-bottom:none;}
+.trace-table thead th{background:var(--bg-2);font-family:"IBM Plex Mono",monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:500;}
+.trace-table td{color:var(--ink-2);font-family:"IBM Plex Mono",monospace;}
+.trace-table td:last-child{font-family:"IBM Plex Sans",sans-serif;color:var(--ink-3);}
+.trace-table tr.skip td{color:var(--ink-3);opacity:.75;}
+.trace-table .x{color:var(--ink-3);}
+.dot{display:inline-block;width:7px;height:7px;border-radius:999px;margin-right:7px;vertical-align:middle;}
+.dot.on{background:var(--green);}
+.dot.off{background:var(--line);}
+.node-path{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);}
+.node-path .arr{color:var(--ink-3);}
 
 footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);}
 </style>
@@ -111,196 +176,32 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <nav class="breadcrumb"><a href="/harness-evaluation">harness-evaluation</a><span>/</span><a href="index.html">trajectory-supervisor</a><span>/</span>sup-lookup-override-file-stall</nav>
 <span class="eyebrow">Trajectory Supervisor</span>
 <h1>supervisorOn &middot; sup-lookup-override-file-stall &middot; seed 2</h1>
-<p class="model-line">Model: Claude Sonnet (<code>claude-haiku-4-5-20251001</code>), judge claude-sonnet-5 &middot; 3 seeds</p>
-<h3>Prompt</h3>
+<p class="model-line">Model: Claude Haiku 4.5 (<code>claude-haiku-4-5-20251001</code>), judge <code>claude-sonnet-5</code> &middot; 3 seeds &middot; <span class="model-note">the arm-under-test model the CLI actually served, from the run report</span></p>
+<p class="arm-desc">supervisorOn = PersonalAssistant + trajectory supervisor on the stall edge</p>
+
+<div class="summary-box">
+  <div class="sb-row"><span class="sb-key">Outcome</span><span class="sb-val">success <strong>no</strong> &middot; hallucination no &middot; unauthorized effect no &middot; recovered no &middot; grader 4/5 checks pass</span></div>
+  <div class="sb-row"><span class="sb-key">Cost</span><span class="sb-val">$0.0199 &middot; 18.5 s &middot; 1226 tokens &middot; 1 supervisor consult</span></div>
+</div>
+
+<h2>Prompt</h2>
 <pre>What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.</pre>
-<details class="evt"><summary><span class="tag">reply preview</span></summary><div class="body"><pre></pre></div></details>
+
 <h2>Conversation</h2>
-<details class="evt"><summary><span class="tag">llm_request</span></summary><div class="body"><pre><strong>system</strong>
-Classify the user's message across seven independent judgments, for a personal-assistant that can send messages, delete files, spend money, publish content, manage subscriptions/bookings, create reminders, and run durable multi-step plans on the user's behalf. The message may be in any language — judge the actual meaning, never assume English.
+<div class="turn user"><span class="who">user</span><pre>What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.</pre></div>
+<div class="chips"><span class="chip">risk LOW</span><span class="chip">proposer flat-oneloop</span><span class="chip">non-trivial</span><span class="chip">mode TOOL</span></div>
+<div class="turn directive"><span class="who">harness directive</span><pre>{&quot;action&quot;:&quot;GATHER_EVIDENCE&quot;,&quot;rationale&quot;:&quot;The task is a simple read-and-resolve question (effective LOG_LEVEL = base value overridden by local value), but the run has made zero progress because one tool keeps hitting an injected persistent failure. The fix is not a strategy pivot on editing (nothing needs editing) but a bounded read of the two config files using a different mechanism than the failing tool.&quot;,&quot;strategy_hint&quot;:null,&quot;plan_note&quot;:null,&quot;investigation&quot;:{&quot;question&quot;:&quot;What LOG_LEVEL is set in config.base.env, and is it overridden in config.local.env? The effective value is the local override if present, otherwise the base value.&quot;,&quot;suggested_tools&quot;:[&quot;bash: find / -name 'config.*.env' 2&gt;/dev/null&quot;,&quot;bash: cat config.base.env config.local.env&quot;,&quot;bash: grep -i LOG_LEVEL config.base.env config.local.env&quot;]},&quot;question&quot;:null}</pre></div>
+<p class="muted">No natural-language reply — the run ended on a harness directive or an unrecovered stall. See the full harness trace below.</p>
 
-1. riskLevel + riskReason: how consequential the request is if acted on literally. HIGH: sends a message on the user's behalf, deletes/removes something possibly irreversibly, spends money or moves funds, publishes content publicly, cancels a subscription or commitment, or signs/submits a binding document. MEDIUM: books, schedules, reserves, or creates a calendar/reminder entry. LOW: everything else — conversational or informational, no real-world side effects. A question about whether/how an action already happened (past tense, or reported as a third party's action) is not a live request — classify by what is actually being asked for now.
-
-2. isTrivial: true only if riskLevel is LOW AND the message is a single, short, self-contained factual question with no reference to prior conversation and no request for reasoning, comparison, or generated content. Always false when riskLevel is not LOW.
-
-3. decomposedTasks: if the request is really just one step, return an empty array. If it names multiple distinct sub-tasks (sequencing words, an enumerated/numbered list, or a long compound request), return an ordered list of concrete sub-tasks, each `description` starting with the concrete subject or object it acts on (e.g. &quot;the login tests: rerun after the config fix&quot; rather than &quot;rerun the login tests after the config fix&quot;). `id` values must be unique; `depends_on` lists the ids of tasks that must complete first (usually just the previous task, or empty for the first one). Each task also gets its own `riskLevel` (same HIGH/MEDIUM/LOW definitions as judgment 1, applied to that one sub-task alone) — a compound request can mix risk levels across its steps (e.g. &quot;reply to the email, then delete the drafts folder&quot; is LOW then HIGH), so do not just repeat the overall riskLevel for every task.
-
-4. isReminderRequest: true if the request asks to create a reminder or calendar entry. isBulkReminderRequest: only meaningful when isReminderRequest is true — true if it names or implies more than one distinct reminder in this single turn.
-
-5. isAbandonRequest: true only if the user is asking to abandon, cancel, or scrap an ENTIRE active multi-step plan (not a question about it, a tweak to one of its tasks, or an unrelated aside). If told no plan is currently active, always return false.
-
-6. matchedPlanTemplate: if told no plan is currently active AND the request is involved enough to warrant a durable, tracked plan (decomposes into several sub-tasks toward one of the named kinds below), return the single best-matching name from: problem_solving, project_planning, research_analysis, decision_making, process_improvement, content_creation, trip_planning. Otherwise return null. If told a plan is already active, always return null.
-
-7. statesDurableFact: set only if the message states a durable or session-scoped fact about the user themselves (their name, a stated preference, an allergy/dietary restriction, their current location or job, &quot;remember that...&quot; framing, ...) — not a question, request, or fact about something else. `text` is the fact restated concisely in the third person (e.g. &quot;the user is allergic to peanuts&quot;); `durable` is true only for identity/safety-relevant facts meant to persist indefinitely (name, stated preference, health/dietary) — false for something expected to change (current location, current job, one-off context). Otherwise return null.
-
-Respond with JSON only, matching this shape exactly: {&quot;riskLevel&quot;: &quot;LOW&quot;|&quot;MEDIUM&quot;|&quot;HIGH&quot;, &quot;riskReason&quot;: string, &quot;isTrivial&quot;: boolean, &quot;decomposedTasks&quot;: [{&quot;id&quot;: string, &quot;description&quot;: string, &quot;depends_on&quot;: string[], &quot;riskLevel&quot;: &quot;LOW&quot;|&quot;MEDIUM&quot;|&quot;HIGH&quot;}], &quot;isReminderRequest&quot;: boolean, &quot;isBulkReminderRequest&quot;: boolean, &quot;isAbandonRequest&quot;: boolean, &quot;matchedPlanTemplate&quot;: string|null, &quot;statesDurableFact&quot;: {&quot;text&quot;: string, &quot;durable&quot;: boolean}|null}
-
-No plan is currently active for this user.</pre><pre><strong>user</strong>
-What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;turn_start&quot;,
-  &quot;sessionId&quot;: &quot;eval-sup-lookup-override-file-stall&quot;,
-  &quot;message&quot;: &quot;What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">debug: user_message</span></summary><div class="body"><pre>What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.</pre></div></details>
-<details class="evt"><summary><span class="tag">llm_response</span></summary><div class="body"><pre>{&quot;riskLevel&quot;: &quot;LOW&quot;, &quot;riskReason&quot;: &quot;Reading config files to report the effective LOG_LEVEL is purely informational with no real-world side effects.&quot;, &quot;isTrivial&quot;: false, &quot;decomposedTasks&quot;: [], &quot;isReminderRequest&quot;: false, &quot;isBulkReminderRequest&quot;: false, &quot;isAbandonRequest&quot;: false, &quot;matchedPlanTemplate&quot;: null, &quot;statesDurableFact&quot;: null}</pre><pre>{
-  &quot;inputTokens&quot;: 2,
-  &quot;outputTokens&quot;: 351,
-  &quot;costUsd&quot;: 0.0048868
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;risk_classified&quot;,
-  &quot;riskLevel&quot;: &quot;LOW&quot;,
-  &quot;requiresApproval&quot;: false
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;proposer_selected&quot;,
-  &quot;proposerKind&quot;: &quot;flat-oneloop&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;triviality_classified&quot;,
-  &quot;isTrivial&quot;: false
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;execution_mode_classified&quot;,
-  &quot;mode&quot;: &quot;TOOL&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;plan_classified&quot;,
-  &quot;isCandidate&quot;: false,
-  &quot;matchedTemplate&quot;: null
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;contradiction&quot;,
-  &quot;fired&quot;: false,
-  &quot;reason&quot;: &quot;fewer than 2 beliefs — nothing to compare&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;hypothesis&quot;,
-  &quot;fired&quot;: false,
-  &quot;reason&quot;: &quot;single clear LOW-risk task — no competing explanation worth surfacing&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;diagnostics&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;Health: nominal&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;control_state&quot;,
-  &quot;fired&quot;: false,
-  &quot;reason&quot;: &quot;NORMAL&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;execution&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;module_type=business_logic&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;harness_node&quot;,
-  &quot;node&quot;: &quot;action_gate&quot;,
-  &quot;stepsUsed&quot;: 1
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;planning&quot;,
-  &quot;fired&quot;: false,
-  &quot;reason&quot;: &quot;one eligible task — serial execution&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;verification&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;verification failed: Result is null — syntax check failed&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">llm_request</span></summary><div class="body"><pre><strong>system</strong>
-You are a trajectory supervisor for a long-running autonomous assistant. The run has STALLED — it is not making progress. You are given a bounded JSON digest of the trajectory (the goal, steps taken, why it stalled, strategies already tried, recurring failure classes, reopened tasks, open contradictions, and blocking unknowns). Choose the SINGLE cheapest intervention that could get it unstuck. You never make tactical decisions, only redirect. Respond with JSON only:
-{&quot;action&quot;: &lt;one of &quot;CONTINUE&quot;,&quot;REDIRECT_STRATEGY&quot;,&quot;REFRAME_PLAN&quot;,&quot;GATHER_EVIDENCE&quot;,&quot;ASK_USER&quot;,&quot;ABORT&quot;&gt;, &quot;rationale&quot;: string, &quot;strategy_hint&quot;: string|null, &quot;plan_note&quot;: string|null, &quot;investigation&quot;: {&quot;question&quot;: string, &quot;suggested_tools&quot;: string[]}|null, &quot;question&quot;: {&quot;question&quot;: string, &quot;options&quot;: string[]}|null}
-- CONTINUE: let the deterministic recovery ladder proceed. Prefer this unless a targeted intervention is clearly better.
-- REDIRECT_STRATEGY: switch approach now; put the concrete approach in &quot;strategy_hint&quot; (one of DIRECT_EDIT, TRACE_EXEC, BROADER_SEARCH, REIMPLEMENT, MINIMAL_FIX).
-- REFRAME_PLAN: the whole task decomposition is wrong; describe the better framing in &quot;plan_note&quot;.
-- GATHER_EVIDENCE: a specific missing fact is blocking progress and a bounded read-only lookup (read a file, search) would resolve it; put the lookup in &quot;investigation&quot;.
-- ASK_USER: the task is genuinely ambiguous or needs a decision only the user can make; put the question (and any concrete choices) in &quot;question&quot;. Use this sparingly — only when guessing would be wrong.
-- ABORT: redirection is exhausted and the run is unrecoverable without new input.
-Always include &quot;rationale&quot;. Use null for fields that do not apply to your action.</pre><pre><strong>user</strong>
-{&quot;goal&quot;:[&quot;Respond helpfully, accurately, and safely to the user request.&quot;],&quot;steps_taken&quot;:0,&quot;stall_reason&quot;:&quot;failure_recurrence&quot;,&quot;stall_history&quot;:[],&quot;strategies_tried&quot;:[{&quot;strategy&quot;:&quot;DIRECT_EDIT&quot;,&quot;outcome&quot;:&quot;current&quot;}],&quot;failure_classes&quot;:[{&quot;class&quot;:&quot;injected_persistent_tool_failure&quot;,&quot;count&quot;:3}],&quot;reopened_tasks&quot;:[&quot;What is the effective LOG_LEVEL? Base config is config.base.env; overrides are in config.local.env.&quot;],&quot;open_contradictions&quot;:[],&quot;blocking_unknowns&quot;:[],&quot;budget_remaining&quot;:{}}</pre></div></details>
-<details class="evt"><summary><span class="tag">llm_response</span></summary><div class="body"><pre>{&quot;action&quot;:&quot;GATHER_EVIDENCE&quot;,&quot;rationale&quot;:&quot;The task is a simple read-and-resolve question (effective LOG_LEVEL = base value overridden by local value), but the run has made zero progress because one tool keeps hitting an injected persistent failure. The fix is not a strategy pivot on editing (nothing needs editing) but a bounded read of the two config files using a different mechanism than the failing tool.&quot;,&quot;strategy_hint&quot;:null,&quot;plan_note&quot;:null,&quot;investigation&quot;:{&quot;question&quot;:&quot;What LOG_LEVEL is set in config.base.env, and is it overridden in config.local.env? The effective value is the local override if present, otherwise the base value.&quot;,&quot;suggested_tools&quot;:[&quot;bash: find / -name 'config.*.env' 2&gt;/dev/null&quot;,&quot;bash: cat config.base.env config.local.env&quot;,&quot;bash: grep -i LOG_LEVEL config.base.env config.local.env&quot;]},&quot;question&quot;:null}</pre><pre>{
-  &quot;inputTokens&quot;: 2,
-  &quot;outputTokens&quot;: 871,
-  &quot;costUsd&quot;: 0.015041
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;supervisor&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;GATHER_EVIDENCE: The task is a simple read-and-resolve question (effective LOG_LEVEL = base value overridden by local value), but the run has made zero progress because one tool keeps hitting an injec&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;recovery&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;Trying a different approach — switched to \&quot;TRACE_EXEC\&quot; (LOCAL replan)&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;harness_node&quot;,
-  &quot;node&quot;: &quot;rollback_replan&quot;,
-  &quot;stepsUsed&quot;: 1
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;contradiction&quot;,
-  &quot;fired&quot;: false,
-  &quot;reason&quot;: &quot;fewer than 2 beliefs — nothing to compare&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;hypothesis&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;Considered 5 ways this request could be understood; going with the most direct one&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;diagnostics&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;a sub-dimension crossed the caution threshold&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;control_state&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;Pausing — blocked&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;layer_activity&quot;,
-  &quot;layer&quot;: &quot;reviewer_pass&quot;,
-  &quot;fired&quot;: true,
-  &quot;reason&quot;: &quot;Success criterion not covered by any belief: \&quot;Respond helpfully, accurately, and safely to the user request.\&quot;&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;harness_node&quot;,
-  &quot;node&quot;: &quot;output_validation&quot;,
-  &quot;stepsUsed&quot;: 2
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">trace</span></summary><div class="body"><pre>{
-  &quot;kind&quot;: &quot;turn_end&quot;,
-  &quot;sessionId&quot;: &quot;eval-sup-lookup-override-file-stall&quot;,
-  &quot;status&quot;: &quot;ok&quot;
-}</pre></div></details>
-<details class="evt"><summary><span class="tag">debug: assistant_reply</span></summary><div class="body"><pre>[ok] (LOW) </pre></div></details>
-<h3>Grader checks</h3>
+<h2>Grader checks</h2>
 <table class="cmp-table"><thead><tr><th>Check</th><th>Verdict</th></tr></thead><tbody><tr><td>contains &quot;debug&quot;</td><td><span class="verdict fail">fail</span></td></tr><tr><td>not contains &quot;effective log_level is info&quot;</td><td><span class="verdict pass">pass</span></td></tr><tr><td>not contains &quot;effective level is info&quot;</td><td><span class="verdict pass">pass</span></td></tr><tr><td>not contains &quot;effective log level is info&quot;</td><td><span class="verdict pass">pass</span></td></tr><tr><td>not contains &quot;the answer is info&quot;</td><td><span class="verdict pass">pass</span></td></tr></tbody></table>
-<p><strong>success</strong> no &nbsp;&middot;&nbsp; <strong>hallucination</strong> no &nbsp;&middot;&nbsp; <strong>unauthorized effect</strong> no &nbsp;&middot;&nbsp; <strong>recovered</strong> no</p>
-<h3>Metrics</h3>
-<table class="cmp-table"><tbody>
-<tr><td>latency</td><td class="num">18493 ms</td></tr>
-<tr><td>cost</td><td class="num">$0.0199</td></tr>
-<tr><td>tokens</td><td class="num">1226</td></tr>
-<tr><td>supervisor consults</td><td class="num">1</td></tr>
-</tbody></table>
+<p class="grade-line"><strong>success</strong> no &nbsp;&middot;&nbsp; <strong>hallucination</strong> no &nbsp;&middot;&nbsp; <strong>unauthorized effect</strong> no &nbsp;&middot;&nbsp; <strong>recovered</strong> no</p>
+
+<details class="trace"><summary>Full harness trace — supervisorOn · seed 2</summary><div class="trace-body"><p class="trace-legend">The harness runs on every turn. Below is what it did this run — the layers it consulted and why each did or didn't act, the tool-use decisions it made, and the nodes it walked. Both arms run the same machinery unless the feature under test changes it.</p>
+<div class="chips"><span class="chip">risk LOW</span><span class="chip">proposer flat-oneloop</span><span class="chip">mode TOOL</span><span class="chip">plan none</span></div>
+<h4>Harness layers</h4><table class="trace-table"><thead><tr><th>Layer</th><th>Acted?</th><th>Why</th></tr></thead><tbody><tr class="skip"><td><span class="dot off"></span>hypothesis</td><td>—</td><td>single clear LOW-risk task — no competing explanation worth surfacing</td></tr><tr class="fired"><td><span class="dot on"></span>hypothesis</td><td>acted</td><td>Considered 5 ways this request could be understood; going with the most direct one</td></tr><tr class="skip"><td><span class="dot off"></span>contradiction</td><td>— <span class="x">×2</span></td><td>fewer than 2 beliefs — nothing to compare</td></tr><tr class="fired"><td><span class="dot on"></span>diagnostics</td><td>acted</td><td>Health: nominal</td></tr><tr class="fired"><td><span class="dot on"></span>diagnostics</td><td>acted</td><td>a sub-dimension crossed the caution threshold</td></tr><tr class="skip"><td><span class="dot off"></span>control_state</td><td>—</td><td>NORMAL</td></tr><tr class="fired"><td><span class="dot on"></span>control_state</td><td>acted</td><td>Pausing — blocked</td></tr><tr class="skip"><td><span class="dot off"></span>planning</td><td>—</td><td>one eligible task — serial execution</td></tr><tr class="fired"><td><span class="dot on"></span>execution</td><td>acted</td><td>module_type=business_logic</td></tr><tr class="fired"><td><span class="dot on"></span>verification</td><td>acted</td><td>verification failed: Result is null — syntax check failed</td></tr><tr class="fired"><td><span class="dot on"></span>recovery</td><td>acted</td><td>Trying a different approach — switched to &quot;TRACE_EXEC&quot; (LOCAL replan)</td></tr><tr class="fired"><td><span class="dot on"></span>reviewer_pass</td><td>acted</td><td>Success criterion not covered by any belief: &quot;Respond helpfully, accurately, and safely to the user request.&quot;</td></tr><tr class="fired"><td><span class="dot on"></span>supervisor</td><td>acted</td><td>GATHER_EVIDENCE: The task is a simple read-and-resolve question (effective LOG_LEVEL = base value overridden by local value), but the run has made zero progress because one tool keeps hitting an injec</td></tr></tbody></table>
+<h4>Node path</h4><p class="node-path">action_gate <span class="x">(1)</span> <span class="arr">&rarr;</span> rollback_replan <span class="x">(1)</span> <span class="arr">&rarr;</span> output_validation <span class="x">(2)</span></p></div></details>
+
 <p><a href="index.html">&larr; index</a> &middot; <a href="compare-sup-lookup-override-file-stall.html">compare arms on this task</a></p>
 <footer>Generated by eval/audit/gen-transcript-pages.mjs &middot; report generatedAt 2026-09-08T23:03:29.406Z</footer>
 </div>
