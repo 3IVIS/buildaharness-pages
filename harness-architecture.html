@@ -407,14 +407,6 @@ dialog.flow-modal::backdrop{background:oklch(.15 .01 270 / .6);}
   padding:10px 14px;font-size:12.5px;color:var(--ink);text-align:center;font-weight:500;
 }
 
-.fm-verdict{
-  margin-top:12px;padding:9px 13px;border:1px solid var(--line);border-left:3px solid var(--assist-ink);
-  border-radius:5px;background:var(--assist-tint);font-size:12px;color:var(--ink-2);line-height:1.55;
-}
-.fm-verdict b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--assist-ink);}
-.fm-verdict a{color:var(--accent-ink);text-decoration:none;}
-.fm-verdict a:hover{text-decoration:underline;}
-
 .fm-branches{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 .fm-branch{
   display:flex;align-items:flex-start;gap:10px;
@@ -508,7 +500,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <a href="/build">Build your own</a>
       <a href="/harness-comparison">Comparison</a>
       <a href="/harness-architecture" style="color:var(--accent-ink);">Architecture</a>
-      <a href="/harness-evaluation">Evaluation</a>
     </nav>
     <div class="hdr-actions">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">
@@ -1055,7 +1046,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       <div class="fm-branch"><b>semantic pass (assistant)</b> one LLM call, only for candidates the lexical pass wouldn't confidently classify</div>
       <div class="fm-branch"><b>all-lexical turn</b> if every new belief already looks lexically structured, the LLM call is skipped entirely — no cost</div>
     </div>
-    <p class="fm-verdict"><b>Evaluation:</b> on the bench — Batch&nbsp;B. Does the semantic pass catch enough conflicts the lexical check misses to pay for the call? <a href="/harness-evaluation#bench">See the audit →</a></p>
   </div>
 </dialog>
 
@@ -1118,7 +1108,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <p class="fm-desc">Matches observed symptoms against the curated failure-pattern library by meaning, not exact wording — e.g. "the request took too long and timed out" matches a curated "request timed out" symptom.</p>
     <div class="fm-files"><b>Files:</b> failure-mode-matcher.ts</div>
     <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Layered on top of Recovery (Layer 10)'s own pattern-library match — one LLM call, only reached when the lexical match doesn't already resolve it.</p>
-    <p class="fm-verdict"><b>Evaluation:</b> on the bench — Batch&nbsp;B. The exact-string match "almost never" hits on free-text symptoms; the open question is whether the semantic match then changes any outcome. <a href="/harness-evaluation#bench">See the audit →</a></p>
   </div>
 </dialog>
 
@@ -1132,7 +1121,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <p class="fm-desc">Checks whether a proposed action genuinely conflicts with a high-confidence belief or an active hypothesis's predicted observation — a real logical conflict, not just topical overlap.</p>
     <div class="fm-files"><b>Files:</b> review-checker.ts</div>
     <p class="layer-more" style="font-size:13px;color:var(--ink-2);margin:0;">Layered on top of Reviewer Pass (Layer 11)'s own three lenses.</p>
-    <p class="fm-verdict"><b>Evaluation:</b> on the bench — Batch&nbsp;C. <a href="/harness-evaluation#bench">See the audit →</a></p>
   </div>
 </dialog>
 
