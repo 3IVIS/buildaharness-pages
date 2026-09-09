@@ -86,7 +86,7 @@
       "headline": "Does the harness work? We measure it — and cut what doesn't earn its cost",
       "description": "A controlled benchmark on every reasoning feature in the Build A Harness assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First result: the Trajectory Supervisor — measured, negative, cut.",
       "datePublished": "2026-09-07",
-      "dateModified": "2026-09-08",
+      "dateModified": "2026-09-09",
       "author": { "@id": "https://buildaharness.com/#org" },
       "publisher": { "@id": "https://buildaharness.com/#org" },
       "mainEntityOfPage": "https://buildaharness.com/harness-evaluation"
@@ -132,7 +132,7 @@
         {
           "@type": "Question",
           "name": "What model are these run on?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Claude Sonnet (claude-sonnet-5), pinned. Both the assistant under test and the LLM judge run on Sonnet, and the resolved model id is recorded in every machine report so a published number can be traced back to the model that produced it." }
+          "acceptedAnswer": { "@type": "Answer", "text": "The model id each run actually executed on, and the LLM judge's model, are both recorded in that run's machine report and shown on its transcript page — so a published number can be traced back to the model that produced it." }
         }
       ]
     }
@@ -448,15 +448,14 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <table class="cmp-table">
       <caption style="caption-side:bottom;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:.04em;padding:12px 4px 0;">
-        Audit runs are pinned to Claude Sonnet (<code>claude-sonnet-5</code>), LLM judge on (also Sonnet), 3 seeds minimum. The resolved model id is recorded in every machine report.
+        LLM judge on, 3 seeds minimum. Each run records the model it actually executed on — shown on its transcript page.
       </caption>
       <thead>
         <tr>
-          <th style="width:22%">Feature</th>
-          <th style="width:30%">The bet it encodes</th>
-          <th style="width:12%">Model</th>
+          <th style="width:26%">Feature</th>
+          <th style="width:34%">The bet it encodes</th>
           <th style="width:12%">Verdict</th>
-          <th style="width:24%">Evidence</th>
+          <th style="width:28%">Evidence</th>
         </tr>
       </thead>
       <tbody>
@@ -467,7 +466,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>A stalled run recovers better with a meta-controller that reads the failure trajectory and issues
           a targeted directive than by walking the deterministic strategy ladder.</td>
-          <td class="num">Claude Sonnet</td>
           <td><span class="verdict cut">Cut</span></td>
           <td>3-seed, 18-task, judge-on. Task success <span style="color:var(--red);font-weight:600;">−3.7%</span>
           (CI ±3.6%); latency <strong style="color:var(--red);">+34%</strong>, cost
@@ -579,9 +577,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         LLM judge on. Machine report:
         <code>eval/reports/2026-09-07T08-54-28-789Z.multiseed.json</code>. Per-seed task
         success — off: 72.2 / 72.2 / 72.2; on: 72.2 / 66.7 / 66.7. No change in hallucination or unauthorized
-        actions on either arm. The transcript-backed re-run (pinned to Claude Sonnet, model id recorded per seed)
-        is in progress &mdash; <a class="inline" href="/harness-evaluation/trajectory-supervisor/">read every run,
-        turn by turn →</a>
+        actions on either arm. The transcript-backed 3-seed re-run is published below &mdash;
+        <a class="inline" href="/harness-evaluation/trajectory-supervisor/">read every run, turn by turn →</a>
       </div>
     </div>
 
@@ -591,7 +588,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       turns, the tool calls and their results, the supervisor's directive text where it fired, and the grader
       checks &mdash; so the &minus;3.7% is a number you can inspect, not one you have to trust.
       <a class="inline" href="/harness-evaluation/trajectory-supervisor/">Open the transcript index →</a>
-      The pages populate as the pinned-Sonnet re-run finalizes its three seeds.
+      Each run's page names the model it executed on.
     </p>
 
     <h3 style="font-size:16px;font-weight:600;color:var(--ink);margin:32px 0 4px;">What we found</h3>
@@ -704,14 +701,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h2>The whole benchmark is <em>open source.</em></h2>
     <p class="prose">The task corpus, the mechanical grader, the arm definitions and the multi-seed runner all
     live in the product repo under <code>packages/personal-assistant/eval/</code>. Every result on this page
-    links to its machine report JSON. One command re-runs the supervisor matrix &mdash; the model is passed
-    explicitly so the run is pinned to Claude Sonnet rather than inheriting a CLI default:</p>
+    links to its machine report JSON, and each run records the model it executed on. One command re-runs the
+    supervisor matrix:</p>
 
     <pre><code>npx tsx scripts/run-harness-benchmark.ts \
   --arms=flagOn,supervisorOn \
   --slice=supervisor_lookup,supervisor_pivot \
-  --seeds=3 \
-  --model=sonnet --judge-model=sonnet</code></pre>
+  --seeds=3</code></pre>
 
     <p class="prose" style="margin-top:20px;">
       <a class="inline" href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant/eval">Benchmark harness on GitHub →</a><br>
@@ -746,10 +742,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </div>
       <div class="faq-item">
         <h3>What model are these run on?</h3>
-        <p>Claude Sonnet (<code>claude-sonnet-5</code>), pinned. Both the assistant under test and the LLM judge
-        run on Sonnet, and the resolved model id is written into every machine report so a published number can
-        always be traced back to the model that produced it. Before the audit driver, a benchmark run silently
-        inherited whatever the CLI default was; it no longer does.</p>
+        <p>Each run writes the model id it actually executed on — and the LLM judge's model — into its machine
+        report, and every transcript page names both, so a published number can always be traced back to the
+        model that produced it.</p>
       </div>
       <div class="faq-item">
         <h3>How does this relate to the architecture page?</h3>
