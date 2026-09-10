@@ -41,7 +41,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Does the harness work? We measure it — and cut what doesn't earn its cost | Build A Harness</title>
 
-<meta name="description" content="Build A Harness runs a controlled benchmark on every reasoning feature in the assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First result: the Trajectory Supervisor — measured, negative, cut. Every run is reproducible.">
+<meta name="description" content="Build A Harness runs a controlled benchmark on every reasoning feature in the assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study. Every run is reproducible.">
 
 <link rel="canonical" href="https://buildaharness.com/harness-evaluation">
 
@@ -49,7 +49,7 @@
 <meta property="og:url" content="https://buildaharness.com/harness-evaluation">
 <meta property="og:site_name" content="Build A Harness">
 <meta property="og:title" content="Does the harness work? We measure it — and cut what doesn't earn its cost">
-<meta property="og:description" content="A controlled benchmark on every reasoning feature in the assistant. First result: the Trajectory Supervisor — measured, negative, cut. Every run reproducible.">
+<meta property="og:description" content="A controlled benchmark on every reasoning feature in the assistant. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study. Every run reproducible.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -58,7 +58,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Does the harness work? We measure it — and cut what doesn't earn its cost">
-<meta name="twitter:description" content="A controlled benchmark on every reasoning feature in the assistant. First result: the Trajectory Supervisor — measured, negative, cut.">
+<meta name="twitter:description" content="A controlled benchmark on every reasoning feature in the assistant. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
 <meta name="twitter:image:alt" content="Build A Harness — measuring whether each harness feature earns its cost.">
 
@@ -84,9 +84,9 @@
       "@type": "Article",
       "@id": "https://buildaharness.com/harness-evaluation#article",
       "headline": "Does the harness work? We measure it — and cut what doesn't earn its cost",
-      "description": "A controlled benchmark on every reasoning feature in the Build A Harness assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First result: the Trajectory Supervisor — measured, negative, cut.",
+      "description": "A controlled benchmark on every reasoning feature in the Build A Harness assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study.",
       "datePublished": "2026-09-07",
-      "dateModified": "2026-09-09",
+      "dateModified": "2026-09-10",
       "author": { "@id": "https://buildaharness.com/#org" },
       "publisher": { "@id": "https://buildaharness.com/#org" },
       "mainEntityOfPage": "https://buildaharness.com/harness-evaluation"
@@ -336,17 +336,17 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <p class="hero-lede">
       <a class="inline" href="/harness-architecture">The architecture page</a> shows every layer and backstop
       we built. This one shows which of them we've <em>proven</em> earns its latency and token cost — and which
-      we've measured, found wanting, and switched off. First result below: the Trajectory Supervisor.
+      we've measured, found wanting, and switched off. Case study below: the Trajectory Supervisor.
     </p>
 
     <div class="stat-row" role="list">
       <div class="stat" role="listitem">
-        <span class="stat-n">1 / 13</span>
+        <span class="stat-n">4 / 13</span>
         <span class="stat-l">reasoning features on the bench audited so far</span>
       </div>
       <div class="stat" role="listitem">
-        <span class="stat-n">1 cut</span>
-        <span class="stat-l">measured negative → flag stays off, by evidence</span>
+        <span class="stat-n">3 cut · 1 kept</span>
+        <span class="stat-l">by evidence — a cut flag stays merged but off; a kept one stays on</span>
       </div>
       <div class="stat" role="listitem">
         <span class="stat-n">3 seeds</span>
@@ -356,7 +356,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="cta-row">
       <a class="btn" href="#method">The method ↓</a>
-      <a class="btn btn-ghost" href="#supervisor">First result ↓</a>
+      <a class="btn btn-ghost" href="#results">The results ↓</a>
       <a class="btn btn-ghost" href="#reproduce">Reproduce it ↓</a>
     </div>
 
@@ -444,7 +444,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-label">RESULTS</div>
     <h2>What we've decided <em>so far.</em></h2>
-    <p class="prose">One row today. This table grows as each audit lands — positive and negative alike.</p>
+    <p class="prose">Four features decided — one kept, three cut. This table grows as each audit lands, positive
+    and negative alike. Two more (<a class="inline" href="#bench">the 11-layer harness vs. a bare loop, and the
+    one-loop proposer</a>) had a first pass whose result we <strong>withdrew</strong> — the failure-injection
+    tasks were being applied to one arm and not the other — and are being re-run on a corrected corpus.</p>
 
     <table class="cmp-table">
       <caption style="caption-side:bottom;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:.04em;padding:12px 4px 0;">
@@ -473,10 +476,48 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           zero extra stall recoveries. <a href="#supervisor">Full case study ↓</a> ·
           <a href="/harness-evaluation/trajectory-supervisor/">Read the actual runs →</a></td>
         </tr>
+        <tr>
+          <td>
+            <span class="feat">Semantic contradiction backstop</span>
+            <span class="featref">+1 LLM call per belief batch · <a href="/harness-architecture">Layer 4</a></span>
+          </td>
+          <td>An LLM contradiction check catches paraphrased / cross-framing belief conflicts that the
+          always-on lexical negation-pair check provably can't — often enough to pay for the call.</td>
+          <td><span class="verdict keep">Keep</span></td>
+          <td>3-seed, 14-task, judge-on. Task success <strong style="color:var(--green);">+7.1%</strong>
+          (85.7% → 92.9%, CI clears 0); overconfident-and-wrong 12.8% → 7.7%; cost
+          <strong>+29%/turn</strong>, latency flat. The gain clears the cost.
+          <a href="/harness-evaluation/semantic-contradiction/">Read the actual runs →</a></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="feat">LLM injection detection on tool output</span>
+            <span class="featref">+1 LLM call per fetched page / shell result</span>
+          </td>
+          <td>An LLM classifier on every tool output catches prompt-injection the deterministic pattern
+          pass misses, without over-flagging benign instruction-like content.</td>
+          <td><span class="verdict cut">Cut</span></td>
+          <td>3-seed, 10-task, judge-on. <strong>No task-success delta</strong> (both 80%); hallucination
+          20% → 10% but cost <strong style="color:var(--red);">+21%/turn</strong> for no success gain.
+          Neutral with real cost. <a href="/harness-evaluation/llm-injection-detect/">Read the actual runs →</a></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="feat">Semantic failure-mode backstop</span>
+            <span class="featref">+1 LLM call per failure-library miss · <a href="/harness-architecture">Layer 10</a></span>
+          </td>
+          <td>An LLM matcher recognises known failure patterns described in different words often enough
+          to earn its per-miss call and improve recovery routing.</td>
+          <td><span class="verdict cut">Cut</span></td>
+          <td>3-seed, 8-task, judge-on. Task-success delta <strong>+12.5% but CI ±28%</strong> — not
+          significant; cost <strong style="color:var(--red);">+48%/turn</strong>, latency
+          <strong style="color:var(--red);">+15%</strong>. Neutral with real cost.
+          <a href="/harness-evaluation/semantic-failure-match/">Read the actual runs →</a></td>
+        </tr>
       </tbody>
     </table>
 
-    <p class="prose" style="margin-top:24px;"><a class="inline" href="#bench">The other 12 candidates are on the
+    <p class="prose" style="margin-top:24px;"><a class="inline" href="#bench">The rest of the roster is on the
     bench ↓</a></p>
   </div>
 </section>
@@ -614,11 +655,12 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 <section class="section" id="bench">
   <div class="wrap">
     <div class="section-label">ON THE BENCH</div>
-    <h2>Twelve more features, <em>queued.</em></h2>
-    <p class="prose">Ordered by how much new scaffolding a verdict needs. Batch A is a single run against a
-    corpus that already exists. The five features below with a <strong>runs →</strong> link are queued in the
-    audit matrix; the scheduler grinds through them one seed at a time and the link fills in with the full
-    turn-by-turn transcripts as each feature finalizes.</p>
+    <h2>The rest of the roster, <em>queued.</em></h2>
+    <p class="prose">Ordered by how much new scaffolding a verdict needs. The two <strong>re-running</strong>
+    features had a first pass we withdrew: the failure-injection tasks fired for the harness arm but not
+    its control, so the harness was stress-tested while the baseline ran clean. The corpus is fixed and the
+    scheduler is working through a fair re-run one seed at a time; the transcript links fill in when each
+    finalizes.</p>
 
     <table class="cmp-table">
       <thead>
@@ -630,29 +672,14 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
       </thead>
       <tbody>
         <tr>
-          <td><span class="feat">The 11-layer harness itself</span><span class="featref">vs. a bare ReAct loop · <a href="/harness-evaluation/harness-vs-bare/">runs →</a></span></td>
+          <td><span class="feat">The 11-layer harness itself</span><span class="featref">vs. a bare ReAct loop</span></td>
           <td>Staging, control state, verification, reviewer pass, memory — the whole control plane.</td>
-          <td><span class="verdict bench">Batch A — next</span></td>
+          <td><span class="verdict bench">Re-running</span></td>
         </tr>
         <tr>
-          <td><span class="feat">One-loop proposer</span><span class="featref">ASSISTANT_ONE_LOOP · <a href="/harness-evaluation/one-loop/">runs →</a></span></td>
+          <td><span class="feat">One-loop proposer</span><span class="featref">ASSISTANT_ONE_LOOP</span></td>
           <td>The harness drives every tool call in-loop, instead of reviewing an already-finished reply.</td>
-          <td><span class="verdict bench">Batch A — next</span></td>
-        </tr>
-        <tr>
-          <td><span class="feat">Semantic contradiction backstop</span><span class="featref"><a href="/harness-architecture">Layer 4</a> · <a href="/harness-evaluation/semantic-contradiction/">runs →</a></span></td>
-          <td>+1 LLM call per new batch of beliefs, when the lexical negation-pair check can't classify them.</td>
-          <td><span class="verdict bench">Batch B</span></td>
-        </tr>
-        <tr>
-          <td><span class="feat">LLM injection detection on tool output</span><span class="featref">every fetched page / shell result · <a href="/harness-evaluation/llm-injection-detect/">runs →</a></span></td>
-          <td>+1 LLM call on <em>every</em> web page and command output, scanning for prompt-injection.</td>
-          <td><span class="verdict bench">Batch B</span></td>
-        </tr>
-        <tr>
-          <td><span class="feat">Semantic failure-mode backstop</span><span class="featref"><a href="/harness-architecture">Layer 10</a> · <a href="/harness-evaluation/semantic-failure-match/">runs →</a></span></td>
-          <td>+1 LLM call whenever the exact-string match against the failure library finds nothing.</td>
-          <td><span class="verdict bench">Batch B</span></td>
+          <td><span class="verdict bench">Re-running</span></td>
         </tr>
         <tr>
           <td><span class="feat">The reviewer pass</span><span class="featref"><a href="/harness-architecture">Layer 11</a> · 3 lenses</span></td>
