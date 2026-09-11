@@ -196,6 +196,27 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <table class="cmp-table"><thead><tr><th>Metric</th><th>bare</th><th>flagOn</th><th>&Delta;mean</th><th>&plusmn;CI95</th></tr></thead><tbody><tr class=""><td>taskSuccessRate</td><td class="num">0.676</td><td class="num">0.838</td><td class="num">+0.162</td><td class="num">±0.256</td></tr><tr class=""><td>hallucinationRate</td><td class="num">0.032</td><td class="num">0.014</td><td class="num">-0.019</td><td class="num">±0.024</td></tr><tr class="positive"><td>unauthorizedEffectRate</td><td class="num">0.037</td><td class="num">0.000</td><td class="num">-0.037</td><td class="num">±0.036</td></tr><tr class=""><td>recoveryRate</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr class=""><td>overconfidentWrongRate</td><td class="num">—</td><td class="num">0.125</td><td class="num">—</td><td class="num">—</td></tr><tr class=""><td>supervisorConsultsMean</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>meanLatencyMs</td><td class="num">9032 ms</td><td class="num">16937 ms</td><td class="num">+7905 ms</td><td class="num">±3666 ms</td></tr><tr class=""><td>meanCostUsd</td><td class="num">$0.0123</td><td class="num">$0.0218</td><td class="num">+$0.0095</td><td class="num">±$0.0023</td></tr><tr class=""><td>totalTokens</td><td class="num">55755</td><td class="num">56117</td><td class="num">+362</td><td class="num">±18614</td></tr></tbody></table>
 <p>Cost +77% &middot; latency +88% &middot; tokens +1% (candidate vs control).</p>
 
+<h2>Case study</h2><h3>What it does</h3><p>The 11-layer harness — a world model, evidence and contradiction tracking,
+  control-state gating, up-front planning, a 9-layer verification pass, and a reviewer pass — runs
+  on every turn, wrapping the same underlying model with staging, self-checks and recovery logic
+  that a plain tool-calling loop skips entirely.</p>
+<h3>Why we hypothesized it would help</h3><p>All that machinery should produce measurably better task outcomes than letting
+  the model call tools directly with nothing in front of it — enough to justify running the whole
+  subsystem, and the extra latency and tokens it costs, on every single turn.</p>
+<h3>How it was tested</h3><p>Arms: <code>bare</code> (a plain ReAct-style tool loop, no harness) vs
+  <code>flagOn</code> (the full harness). 76-task corpus, 3 seeds, LLM judge on. A first pass was
+  withdrawn: its injected-failure tasks fired only for the harness arm, not <code>bare</code>, so
+  the harness was stress-tested while the control ran clean. This run drops those tasks and
+  measures ordinary, non-failure task quality only — recovery-under-failure for the bare arm is a
+  separate, still-open coverage gap.</p>
+<h3>What we found</h3><p>Every quality metric favored the harness — task success 67.6% &rarr; 83.8% (a
+  16.2-point gap), hallucination 3.2% &rarr; 1.4%, unauthorized effects 3.7% &rarr; 0% — but none
+  of it clears its confidence interval at 3 seeds; the noise is wider than the gap. What
+  <em>is</em> proven: cost is 77% higher per turn and latency is 88% higher. So the honest read is
+  narrower than either "it helps" or "it doesn't": this run can't yet prove the harness improves
+  outcomes on ordinary, non-failure tasks, and it can prove the harness costs meaningfully more to
+  run them.</p>
+
 <h2>Runs <span class="sub">&mdash; 72 tasks &times; 3 seeds, 432 runs, one row per task</span></h2>
 <div class="filter-box"><input id="f" type="text" placeholder="filter by task…" oninput="filterRows()"></div>
 <table class="cmp-table" id="runs"><thead><tr><th>Task</th><th>Behaviour</th><th>bare<br><span class="th-sub">pass</span></th><th>flagOn<br><span class="th-sub">pass</span></th><th>&Delta; cost</th><th>&Delta; lat</th><th>&Delta; tok</th><th>Seeds <span class="th-sub">ctrl&rarr;cand</span></th></tr></thead><tbody><tr>

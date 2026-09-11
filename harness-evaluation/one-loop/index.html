@@ -196,6 +196,23 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <table class="cmp-table"><thead><tr><th>Metric</th><th>baseline</th><th>flagOn</th><th>&Delta;mean</th><th>&plusmn;CI95</th></tr></thead><tbody><tr class=""><td>taskSuccessRate</td><td class="num">0.810</td><td class="num">0.815</td><td class="num">+0.005</td><td class="num">±0.026</td></tr><tr class=""><td>hallucinationRate</td><td class="num">0.019</td><td class="num">0.014</td><td class="num">-0.005</td><td class="num">±0.009</td></tr><tr class=""><td>unauthorizedEffectRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>recoveryRate</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr class=""><td>overconfidentWrongRate</td><td class="num">0.163</td><td class="num">0.138</td><td class="num">-0.024</td><td class="num">±0.045</td></tr><tr class=""><td>supervisorConsultsMean</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>meanLatencyMs</td><td class="num">16241 ms</td><td class="num">16659 ms</td><td class="num">+418 ms</td><td class="num">±1608 ms</td></tr><tr class=""><td>meanCostUsd</td><td class="num">$0.0186</td><td class="num">$0.0153</td><td class="num">$-0.0033</td><td class="num">±$0.0041</td></tr><tr class=""><td>totalTokens</td><td class="num">51910</td><td class="num">54552</td><td class="num">+2642</td><td class="num">±4298</td></tr></tbody></table>
 <p>Cost -18% &middot; latency +3% &middot; tokens +5% (candidate vs control).</p>
 
+<h2>Case study</h2><h3>What it does</h3><p>Under <code>ASSISTANT_ONE_LOOP</code>, the harness's own <code>driveMainLoop</code>
+  calls the tool-calling machinery one iteration at a time, so the 11-layer harness genuinely
+  drives each tool call as it happens. The pre-rewire path ran the tool loop to completion first
+  and then ran the harness once afterward, purely as bookkeeping over an already-finished
+  reply.</p>
+<h3>Why we hypothesized it would help</h3><p>Driving tool calls in-loop, where the harness can act on each result as it
+  arrives, should beat reviewing a reply after the fact — retroactively validating the
+  2026-09-06 default flip to <code>ASSISTANT_ONE_LOOP=enabled</code>.</p>
+<h3>How it was tested</h3><p>Arms: <code>baseline</code> (post-hoc bookkeeping) vs <code>flagOn</code>
+  (in-loop). Same 76-task corpus, 3 seeds, LLM judge on. Like harness-vs-bare, a first pass was
+  withdrawn for the same reason — an injected-failure task fired for one arm and not the other —
+  and this is the corrected re-run.</p>
+<h3>What we found</h3><p>Task success moved 81.0% &rarr; 81.5% — essentially flat, well inside the
+  confidence interval. Cost actually came in 18% lower for the in-loop arm; latency was flat. So
+  this run is genuinely inconclusive on quality: it doesn't prove the in-loop rewire changed task
+  outcomes either way, though it didn't cost more to run it that way.</p>
+
 <h2>Runs <span class="sub">&mdash; 72 tasks &times; 3 seeds, 432 runs, one row per task</span></h2>
 <div class="filter-box"><input id="f" type="text" placeholder="filter by task…" oninput="filterRows()"></div>
 <table class="cmp-table" id="runs"><thead><tr><th>Task</th><th>Behaviour</th><th>baseline<br><span class="th-sub">pass</span></th><th>flagOn<br><span class="th-sub">pass</span></th><th>&Delta; cost</th><th>&Delta; lat</th><th>&Delta; tok</th><th>Seeds <span class="th-sub">ctrl&rarr;cand</span></th></tr></thead><tbody><tr>

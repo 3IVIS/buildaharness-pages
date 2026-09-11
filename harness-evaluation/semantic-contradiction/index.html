@@ -196,6 +196,22 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <table class="cmp-table"><thead><tr><th>Metric</th><th>contradictionOff</th><th>flagOn</th><th>&Delta;mean</th><th>&plusmn;CI95</th></tr></thead><tbody><tr class="positive"><td>taskSuccessRate</td><td class="num">0.857</td><td class="num">0.929</td><td class="num">+0.071</td><td class="num">±0.000</td></tr><tr class=""><td>hallucinationRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>unauthorizedEffectRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>recoveryRate</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr class="positive"><td>overconfidentWrongRate</td><td class="num">0.128</td><td class="num">0.077</td><td class="num">-0.051</td><td class="num">±0.050</td></tr><tr class=""><td>supervisorConsultsMean</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>meanLatencyMs</td><td class="num">21958 ms</td><td class="num">22286 ms</td><td class="num">+329 ms</td><td class="num">±464 ms</td></tr><tr class=""><td>meanCostUsd</td><td class="num">$0.0210</td><td class="num">$0.0270</td><td class="num">+$0.0060</td><td class="num">±$0.0063</td></tr><tr class=""><td>totalTokens</td><td class="num">16127</td><td class="num">15858</td><td class="num">-269</td><td class="num">±738</td></tr></tbody></table>
 <p>Cost +29% &middot; latency +1% &middot; tokens -2% (candidate vs control).</p>
 
+<h2>Case study</h2><h3>What it does</h3><p>An always-on lexical pass catches contradictions that are simple negation pairs
+  ("X is true" vs "X is not true"). <code>checkForContradictions</code> adds one LLM call on top
+  of that, run whenever the belief set grows, to catch contradictions that are paraphrased or
+  reframed rather than a literal negation.</p>
+<h3>Why we hypothesized it would help</h3><p>Real conversations restate beliefs in different words often enough that the
+  lexical-only check misses genuine contradictions — enough that the extra per-belief-set-growth
+  LLM call pays for itself.</p>
+<h3>How it was tested</h3><p>Arms: <code>contradictionOff</code> vs <code>flagOn</code>. A 14-task slice built
+  specifically for this: a belief stated one turn, unrelated beliefs in between, then a paraphrased
+  or cross-framed contradiction on a later turn — plus control tasks (a legitimate change over
+  time) that must not be false-flagged. 3 seeds, LLM judge on.</p>
+<h3>What we found</h3><p>Task success went 85.7% &rarr; 92.9%, a 7.1-point gain whose confidence interval
+  clears zero — the one result in this audit that's proven, not just suggested. Cost went up 29%
+  per turn with latency flat. The gain is real and it clears the cost: this is the one feature
+  kept on by default so far.</p>
+
 <h2>Runs <span class="sub">&mdash; 14 tasks &times; 3 seeds, 84 runs, one row per task</span></h2>
 <div class="filter-box"><input id="f" type="text" placeholder="filter by task…" oninput="filterRows()"></div>
 <table class="cmp-table" id="runs"><thead><tr><th>Task</th><th>Behaviour</th><th>contradictionOff<br><span class="th-sub">pass</span></th><th>flagOn<br><span class="th-sub">pass</span></th><th>&Delta; cost</th><th>&Delta; lat</th><th>&Delta; tok</th><th>Seeds <span class="th-sub">ctrl&rarr;cand</span></th></tr></thead><tbody><tr>

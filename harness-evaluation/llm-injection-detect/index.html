@@ -196,6 +196,22 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <table class="cmp-table"><thead><tr><th>Metric</th><th>injectionDetectOff</th><th>flagOn</th><th>&Delta;mean</th><th>&plusmn;CI95</th></tr></thead><tbody><tr class=""><td>taskSuccessRate</td><td class="num">0.800</td><td class="num">0.800</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class="positive"><td>hallucinationRate</td><td class="num">0.200</td><td class="num">0.100</td><td class="num">-0.100</td><td class="num">±0.000</td></tr><tr class=""><td>unauthorizedEffectRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>recoveryRate</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr class="positive"><td>overconfidentWrongRate</td><td class="num">0.200</td><td class="num">0.111</td><td class="num">-0.089</td><td class="num">±0.000</td></tr><tr class=""><td>supervisorConsultsMean</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>meanLatencyMs</td><td class="num">12775 ms</td><td class="num">12541 ms</td><td class="num">-233 ms</td><td class="num">±1090 ms</td></tr><tr class=""><td>meanCostUsd</td><td class="num">$0.0113</td><td class="num">$0.0137</td><td class="num">+$0.0024</td><td class="num">±$0.0042</td></tr><tr class="positive"><td>totalTokens</td><td class="num">6611</td><td class="num">5526</td><td class="num">-1084</td><td class="num">±539</td></tr></tbody></table>
 <p>Cost +21% &middot; latency -2% &middot; tokens -16% (candidate vs control).</p>
 
+<h2>Case study</h2><h3>What it does</h3><p>A deterministic pattern pass scans tool output (fetched pages, shell results) for
+  known prompt-injection phrasing. <code>detectInjectionLikelyWithLLM</code> adds an LLM classifier
+  on top of that pass, run on every checked output, aimed at payloads worded around the pattern
+  list and at not over-flagging benign content that merely looks instruction-like.</p>
+<h3>Why we hypothesized it would help</h3><p>The LLM classifier should catch injection payloads that slip past the
+  deterministic patterns, without taxing every benign file with a false positive — often enough
+  to be worth a model call on every checked tool output.</p>
+<h3>How it was tested</h3><p>Arms: <code>injectionDetectOff</code> vs <code>flagOn</code>. A 10-task slice:
+  slip-past payloads designed to avoid the pattern list, plus benign instruction-like files that
+  must not be flagged. 3 seeds, LLM judge on.</p>
+<h3>What we found</h3><p>Task success was identical in both arms (80.0%) — the classifier caught nothing
+  the deterministic pass didn't already handle on this slice. Hallucination fell 20% &rarr; 10%,
+  but cost rose 21% per turn for no measured success gain. That's a real cost with nothing to show
+  for it on the tasks tested; a known gap is that fetched-page tool outputs specifically, not just
+  file reads, haven't been exercised yet.</p>
+
 <h2>Runs <span class="sub">&mdash; 10 tasks &times; 3 seeds, 60 runs, one row per task</span></h2>
 <div class="filter-box"><input id="f" type="text" placeholder="filter by task…" oninput="filterRows()"></div>
 <table class="cmp-table" id="runs"><thead><tr><th>Task</th><th>Behaviour</th><th>injectionDetectOff<br><span class="th-sub">pass</span></th><th>flagOn<br><span class="th-sub">pass</span></th><th>&Delta; cost</th><th>&Delta; lat</th><th>&Delta; tok</th><th>Seeds <span class="th-sub">ctrl&rarr;cand</span></th></tr></thead><tbody><tr>

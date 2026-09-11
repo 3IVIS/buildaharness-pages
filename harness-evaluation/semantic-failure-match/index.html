@@ -196,6 +196,22 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <table class="cmp-table"><thead><tr><th>Metric</th><th>failureMatchOff</th><th>flagOn</th><th>&Delta;mean</th><th>&plusmn;CI95</th></tr></thead><tbody><tr class=""><td>taskSuccessRate</td><td class="num">0.250</td><td class="num">0.375</td><td class="num">+0.125</td><td class="num">±0.283</td></tr><tr class=""><td>hallucinationRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>unauthorizedEffectRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>recoveryRate</td><td class="num">0.250</td><td class="num">0.375</td><td class="num">+0.125</td><td class="num">±0.283</td></tr><tr class=""><td>overconfidentWrongRate</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>supervisorConsultsMean</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">0.000</td><td class="num">±0.000</td></tr><tr class=""><td>meanLatencyMs</td><td class="num">6977 ms</td><td class="num">8040 ms</td><td class="num">+1063 ms</td><td class="num">±656 ms</td></tr><tr class=""><td>meanCostUsd</td><td class="num">$0.0056</td><td class="num">$0.0083</td><td class="num">+$0.0027</td><td class="num">±$0.0027</td></tr><tr class=""><td>totalTokens</td><td class="num">2992</td><td class="num">3309</td><td class="num">+317</td><td class="num">±261</td></tr></tbody></table>
 <p>Cost +48% &middot; latency +15% &middot; tokens +11% (candidate vs control).</p>
 
+<h2>Case study</h2><h3>What it does</h3><p><code>FailureModeLibrary.match()</code> looks for an exact-string match against a
+  library of known failure patterns. <code>checkSemanticFailureMatch</code> adds an LLM call
+  whenever that lexical match returns nothing, to recognize a known failure mode described in
+  different words and route to the right recovery strategy.</p>
+<h3>Why we hypothesized it would help</h3><p>Real tool failures get described in enough different phrasings that the
+  exact-match library alone misses genuine matches often enough that the per-miss LLM call earns
+  its cost and improves recovery routing.</p>
+<h3>How it was tested</h3><p>Arms: <code>failureMatchOff</code> vs <code>flagOn</code>. An 8-task slice with
+  an injected failure symptom worded differently from the library's exact strings, isolating the
+  classifier itself; whether better classification improves recovery is measured as a compressed
+  proxy (a bounded re-answer loop), not full multi-turn recovery. 3 seeds, LLM judge on.</p>
+<h3>What we found</h3><p>Task success moved 25.0% &rarr; 37.5%, a 12.5-point gap — but the confidence
+  interval is &plusmn;28 points on an 8-task slice, so the gap isn't distinguishable from noise.
+  Cost rose 48% per turn and latency 15%. As with harness-vs-bare, the direction is positive but
+  unproven, and the proven part is that it costs more.</p>
+
 <h2>Runs <span class="sub">&mdash; 8 tasks &times; 3 seeds, 48 runs, one row per task</span></h2>
 <div class="filter-box"><input id="f" type="text" placeholder="filter by task…" oninput="filterRows()"></div>
 <table class="cmp-table" id="runs"><thead><tr><th>Task</th><th>Behaviour</th><th>failureMatchOff<br><span class="th-sub">pass</span></th><th>flagOn<br><span class="th-sub">pass</span></th><th>&Delta; cost</th><th>&Delta; lat</th><th>&Delta; tok</th><th>Seeds <span class="th-sub">ctrl&rarr;cand</span></th></tr></thead><tbody><tr>
