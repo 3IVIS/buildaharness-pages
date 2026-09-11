@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-10T08:02:14.698Z",
+  "fetchedAt": "2026-09-11T07:57:54.369Z",
   "count": 24,
   "frameworks": [
     {
@@ -8,16 +8,16 @@
       "fullName": "mem0ai/mem0",
       "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
       "url": "https://github.com/mem0ai/mem0",
-      "stars": 65037,
-      "forks": 7613,
-      "openIssues": 737,
-      "watchers": 65037,
+      "stars": 65103,
+      "forks": 7620,
+      "openIssues": 742,
+      "watchers": 65103,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://mem0.ai",
       "archived": false,
-      "updatedAt": "2026-09-10T07:51:38Z",
-      "pushedAt": "2026-09-09T14:40:27Z",
+      "updatedAt": "2026-09-11T07:24:28Z",
+      "pushedAt": "2026-09-10T23:04:17Z",
       "layer": "Framework",
       "memoryClass": "Personalization + some institutional",
       "architecture": "Vector + Graph",
@@ -38,7 +38,7 @@
         "agentic-memory",
         "agentic-memory-system"
       ],
-      "lastFetchedAt": "2026-09-10T08:01:57.020Z"
+      "lastFetchedAt": "2026-09-11T07:57:37.954Z"
     },
     {
       "slug": "vectorize-io/hindsight",
@@ -46,16 +46,16 @@
       "fullName": "vectorize-io/hindsight",
       "description": "Hindsight: Agent Memory That Learns",
       "url": "https://github.com/vectorize-io/hindsight",
-      "stars": 23365,
-      "forks": 1726,
-      "openIssues": 75,
-      "watchers": 23365,
+      "stars": 23442,
+      "forks": 1730,
+      "openIssues": 86,
+      "watchers": 23442,
       "language": "Python",
       "license": "MIT",
       "homepage": "https://hindsight.vectorize.io/",
       "archived": false,
-      "updatedAt": "2026-09-10T08:01:18Z",
-      "pushedAt": "2026-09-10T08:00:59Z",
+      "updatedAt": "2026-09-11T07:53:23Z",
+      "pushedAt": "2026-09-11T07:54:52Z",
       "layer": "Framework",
       "memoryClass": "Both (strong institutional)",
       "architecture": "Multi-strategy hybrid",
@@ -66,7 +66,7 @@
         "agents",
         "ai-memory"
       ],
-      "lastFetchedAt": "2026-09-10T08:01:57.773Z"
+      "lastFetchedAt": "2026-09-11T07:57:38.696Z"
     },
     {
       "slug": "letta-ai/letta",
@@ -74,16 +74,16 @@
       "fullName": "letta-ai/letta",
       "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.",
       "url": "https://github.com/letta-ai/letta",
-      "stars": 24685,
-      "forks": 2615,
-      "openIssues": 1,
-      "watchers": 24685,
+      "stars": 24698,
+      "forks": 2616,
+      "openIssues": 0,
+      "watchers": 24698,
       "language": "Unknown",
       "license": "Apache-2.0",
       "homepage": "https://docs.letta.com/",
       "archived": false,
-      "updatedAt": "2026-09-10T07:50:16Z",
-      "pushedAt": "2026-09-10T07:51:48Z",
+      "updatedAt": "2026-09-11T07:21:52Z",
+      "pushedAt": "2026-09-10T17:59:08Z",
       "layer": "Framework",
       "memoryClass": "Both",
       "architecture": "Tiered (OS-inspired)",
@@ -94,7 +94,7 @@
         "ai",
         "ai-agents"
       ],
-      "lastFetchedAt": "2026-09-10T08:01:58.500Z"
+      "lastFetchedAt": "2026-09-11T07:57:39.398Z"
     },
     {
       "slug": "getzep/zep",
@@ -102,16 +102,16 @@
       "fullName": "getzep/zep",
       "description": "Zep | Examples, Integrations, & More",
       "url": "https://github.com/getzep/zep",
-      "stars": 4902,
+      "stars": 4906,
       "forks": 651,
-      "openIssues": 35,
-      "watchers": 4902,
+      "openIssues": 36,
+      "watchers": 4906,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://help.getzep.com",
       "archived": false,
-      "updatedAt": "2026-09-09T23:36:03Z",
-      "pushedAt": "2026-09-09T13:06:32Z",
+      "updatedAt": "2026-09-11T04:29:08Z",
+      "pushedAt": "2026-09-11T02:02:48Z",
       "layer": "Framework",
       "memoryClass": "Both (temporal focus)",
       "architecture": "Temporal knowledge graph",
@@ -122,7 +122,7 @@
         "ai",
         "knowledge-graphs"
       ],
-      "lastFetchedAt": "2026-09-10T08:01:59.256Z"
+      "lastFetchedAt": "2026-09-11T07:57:40.073Z"
     },
     {
       "slug": "getzep/graphiti",
@@ -130,16 +130,16 @@
       "fullName": "getzep/graphiti",
       "description": "Build Real-Time Knowledge Graphs for AI Agents",
       "url": "https://github.com/getzep/graphiti",
-      "stars": 30752,
+      "stars": 30788,
       "forks": 3132,
-      "openIssues": 501,
-      "watchers": 30752,
+      "openIssues": 503,
+      "watchers": 30788,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://help.getzep.com/graphiti",
       "archived": false,
-      "updatedAt": "2026-09-10T07:46:12Z",
-      "pushedAt": "2026-09-10T02:36:37Z",
+      "updatedAt": "2026-09-11T07:11:44Z",
+      "pushedAt": "2026-09-10T20:19:38Z",
       "layer": "Framework",
       "memoryClass": "Both (temporal focus)",
       "architecture": "Temporal knowledge graph",
@@ -150,7 +150,7 @@
         "llms",
         "rag"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:00.032Z"
+      "lastFetchedAt": "2026-09-11T07:57:40.750Z"
     },
     {
       "slug": "topoteretes/cognee",
@@ -158,16 +158,16 @@
       "fullName": "topoteretes/cognee",
       "description": "Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.",
       "url": "https://github.com/topoteretes/cognee",
-      "stars": 30612,
-      "forks": 3012,
-      "openIssues": 516,
-      "watchers": 30612,
+      "stars": 30639,
+      "forks": 3014,
+      "openIssues": 519,
+      "watchers": 30639,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://www.cognee.ai",
       "archived": false,
-      "updatedAt": "2026-09-10T07:04:14Z",
-      "pushedAt": "2026-09-10T07:48:21Z",
+      "updatedAt": "2026-09-11T07:15:55Z",
+      "pushedAt": "2026-09-11T07:50:46Z",
       "layer": "Framework",
       "memoryClass": "Institutional",
       "architecture": "Knowledge graph + vector",
@@ -193,7 +193,7 @@
         "agent-skills",
         "memory-management"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:00.682Z"
+      "lastFetchedAt": "2026-09-11T07:57:41.459Z"
     },
     {
       "slug": "supermemoryai/supermemory",
@@ -201,15 +201,15 @@
       "fullName": "supermemoryai/supermemory",
       "description": "Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era.",
       "url": "https://github.com/supermemoryai/supermemory",
-      "stars": 29584,
-      "forks": 2587,
-      "openIssues": 90,
-      "watchers": 29584,
+      "stars": 29621,
+      "forks": 2592,
+      "openIssues": 93,
+      "watchers": 29621,
       "language": "TypeScript",
       "license": "MIT",
       "homepage": "https://supermemory.ai/docs",
       "archived": false,
-      "updatedAt": "2026-09-10T07:23:33Z",
+      "updatedAt": "2026-09-11T07:45:14Z",
       "pushedAt": "2026-09-10T06:01:32Z",
       "layer": "Framework",
       "memoryClass": "Personalization + some institutional",
@@ -229,7 +229,7 @@
         "ai-memory",
         "memory"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:01.423Z"
+      "lastFetchedAt": "2026-09-11T07:57:42.126Z"
     },
     {
       "slug": "langchain-ai/langmem",
@@ -237,39 +237,39 @@
       "fullName": "langchain-ai/langmem",
       "description": "",
       "url": "https://github.com/langchain-ai/langmem",
-      "stars": 1656,
+      "stars": 1659,
       "forks": 187,
       "openIssues": 64,
-      "watchers": 1656,
+      "watchers": 1659,
       "language": "Python",
       "license": "MIT",
       "homepage": "https://langchain-ai.github.io/langmem/",
       "archived": false,
-      "updatedAt": "2026-09-10T07:06:02Z",
+      "updatedAt": "2026-09-11T04:54:42Z",
       "pushedAt": "2026-09-09T06:44:43Z",
       "layer": "Framework",
       "memoryClass": "Personalization",
       "architecture": "Key-value + vector",
       "maturity": "Production",
       "topics": [],
-      "lastFetchedAt": "2026-09-10T08:02:02.246Z"
+      "lastFetchedAt": "2026-09-11T07:57:42.844Z"
     },
     {
       "slug": "run-llama/llama_index",
       "name": "llama_index",
       "fullName": "run-llama/llama_index",
-      "description": "LlamaIndex is the leading document agent and OCR platform",
+      "description": "LlamaIndex is the document processing platform for AI",
       "url": "https://github.com/run-llama/llama_index",
-      "stars": 52110,
-      "forks": 8103,
-      "openIssues": 748,
-      "watchers": 52110,
+      "stars": 52124,
+      "forks": 8109,
+      "openIssues": 747,
+      "watchers": 52124,
       "language": "Python",
       "license": "MIT",
       "homepage": "https://developers.llamaindex.ai",
       "archived": false,
-      "updatedAt": "2026-09-10T07:52:33Z",
-      "pushedAt": "2026-09-10T04:02:24Z",
+      "updatedAt": "2026-09-11T06:49:02Z",
+      "pushedAt": "2026-09-11T06:08:34Z",
       "layer": "Framework",
       "memoryClass": "Personalization",
       "architecture": "Composable buffers",
@@ -286,7 +286,7 @@
         "vector-database",
         "multi-agents"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:02.924Z"
+      "lastFetchedAt": "2026-09-11T07:57:43.529Z"
     },
     {
       "slug": "microsoft/autogen",
@@ -294,15 +294,15 @@
       "fullName": "microsoft/autogen",
       "description": "A programming framework for agentic AI",
       "url": "https://github.com/microsoft/autogen",
-      "stars": 60909,
+      "stars": 60933,
       "forks": 9203,
       "openIssues": 1065,
-      "watchers": 60909,
+      "watchers": 60933,
       "language": "Python",
       "license": "CC-BY-4.0",
       "homepage": "https://microsoft.github.io/autogen/",
       "archived": false,
-      "updatedAt": "2026-09-10T07:53:31Z",
+      "updatedAt": "2026-09-11T07:45:54Z",
       "pushedAt": "2026-04-15T11:59:09Z",
       "layer": "Framework",
       "memoryClass": "Both (implicit memory)",
@@ -320,7 +320,7 @@
         "framework",
         "autogen-ecosystem"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:03.687Z"
+      "lastFetchedAt": "2026-09-11T07:57:44.171Z"
     },
     {
       "slug": "deepset-ai/haystack",
@@ -328,16 +328,16 @@
       "fullName": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
       "url": "https://github.com/deepset-ai/haystack",
-      "stars": 26463,
-      "forks": 3109,
-      "openIssues": 129,
-      "watchers": 26463,
+      "stars": 26476,
+      "forks": 3112,
+      "openIssues": 132,
+      "watchers": 26476,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://haystack.deepset.ai",
       "archived": false,
-      "updatedAt": "2026-09-10T07:11:34Z",
-      "pushedAt": "2026-09-10T06:46:28Z",
+      "updatedAt": "2026-09-11T07:43:56Z",
+      "pushedAt": "2026-09-10T16:04:59Z",
       "layer": "Framework",
       "memoryClass": "Institutional",
       "architecture": "RAG pipeline-based",
@@ -364,7 +364,7 @@
         "mcp",
         "multi-agent"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:04.458Z"
+      "lastFetchedAt": "2026-09-11T07:57:44.864Z"
     },
     {
       "slug": "rohitg00/agentmemory",
@@ -372,15 +372,15 @@
       "fullName": "rohitg00/agentmemory",
       "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
       "url": "https://github.com/rohitg00/agentmemory",
-      "stars": 28244,
-      "forks": 2451,
-      "openIssues": 580,
-      "watchers": 28244,
+      "stars": 28311,
+      "forks": 2455,
+      "openIssues": 583,
+      "watchers": 28311,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "homepage": "https://agent-memory.dev",
       "archived": false,
-      "updatedAt": "2026-09-10T07:01:57Z",
+      "updatedAt": "2026-09-11T07:43:29Z",
       "pushedAt": "2026-09-07T06:13:17Z",
       "layer": "Framework",
       "memoryClass": "Coding agents",
@@ -401,7 +401,7 @@
         "memory",
         "openclaw"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:05.222Z"
+      "lastFetchedAt": "2026-09-11T07:57:45.485Z"
     },
     {
       "slug": "MemPalace/mempalace",
@@ -409,16 +409,16 @@
       "fullName": "MemPalace/mempalace",
       "description": "The best-benchmarked open-source AI memory system. And it's free.",
       "url": "https://github.com/MemPalace/mempalace",
-      "stars": 58971,
-      "forks": 7561,
-      "openIssues": 784,
-      "watchers": 58971,
+      "stars": 58991,
+      "forks": 7564,
+      "openIssues": 789,
+      "watchers": 58991,
       "language": "Python",
       "license": "MIT",
       "homepage": "http://mempalaceofficial.com/",
       "archived": false,
-      "updatedAt": "2026-09-10T07:09:49Z",
-      "pushedAt": "2026-09-08T19:49:28Z",
+      "updatedAt": "2026-09-11T07:26:11Z",
+      "pushedAt": "2026-09-11T07:54:18Z",
       "layer": "Framework",
       "memoryClass": "Personalization (verbatim-heavy)",
       "architecture": "Structured + vector (verbatim)",
@@ -431,7 +431,7 @@
         "memory",
         "python"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:05.952Z"
+      "lastFetchedAt": "2026-09-11T07:57:46.209Z"
     },
     {
       "slug": "RBKunnela/ALMA-memory",
@@ -454,7 +454,7 @@
       "architecture": "Scoped learning + anti-patterns",
       "maturity": "Emerging",
       "topics": [],
-      "lastFetchedAt": "2026-09-10T08:02:06.671Z"
+      "lastFetchedAt": "2026-09-11T07:57:46.874Z"
     },
     {
       "slug": "rishimeka/genesys",
@@ -496,7 +496,7 @@
         "ai",
         "causal-graph"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:07.794Z"
+      "lastFetchedAt": "2026-09-11T07:57:47.848Z"
     },
     {
       "slug": "matrixorigin/Memoria",
@@ -506,14 +506,14 @@
       "url": "https://github.com/matrixorigin/memoria",
       "stars": 594,
       "forks": 77,
-      "openIssues": 45,
+      "openIssues": 43,
       "watchers": 594,
       "language": "Rust",
       "license": "Apache-2.0",
       "homepage": "https://thememoria.ai/",
       "archived": false,
-      "updatedAt": "2026-09-10T02:48:01Z",
-      "pushedAt": "2026-09-10T07:53:37Z",
+      "updatedAt": "2026-09-11T07:24:28Z",
+      "pushedAt": "2026-09-11T07:25:07Z",
       "layer": "Infra",
       "memoryClass": "Personalization + coding agents",
       "architecture": "Versioned semantic memory (git-style)",
@@ -526,7 +526,7 @@
         "storage",
         "agent"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:08.530Z"
+      "lastFetchedAt": "2026-09-11T07:57:48.502Z"
     },
     {
       "slug": "MemTensor/MemOS",
@@ -534,15 +534,15 @@
       "fullName": "MemTensor/MemOS",
       "description": "Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, hybrid-retrieval, and cross-task skill reuse, with 35.24% token savings and DeepSeek Harness support.",
       "url": "https://github.com/MemTensor/MemOS",
-      "stars": 11258,
-      "forks": 1030,
-      "openIssues": 68,
-      "watchers": 11258,
+      "stars": 11283,
+      "forks": 1033,
+      "openIssues": 69,
+      "watchers": 11283,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "homepage": "https://memos.openmem.net",
       "archived": false,
-      "updatedAt": "2026-09-10T06:47:52Z",
+      "updatedAt": "2026-09-11T07:48:35Z",
       "pushedAt": "2026-09-09T12:54:27Z",
       "layer": "Infra",
       "memoryClass": "Both (shared systems)",
@@ -569,7 +569,7 @@
         "deepseek-harness",
         "dsh-plugin"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:09.321Z"
+      "lastFetchedAt": "2026-09-11T07:57:49.236Z"
     },
     {
       "slug": "MehulG/memX",
@@ -601,7 +601,7 @@
         "pubsub",
         "redis"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:10.091Z"
+      "lastFetchedAt": "2026-09-11T07:57:49.894Z"
     },
     {
       "slug": "chroma-core/chroma",
@@ -609,16 +609,16 @@
       "fullName": "chroma-core/chroma",
       "description": "Search infrastructure for AI",
       "url": "https://github.com/chroma-core/chroma",
-      "stars": 29264,
-      "forks": 2492,
-      "openIssues": 841,
-      "watchers": 29264,
+      "stars": 29282,
+      "forks": 2496,
+      "openIssues": 843,
+      "watchers": 29282,
       "language": "Rust",
       "license": "Apache-2.0",
       "homepage": "https://www.trychroma.com/",
       "archived": false,
-      "updatedAt": "2026-09-10T06:36:19Z",
-      "pushedAt": "2026-09-10T00:21:01Z",
+      "updatedAt": "2026-09-11T06:59:16Z",
+      "pushedAt": "2026-09-10T23:58:40Z",
       "layer": "Infra",
       "memoryClass": "None (storage layer)",
       "architecture": "Vector database",
@@ -631,7 +631,7 @@
         "agents",
         "ai-agents"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:10.738Z"
+      "lastFetchedAt": "2026-09-11T07:57:50.692Z"
     },
     {
       "slug": "MemTensor/MemFactory",
@@ -654,7 +654,7 @@
       "architecture": "RL-driven modular (GRPO)",
       "maturity": "Research",
       "topics": [],
-      "lastFetchedAt": "2026-09-10T08:02:11.404Z"
+      "lastFetchedAt": "2026-09-11T07:57:51.415Z"
     },
     {
       "slug": "dolthub/dolt",
@@ -662,16 +662,16 @@
       "fullName": "dolthub/dolt",
       "description": "Dolt – Git for Data",
       "url": "https://github.com/dolthub/dolt",
-      "stars": 24410,
+      "stars": 24414,
       "forks": 873,
-      "openIssues": 631,
-      "watchers": 24410,
+      "openIssues": 614,
+      "watchers": 24414,
       "language": "Go",
       "license": "Apache-2.0",
       "homepage": "https://www.dolthub.com",
       "archived": false,
-      "updatedAt": "2026-09-10T07:55:02Z",
-      "pushedAt": "2026-09-10T00:39:42Z",
+      "updatedAt": "2026-09-11T06:16:24Z",
+      "pushedAt": "2026-09-11T06:16:22Z",
       "layer": "Infra",
       "memoryClass": "Both",
       "architecture": "Version-controlled relational DB",
@@ -698,7 +698,7 @@
         "ai-agents",
         "ai-database"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:12.165Z"
+      "lastFetchedAt": "2026-09-11T07:57:52.077Z"
     },
     {
       "slug": "vstorm-co/memv",
@@ -706,15 +706,15 @@
       "fullName": "vstorm-co/memv",
       "description": "Structured, temporal memory for AI agents.",
       "url": "https://github.com/vstorm-co/memv",
-      "stars": 89,
+      "stars": 90,
       "forks": 13,
       "openIssues": 5,
-      "watchers": 89,
+      "watchers": 90,
       "language": "Python",
       "license": "MIT",
       "homepage": "https://vstorm-co.github.io/memv/",
       "archived": false,
-      "updatedAt": "2026-09-01T07:33:07Z",
+      "updatedAt": "2026-09-11T01:22:59Z",
       "pushedAt": "2026-09-01T07:30:35Z",
       "layer": "Framework",
       "memoryClass": "Both",
@@ -729,7 +729,7 @@
         "agentic-framework",
         "open-source"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:12.987Z"
+      "lastFetchedAt": "2026-09-11T07:57:52.796Z"
     },
     {
       "slug": "raia-live/amfs",
@@ -745,8 +745,8 @@
       "license": "Apache-2.0",
       "homepage": "https://www.sense-lab.ai",
       "archived": false,
-      "updatedAt": "2026-09-05T05:10:21Z",
-      "pushedAt": "2026-09-10T00:45:16Z",
+      "updatedAt": "2026-09-11T05:35:18Z",
+      "pushedAt": "2026-09-11T05:53:16Z",
       "layer": "Framework",
       "memoryClass": "Both",
       "architecture": "Versioned + feedback-driven memory",
@@ -768,7 +768,7 @@
         "multi-agent",
         "multi-agent-systems"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:13.745Z"
+      "lastFetchedAt": "2026-09-11T07:57:53.478Z"
     },
     {
       "slug": "EverMind-AI/EverOS",
@@ -776,15 +776,15 @@
       "fullName": "EverMind-AI/EverOS",
       "description": "One portable memory layer for every AI agent: local-first, Markdown-native, user-owned, and self-evolving across apps, tools, and workflows.",
       "url": "https://github.com/EverMind-AI/EverOS",
-      "stars": 12846,
-      "forks": 917,
+      "stars": 12875,
+      "forks": 919,
       "openIssues": 69,
-      "watchers": 12846,
+      "watchers": 12875,
       "language": "Python",
       "license": "Apache-2.0",
       "homepage": "https://evermind.ai/everos",
       "archived": false,
-      "updatedAt": "2026-09-10T07:26:18Z",
+      "updatedAt": "2026-09-11T07:46:27Z",
       "pushedAt": "2026-09-09T02:59:13Z",
       "layer": "Framework",
       "memoryClass": "Multi-type taxonomy",
@@ -809,7 +809,7 @@
         "dsh",
         "dsh-plugin"
       ],
-      "lastFetchedAt": "2026-09-10T08:02:14.447Z"
+      "lastFetchedAt": "2026-09-11T07:57:54.118Z"
     }
   ],
   "slugRedirects": [
