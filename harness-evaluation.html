@@ -153,6 +153,7 @@
   --accent-ink:oklch(.36 .16 270);
   --green:oklch(.38 .12 148);
   --red:oklch(.5 .17 25);
+  --orange:oklch(.55 .16 55);
   --series-flag:oklch(.55 .018 270);
   --series-sup:oklch(.46 .16 268);
 }
@@ -227,6 +228,7 @@ a.inline:hover{text-decoration:underline;}
 .verdict{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:999px;white-space:nowrap;display:inline-block;}
 .verdict.cut{background:color-mix(in oklch,var(--red) 15%,transparent);color:var(--red);}
 .verdict.keep{background:color-mix(in oklch,var(--green) 15%,transparent);color:var(--green);}
+.verdict.mixed{background:color-mix(in oklch,var(--orange) 15%,transparent);color:var(--orange);}
 .verdict.bench{background:var(--bg-2);color:var(--ink-3);border:1px solid var(--line);}
 
 .callout{margin-top:24px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;background:var(--bg);max-width:760px;}
@@ -494,7 +496,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>An LLM matcher recognises known failure patterns described in different words often enough
           to earn its per-miss call and improve recovery routing.</td>
-          <td><span class="verdict cut">Better results, at higher cost</span></td>
+          <td><span class="verdict mixed">Better results, at higher cost</span></td>
           <td>3-seed, 8-task, judge-on. Task-success delta <strong>+12.5% but CI ±28%</strong> — not
           significant; cost <strong style="color:var(--red);">+48%/turn</strong>, latency
           <strong style="color:var(--red);">+15%</strong>. Neutral with real cost.
@@ -508,7 +510,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           <td>The full 11-layer harness (staging, control-state, verification, reviewer, memory) produces
           materially better task outcomes than a bare ReAct loop — enough to justify running the whole
           subsystem every turn.</td>
-          <td><span class="verdict cut">Better results, at higher cost</span></td>
+          <td><span class="verdict mixed">Better results, at higher cost</span></td>
           <td>3-seed, 76-task, judge-on. Task success <strong style="color:var(--green);">+16.2pt</strong>
           (67.6% → 83.8%, CI ±25.6pt — includes 0, unproven); cost
           <strong style="color:var(--red);">+77%/turn</strong>, latency <strong style="color:var(--red);">+88%</strong>.
@@ -522,7 +524,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>Letting the harness drive tool calls in-loop, one iteration at a time, beats post-hoc
           bookkeeping over an already-finished reply — validating the 2026-09-06 default flip.</td>
-          <td><span class="verdict bench">No measurable difference, but cheaper</span></td>
+          <td><span class="verdict mixed">No measurable difference, but cheaper</span></td>
           <td>3-seed, 76-task, judge-on. Task success <strong>+0.5pt</strong> (81.0% → 81.5%, CI ±2.6pt) —
           flat; cost <strong style="color:var(--green);">−18%/turn</strong>, latency flat. Neither helps nor
           hurts measurably; cheaper either way.
