@@ -186,7 +186,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <nav class="breadcrumb"><a href="/harness-evaluation">harness-evaluation</a><span>/</span>semantic-contradiction</nav>
 <span class="eyebrow">Feature Value Audit</span>
 <h1>Semantic contradiction check</h1>
-<p><span class="verdict keep">KEEP</span></p>
+<p><span class="verdict keep">Better results, at higher cost</span></p>
 <p class="model-line">Model: Claude Sonnet 5 (<code>claude-sonnet-5</code>), judge <code>claude-sonnet-5</code> &middot; 3 seeds &middot; <span class="model-note">the arm-under-test model the CLI actually served, from the run report</span></p>
 <p><strong>Hypothesis.</strong> The checkForContradictions LLM call catches enough real paraphrased / cross-framing belief contradictions that the always-on lexical negation-pair check misses to pay for its per-belief-set-growth cost.</p>
 <div class="callout keep"><p>The candidate beats the control on task success (CI clears 0) and the gain justifies its higher cost (+29% $/turn).</p></div>

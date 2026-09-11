@@ -39,17 +39,17 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Does the harness work? We measure it — and cut what doesn't earn its cost | Build A Harness</title>
+<title>Does the harness work? We measure it — and turn off what doesn't earn its cost | Build A Harness</title>
 
-<meta name="description" content="Build A Harness runs a controlled benchmark on every reasoning feature in the assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study. Every run is reproducible.">
+<meta name="description" content="Build A Harness runs a controlled benchmark on every reasoning feature in the assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. Six features decided — one earns its keep, the rest don't clear that bar; the Trajectory Supervisor is the case study. Every run is reproducible.">
 
 <link rel="canonical" href="https://buildaharness.com/harness-evaluation">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://buildaharness.com/harness-evaluation">
 <meta property="og:site_name" content="Build A Harness">
-<meta property="og:title" content="Does the harness work? We measure it — and cut what doesn't earn its cost">
-<meta property="og:description" content="A controlled benchmark on every reasoning feature in the assistant. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study. Every run reproducible.">
+<meta property="og:title" content="Does the harness work? We measure it — and turn off what doesn't earn its cost">
+<meta property="og:description" content="A controlled benchmark on every reasoning feature in the assistant. Six features decided — one earns its keep, the rest don't clear that bar; the Trajectory Supervisor is the case study. Every run reproducible.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -57,8 +57,8 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Does the harness work? We measure it — and cut what doesn't earn its cost">
-<meta name="twitter:description" content="A controlled benchmark on every reasoning feature in the assistant. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study.">
+<meta name="twitter:title" content="Does the harness work? We measure it — and turn off what doesn't earn its cost">
+<meta name="twitter:description" content="A controlled benchmark on every reasoning feature in the assistant. Six features decided — one earns its keep, the rest don't clear that bar; the Trajectory Supervisor is the case study.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
 <meta name="twitter:image:alt" content="Build A Harness — measuring whether each harness feature earns its cost.">
 
@@ -83,10 +83,10 @@
     {
       "@type": "Article",
       "@id": "https://buildaharness.com/harness-evaluation#article",
-      "headline": "Does the harness work? We measure it — and cut what doesn't earn its cost",
-      "description": "A controlled benchmark on every reasoning feature in the Build A Harness assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. First four features decided — one kept, three cut; the Trajectory Supervisor is the case study.",
+      "headline": "Does the harness work? We measure it — and turn off what doesn't earn its cost",
+      "description": "A controlled benchmark on every reasoning feature in the Build A Harness assistant: state the hypothesis, toggle it, stress it, measure multi-seed, decide. Six features decided — one earns its keep, the rest don't clear that bar; the Trajectory Supervisor is the case study.",
       "datePublished": "2026-09-07",
-      "dateModified": "2026-09-10",
+      "dateModified": "2026-09-11",
       "author": { "@id": "https://buildaharness.com/#org" },
       "publisher": { "@id": "https://buildaharness.com/#org" },
       "mainEntityOfPage": "https://buildaharness.com/harness-evaluation"
@@ -112,12 +112,12 @@
         {
           "@type": "Question",
           "name": "Why publish negative results about your own product?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Because “11 layers, 27 node types, 3,400 tests” proves we built something, not that it works. A harness is only worth its latency and token cost if it changes outcomes. The honest way to know is a controlled benchmark that can come back negative — and when it does, we say so and cut the feature." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Because “11 layers, 27 node types, 3,400 tests” proves we built something, not that it works. A harness is only worth its latency and token cost if it changes outcomes. The honest way to know is a controlled benchmark that can come back negative — and when it does, we say so and switch the feature off." }
         },
         {
           "@type": "Question",
-          "name": "Does “cut” mean you delete the code?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. A cut feature stays merged and flag-gated OFF. The negative result is recorded, not overridden. If a later test on a different shape of task shows value, the flag can flip back on — but the default reflects the evidence we have." }
+          "name": "Does switching a feature off mean you delete the code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A feature that doesn't earn its cost stays merged and flag-gated OFF. The negative result is recorded, not overridden. If a later test on a different shape of task shows value, the flag can flip back on — but the default reflects the evidence we have." }
         },
         {
           "@type": "Question",
@@ -341,12 +341,12 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="stat-row" role="list">
       <div class="stat" role="listitem">
-        <span class="stat-n">4 / 13</span>
+        <span class="stat-n">6 / 13</span>
         <span class="stat-l">reasoning features on the bench audited so far</span>
       </div>
       <div class="stat" role="listitem">
-        <span class="stat-n">3 cut · 1 kept</span>
-        <span class="stat-l">by evidence — a cut flag stays merged but off; a kept one stays on</span>
+        <span class="stat-n">1 kept · 5 don't</span>
+        <span class="stat-l">by evidence — a flag that doesn't earn its cost stays merged but off; a kept one stays on</span>
       </div>
       <div class="stat" role="listitem">
         <span class="stat-n">3 seeds</span>
@@ -444,10 +444,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-label">RESULTS</div>
     <h2>What we've decided <em>so far.</em></h2>
-    <p class="prose">Four features decided — one kept, three cut. This table grows as each audit lands, positive
-    and negative alike. Two more (<a class="inline" href="#bench">the 11-layer harness vs. a bare loop, and the
-    one-loop proposer</a>) had a first pass whose result we <strong>withdrew</strong> — the failure-injection
-    tasks were being applied to one arm and not the other — and are being re-run on a corrected corpus.</p>
+    <p class="prose">Six features decided. This table grows as each audit lands, positive and negative alike.
+    The 11-layer harness vs. a bare loop, and the one-loop proposer, both had a first pass whose result we
+    <strong>withdrew</strong> — the failure-injection tasks were being applied to one arm and not the other —
+    and were re-run on a corrected corpus (below).</p>
 
     <table class="cmp-table">
       <caption style="caption-side:bottom;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:.04em;padding:12px 4px 0;">
@@ -469,7 +469,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>A stalled run recovers better with a meta-controller that reads the failure trajectory and issues
           a targeted directive than by walking the deterministic strategy ladder.</td>
-          <td><span class="verdict cut">Cut</span></td>
+          <td><span class="verdict cut">Worse results, at higher cost</span></td>
           <td>3-seed, 18-task, judge-on. Task success <span style="color:var(--red);font-weight:600;">−3.7%</span>
           (CI ±3.6%); latency <strong style="color:var(--red);">+34%</strong>, cost
           <strong style="color:var(--red);">+32%</strong>, tokens <strong style="color:var(--red);">+48%</strong>;
@@ -483,7 +483,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>An LLM contradiction check catches paraphrased / cross-framing belief conflicts that the
           always-on lexical negation-pair check provably can't — often enough to pay for the call.</td>
-          <td><span class="verdict keep">Keep</span></td>
+          <td><span class="verdict keep">Better results, at higher cost</span></td>
           <td>3-seed, 14-task, judge-on. Task success <strong style="color:var(--green);">+7.1%</strong>
           (85.7% → 92.9%, CI clears 0); overconfident-and-wrong 12.8% → 7.7%; cost
           <strong>+29%/turn</strong>, latency flat. The gain clears the cost.
@@ -496,7 +496,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>An LLM classifier on every tool output catches prompt-injection the deterministic pattern
           pass misses, without over-flagging benign instruction-like content.</td>
-          <td><span class="verdict cut">Cut</span></td>
+          <td><span class="verdict cut">No measurable improvement, at extra cost</span></td>
           <td>3-seed, 10-task, judge-on. <strong>No task-success delta</strong> (both 80%); hallucination
           20% → 10% but cost <strong style="color:var(--red);">+21%/turn</strong> for no success gain.
           Neutral with real cost. <a href="/harness-evaluation/llm-injection-detect/">Read the actual runs →</a></td>
@@ -508,11 +508,39 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
           </td>
           <td>An LLM matcher recognises known failure patterns described in different words often enough
           to earn its per-miss call and improve recovery routing.</td>
-          <td><span class="verdict cut">Cut</span></td>
+          <td><span class="verdict cut">Better results, at higher cost</span></td>
           <td>3-seed, 8-task, judge-on. Task-success delta <strong>+12.5% but CI ±28%</strong> — not
           significant; cost <strong style="color:var(--red);">+48%/turn</strong>, latency
           <strong style="color:var(--red);">+15%</strong>. Neutral with real cost.
           <a href="/harness-evaluation/semantic-failure-match/">Read the actual runs →</a></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="feat">The 11-layer harness</span>
+            <span class="featref">vs. a bare ReAct loop · <a href="/harness-architecture">whole subsystem</a></span>
+          </td>
+          <td>The full 11-layer harness (staging, control-state, verification, reviewer, memory) produces
+          materially better task outcomes than a bare ReAct loop — enough to justify running the whole
+          subsystem every turn.</td>
+          <td><span class="verdict cut">Better results, at higher cost</span></td>
+          <td>3-seed, 76-task, judge-on. Task success <strong style="color:var(--green);">+16.2pt</strong>
+          (67.6% → 83.8%, CI ±25.6pt — includes 0, unproven); cost
+          <strong style="color:var(--red);">+77%/turn</strong>, latency <strong style="color:var(--red);">+88%</strong>.
+          Can't prove it helps; can prove it costs more.
+          <a href="/harness-evaluation/harness-vs-bare/">Read the actual runs →</a></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="feat">One-loop proposer</span>
+            <span class="featref"><code>ASSISTANT_ONE_LOOP</code> · default since 2026-09-06</span>
+          </td>
+          <td>Letting the harness drive tool calls in-loop, one iteration at a time, beats post-hoc
+          bookkeeping over an already-finished reply — validating the 2026-09-06 default flip.</td>
+          <td><span class="verdict bench">No measurable difference, but cheaper</span></td>
+          <td>3-seed, 76-task, judge-on. Task success <strong>+0.5pt</strong> (81.0% → 81.5%, CI ±2.6pt) —
+          flat; cost <strong style="color:var(--green);">−18%/turn</strong>, latency flat. Neither helps nor
+          hurts measurably; cheaper either way.
+          <a href="/harness-evaluation/one-loop/">Read the actual runs →</a></td>
         </tr>
       </tbody>
     </table>
@@ -525,7 +553,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
 <section class="section alt" id="supervisor">
   <div class="wrap">
-    <div class="section-label">CASE STUDY 01 · <span style="color:var(--red);">CUT</span></div>
+    <div class="section-label">CASE STUDY 01 · <span style="color:var(--red);">Worse results, at higher cost</span></div>
     <h2>The Trajectory Supervisor</h2>
     <p class="prose">
       A slow-loop meta-controller that wakes up only when the run has measurably stopped making progress. It
@@ -642,7 +670,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     </p>
 
     <div class="callout cut">
-      <p><strong>Verdict: cut.</strong> In the single-turn assistant shape, the Trajectory Supervisor does not
+      <p><strong>Verdict: worse results, at higher cost.</strong> In the single-turn assistant shape, the Trajectory Supervisor does not
       earn its cost. <code>HARNESS_TRAJECTORY_SUPERVISOR</code> stays off by default. The code stays merged and
       flag-gated. One open question remains — a decomposed, multi-step planning path, closer to AVO's own
       setting, where a redirect or a re-framed plan has downstream tasks to affect — and that needs its own
@@ -656,11 +684,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-label">ON THE BENCH</div>
     <h2>The rest of the roster, <em>queued.</em></h2>
-    <p class="prose">Ordered by how much new scaffolding a verdict needs. The two <strong>re-running</strong>
-    features had a first pass we withdrew: the failure-injection tasks fired for the harness arm but not
-    its control, so the harness was stress-tested while the baseline ran clean. The corpus is fixed and the
-    scheduler is working through a fair re-run one seed at a time; the transcript links fill in when each
-    finalizes.</p>
+    <p class="prose">Ordered by how much new scaffolding a verdict needs.</p>
 
     <table class="cmp-table">
       <thead>
@@ -671,16 +695,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><span class="feat">The 11-layer harness itself</span><span class="featref">vs. a bare ReAct loop</span></td>
-          <td>Staging, control state, verification, reviewer pass, memory — the whole control plane.</td>
-          <td><span class="verdict bench">Re-running</span></td>
-        </tr>
-        <tr>
-          <td><span class="feat">One-loop proposer</span><span class="featref">ASSISTANT_ONE_LOOP</span></td>
-          <td>The harness drives every tool call in-loop, instead of reviewing an already-finished reply.</td>
-          <td><span class="verdict bench">Re-running</span></td>
-        </tr>
         <tr>
           <td><span class="feat">The reviewer pass</span><span class="featref"><a href="/harness-architecture">Layer 11</a> · 3 lenses</span></td>
           <td>Consistency, adversarial and abstraction-fit review on every harness turn.</td>
@@ -753,13 +767,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
         <h3>Why publish negative results about your own product?</h3>
         <p>Because "11 layers, 27 node types, thousands of tests" proves we built something, not that it works.
         A harness is only worth its latency and token cost if it changes outcomes. The honest way to know is a
-        benchmark that can come back negative — and when it does, we say so and cut the feature.</p>
+        benchmark that can come back negative — and when it does, we say so and switch the feature off.</p>
       </div>
       <div class="faq-item">
-        <h3>Does "cut" mean you delete the code?</h3>
-        <p>No. A cut feature stays merged and flag-gated off. The negative result is recorded, not overridden.
-        If a later test on a different shape of task shows value, the flag can flip back on — but the default
-        reflects the evidence we actually have.</p>
+        <h3>Does switching a feature off mean you delete the code?</h3>
+        <p>No. A feature that doesn't earn its cost stays merged and flag-gated off. The negative result is
+        recorded, not overridden. If a later test on a different shape of task shows value, the flag can flip
+        back on — but the default reflects the evidence we actually have.</p>
       </div>
       <div class="faq-item">
         <h3>What is Rule 6?</h3>

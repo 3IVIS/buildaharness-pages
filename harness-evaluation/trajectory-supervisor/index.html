@@ -186,7 +186,7 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-fa
 <nav class="breadcrumb"><a href="/harness-evaluation">harness-evaluation</a><span>/</span>trajectory-supervisor</nav>
 <span class="eyebrow">Feature Value Audit</span>
 <h1>Trajectory Supervisor</h1>
-<p><span class="verdict cut">CUT</span></p>
+<p><span class="verdict cut">No measurable improvement, at extra cost</span></p>
 <p class="model-line">Model: Claude Sonnet 5 (<code>claude-sonnet-5</code>), judge <code>claude-sonnet-5</code> &middot; 3 seeds &middot; <span class="model-note">the arm-under-test model the CLI actually served, from the run report</span></p>
 <p><strong>Hypothesis.</strong> The trajectory supervisor's one LLM call on the cannotMakeProgress() stall edge redirects enough stalled runs into recovery to justify its extra cost, latency and tokens.</p>
 <div class="callout cut"><p>No task-success delta (CI includes 0) but the candidate costs materially more (+22% $/turn, +40% latency). Neutral with real cost — it does not earn its keep.</p></div>
