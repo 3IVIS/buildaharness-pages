@@ -532,7 +532,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h1>Inside the <em>harness.</em></h1>
 
     <p class="hero-lede">
-      A <a href="/harness-engineering" style="color:var(--accent-ink);">harness</a> is a governance and reliability control plane around an autonomous agent: the agent has intelligence, the harness has authority. The agent proposes; the harness decides what's allowed to happen next; evidence decides whether the result is accepted. Every turn walks the same eleven layers of it, in the same order, whether it's <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a> (Build A Harness's own reference chat agent) or a flow drawn on <a href="/" style="color:var(--accent-ink);">the canvas</a>. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer below to open its internal flowchart.
+      A <a href="/harness-engineering" style="color:var(--accent-ink);">harness</a> is a governance and reliability control plane around an autonomous agent: the agent has intelligence, the harness has authority. The agent proposes; the harness decides what's allowed to happen next; evidence decides whether the result is accepted. Every turn walks the same eleven layers of it, in the same order, whether it's <a href="/personal-assistant" style="color:var(--accent-ink);">Aielia</a> (Build A Harness's own reference chat agent) or a flow drawn on <a href="/" style="color:var(--accent-ink);">the canvas</a>. This is that loop — <code style="font-size:14px">World Model</code> through <code style="font-size:14px">Reviewer Pass</code> — read straight out of <code style="font-size:14px">adapter/harness/</code>. Click any layer below to open its internal flowchart.
     </p>
 
     <div class="stat-row">
@@ -552,12 +552,12 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <div class="section-label">THE LOOP</div>
     <h2>Eleven layers, <em>one turn.</em></h2>
     <p class="prose" style="margin-bottom:0;">
-      The chain below runs top to bottom on every turn that isn't a trivial one-shot lookup. Click a layer to open its own internal flowchart — five of the eleven decompose into tiers, parallel checks, or a named escalation chain; a few of those open a second popup per item for more depth. The dashed amber boxes aren't part of the harness itself — they're what <code style="font-size:13px">packages/personal-assistant/src/*.ts</code> adds around it.
+      The chain below runs top to bottom on every turn that isn't a trivial one-shot lookup. Click a layer to open its own internal flowchart — five of the eleven decompose into tiers, parallel checks, or a named escalation chain; a few of those open a second popup per item for more depth. The dashed amber boxes aren't part of the harness itself — they're what <code style="font-size:13px">packages/aielia/src/*.ts</code> adds around it.
     </p>
 
     <div class="legend">
       <span class="legend-item"><span class="legend-swatch harness"></span>Harness core — generic, adapter/harness/ · packages/harness</span>
-      <span class="legend-item"><span class="legend-swatch assistant"></span>Added by Personal Assistant — packages/personal-assistant/src/*.ts</span>
+      <span class="legend-item"><span class="legend-swatch assistant"></span>Added by Aielia — packages/aielia/src/*.ts</span>
     </div>
 
     <div class="flowchart">
@@ -688,7 +688,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="tool-callout" style="margin-top:28px;">
       <div class="tool-callout-label">Skipped on trivial turns</div>
-      <p>A single consolidated classification call up front (risk, triviality, decomposition, plan-abandonment, plan-template matching) flags a genuinely self-contained factual one-liner as trivial — that reply returns directly and none of the eleven layers above run. Everything else walks the full loop. See <a href="/personal-assistant" style="color:var(--accent-ink);">Personal Assistant</a> for how this applies turn by turn in the reference chat agent.</p>
+      <p>A single consolidated classification call up front (risk, triviality, decomposition, plan-abandonment, plan-template matching) flags a genuinely self-contained factual one-liner as trivial — that reply returns directly and none of the eleven layers above run. Everything else walks the full loop. See <a href="/personal-assistant" style="color:var(--accent-ink);">Aielia</a> for how this applies turn by turn in the reference chat agent.</p>
     </div>
 
   </div>
@@ -1003,7 +1003,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 </dialog>
 
 
-<!-- ── Assistant-layer popups (packages/personal-assistant/src/*.ts) ──────── -->
+<!-- ── Assistant-layer popups (packages/aielia/src/*.ts) ──────── -->
 
 <dialog class="flow-modal sub" id="amodal-gate" style="--nc:var(--assist-ink)">
   <div class="fm-head">

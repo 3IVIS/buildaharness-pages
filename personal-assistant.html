@@ -96,7 +96,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://buildaharness.com/personal-assistant#software",
       "name": "Aielia",
-      "alternateName": "Build A Harness Personal Assistant",
+      "alternateName": "Build A Harness AI Assistant",
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "AI chat assistant built on an agent harness",
       "operatingSystem": "Web, macOS, Linux, Windows",
@@ -129,7 +129,7 @@
       "@id": "https://buildaharness.com/personal-assistant#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Build A Harness", "item": "https://buildaharness.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Personal Assistant", "item": "https://buildaharness.com/personal-assistant" }
+        { "@type": "ListItem", "position": 2, "name": "Aielia", "item": "https://buildaharness.com/personal-assistant" }
       ]
     },
     {
@@ -144,8 +144,8 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the Personal Assistant?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Personal Assistant is a general-purpose, everyday-use chat agent built on Build A Harness's own 11-layer harness runtime. Where a heavy autonomous agent decomposes an objective into a multi-task plan, it treats every chat message as one objective, one task — walking every harness layer for ordinary conversation, skipping the harness entirely for a one-shot fact lookup, and gating a consequential request like 'send that email' behind explicit approval." }
+          "name": "What is Aielia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Aielia is a general-purpose, everyday-use chat agent built on Build A Harness's own 11-layer harness runtime. Where a heavy autonomous agent decomposes an objective into a multi-task plan, it treats every chat message as one objective, one task — walking every harness layer for ordinary conversation, skipping the harness entirely for a one-shot fact lookup, and gating a consequential request like 'send that email' behind explicit approval." }
         },
         {
           "@type": "Question",
@@ -160,7 +160,7 @@
         {
           "@type": "Question",
           "name": "What happens if it crashes mid-turn?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Personal Assistant writes that checkpoint for every turn that actually reaches HarnessRuntime.run() — not a one-shot fact lookup or one the risk gate stops cold — and deletes it once the turn finishes. Calling turn() again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over." }
+          "acceptedAnswer": { "@type": "Answer", "text": "The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Aielia writes that checkpoint for every turn that actually reaches HarnessRuntime.run() — not a one-shot fact lookup or one the risk gate stops cold — and deletes it once the turn finishes. Calling turn() again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over." }
         },
         {
           "@type": "Question",
@@ -545,7 +545,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
   <div class="wrap">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Personal Assistant</span>
+      <a href="/">Build A Harness</a><span aria-hidden="true">/</span><span>Aielia</span>
     </nav>
 
     <div class="eyebrow">BUILD A HARNESS · AIELIA · APACHE 2.0</div>
@@ -592,7 +592,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h2>One message, <em>one objective, one task.</em></h2>
 
     <p>
-      Most autonomous agents decompose a goal into a multi-task plan — research, then draft, then revise, then send. Personal Assistant deliberately doesn't do that. Every chat message is treated as <strong>one objective, one task</strong>, which keeps each turn's <code style="font-size:14px">HarnessRuntime.run()</code> bounded — the harness drives the model's tool-calling loop one proposed action at a time (<code style="font-size:14px">ASSISTANT_ONE_LOOP</code>, on by default since 2026-09-06), rather than fanning out into a plan of its own — while still walking its full 11-layer sequence, World Model through Reviewer Pass (the exact breakdown is below), with context compression and cross-turn learning running alongside it.
+      Most autonomous agents decompose a goal into a multi-task plan — research, then draft, then revise, then send. Aielia deliberately doesn't do that. Every chat message is treated as <strong>one objective, one task</strong>, which keeps each turn's <code style="font-size:14px">HarnessRuntime.run()</code> bounded — the harness drives the model's tool-calling loop one proposed action at a time (<code style="font-size:14px">ASSISTANT_ONE_LOOP</code>, on by default since 2026-09-06), rather than fanning out into a plan of its own — while still walking its full 11-layer sequence, World Model through Reviewer Pass (the exact breakdown is below), with context compression and cross-turn learning running alongside it.
     </p>
 
     <p>
@@ -628,7 +628,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
     <h2>The same eleven layers, <em>applied to a chat message.</em></h2>
 
     <p class="prose" style="margin-bottom:0;">
-      This is the exact 11-layer breakdown Personal Assistant's own code tracks turn by turn — the same list its <code style="font-size:13px">/why</code> command and chat-ui's "Why?" panel render, collapsed down from about 25 individual harness nodes (see <code style="font-size:13px">node-display-names.ts</code>). Skipped entirely on a trivial fact-lookup turn; walked in full on everything else. For the clickable version — each layer's own internal flowchart, plus exactly what Personal Assistant adds on top of the harness core — see <a href="/harness-architecture" style="color:var(--accent-ink);">the interactive architecture page →</a>.
+      This is the exact 11-layer breakdown Aielia's own code tracks turn by turn — the same list its <code style="font-size:13px">/why</code> command and chat-ui's "Why?" panel render, collapsed down from about 25 individual harness nodes (see <code style="font-size:13px">node-display-names.ts</code>). Skipped entirely on a trivial fact-lookup turn; walked in full on everything else. For the clickable version — each layer's own internal flowchart, plus exactly what Aielia adds on top of the harness core — see <a href="/harness-architecture" style="color:var(--accent-ink);">the interactive architecture page →</a>.
     </p>
 
     <div class="layers-grid">
@@ -818,7 +818,7 @@ await assistant.turn('Summarize this into notes.md', {
       <div class="process-step">
         <span class="process-step-n">Persist</span>
         <span class="process-step-title">To storage, every turn</span>
-        <span class="process-step-sub">Personal Assistant writes that checkpoint keyed to the session, then deletes it once the turn finishes normally or via escalation.</span>
+        <span class="process-step-sub">Aielia writes that checkpoint keyed to the session, then deletes it once the turn finishes normally or via escalation.</span>
       </div>
 
       <div class="process-step">
@@ -956,7 +956,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
     <div class="faq-list">
 
       <div class="faq-item">
-        <h3>What is the Personal Assistant?</h3>
+        <h3>What is Aielia?</h3>
         <p>A general-purpose, everyday-use chat agent built on Build A Harness's own 11-layer harness runtime. Where a heavy autonomous agent decomposes an objective into a multi-task plan, it treats every chat message as one objective, one task — walking every harness layer for ordinary conversation, skipping the harness entirely for a one-shot fact lookup, and gating a consequential request like "send that email" behind explicit approval.</p>
       </div>
 
@@ -972,7 +972,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
 
       <div class="faq-item">
         <h3>What happens if it crashes mid-turn?</h3>
-        <p>The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Personal Assistant writes that checkpoint for every turn that actually reaches <code style="font-size:13px">HarnessRuntime.run()</code> — not a one-shot fact lookup or one the risk gate stops cold, neither of which starts a harness run to checkpoint — and deletes it once the turn finishes. Calling it again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over.</p>
+        <p>The harness runtime can suspend mid-loop and yields a serializable checkpoint after each iteration that makes progress. Aielia writes that checkpoint for every turn that actually reaches <code style="font-size:13px">HarnessRuntime.run()</code> — not a one-shot fact lookup or one the risk gate stops cold, neither of which starts a harness run to checkpoint — and deletes it once the turn finishes. Calling it again for a session with a leftover checkpoint resumes the interrupted run instead of silently starting over.</p>
       </div>
 
       <div class="faq-item">
