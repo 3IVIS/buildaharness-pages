@@ -100,10 +100,10 @@
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "AI chat assistant built on an agent harness",
       "operatingSystem": "Web, macOS, Linux, Windows",
-      "softwareVersion": "0.2.1",
+      "softwareVersion": "0.3.0",
       "description": "Aielia is a general-purpose, everyday-use chat agent that walks the full 11-layer Build A Harness architecture on real conversation, skips it entirely for a one-shot fact lookup, and gates a real email send or shell command behind explicit approval. Ships as a terminal CLI, a browser chat UI, and a native desktop app, all sharing one core.",
       "url": "https://buildaharness.com/personal-assistant",
-      "downloadUrl": "https://www.npmjs.com/package/@buildaharness/personal-assistant",
+      "downloadUrl": "https://www.npmjs.com/package/@buildaharness/aielia",
       "installUrl": "https://buildaharness.com/try",
       "softwareRequirements": "Node.js (CLI/browser); Rust toolchain only for building the native desktop app",
       "programmingLanguage": ["TypeScript"],
@@ -170,7 +170,7 @@
         {
           "@type": "Question",
           "name": "What stops file and shell access from being dangerous?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; write_file always stages instead of executing. Shell access is gated on every single call with no 'safe subset', runs with an env allowlist (PATH/HOME/LANG only), a hard timeout, and output truncation. Tool output from the shell or the web is wrapped as untrusted content before it re-enters the conversation. None of that makes shell access risk-free — these mitigations make it safer, not a substitute for deciding whether to enable it at all. This is an early-stage project (package v0.2.1), not an independently audited security boundary." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; write_file always stages instead of executing. Shell access is gated on every single call with no 'safe subset', runs with an env allowlist (PATH/HOME/LANG only), a hard timeout, and output truncation. Tool output from the shell or the web is wrapped as untrusted content before it re-enters the conversation. None of that makes shell access risk-free — these mitigations make it safer, not a substitute for deciding whether to enable it at all. This is an early-stage project (package v0.3.0), not an independently audited security boundary." }
         }
       ]
     }
@@ -576,8 +576,8 @@ footer{padding:32px 0;border-top:1px solid var(--line);}
 
     <div class="cta-row">
       <a class="btn" href="/try">Try in your browser →</a>
-      <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/personal-assistant"
-        style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/personal-assistant</button>
+      <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/aielia"
+        style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/aielia</button>
       <a class="btn btn-ghost" href="#design">How it's built ↓</a>
     </div>
 
@@ -895,7 +895,7 @@ await assistant.turn('Summarize this into notes.md', {
 
     <div class="quickstart-box">
       <div class="quickstart-bar">shell — no clone</div>
-      <pre>npx @buildaharness/personal-assistant</pre>
+      <pre>npx @buildaharness/aielia</pre>
     </div>
 
     <p style="margin-top:28px;">
@@ -916,11 +916,11 @@ await assistant.turn('Summarize this into notes.md', {
     <div class="quickstart-box">
       <div class="quickstart-bar">shell</div>
       <pre><span style="color:var(--ink-3)"># No API key — shells out to an already-authenticated Claude Code session</span>
-ASSISTANT_LLM_BACKEND=claude-cli npx @buildaharness/personal-assistant
+ASSISTANT_LLM_BACKEND=claude-cli npx @buildaharness/aielia
 
 <span style="color:var(--ink-3)"># Or a direct provider API key</span>
 ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
-  npx @buildaharness/personal-assistant</pre>
+  npx @buildaharness/aielia</pre>
     </div>
 
     <p style="margin-top:28px;">
@@ -940,7 +940,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
     </div>
 
     <p style="margin-top:20px;">
-      Whichever one you pick: try a plain question first, then something with real consequence — "send an email to my boss saying I quit" — to see the risk gate return <code style="font-size:14px">needs_approval</code> before a single token is spent. This is an early-stage project (package v0.2.1), not an audited security product — see the file/shell access sections above for exactly what is and isn't gated before turning either on. Apache 2.0, provided as-is per the license. <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/personal-assistant" style="color:var(--accent-ink);">Full README on GitHub →</a>
+      Whichever one you pick: try a plain question first, then something with real consequence — "send an email to my boss saying I quit" — to see the risk gate return <code style="font-size:14px">needs_approval</code> before a single token is spent. This is an early-stage project (package v0.3.0), not an audited security product — see the file/shell access sections above for exactly what is and isn't gated before turning either on. Apache 2.0, provided as-is per the license. <a href="https://github.com/3IVIS/buildaharness/tree/main/packages/aielia" style="color:var(--accent-ink);">Full README on GitHub →</a>
     </p>
 
   </div>
@@ -982,7 +982,7 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
 
       <div class="faq-item">
         <h3>What stops file and shell access from being dangerous?</h3>
-        <p>Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; <code style="font-size:13px">write_file</code> always stages instead of executing. Shell access is gated on every single call, runs with an environment allowlist, a hard timeout, and output truncation. Content fetched from the shell or the web is wrapped as untrusted before it re-enters the conversation, so it can't be mistaken for an instruction from the user. None of that makes shell access risk-free — it's a real trust decision these mitigations make <em>safer</em>, not a substitute for deciding whether to turn it on at all. This is an early-stage project (package v0.2.1), not an independently audited security boundary.</p>
+        <p>Both are opt-in and off by default. File tools are scoped to one sandboxed workspace root with path-traversal and symlink-escape checks; <code style="font-size:13px">write_file</code> always stages instead of executing. Shell access is gated on every single call, runs with an environment allowlist, a hard timeout, and output truncation. Content fetched from the shell or the web is wrapped as untrusted before it re-enters the conversation, so it can't be mistaken for an instruction from the user. None of that makes shell access risk-free — it's a real trust decision these mitigations make <em>safer</em>, not a substitute for deciding whether to turn it on at all. This is an early-stage project (package v0.3.0), not an independently audited security boundary.</p>
       </div>
 
     </div>
@@ -1001,8 +1001,8 @@ ASSISTANT_LLM_BACKEND=anthropic ASSISTANT_API_KEY=sk-ant-... \
       </div>
       <div class="cta-actions">
         <a class="btn" href="/try">Try in your browser →</a>
-        <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/personal-assistant"
-          style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/personal-assistant</button>
+        <button type="button" class="btn btn-ghost js-copy-cmd" data-copy="npx @buildaharness/aielia"
+          style="font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer;">npx @buildaharness/aielia</button>
         <a class="btn btn-ghost" href="/harness-comparison">See the harness comparison →</a>
       </div>
     </div>
