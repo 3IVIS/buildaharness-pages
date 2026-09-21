@@ -30,6 +30,24 @@ architecture, comparison, evaluation and observatory pages. Apache 2.0.
 - Microsoft Agent Framework (C# / Python / Java)
 - A2A protocol for framework-agnostic invocation
 
+## Observatory indexes
+
+Five live indexes of open-source projects, each fed by a hand-curated list and refreshed daily from the GitHub API:
+
+| Page | Curated list | Data file | Workflow |
+|---|---|---|---|
+| `ai_agent_frameworks.html` | `repos.txt` | `data.json` | `fetch-stats.yml` |
+| `ai_agents.html` | `agents-repos.txt` | `agents-data.json` | `fetch-stats.yml` |
+| `mcp_servers.html` | `mcp-repos.txt` | `mcp-data.json` | `fetch-stats.yml` |
+| `agent_skills.html` | `skills-repos.txt` | `skills-data.json` | `fetch-stats.yml` |
+| `ai_agent_memory_frameworks.html` | `memory-repos.txt` (extra classification columns) | `memory-data.json` | `fetch-memory-stats.yml` |
+
+- **Adding or removing an entry** means editing the list (`owner/repo tag1,tag2`). The workflow re-runs on push and rewrites the data file.
+- **Fetch logic** lives in `scripts/fetch-stats.mjs`. Run it locally with `GITHUB_TOKEN=$(gh auth token) node scripts/fetch-stats.mjs <list> <out> [array-key]`.
+- **Review policy:** every slug should resolve to its current name and be unarchived. Remove archived repos, 404s, anything without a push for roughly 300 days, and anything that is not what the page is about. The fetch summary prints renamed slugs so the lists can be updated.
+- **Scope:** frameworks are what you *build* agents with; agents are what you *run*; MCP servers, skills libraries and memory frameworks are the pieces around them.
+- Repo names, descriptions and topics are third-party text: the pages escape them before rendering. Keep it that way if you touch the row templates.
+
 ## License
 
 Apache 2.0

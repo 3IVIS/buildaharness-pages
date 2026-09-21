@@ -51,32 +51,32 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Agent Frameworks — Build A Harness Observatory</title>
+<title>Agent Skills Libraries — Build A Harness Observatory</title>
 
-<meta name="description" content="Ranked, searchable index of open-source AI agent frameworks with live GitHub stats — stars, forks, language, license, and topics refreshed daily. Filter by language or topic, sort by any column.">
+<meta name="description" content="Curated index of agent skills libraries and collections — SKILL.md folders for Claude Code, Codex and other agents — with live GitHub stats refreshed daily. Filter by topic.">
 
-<link rel="canonical" href="https://buildaharness.com/ai_agent_frameworks.html">
+<link rel="canonical" href="https://buildaharness.com/agent_skills.html">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://buildaharness.com/ai_agent_frameworks.html">
+<meta property="og:url" content="https://buildaharness.com/agent_skills.html">
 <meta property="og:site_name" content="Build A Harness">
-<meta property="og:title" content="AI Agent Frameworks — Build A Harness Observatory">
-<meta property="og:description" content="Ranked, searchable index of open-source AI agent frameworks with live GitHub stats — stars, forks, language, license, and topics refreshed daily.">
+<meta property="og:title" content="Agent Skills Libraries — Build A Harness Observatory">
+<meta property="og:description" content="Curated index of agent skills libraries and collections for Claude Code, Codex and other agents, with live GitHub stats refreshed daily.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Agent Frameworks Observatory — ranked and searchable index of open-source agent frameworks.">
+<meta property="og:image:alt" content="Agent skills libraries — curated, searchable index.">
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Agent Frameworks — Build A Harness Observatory">
-<meta name="twitter:description" content="Ranked, searchable index of open-source AI agent frameworks with live GitHub stats — stars, forks, language, license, and topics refreshed daily.">
+<meta name="twitter:title" content="Agent Skills Libraries — Build A Harness Observatory">
+<meta name="twitter:description" content="Curated index of agent skills libraries and collections for Claude Code, Codex and other agents, with live GitHub stats refreshed daily.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
-<meta name="twitter:image:alt" content="AI Agent Frameworks Observatory — ranked and searchable index of open-source agent frameworks.">
+<meta name="twitter:image:alt" content="Agent skills libraries — curated, searchable index.">
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="3IVIS">
-<meta name="keywords" content="AI agent frameworks, open source agent frameworks, LangGraph, CrewAI, Mastra, LangChain, AutoGen, agent orchestration, multi-agent, GitHub stars, ranked frameworks, build a harness">
+<meta name="keywords" content="agent skills, Claude skills, SKILL.md, Claude Code skills, Codex skills, awesome agent skills, skills library, GitHub stars, build a harness">
 
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -90,16 +90,22 @@
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": "https://buildaharness.com/ai_agent_frameworks.html",
-      "name": "AI Agent Frameworks Observatory",
-      "description": "Ranked, searchable index of open-source AI agent frameworks with live GitHub stats. Stars, forks, language, license, and topics refreshed daily via GitHub Actions.",
-      "url": "https://buildaharness.com/ai_agent_frameworks.html",
-      "isPartOf": { "@id": "https://buildaharness.com/#website" },
-      "publisher": { "@type": "Organization", "name": "3IVIS", "url": "https://buildaharness.com" },
+      "@id": "https://buildaharness.com/agent_skills.html",
+      "name": "Agent Skills Libraries",
+      "description": "Curated index of agent skills libraries and collections — SKILL.md folders for Claude Code, Codex and other agents — with live GitHub stats refreshed daily. Filter by topic.",
+      "url": "https://buildaharness.com/agent_skills.html",
+      "isPartOf": {
+        "@id": "https://buildaharness.com/#website"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "3IVIS",
+        "url": "https://buildaharness.com"
+      },
       "about": {
         "@type": "Thing",
-        "name": "AI agent frameworks",
-        "description": "Open-source software frameworks for building and orchestrating AI agents and multi-agent systems"
+        "name": "Agent skills libraries",
+        "description": "Open-source libraries and collections of agent skills, plus the specification and tooling around them"
       }
     },
     {
@@ -107,43 +113,59 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is an AI agent framework?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A library or platform for building software where an LLM decides what to do next and the framework executes that decision — calling tools, managing state across steps, and looping until the task completes. LangChain, CrewAI, LangGraph, and Mastra are all examples, though they differ in how much control-flow detail they expose versus abstract away." }
+          "name": "What is an agent skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A folder with a SKILL.md file — a name, a description and instructions — plus optional scripts and reference files. An agent loads the full skill only when the task matches its description."
+          }
         },
         {
           "@type": "Question",
-          "name": "What's the difference between an AI agent framework and an orchestration framework?",
-          "acceptedAnswer": { "@type": "Answer", "text": "In practice the terms overlap heavily. \"Orchestration framework\" more precisely refers to the control-flow layer — the graph or state machine deciding which step or agent runs next — while \"agent framework\" is the broader umbrella that also includes prompt templating, tool-calling conventions, and memory. Most tools people call agent frameworks include an orchestration layer internally." }
+          "name": "What is the difference between a skill and an MCP server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A skill teaches the agent a procedure and is loaded into its context on demand. An MCP server gives the agent live access to a tool or data source. Skills add know-how; MCP servers add reach."
+          }
         },
         {
           "@type": "Question",
-          "name": "What's the difference between an AI agent framework and a harness?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A framework gives you the building blocks — agents, tools, an execution loop. A harness is the full production wrapper around those blocks: a world model, control state, verification before acting, recovery from failures, and observability across the whole run. A harness typically compiles to one or more agent frameworks rather than replacing them." }
+          "name": "Are skills safe to install?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treat them like any code you run. A skill can include scripts, and its instructions steer what the agent does. Prefer official or widely reviewed libraries, read a skill before installing it, and scan third-party ones."
+          }
         },
         {
           "@type": "Question",
-          "name": "Is LangGraph an AI agent framework or an orchestration framework?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Both terms are used for it in practice. LangGraph is a low-level graph/state-machine layer for controlling multi-step and multi-agent execution, which is why it's often described specifically as an orchestration framework — and it's frequently used underneath higher-level agent abstractions rather than on its own." }
+          "name": "Do skills only work in Claude?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The format is documented as an open specification, and several agents load the same SKILL.md structure. This index includes collections aimed at Claude Code, Codex, GitHub Copilot and OpenClaw — check each library’s README for exactly what it supports."
+          }
         },
         {
           "@type": "Question",
-          "name": "What's the difference between a multi-agent framework and a single-agent framework?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A single-agent framework runs one LLM loop with tools and memory. A multi-agent framework coordinates several agents, each with its own role, prompt, and tools, communicating toward a shared goal — useful when a task naturally splits into specialized sub-tasks rather than one generalist agent handling everything." }
+          "name": "How do I install a skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the agent and the library. Some libraries ship as plugins, some as folders you copy into your agent’s skills directory, and there are installer tools listed under tooling. The library’s README is authoritative."
+          }
         },
         {
           "@type": "Question",
-          "name": "Are open-source AI agent frameworks free to use commercially?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Depends entirely on the license, not on being \"open source.\" MIT and Apache-2.0 — the majority of frameworks in this index — are unrestricted for commercial use. Copyleft licenses like GPL or AGPL carry obligations that can affect proprietary products. Always check the license column rather than assuming." }
-        },
-        {
-          "@type": "Question",
-          "name": "Which AI agent framework should I use for Python vs TypeScript vs C#?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Python has the largest share of the ecosystem, including LangChain, CrewAI, and LangGraph's primary SDK. TypeScript/JavaScript options include Mastra and LangGraph.js. C#/.NET is covered primarily by the Microsoft Agent Framework." }
+          "name": "How are libraries chosen for this list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By hand: substantial collections and official libraries, plus the specification and tooling around them. Single-purpose one-off skills are out of scope. Each entry is verified against the live GitHub API when the list is reviewed."
+          }
         },
         {
           "@type": "Question",
           "name": "How current is this list?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Stars, forks, and topics are refreshed daily via GitHub Actions." }
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stars, forks and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull. The list itself is reviewed by hand periodically."
+          }
         }
       ]
     }
@@ -593,14 +615,14 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 <!-- ── LOADING ── -->
 <div id="loading-screen">
   <span class="loader-eyebrow">Open Source · GitHub Data</span>
-  <span class="loader-title">Agent Frameworks Observatory</span>
+  <span class="loader-title">Agent Skills Libraries</span>
   <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
   <span class="loader-status" id="loader-status">Loading data…</span>
 </div>
 
 <!-- ── ERROR ── -->
 <div class="error-banner" id="error-banner">
-  ⚠ &nbsp;<span id="error-msg">Could not load data.json — trigger the GitHub Actions workflow first.</span>
+  ⚠ &nbsp;<span id="error-msg">Could not load skills-data.json — trigger the GitHub Actions workflow first.</span>
 </div>
 
 <!-- ── NAV ── -->
@@ -630,10 +652,10 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 <!-- ── OBSERVATORY TABS ── -->
 <div class="obs-tabs" aria-label="Observatory indexes">
   <div class="obs-tabs-inner">
-    <a class="obs-tab active" href="ai_agent_frameworks.html" aria-current="page">Frameworks</a>
+    <a class="obs-tab" href="ai_agent_frameworks.html">Frameworks</a>
     <a class="obs-tab" href="ai_agents.html">Agents</a>
     <a class="obs-tab" href="mcp_servers.html">MCP servers</a>
-    <a class="obs-tab" href="agent_skills.html">Agent skills</a>
+    <a class="obs-tab active" href="agent_skills.html" aria-current="page">Agent skills</a>
     <a class="obs-tab" href="ai_agent_memory_frameworks.html">Memory</a>
   </div>
 </div>
@@ -642,15 +664,15 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 <header>
   <div class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Open Source · Apache 2.0 · Updated daily via GitHub Actions</p>
-      <h1>AI Agent Frameworks —<br><em>ranked, tagged, and searchable</em></h1>
-      <p class="hero-sub">A curated index of open-source agent frameworks with live GitHub stats. Stars, forks, language, license, and topics fetched daily. Filter by language or topic, sort by any column. Looking for ready-to-run agents instead? See the <a href="ai_agents.html" style="color:var(--amber);">agents index</a>. Want a working one to talk to now? <a href="https://myaielia.com/try" style="color:var(--amber);">Try Aielia</a> — our open-source assistant that stops for approval before it acts.</p>
+      <p class="eyebrow">Open Source · Agent Skills · Updated daily via GitHub Actions</p>
+      <h1>Agent Skills Libraries —<br><em>official, community, and searchable</em></h1>
+      <p class="hero-sub">A curated index of agent skills libraries and collections — folders of instructions and scripts that agents such as Claude Code and Codex load on demand — with live GitHub stats. Building an agent instead? See the <a href="ai_agent_frameworks.html">frameworks index</a>.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><span class="hero-stat-val" id="total-count">—</span><span class="hero-stat-lbl">Frameworks</span></div>
+        <div class="hero-stat"><span class="hero-stat-val" id="total-count">—</span><span class="hero-stat-lbl">Libraries</span></div>
         <div class="stat-divider"></div>
         <div class="hero-stat"><span class="hero-stat-val" id="total-stars">—</span><span class="hero-stat-lbl">Total Stars</span></div>
         <div class="stat-divider"></div>
-        <div class="hero-stat"><span class="hero-stat-val" id="total-langs">—</span><span class="hero-stat-lbl">Languages</span></div>
+        <div class="hero-stat"><span class="hero-stat-val" id="total-langs">—</span><span class="hero-stat-lbl">Active this month</span></div>
         <div class="stat-divider"></div>
         <div class="hero-stat"><span class="hero-stat-val" id="total-topics">—</span><span class="hero-stat-lbl">Unique Topics</span></div>
       </div>
@@ -665,11 +687,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
-      <input type="text" id="search" placeholder="Search name, topic, language…">
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Lang</span>
-      <div id="lang-filters"></div>
+      <input type="text" id="search" placeholder="Search name, topic…">
     </div>
     <div class="filter-group" id="topic-filter-group">
       <span class="filter-label">Topic</span>
@@ -688,10 +706,9 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
     <table>
       <thead>
         <tr>
-          <th onclick="setSort('name')"     id="th-name">    <div class="th-inner">Framework <span class="sort-icon none" id="si-name"></span></div></th>
+          <th onclick="setSort('name')"     id="th-name">    <div class="th-inner">Library <span class="sort-icon none" id="si-name"></span></div></th>
           <th onclick="setSort('stars')"    id="th-stars">   <div class="th-inner">Stars     <span class="sort-icon desc" id="si-stars"></span></div></th>
           <th onclick="setSort('forks')"    id="th-forks">   <div class="th-inner">Forks     <span class="sort-icon none" id="si-forks"></span></div></th>
-          <th onclick="setSort('language')" id="th-language"><div class="th-inner">Language  <span class="sort-icon none" id="si-language"></span></div></th>
           <th onclick="setSort('license')"  id="th-license"> <div class="th-inner">License   <span class="sort-icon none" id="si-license"></span></div></th>
           <th onclick="setSort('pushedAt')" id="th-pushedAt"><div class="th-inner">Updated <span class="sort-icon none" id="si-pushedAt"></span></div></th>
           <th>Topics</th>
@@ -713,9 +730,9 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 <section class="content-section" id="what-is">
   <div class="content-inner">
     <span class="content-eyebrow">Definitions</span>
-    <h2>What is an AI agent framework?</h2>
-    <p>An AI agent framework is a library or platform for building software that uses an LLM to decide what to do next, then acts on that decision — calling tools, reading and writing state, and looping until a task is done. In practice that means three things: a way to define tools the model can call, a way to hold state across steps (the conversation, intermediate results, task memory), and a runtime loop that keeps calling the model until the task finishes or fails.</p>
-    <p>The term covers a wide range of designs. Some frameworks (LangChain, CrewAI) give you high-level abstractions — agents, roles, crews — and hide the loop underneath. Others (LangGraph) expose the control flow directly as a graph or state machine so you can route between steps, tools, and multiple agents explicitly. Others still (Mastra, Microsoft Agent Framework) are runtime-specific SDKs tied to a particular language ecosystem. The table above indexes all of them side by side with live GitHub signal — stars, forks, language, license — so you can compare by what actually matters for a production decision rather than by marketing copy.</p>
+    <h2>What is an agent skill?</h2>
+    <p>An agent skill is a folder containing a SKILL.md file — instructions, with a name and a short description at the top — plus any scripts and reference files the instructions need. The agent sees only the names and descriptions up front and loads a skill’s full contents when the task calls for it, which keeps context small while making a large library available.</p>
+    <p>A skills library is a collection of these folders: an official set from a vendor, a large community catalog, a focused set for one domain, or a curated list pointing elsewhere. The format is documented as an open specification and is read by more than one agent, so a good skill is portable. The flip side is that a skill can bundle executable scripts, so installing one is closer to installing software than to copying a prompt.</p>
   </div>
 </section>
 
@@ -724,44 +741,39 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
   <div class="content-inner">
     <span class="content-eyebrow">Taxonomy</span>
     <h2>Categories in this index</h2>
-    <p>Every framework above is tagged by design pattern, not just popularity. Use the Topic filter to isolate any of these — or read on for what each one actually means.</p>
+    <p>Every entry above is tagged by kind. Use the Topic filter to isolate any of these — or read on for what each one means.</p>
     <div class="cat-grid">
-      <div class="cat-card"><h3>Orchestration</h3><p>Manages control flow between LLM calls, tools, and steps — chains, graphs, or state machines that decide what runs next.</p></div>
-      <div class="cat-card"><h3>Multi-agent</h3><p>Coordinates several agents with distinct roles, prompts, and tools, communicating toward a shared goal.</p></div>
-      <div class="cat-card"><h3>Swarm</h3><p>Lightweight patterns for loosely-coupled agents that hand off tasks to each other without a central orchestrator.</p></div>
-      <div class="cat-card"><h3>RAG</h3><p>Focused on retrieval-augmented generation — indexing, retrieving, and grounding agent output in external documents or data.</p></div>
-      <div class="cat-card"><h3>No-code / Visual</h3><p>Drag-and-drop or visual-canvas tools for composing agent workflows without hand-writing the orchestration code.</p></div>
-      <div class="cat-card"><h3>Autonomous</h3><p>Aimed at long-running, goal-directed agents that plan and execute multi-step tasks with minimal human intervention.</p></div>
-      <div class="cat-card"><h3>Code-generation</h3><p>Specialized for agents whose primary tool is writing, running, and debugging code.</p></div>
-      <div class="cat-card"><h3>Microsoft</h3><p>Published or maintained by Microsoft, including the Microsoft Agent Framework and its predecessors (AutoGen, Semantic Kernel).</p></div>
-      <div class="cat-card"><h3>Memory</h3><p>Adds persistent or long-term memory to agents. See the <a href="ai_agent_memory_frameworks.html">Memory Frameworks index</a> for a deeper, dedicated comparison.</p></div>
-      <div class="cat-card"><h3>Harness</h3><p>Frameworks that describe themselves as an agent harness: they wrap the model with tools, memory, permissions and control rather than only a prompt loop. See <a href="harness-engineering.html">Harness Engineering</a>.</p></div>
-      <div class="cat-card"><h3>Vendor SDKs</h3><p>Agent SDKs published by the model or cloud vendor — OpenAI, Anthropic, Google, AWS, Microsoft — usually tuned to that vendor’s models and tooling.</p></div>
-      <div class="cat-card"><h3>TypeScript</h3><p>Frameworks built for the JavaScript and TypeScript ecosystem, often with first-class support for web apps and edge runtimes.</p></div>
-      <div class="cat-card"><h3>Voice &amp; realtime</h3><p>Frameworks for agents that listen and speak in real time — audio pipelines, turn-taking and low-latency streaming.</p></div>
-      <div class="cat-card"><h3>Research</h3><p>Experimental or academic frameworks exploring new agent architectures, not yet aimed at production use.</p></div>
+      <div class="cat-card"><h3>Spec</h3><p>The specification and documentation for the skill format itself — what a valid skill looks like.</p></div>
+      <div class="cat-card"><h3>Official</h3><p>Published by the vendor or team behind the product or agent, so it tracks that product and is accountable for it.</p></div>
+      <div class="cat-card"><h3>Collection</h3><p>Large community libraries of many skills, often installable as plugins or bundles. Breadth varies; so does quality.</p></div>
+      <div class="cat-card"><h3>Directory</h3><p>Curated “awesome” lists that point to skills elsewhere. Good for discovery; the skills themselves live in other repositories.</p></div>
+      <div class="cat-card"><h3>Domain</h3><p>Focused libraries for one field — science, design, security, marketing, note-taking — with skills that share a point of view.</p></div>
+      <div class="cat-card"><h3>Tooling</h3><p>Installers, converters, scanners and optimizers around skills, rather than skills themselves.</p></div>
+      <div class="cat-card"><h3>Security</h3><p>Skills for security work, or tools that scan skills for risky content. Use security skills only on systems you are authorized to test.</p></div>
+      <div class="cat-card"><h3>Plugins</h3><p>Bundles that package skills together with commands, sub-agents or hooks so they install as one unit.</p></div>
+      <div class="cat-card"><h3>Methodology</h3><p>Libraries that encode a whole working method — planning, testing, review — rather than a single capability.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── FRAMEWORK VS ORCHESTRATION VS HARNESS ── -->
-<section class="content-section" id="framework-vs-harness">
+<!-- ── COMPARE ── -->
+<section class="content-section" id="compare">
   <div class="content-inner">
     <span class="content-eyebrow">Terminology</span>
-    <h2>Agent framework vs orchestration framework vs harness</h2>
-    <p>These three terms get used interchangeably, but they describe different layers of the stack.</p>
+    <h2>Skill vs MCP server vs harness</h2>
+    <p>They solve different problems and are often used together.</p>
     <div class="compare-grid">
       <div class="compare-card">
-        <h3>Agent framework</h3>
-        <p>A library for building one or more LLM-driven agents: prompt templates, tool calling, and an execution loop. Examples: LangChain, CrewAI, Mastra.</p>
+        <h3>Skill</h3>
+        <p>Instructions and scripts loaded into the agent’s context on demand. A skill teaches the agent how to do something — a procedure, a house style, a workflow.</p>
       </div>
       <div class="compare-card">
-        <h3>Orchestration framework</h3>
-        <p>The control-flow layer that decides which step, tool, or agent runs next — usually a graph, DAG, or state machine. LangGraph is the clearest example; the term is often used as a synonym for "agent framework" in casual usage.</p>
+        <h3>MCP server</h3>
+        <p>A live connection to a tool or data source. An MCP server gives the agent access to something — a database, a browser, an API.</p>
       </div>
       <div class="compare-card highlight">
         <h3>Harness</h3>
-        <p>The full production wrapper around a model or agent framework — world model, control state, verification, recovery, and observability. A harness can compile down to any of the frameworks above. <a href="/harness-engineering">Read the full breakdown →</a></p>
+        <p>The control layer that decides what the agent may actually do with either — permissions, budgets, approvals and verification.</p>
       </div>
     </div>
   </div>
@@ -771,15 +783,15 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 <section class="content-section alt" id="how-to-choose">
   <div class="content-inner">
     <span class="content-eyebrow">Evaluation</span>
-    <h2>How to choose an AI agent framework</h2>
-    <p>Six things worth checking before committing to one, roughly in the order they tend to eliminate options.</p>
+    <h2>How to choose a skills library</h2>
+    <p>Six checks worth making before you install skills into an agent that can run commands on your machine.</p>
     <div class="choose-list">
-      <div class="choose-item"><span class="choose-num">1</span><div><h3>Language & runtime</h3><p>Does it match your stack — Python, TypeScript, C#/.NET, Go? Switching later means a rewrite, not a config change.</p></div></div>
-      <div class="choose-item"><span class="choose-num">2</span><div><h3>Orchestration model</h3><p>Graph-based (LangGraph), role/crew-based (CrewAI), or a plain code-first agent loop? This decides how explicit your control flow will be.</p></div></div>
-      <div class="choose-item"><span class="choose-num">3</span><div><h3>License</h3><p>MIT and Apache-2.0 are unrestricted for commercial use. GPL/AGPL and source-available licenses carry real obligations — check the License column above before adopting.</p></div></div>
-      <div class="choose-item"><span class="choose-num">4</span><div><h3>Memory & state</h3><p>Built-in short/long-term memory, or does it expect you to bring your own (Mem0, Zep, Letta)? See the <a href="ai_agent_memory_frameworks.html">memory frameworks index</a>.</p></div></div>
-      <div class="choose-item"><span class="choose-num">5</span><div><h3>Observability</h3><p>Native tracing and eval hooks, or bolt-on? Debugging a multi-step agent without traces is largely guesswork.</p></div></div>
-      <div class="choose-item"><span class="choose-num">6</span><div><h3>Maturity signal</h3><p>Stars, forks, and issue activity in the table above are a faster proxy for production-readiness than a project's own marketing.</p></div></div>
+      <div class="choose-item"><span class="choose-num">1</span><div><h3>Which agents it supports</h3><p>Some libraries target Claude Code, others Codex, GitHub Copilot or OpenClaw. The format is shared, but packaging and install steps differ, so check the README for your agent.</p></div></div>
+      <div class="choose-item"><span class="choose-num">2</span><div><h3>What the skills can run</h3><p>A skill may include scripts that execute on your machine. Read them before installing, prefer official or widely reviewed libraries, and consider running a scanner from the tooling group.</p></div></div>
+      <div class="choose-item"><span class="choose-num">3</span><div><h3>Curated or catalog</h3><p>A small vetted library and a catalog of thousands serve different needs. Bigger is not better: a skill you never trigger is just clutter.</p></div></div>
+      <div class="choose-item"><span class="choose-num">4</span><div><h3>Trigger quality</h3><p>A skill loads only when its description matches the task. Overlapping or vague descriptions across many skills make an agent pick the wrong one or none at all.</p></div></div>
+      <div class="choose-item"><span class="choose-num">5</span><div><h3>License</h3><p>MIT and Apache-2.0 are unrestricted for commercial use. Some collections mix content under different terms, so check before redistributing.</p></div></div>
+      <div class="choose-item"><span class="choose-num">6</span><div><h3>Maintenance signal</h3><p>The Updated column shows the last push. Skills reference tools and APIs that change, so an untouched library goes stale quickly.</p></div></div>
     </div>
   </div>
 </section>
@@ -791,42 +803,37 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
     <h2>Questions, answered</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <h3>What is an AI agent framework?</h3>
-        <p>A library or platform for building software where an LLM decides what to do next and the framework executes that decision — calling tools, managing state across steps, and looping until the task completes. LangChain, CrewAI, LangGraph, and Mastra are all examples, though they differ in how much control-flow detail they expose versus abstract away.</p>
+        <h3>What is an agent skill?</h3>
+        <p>A folder with a SKILL.md file — a name, a description and instructions — plus optional scripts and reference files. An agent loads the full skill only when the task matches its description.</p>
       </div>
       <div class="faq-item">
-        <h3>What's the difference between an AI agent framework and an orchestration framework?</h3>
-        <p>In practice the terms overlap heavily. "Orchestration framework" more precisely refers to the control-flow layer — the graph or state machine deciding which step or agent runs next — while "agent framework" is the broader umbrella that also includes prompt templating, tool-calling conventions, and memory. Most tools people call agent frameworks include an orchestration layer internally.</p>
+        <h3>What is the difference between a skill and an MCP server?</h3>
+        <p>A skill teaches the agent a procedure and is loaded into its context on demand. An MCP server gives the agent live access to a tool or data source. Skills add know-how; MCP servers add reach.</p>
       </div>
       <div class="faq-item">
-        <h3>What's the difference between an AI agent framework and a harness?</h3>
-        <p>A framework gives you the building blocks — agents, tools, an execution loop. A harness is the full production wrapper around those blocks: a world model, control state, verification before acting, recovery from failures, and observability across the whole run. A harness typically compiles to one or more agent frameworks rather than replacing them. See <a href="/harness-engineering">harness engineering</a> for the full distinction.</p>
+        <h3>Are skills safe to install?</h3>
+        <p>Treat them like any code you run. A skill can include scripts, and its instructions steer what the agent does. Prefer official or widely reviewed libraries, read a skill before installing it, and scan third-party ones.</p>
       </div>
       <div class="faq-item">
-        <h3>Is LangGraph an AI agent framework or an orchestration framework?</h3>
-        <p>Both terms are used for it in practice. LangGraph is a low-level graph/state-machine layer for controlling multi-step and multi-agent execution, which is why it's often described specifically as an orchestration framework — and it's frequently used underneath higher-level agent abstractions rather than on its own.</p>
+        <h3>Do skills only work in Claude?</h3>
+        <p>The format is documented as an open specification, and several agents load the same SKILL.md structure. This index includes collections aimed at Claude Code, Codex, GitHub Copilot and OpenClaw — check each library’s README for exactly what it supports.</p>
       </div>
       <div class="faq-item">
-        <h3>What's the difference between a multi-agent framework and a single-agent framework?</h3>
-        <p>A single-agent framework runs one LLM loop with tools and memory. A multi-agent framework coordinates several agents, each with its own role, prompt, and tools, communicating toward a shared goal — useful when a task naturally splits into specialized sub-tasks (research, coding, review) rather than one generalist agent handling everything.</p>
+        <h3>How do I install a skill?</h3>
+        <p>It depends on the agent and the library. Some libraries ship as plugins, some as folders you copy into your agent’s skills directory, and there are installer tools listed under tooling. The library’s README is authoritative.</p>
       </div>
       <div class="faq-item">
-        <h3>Are open-source AI agent frameworks free to use commercially?</h3>
-        <p>Depends entirely on the license, not on being "open source." MIT and Apache-2.0 — the majority of frameworks in this index — are unrestricted for commercial use. Copyleft licenses like GPL or AGPL carry obligations that can affect proprietary products. Always check the License column above rather than assuming.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Which AI agent framework should I use for Python vs TypeScript vs C#?</h3>
-        <p>Python has the largest share of the ecosystem, including LangChain, CrewAI, and LangGraph's primary SDK. TypeScript/JavaScript options include Mastra and LangGraph.js. C#/.NET is covered primarily by the Microsoft Agent Framework. Filter by Language in the table above to see current options per ecosystem.</p>
+        <h3>How are libraries chosen for this list?</h3>
+        <p>By hand: substantial collections and official libraries, plus the specification and tooling around them. Single-purpose one-off skills are out of scope. Each entry is verified against the live GitHub API when the list is reviewed.</p>
       </div>
       <div class="faq-item">
         <h3>How current is this list?</h3>
-        <p>Stars, forks, and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull.</p>
+        <p>Stars, forks and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull. The list itself is reviewed by hand periodically.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-row">
@@ -856,7 +863,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; }
 
 <script>
 // Per-page settings: which data file feeds this index and how it is worded.
-const PAGE = {"dataFile": "data.json", "key": "frameworks", "nounPlural": "frameworks", "showLang": true, "thirdStat": "langs"};
+const PAGE = {"dataFile": "skills-data.json", "key": "items", "nounPlural": "skills libraries", "showLang": false, "thirdStat": "active"};
 const COLS = PAGE.showLang ? 7 : 6;
 
 let FRAMEWORKS = [];

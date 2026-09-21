@@ -698,6 +698,32 @@ h2 em{
   border-right:none;
 }
 
+/* the five observatory indexes: reflow by available width instead of a fixed column count */
+.cards.cards-idx{
+  grid-template-columns:repeat(6,1fr);
+  gap:1px;
+  background:var(--line);
+}
+
+.cards-idx .card{
+  border-right:none;
+  grid-column:span 3;
+}
+
+.cards-idx .card:nth-child(-n+3){
+  grid-column:span 2;
+}
+
+@media(max-width:980px){
+  .cards.cards-idx{
+    grid-template-columns:1fr;
+  }
+  .cards-idx .card,
+  .cards-idx .card:nth-child(-n+3){
+    grid-column:auto;
+  }
+}
+
 .card h3{
   margin:0 0 12px;
   font-size:20px;
@@ -1494,15 +1520,30 @@ footer{
     </h2>
 
     <p class="section-lede">
-      Two live indexes of open-source projects, with GitHub stats refreshed daily by GitHub Actions —
+      Five live indexes of open-source projects, with GitHub stats refreshed daily by GitHub Actions —
       built to help you choose what to build on, and to see where a harness fits.
     </p>
 
-    <div class="cards">
+    <div class="cards cards-idx">
       <div class="card">
         <h3>AI Agent Frameworks</h3>
-        <p>A ranked, searchable index of open-source agent frameworks — orchestration, multi-agent, RAG, no-code, code generation and more — with stars, forks, language, license, and topics. Sort and filter by any of them.</p>
-        <p style="margin-top:14px;"><a class="btn" href="/ai_agent_frameworks.html">Browse agent frameworks →</a></p>
+        <p>A ranked, searchable index of open-source agent frameworks — orchestration, multi-agent, RAG, no-code, harnesses and more — with stars, forks, language, license, and topics.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/ai_agent_frameworks.html">Browse frameworks →</a></p>
+      </div>
+      <div class="card">
+        <h3>AI Agents</h3>
+        <p>Ready-to-run open-source agents — coding, browser and computer-use, research, and personal assistants — for when you want one to use rather than one to build.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/ai_agents.html">Browse agents →</a></p>
+      </div>
+      <div class="card">
+        <h3>MCP Servers</h3>
+        <p>Model Context Protocol servers, SDKs, frameworks, gateways and directories, with vendor-maintained servers tagged apart from community ones.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/mcp_servers.html">Browse MCP servers →</a></p>
+      </div>
+      <div class="card">
+        <h3>Agent Skills</h3>
+        <p>Libraries and collections of agent skills — the SKILL.md folders Claude Code, Codex and other agents load on demand — plus the specification and tooling.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/agent_skills.html">Browse skills →</a></p>
       </div>
       <div class="card">
         <h3>AI Agent Memory Frameworks</h3>
@@ -1777,6 +1818,9 @@ footer{
       <a href="/harness-comparison">Comparison</a>
       <a href="/ai_agent_frameworks.html">Agent frameworks</a>
       <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
+      <a href="/ai_agents.html">AI agents</a>
+      <a href="/mcp_servers.html">MCP servers</a>
+      <a href="/agent_skills.html">Agent skills</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/impressum.html">Impressum</a>
       <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>

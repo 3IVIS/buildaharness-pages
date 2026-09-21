@@ -9,9 +9,9 @@ Build A Harness is a **working tool** (public alpha). Its front door is **Aielia
 A live-updated, ranked, and searchable index of open-source AI agent frameworks with real GitHub stats (stars, forks, language, license, topics) refreshed daily via GitHub Actions. Covers orchestration, multi-agent, swarm, RAG, no-code/visual, autonomous, code-generation, Microsoft, memory, infrastructure, and research frameworks.
 
 - **URL**: https://buildaharness.com/ai_agent_frameworks.html
-- **Data coverage**: ~58 frameworks as of June 2026, updated daily
+- **Data coverage**: ~60 frameworks, reviewed by hand 2026-09-21 and refreshed daily (archived, dead and long-stale projects are removed at each review)
 - **Source list**: repos.txt in the buildaharness-pages repository (owner/repo format with optional manual tags)
-- **Sorting**: by stars (default), forks, name, language, license
+- **Sorting**: by stars (default), forks, name, language, license, last update
 - **Filtering**: by programming language and GitHub topic tags
 - **Also on the page**: a definitions section (what an AI agent framework is), a category breakdown, a framework-vs-orchestration-framework-vs-harness comparison, an evaluation checklist, and an FAQ covering licensing, language choice, and LangGraph's classification as an orchestration layer
 
@@ -20,10 +20,43 @@ A live-updated, ranked, and searchable index of open-source AI agent frameworks 
 A curated index of open-source memory frameworks for AI agents, classified by layer (Framework, Infra, Research), memory class (Personalization, Institutional, Both), architecture pattern, license, and maturity (Production, Emerging, Research, Experimental). GitHub stars refreshed daily.
 
 - **URL**: https://buildaharness.com/ai_agent_memory_frameworks.html
-- **Data coverage**: ~24 frameworks as of June 2026
+- **Data coverage**: ~28 frameworks, reviewed by hand 2026-09-21
 - **Source list**: memory-repos.txt in the buildaharness-pages repository (pipe-delimited: url | layer | memoryClass | architecture | license | maturity)
 - **Notable entries**: mem0, Letta, Zep, Graphiti, LangMem, LlamaIndex, Cognee, MemOS, Chroma
 - **Also on the page**: a definitions section (what a memory framework is vs a vector database), a layer breakdown (Framework/Infra/Research), a memory-class and architecture breakdown (Personalization/Institutional/Both, vector/knowledge-graph/temporal-graph/tiered/version-controlled), an evaluation checklist, and an FAQ covering mem0 self-hosting, temporal knowledge graphs, and short- vs long-term memory
+
+## AI Agents Observatory
+
+A curated, live-updated index of open-source AI agents you can run — coding agents (terminal, IDE, orchestrators), browser and computer-use agents, research agents, and personal assistants — with real GitHub stats refreshed daily. Distinct from the frameworks index, which lists libraries for building agents.
+
+- **URL**: https://buildaharness.com/ai_agents.html
+- **Data coverage**: ~50 agents, reviewed by hand 2026-09-21
+- **Source list**: agents-repos.txt in the buildaharness-pages repository (owner/repo format with optional manual tags)
+- **Sorting**: by stars (default), forks, name, license, last update
+- **Filtering**: by GitHub topic tags and programming language
+- **Related**: https://buildaharness.com/ai_agent_frameworks.html (libraries for building agents), https://buildaharness.com/harness-engineering (the control layer around any of these)
+
+## MCP Servers & Tooling Observatory
+
+A curated, live-updated index of Model Context Protocol (MCP) servers, official SDKs, server frameworks, gateways, registries and directories, with vendor-maintained servers tagged apart from community ones. GitHub stats refreshed daily.
+
+- **URL**: https://buildaharness.com/mcp_servers.html
+- **Data coverage**: ~50 projects, reviewed by hand 2026-09-21
+- **Source list**: mcp-repos.txt in the buildaharness-pages repository (owner/repo format with optional manual tags)
+- **Sorting**: by stars (default), forks, name, license, last update
+- **Filtering**: by GitHub topic tags and programming language
+- **Related**: https://buildaharness.com/ai_agent_frameworks.html (libraries for building agents), https://buildaharness.com/harness-engineering (the control layer around any of these)
+
+## Agent Skills Libraries Observatory
+
+A curated, live-updated index of agent skills libraries and collections — folders of SKILL.md instructions and scripts that agents such as Claude Code and Codex load on demand — plus the specification and the installer, scanner and converter tooling around them. GitHub stats refreshed daily.
+
+- **URL**: https://buildaharness.com/agent_skills.html
+- **Data coverage**: ~35 libraries, reviewed by hand 2026-09-21
+- **Source list**: skills-repos.txt in the buildaharness-pages repository (owner/repo format with optional manual tags)
+- **Sorting**: by stars (default), forks, name, license, last update
+- **Filtering**: by GitHub topic tags
+- **Related**: https://buildaharness.com/ai_agent_frameworks.html (libraries for building agents), https://buildaharness.com/harness-engineering (the control layer around any of these)
 
 ## Harness engineering
 
