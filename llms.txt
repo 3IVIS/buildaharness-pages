@@ -2,7 +2,7 @@
 
 > Open-source, self-hosted AI assistant (Aielia) that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
 
-Build A Harness is a **working tool** (public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/personal-assistant`, or try it in a browser at https://buildaharness.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, a 5-tier control state resolver, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant. The npm packages (`@buildaharness/personal-assistant`, `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas`) are published at 0.2.x under Apache 2.0.
+Build A Harness is a **working tool** (public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/aielia`, or try it in a browser at https://myaielia.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, a 5-tier control state resolver, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant. The npm packages (`@buildaharness/aielia`, `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas`) are published on npm (currently 0.2.x–0.3.x) under Apache 2.0.
 
 ## AI Agent Frameworks Observatory
 
@@ -39,13 +39,13 @@ Build A Harness is the purpose-built open-source tool for harness engineering. I
 
 ## Aielia — the personal assistant
 
-Aielia (`@buildaharness/personal-assistant`) is Build A Harness's own assistant — a general-purpose, everyday-use chat agent that runs the full 11-layer harness on every turn. Install with `npx @buildaharness/personal-assistant`, or try it in a browser (bring your own key) at https://buildaharness.com/try. Positioned as a runnable open-source alternative to Hermes Agent, Kilo Code, and OpenClaw — it ships both a tiered Control State resolver and a reviewer/output gate, which none of those three do. It treats each chat message as one objective, one task (rather than decomposing into a multi-task plan), which keeps the harness run cheap per turn — one real LLM call for an ordinary turn, zero for one a pre-harness risk gate blocks — while still walking World Model, Evidence, Hypothesis, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and the Reviewer Pass.
+Aielia (`@buildaharness/aielia`) is Build A Harness's own assistant — a general-purpose, everyday-use chat agent that runs the full 11-layer harness on every turn. Install with `npx @buildaharness/aielia`, or try it in a browser (bring your own key) at https://myaielia.com/try. Positioned as a runnable open-source alternative to Hermes Agent, Kilo Code, and OpenClaw — it ships both a tiered Control State resolver and a reviewer/output gate, which none of those three do. It treats each chat message as one objective, one task (rather than decomposing into a multi-task plan), which keeps the harness run cheap per turn — one real LLM call for an ordinary turn, zero for one a pre-harness risk gate blocks — while still walking World Model, Evidence, Hypothesis, Control State, Planning, Execution, Verification, Recovery, Memory, Learning, and the Reviewer Pass.
 
 Safety is layered: one consolidated classification call every turn judges the message for consequential intent (send, delete, pay, post, ...) — in any language, not just English — before the harness or any LLM call runs, and a classifier error resolves to "requires approval" rather than defaulting to low-risk; `write_file`, `run_shell_command`, and `send_email` tool calls always stage a proposal rather than executing inline, resolved only by an explicit approval with the matching pending-action ID; shell commands run with an environment allowlist, a timeout, and output truncation; and content fetched from the web or a shell command is wrapped as untrusted before it re-enters the conversation. The harness runtime checkpoints mid-turn so a crash mid-conversation resumes rather than restarts.
 
 Three front ends — a terminal CLI, a browser chat UI, and a native Tauri desktop app — share the identical assistant class and harness, differing only in storage backend (filesystem for CLI/desktop, IndexedDB/Dexie for the browser).
 
-**Dedicated page**: https://buildaharness.com/personal-assistant
+**Dedicated site**: https://myaielia.com (how it works: https://myaielia.com/how-it-works)
 
 ## Build your own harness
 
@@ -55,7 +55,7 @@ The same 11 layers Aielia runs are node types on a visual canvas. Draw the graph
 
 ## Harness evaluation — measuring which features earn their cost
 
-Build A Harness runs a controlled benchmark on every reasoning feature in the assistant, and publishes the result whether it is positive or negative. The method: state the hypothesis the feature encodes, build a benchmark arm that toggles exactly that feature, build a stress corpus where it should show value if anywhere, run at least three seeds with an LLM judge, and decide — keep, cut, or expand. A "cut" feature stays merged but flag-gated off; the negative result is recorded, not overridden. Four features decided so far: **semantic contradiction check** — KEPT (+7.1% task success over the always-on lexical check, cost +29%/turn, the gain clears the cost); **Trajectory Supervisor** (a stall-edge meta-controller) — CUT (-3.7% task success over 3 seeds / 18 tasks while adding +34% latency, +32% cost, +48% tokens, zero extra stall recoveries; `HARNESS_TRAJECTORY_SUPERVISOR` stays off); **LLM injection detection on tool output** — CUT (no task-success delta, +21% cost/turn); **semantic failure-mode backstop** — CUT (+12.5% task success but CI ±28%, not significant; +48% cost, +15% latency). Two more — the 11-layer harness vs. a bare loop, and the one-loop proposer — had a first pass whose result was withdrawn (the failure-injection tasks fired for the harness arm but not its control) and are being re-run on a corrected corpus. Every run is on Claude Sonnet, judge on. Each run records the model it actually executed on and the LLM judge's model, both shown on the run's transcript page. A scheduled driver works through the feature-by-seed matrix one cell per wakeup and publishes browsable turn-by-turn transcripts for each feature at `https://buildaharness.com/harness-evaluation/<feature>/`. The corpus, grader, arms and multi-seed runner are all open source under `packages/personal-assistant/eval/`.
+Build A Harness runs a controlled benchmark on every reasoning feature in the assistant, and publishes the result whether it is positive or negative. The method: state the hypothesis the feature encodes, build a benchmark arm that toggles exactly that feature, build a stress corpus where it should show value if anywhere, run at least three seeds with an LLM judge, and decide — keep, cut, or expand. A "cut" feature stays merged but flag-gated off; the negative result is recorded, not overridden. Four features decided so far: **semantic contradiction check** — KEPT (+7.1% task success over the always-on lexical check, cost +29%/turn, the gain clears the cost); **Trajectory Supervisor** (a stall-edge meta-controller) — CUT (-3.7% task success over 3 seeds / 18 tasks while adding +34% latency, +32% cost, +48% tokens, zero extra stall recoveries; `HARNESS_TRAJECTORY_SUPERVISOR` stays off); **LLM injection detection on tool output** — CUT (no task-success delta, +21% cost/turn); **semantic failure-mode backstop** — CUT (+12.5% task success but CI ±28%, not significant; +48% cost, +15% latency). Two more — the 11-layer harness vs. a bare loop, and the one-loop proposer — had a first pass whose result was withdrawn (the failure-injection tasks fired for the harness arm but not its control) and are being re-run on a corrected corpus. Every run is on Claude Sonnet, judge on. Each run records the model it actually executed on and the LLM judge's model, both shown on the run's transcript page. A scheduled driver works through the feature-by-seed matrix one cell per wakeup and publishes browsable turn-by-turn transcripts for each feature at `https://buildaharness.com/harness-evaluation/<feature>/`. The corpus, grader, arms and multi-seed runner are all open source under `packages/aielia/eval/`.
 
 **Dedicated page**: https://buildaharness.com/harness-evaluation
 
@@ -74,15 +74,15 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 ## Key facts
 
 - **License**: Apache 2.0
-- **npm packages**: `@buildaharness/personal-assistant` (0.2.1), `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas` (0.2.0)
+- **npm packages**: `@buildaharness/aielia` (0.3.1), `@buildaharness/harness` (0.3.0), `@buildaharness/runtime` (0.3.0), `@buildaharness/react` (0.2.0), `@buildaharness/canvas` (0.2.0)
 - **Repository**: https://github.com/3IVIS/buildaharness
 - **Homepage**: https://buildaharness.com
 - **Status**: Public alpha — the assistant, canvas, 4 framework adapters, and Langfuse observability are working and ready to use
-- **Deployment**: assistant via `npx @buildaharness/personal-assistant` (no clone); full stack via Docker (`./scripts/setup-env.sh && docker compose up`); no cloud account required
+- **Deployment**: assistant via `npx @buildaharness/aielia` (no clone); full stack via Docker (`./scripts/setup-env.sh && docker compose up`); no cloud account required
 
 ## What ships today
 
-- **Aielia**, the personal assistant — `npx @buildaharness/personal-assistant` or the hosted browser build at https://buildaharness.com/try
+- **Aielia**, the personal assistant — `npx @buildaharness/aielia` or the hosted browser build at https://myaielia.com/try
 - **Visual canvas** with 27 node types (14 execution + 13 harness) for designing AI agent workflows — the 13 harness nodes are grouped Observation → State → Policy → Control Flow → Effect in the sidebar; an Expert/Intent toggle swaps the full palette for click-to-insert templates of common flows
 - **Full harness layer** — world model, 5-tier control state resolver, 9-layer verification, 6 recovery strategies, experience store, and a 3-lens reviewer pass (consistency, adversarial, abstraction fit), all implemented and tested, with 18 architectural invariants enforced as CI gates
 - **FlowSpec v1.0.0** — open, portable JSON format; the runtime-neutral intermediate representation (also accepts `"0.2.0"` for backwards compatibility)
@@ -166,7 +166,7 @@ Each phase is independently deployable. All flows drawn today are forward-compat
 The assistant needs no clone:
 
 ```sh
-npx @buildaharness/personal-assistant
+npx @buildaharness/aielia
 ```
 
 The full canvas + adapter stack runs via Docker:

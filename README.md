@@ -1,17 +1,20 @@
 # Build A Harness
 
-Static marketing site for **Build A Harness** — an open-source AI assistant (Aielia)
-that runs an 11-layer harness every turn and stops for your approval before it acts,
-plus a visual builder for the same architecture that compiles to any major AI framework.
-Apache 2.0.
+Developer-facing static site for **Build A Harness** — the open-source visual canvas and
+runtime for AI agent harnesses (11 layers, FlowSpec, four framework adapters), plus the
+architecture, comparison, evaluation and observatory pages. Apache 2.0.
 
 **Live site:** https://buildaharness.com
 **Product repository:** https://github.com/3IVIS/buildaharness
 
+> **Looking for Aielia?** The user-facing assistant site (home, how it works, and the hosted
+> `/try` browser build) lives in its own repo and is served at https://myaielia.com.
+> `/personal-assistant` and `/try` here are redirect stubs to it.
+
 ## What the product ships today
 
-- **Aielia**, the personal assistant — `npx @buildaharness/personal-assistant`, or the
-  hosted browser build at https://buildaharness.com/try
+- **Aielia**, the reference assistant — `npx @buildaharness/personal-assistant`, or the
+  hosted browser build at https://myaielia.com/try (see the note above)
 - Visual canvas with 27 node types (14 execution + 13 harness)
 - FlowSpec v1.0.0 — open, portable JSON format
 - 4 framework adapters: LangGraph, CrewAI, Mastra, Microsoft Agent Framework
