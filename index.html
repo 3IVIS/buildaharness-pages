@@ -51,22 +51,22 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Build A Harness — Open-Source AI Assistant That Asks Before It Acts</title>
+<title>Build A Harness — Open-Source Visual Canvas for AI Agent Harnesses</title>
 
-<meta name="description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
+<meta name="description" content="Build A Harness is an open-source visual canvas and runtime for the control layer around AI agents: an 11-layer harness with a world model, control state, verification, and recovery. Compile one FlowSpec to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. Apache 2.0.">
 
 <link rel="canonical" href="https://buildaharness.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://buildaharness.com/">
 <meta property="og:site_name" content="Build A Harness">
-<meta property="og:title" content="Build A Harness — Open-Source AI Assistant That Asks Before It Acts">
-<meta property="og:description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
+<meta property="og:title" content="Build A Harness — Open-Source Visual Canvas for AI Agent Harnesses">
+<meta property="og:description" content="Build A Harness is an open-source visual canvas and runtime for the control layer around AI agents: an 11-layer harness with a world model, control state, verification, and recovery. Compile one FlowSpec to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. Apache 2.0.">
 <meta property="og:image" content="https://buildaharness.com/og-image.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Build A Harness — Open-Source AI Assistant That Asks Before It Acts">
-<meta name="twitter:description" content="Aielia is an open-source, self-hosted AI assistant that runs an 11-layer harness every turn and stops for your approval before sending email, paying, or running commands. Plus a visual builder that compiles to LangGraph, CrewAI, Mastra, or MS Agent Framework.">
+<meta name="twitter:title" content="Build A Harness — Open-Source Visual Canvas for AI Agent Harnesses">
+<meta name="twitter:description" content="Build A Harness is an open-source visual canvas and runtime for the control layer around AI agents: an 11-layer harness with a world model, control state, verification, and recovery. Compile one FlowSpec to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework. Apache 2.0.">
 <meta name="twitter:image" content="https://buildaharness.com/og-image.png">
 <meta name="twitter:image:alt" content="Build A Harness — visual canvas comparing a simple agent loop with a full 11-layer AI agent harness.">
 
@@ -77,7 +77,7 @@
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="3IVIS">
-<meta name="keywords" content="open source AI assistant, self-hosted AI assistant, AI assistant with human approval, OpenClaw alternative, Hermes Agent alternative, AI agent harness, harness engineering, visual canvas, LangGraph, CrewAI, Mastra, Microsoft Agent Framework, Langfuse, MCP, A2A, FlowSpec">
+<meta name="keywords" content="AI agent harness, harness engineering, agent reliability, visual canvas, LangGraph, CrewAI, Mastra, Microsoft Agent Framework, Langfuse, MCP, A2A, FlowSpec, agent evaluation, open source">
 
 <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -105,9 +105,9 @@
       "datePublished": "2026-09-04",
       "dateModified": "2026-09-04",
       "image": "https://buildaharness.com/og-image.png",
-      "url": "https://buildaharness.com/personal-assistant",
+      "url": "https://myaielia.com/how-it-works",
       "downloadUrl": "https://www.npmjs.com/package/@buildaharness/aielia",
-      "installUrl": "https://buildaharness.com/try",
+      "installUrl": "https://myaielia.com/try",
       "programmingLanguage": ["TypeScript"],
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "description": "Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command.",
@@ -1216,12 +1216,13 @@ footer{
     </a>
 
     <nav class="nav" id="siteNav">
-      <a href="/personal-assistant">Aielia</a>
-      <a href="/try">Try it</a>
       <a href="/build">Build your own</a>
       <a href="/harness-comparison">Comparison</a>
       <a href="/harness-architecture">Architecture</a>
       <a href="/harness-evaluation">Evaluation</a>
+      <a href="/ai_agent_frameworks.html">Agent frameworks</a>
+      <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
+      <a href="https://myaielia.com">Aielia ↗</a>
     </nav>
 
     <div class="hdr-actions">
@@ -1248,31 +1249,31 @@ footer{
       </div>
 
       <h1>
-        An AI assistant that<br>
-        <em>thinks before it acts.</em>
+        Build the harness<br>
+        <em>around your agent.</em>
       </h1>
 
       <p class="hero-sub">
-        Meet Aielia — she answers a quick question in one step, and stops for your
-        approval before she sends an email, pays an invoice, or runs a command.
+        An open-source visual canvas and runtime for the layer that makes agents reliable —
+        world model, control state, verification, recovery. Draw it once, compile the same
+        FlowSpec to LangGraph, CrewAI, Mastra, or Microsoft Agent Framework.
       </p>
 
       <p class="lede">
         A <strong>harness</strong> is the governance and reliability control plane around an
-        autonomous agent — the agent proposes, the harness decides what happens next. Aielia
-        runs the full 11-layer implementation every turn. Underneath is a visual builder for
-        the same 11 layers you can
-        <a href="/build" style="color:var(--accent-ink);">draw and compile yourself</a>.
+        autonomous agent — the agent proposes, the harness decides what happens next. Use three
+        nodes or all eleven layers. The reference application, <a href="https://myaielia.com" style="color:var(--accent-ink);">Aielia</a>,
+        runs the full implementation on every turn.
       </p>
 
       <div class="cta-row">
-        <a class="btn" href="/try">
-          Try Aielia in your browser →
+        <a class="btn" href="/build">
+          Build your own harness →
         </a>
 
-        <button type="button" class="btn js-copy-cmd" data-copy="npx @buildaharness/aielia"
+        <button type="button" class="btn js-copy-cmd" data-copy="./scripts/setup-env.sh &amp;&amp; docker compose up"
           style="background:transparent;color:var(--ink);border-color:var(--line);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;cursor:pointer;">
-          npx @buildaharness/aielia
+          ./scripts/setup-env.sh &amp;&amp; docker compose up
         </button>
       </div>
 
@@ -1368,73 +1369,6 @@ footer{
 
 </section>
 
-<section class="section alt" id="assistant">
-
-  <div class="wrap">
-
-    <div class="section-eyebrow">
-      THE ASSISTANT · AIELIA
-    </div>
-
-    <h2>
-      Talk to it. It <em>stops before it acts.</em>
-    </h2>
-
-    <p class="section-lede">
-      Aielia is the front door to Build A Harness — a general-purpose chat assistant that
-      walks the full 11-layer harness on every real turn. A quick fact lookup stays light.
-      Anything consequential — sending an email, paying, running a shell command, deleting a
-      file — pauses for your approval <em>before</em> a single token is spent.
-    </p>
-
-    <div class="flow-grid">
-
-      <div class="code-card">
-        <div class="code-bar">the risk gate, in practice</div>
-        <pre><code>&gt; What time zone is Tokyo in?
-Japan Standard Time (UTC+9).
-
-&gt; Send an email to my boss saying I quit.
-⚠ needs approval — this looks consequential (send).
-  Reply "approve" to proceed. No model call was made.</code></pre>
-      </div>
-
-      <div class="feature-box">
-        <h3>Why it's different</h3>
-        <div class="feature-list">
-          <div class="feature-item">
-            <strong>Per-tool-call control state</strong>
-            <p>Every read-only tool call is checked against a live 5-tier resolver before it runs — deterministic ALLOW / DENY / REQUIRE_APPROVAL, not an advisory hint.</p>
-          </div>
-          <div class="feature-item">
-            <strong>Fail-safe risk classification</strong>
-            <p>A classifier error resolves to "requires approval" — it never defaults to low-risk. Judged in any language, not just English.</p>
-          </div>
-          <div class="feature-item">
-            <strong>Staged effects</strong>
-            <p><code style="font-size:13px">write_file</code>, <code style="font-size:13px">run_shell_command</code>, and <code style="font-size:13px">send_email</code> stage the exact action for approval — no second model call can improvise a different one.</p>
-          </div>
-          <div class="feature-item">
-            <strong>Untrusted-content boundary</strong>
-            <p>Web results and shell output are wrapped as data the model is told never to obey, and survive a crash mid-turn via checkpoint resume.</p>
-          </div>
-        </div>
-        <div class="cta-row" style="margin-top:22px;">
-          <a class="btn" href="/try">Try Aielia in your browser →</a>
-          <a class="btn" href="/personal-assistant" style="background:transparent;color:var(--ink);border-color:var(--line);">How it's built →</a>
-        </div>
-      </div>
-
-    </div>
-
-    <p style="font-size:14px;color:var(--ink-3);margin-top:28px;font-family:'IBM Plex Mono',monospace;text-align:center;">
-      npx @buildaharness/aielia · CLI, browser, or desktop · one core, one harness · Apache 2.0
-    </p>
-
-  </div>
-
-</section>
-
 <section class="section" id="why">
 
   <div class="wrap">
@@ -1491,7 +1425,6 @@ Japan Standard Time (UTC+9).
   </div>
 
 </section>
-
 <section class="section alt" id="build">
 
   <div class="wrap">
@@ -1548,8 +1481,135 @@ Japan Standard Time (UTC+9).
   </div>
 
 </section>
+<section class="section" id="observatories">
 
-<section class="section" id="involved">
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      OBSERVATORIES · LIVE DATA
+    </div>
+
+    <h2>
+      See what the ecosystem <em>actually looks like.</em>
+    </h2>
+
+    <p class="section-lede">
+      Two live indexes of open-source projects, with GitHub stats refreshed daily by GitHub Actions —
+      built to help you choose what to build on, and to see where a harness fits.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>AI Agent Frameworks</h3>
+        <p>A ranked, searchable index of open-source agent frameworks — orchestration, multi-agent, RAG, no-code, code generation and more — with stars, forks, language, license, and topics. Sort and filter by any of them.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/ai_agent_frameworks.html">Browse agent frameworks →</a></p>
+      </div>
+      <div class="card">
+        <h3>AI Agent Memory Frameworks</h3>
+        <p>A curated index of open-source memory frameworks for agents, classified by layer (Framework, Infra, Research), memory class, architecture pattern, license, and maturity.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/ai_agent_memory_frameworks.html">Browse memory frameworks →</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section alt" id="evaluation">
+
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      MEASURED, NOT ASSERTED
+    </div>
+
+    <h2>
+      Every feature has to <em>earn its cost.</em>
+    </h2>
+
+    <p class="section-lede">
+      We run a controlled benchmark on the harness's reasoning features — one feature toggled
+      per arm, a stress corpus, several seeds, an LLM judge — and publish the result whether it is
+      positive or negative. A feature that doesn't pay for itself stays merged but flagged off, and
+      the turn-by-turn transcripts behind every run are public.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn" href="/harness-evaluation">See the results →</a>
+      <a class="btn" href="/harness-architecture" style="background:transparent;color:var(--ink);border-color:var(--line);">Inside one turn →</a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="assistant">
+
+  <div class="wrap">
+
+    <div class="section-eyebrow">
+      REFERENCE APPLICATION · AIELIA
+    </div>
+
+    <h2>
+      The harness, <em>in everyday use.</em>
+    </h2>
+
+    <p class="section-lede">
+      Aielia is a general-purpose chat assistant built on Build A Harness. It walks the full
+      11-layer harness on every real turn — a quick fact lookup stays light, and anything
+      consequential (sending an email, paying, running a shell command) pauses for approval
+      <em>before</em> a single token is spent. It is the architecture, kept honest by daily use.
+    </p>
+
+    <div class="flow-grid">
+
+      <div class="code-card">
+        <div class="code-bar">the risk gate, in practice</div>
+        <pre><code>&gt; What time zone is Tokyo in?
+Japan Standard Time (UTC+9).
+
+&gt; Send an email to my boss saying I quit.
+⚠ needs approval — this looks consequential (send).
+  Reply "approve" to proceed. No model call was made.</code></pre>
+      </div>
+
+      <div class="feature-box">
+        <h3>Why it's different</h3>
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>Per-tool-call control state</strong>
+            <p>Every read-only tool call is checked against a live 5-tier resolver before it runs — deterministic ALLOW / DENY / REQUIRE_APPROVAL, not an advisory hint.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Fail-safe risk classification</strong>
+            <p>A classifier error resolves to "requires approval" — it never defaults to low-risk. Judged in any language, not just English.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Staged effects</strong>
+            <p><code style="font-size:13px">write_file</code>, <code style="font-size:13px">run_shell_command</code>, and <code style="font-size:13px">send_email</code> stage the exact action for approval — no second model call can improvise a different one.</p>
+          </div>
+          <div class="feature-item">
+            <strong>Untrusted-content boundary</strong>
+            <p>Web results and shell output are wrapped as data the model is told never to obey, and survive a crash mid-turn via checkpoint resume.</p>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top:22px;">
+          <a class="btn" href="https://myaielia.com">Meet Aielia →</a>
+          <a class="btn" href="https://myaielia.com/how-it-works" style="background:transparent;color:var(--ink);border-color:var(--line);">How it works ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:14px;color:var(--ink-3);margin-top:28px;font-family:'IBM Plex Mono',monospace;text-align:center;">
+      npx @buildaharness/aielia · CLI, browser, or desktop · one core, one harness · Apache 2.0
+    </p>
+
+  </div>
+
+</section>
+<section class="section alt" id="involved">
 
   <div class="wrap">
 
@@ -1606,9 +1666,7 @@ Japan Standard Time (UTC+9).
   </div>
 
 </section>
-
-
-<section class="section alt" id="faq">
+<section class="section" id="faq">
 
   <div class="wrap">
 
@@ -1628,6 +1686,10 @@ Japan Standard Time (UTC+9).
       </div>
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
+        <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">Is there an assistant built on it?</h3>
+        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">Yes — <a href="https://myaielia.com" style="color:var(--accent-ink);">Aielia</a>, an open-source chat assistant that runs the full 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. It has its own site at <a href="https://myaielia.com" style="color:var(--accent-ink);">myaielia.com</a>; the source lives in <code style="font-size:13px">packages/aielia</code> of this repository.</p>
+      </div>
+<div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
         <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">What's the difference between a harness and a workflow?</h3>
         <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">A workflow routes prompts from node to node. A harness governs what the agent believes, what it's allowed to do, how it catches its own mistakes, and what it learns for next time. The 5-tier control state knows when to slow down or stop; nine verification layers check outputs before they land; recovery strategies handle failures systematically instead of crashing.</p>
       </div>
@@ -1696,10 +1758,11 @@ Japan Standard Time (UTC+9).
       <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
       <a href="https://github.com/3IVIS/buildaharness/tree/main/docs">Documentation</a>
       <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
-      <a href="/personal-assistant">Aielia</a>
+      <a href="https://myaielia.com">Aielia</a>
       <a href="/build">Build your own</a>
       <a href="/harness-comparison">Comparison</a>
-      <a href="/ai_agent_frameworks.html">Frameworks</a>
+      <a href="/ai_agent_frameworks.html">Agent frameworks</a>
+      <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/impressum.html">Impressum</a>
       <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
@@ -1806,4 +1869,9 @@ Japan Standard Time (UTC+9).
 })();
 </script>
 </body>
-</html>
+</html>{
+"@type": "Question",
+"name": "Is there an assistant built on it?",
+"acceptedAnswer": { "@type": "Answer", "text": "Yes — Aielia, an open-source chat assistant that runs the full 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. It has its own site at myaielia.com; the source lives in packages/aielia of the Build A Harness repository." }
+},
+
