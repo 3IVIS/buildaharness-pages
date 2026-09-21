@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Not found — Build A Harness</title>
 <meta name="robots" content="noindex">
+<script>
+// Pages moved to myaielia.com: forward any old deep link (e.g. /harness-evaluation/<feature>/...) to the same path there.
+(function(){
+  var p = location.pathname;
+  if (/^\/harness-(evaluation|architecture|comparison)(\/|\.html$|$)/.test(p)) {
+    location.replace('https://myaielia.com' + p.replace(/\.html$/, '') + location.search + location.hash);
+  }
+})();
+</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
