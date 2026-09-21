@@ -36,6 +36,17 @@ A curated, live-updated index of open-source AI agents you can run — coding ag
 - **Filtering**: by GitHub topic tags and programming language
 - **Related**: https://buildaharness.com/ai_agent_frameworks.html (libraries for building agents), https://buildaharness.com/harness-engineering (the control layer around any of these)
 
+## Agent Harnesses Observatory
+
+A curated, live-updated index of open-source projects that describe themselves as an agent harness — the execution and control layer around a model (tool execution, state, permissions, isolation, verification, recovery, observability). Each entry has a Role (runtime, coding, control-plane, team, security, research, educational, directory) because the word is used loosely. Includes a checklist of what to look for in a harness. GitHub stats refreshed daily.
+
+- **URL**: https://buildaharness.com/agent_harnesses.html
+- **Data coverage**: ~37 projects, reviewed by hand 2026-09-21
+- **Source list**: harness-repos.txt in the buildaharness-pages repository (owner/repo, first tag is the role)
+- **Sorting**: by stars (default), forks, name, role, language, license, last update
+- **Filtering**: by role, programming language and GitHub topic tags; filter state is shareable in the URL (for example `?role=control-plane`)
+- **Related**: https://buildaharness.com/harness-engineering (the discipline), https://myaielia.com/harness-architecture (the 11-layer model)
+
 ## MCP Servers & Tooling Observatory
 
 A curated, live-updated index of Model Context Protocol (MCP) servers, official SDKs, server frameworks, gateways, registries and directories, with vendor-maintained servers tagged apart from community ones. GitHub stats refreshed daily.

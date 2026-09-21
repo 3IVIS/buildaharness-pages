@@ -1,0 +1,67 @@
+# Agent Harnesses — Repo List
+#
+# Format:  owner/repo  role,[extra-tags…]
+#
+# The FIRST tag is the entry's role (shown as the Role column and filter); the rest are extra tags.
+# Roles: runtime · coding · control-plane · team · security · research · educational · directory
+#
+# Scope: projects that describe THEMSELVES as an agent harness. The word is used loosely, so the role
+# says what each one actually is: a runtime that executes the agent loop, a coding-agent harness, a
+# control plane above other harnesses, and so on. Projects that only borrow the word (config packs,
+# an app that is "a harness for résumés") are left out on purpose.
+#
+# Curated 2026-09-21 from GitHub search (description or topics contain "harness"), then read against
+# each project's README where the one-line description was ambiguous, and verified against the live
+# API: every slug is current, unarchived, and pushed to within ~120 days. Some entries also appear on
+# the frameworks or agents lists; that is intended.
+
+# ─── Runtimes: execute the agent loop (tools, state, sandbox, approvals) ──
+langchain-ai/deepagents             runtime,python,batteries-included
+langchain-ai/deepagentsjs           runtime,typescript,batteries-included
+strands-agents/harness-sdk          runtime,python,sdk
+truefoundry/trueforge               runtime,approvals,sandbox,mcp
+deepseek-ai/deepseek-harness        runtime,plugin-architecture,developer-preview
+bytedance/deer-flow                 runtime,long-horizon,research
+aden-hive/hive                      runtime,multi-agent,production
+ruvnet/ruflo                        runtime,multi-agent,swarm
+micro/go-micro                      runtime,go,services
+exoharness/exo                      runtime,self-improving
+thClaws/thClaws                     runtime,rust,desktop
+HKUDS/OpenHarness                   runtime,personal-assistant
+tinyhumansai/openhuman              runtime,personal-assistant,local-first
+zhayujie/CowAgent                   runtime,personal-assistant
+
+# ─── Coding-agent harnesses ───────────────────────────────────────────
+xai-org/grok-build                  coding,terminal,tui
+zai-org/ZCode                       coding,terminal
+HKUDS/DeepCode                      coding,multi-agent
+mindfold-ai/Trellis                 coding,memory,specs
+code-yeongyu/lazycodex              coding,planning
+Waishnav/devspace                   coding,mcp,minimal
+maxritter/pilot-shell               coding,context-engineering
+first-fluke/oh-my-agent             coding,verification,hooks
+teaql/teaql-agent-kit               coding,verification
+QoderAI/better-harness              coding,harness-as-code,insights
+Prism-Shadow/penguin-harness        coding,multi-agent,self-improving
+
+# ─── Control planes and governance: sit above or around other harnesses ──
+loopx-project/loopx                 control-plane,long-horizon,governance
+FailproofAI/failproofai             control-plane,observability,enforcement
+Untrivial-ai/agent-orchestrator     control-plane,orchestration,parallel
+chaitanyagiri/munder-difflin        control-plane,multi-agent,local
+onecli/onecli                       control-plane,sandbox,teams
+Infisical/agent-vault               control-plane,credentials,secrets
+
+# ─── Team and workplace ───────────────────────────────────────────────
+yc-software/qm                      team,slack,multiplayer
+
+# ─── Security ─────────────────────────────────────────────────────────
+visa/visa-vulnerability-agentic-harness security,vulnerability-research
+
+# ─── Research and education ───────────────────────────────────────────
+stanford-iris-lab/meta-harness      research,paper
+NVlabs/SoL-Pi                       research,auto-research
+shareAI-lab/learn-claude-code       educational,build-from-scratch
+
+# ─── Directories ──────────────────────────────────────────────────────
+ai-boost/awesome-harness-engineering directory,harness-engineering

@@ -707,10 +707,6 @@ h2 em{
 
 .cards-idx .card{
   border-right:none;
-  grid-column:span 3;
-}
-
-.cards-idx .card:nth-child(-n+3){
   grid-column:span 2;
 }
 
@@ -718,8 +714,7 @@ h2 em{
   .cards.cards-idx{
     grid-template-columns:1fr;
   }
-  .cards-idx .card,
-  .cards-idx .card:nth-child(-n+3){
+  .cards-idx .card{
     grid-column:auto;
   }
 }
@@ -1520,7 +1515,7 @@ footer{
     </h2>
 
     <p class="section-lede">
-      Five live indexes of open-source projects, with GitHub stats refreshed daily by GitHub Actions —
+      Six live indexes of open-source projects, with GitHub stats refreshed daily by GitHub Actions —
       built to help you choose what to build on, and to see where a harness fits.
     </p>
 
@@ -1534,6 +1529,11 @@ footer{
         <h3>AI Agents</h3>
         <p>Ready-to-run open-source agents — coding, browser and computer-use, research, and personal assistants — for when you want one to use rather than one to build.</p>
         <p style="margin-top:14px;"><a class="btn" href="/ai_agents.html">Browse agents →</a></p>
+      </div>
+      <div class="card">
+        <h3>Agent Harnesses</h3>
+        <p>Projects that call themselves an agent harness, sorted by what each one actually is — runtime, coding harness or control plane — with a checklist of what to look for.</p>
+        <p style="margin-top:14px;"><a class="btn" href="/agent_harnesses.html">Browse harnesses →</a></p>
       </div>
       <div class="card">
         <h3>MCP Servers</h3>
@@ -1819,6 +1819,7 @@ footer{
       <a href="/ai_agent_frameworks.html">Agent frameworks</a>
       <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
       <a href="/ai_agents.html">AI agents</a>
+      <a href="/agent_harnesses.html">Agent harnesses</a>
       <a href="/mcp_servers.html">MCP servers</a>
       <a href="/agent_skills.html">Agent skills</a>
       <a href="/privacy.html">Privacy</a>

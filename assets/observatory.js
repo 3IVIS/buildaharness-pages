@@ -16,7 +16,7 @@
  *   });
  *
  * The page provides these elements: #loading-screen (#loader-bar, #loader-status), #pulse-dot,
- * #freshness-text, #error-banner (#error-msg), #hero-stats, #search, #filters, #thead-row,
+ * #freshness-text, #error-banner (#error-msg), #obs-tabs (rendered here), #hero-stats, #search, #filters, #thead-row,
  * #table-body, #shown-count, #total-shown, #clear-filters.
  *
  * Repo names, descriptions, topics, languages and licenses are third-party text: every value that
@@ -67,6 +67,7 @@
       label: 'Updated', sort: 'date', key: 'pushedAt', first: 'desc',
       cell: f => `<td><span class="upd-val${isStale(f.pushedAt) ? ' stale' : ''}">${ago(f.pushedAt)}</span></td>`,
     },
+    role: { label: 'Role', sort: 'str', first: 'asc', cell: f => `<td><span class="kind-badge">${esc(f.role || '—')}</span></td>` },
     kind: { label: 'Type', sort: 'str', first: 'asc', cell: f => `<td><span class="kind-badge">${esc(f.kind || '—')}</span></td>` },
     layer: { label: 'Layer', sort: 'str', first: 'asc', cell: f => `<td><span class="layer-badge layer-${esc(f.layer)}">${esc(f.layer)}</span></td>` },
     memoryClass: { label: 'Memory Class', sort: 'str', first: 'asc', cell: f => `<td><div class="mem-class">${esc(f.memoryClass || '—')}</div></td>` },
@@ -105,6 +106,7 @@
     language: scalar('Lang', 'language', { dot: true }),
     layer: scalar('Layer', 'layer', { dot: true }),
     kind: scalar('Type', 'kind'),
+    role: scalar('Role', 'role'),
     maturity: scalar('Maturity', 'maturity', {
       values: rows => Object.keys(MATURITY_ORDER).filter(m => rows.some(r => r.maturity === m)),
     }),
@@ -128,6 +130,7 @@
     archs: rows => uniq(rows, 'architecture').length,
     production: rows => rows.filter(r => r.maturity === 'Production').length,
     kinds: rows => uniq(rows, 'kind').length,
+    roles: rows => uniq(rows, 'role').length,
     topics: rows => new Set(rows.flatMap(r => r.topics || [])).size,
     active: rows => rows.filter(r => r.pushedAt && (Date.now() - new Date(r.pushedAt)) / DAY <= 30).length,
   };
@@ -144,7 +147,7 @@
     const colspan = cols.length + 1;
 
     // shareable state: ?q=&topic=&lang=&layer=&kind=&maturity=&sort=col:dir
-    const URL_KEYS = { topics: 'topic', language: 'lang', layer: 'layer', kind: 'kind', maturity: 'maturity' };
+    const URL_KEYS = { topics: 'topic', language: 'lang', layer: 'layer', kind: 'kind', role: 'role', maturity: 'maturity' };
     function readUrl() {
       const p = new URLSearchParams(location.search);
       if (p.get('q')) state.search = p.get('q');
@@ -309,6 +312,8 @@
           if (!list || !list.length) throw new Error(`${sources[i].file} is empty — trigger the GitHub Actions workflow from the Actions tab first`);
           list.forEach(item => rows.push(sources[i].kind ? { ...item, kind: sources[i].kind } : item));
         });
+        // an entry's role is its first curated tag (the harness list puts it first on every line)
+        rows.forEach(r => { if (r.role === undefined && r.manualTags && r.manualTags.length) r.role = r.manualTags[0]; });
         state.rows = rows;
         state.maxStars = Math.max(...rows.map(f => f.stars || 0), 1);
         // the page is only as fresh as its oldest source
@@ -337,6 +342,26 @@
     load();
   }
 
+  // ── tab strip: one registry for every index page ──
+  const TABS = [
+    ['Frameworks', 'ai_agent_frameworks.html'],
+    ['Agents', 'ai_agents.html'],
+    ['Harnesses', 'agent_harnesses.html'],
+    ['MCP servers', 'mcp_servers.html'],
+    ['Agent skills', 'agent_skills.html'],
+    ['Memory', 'ai_agent_memory_frameworks.html'],
+  ];
+  function initTabs() {
+    const el = $('obs-tabs'); if (!el) return;
+    const bare = p => p.split('/').pop().replace(/\.html$/, '');
+    const here = bare(location.pathname);
+    el.setAttribute('aria-label', 'Observatory indexes');
+    el.innerHTML = '<div class="obs-tabs-inner">' + TABS.map(([label, href]) => {
+      const on = bare(href) === here;
+      return `<a class="obs-tab${on ? ' active' : ''}" href="${href}"${on ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
+    }).join('') + '</div>';
+  }
+
   // ── nav menu (every page) ──
   function initNav() {
     const toggle = $('navToggle'), nav = $('navLinks') || $('siteNav');
@@ -350,7 +375,8 @@
     document.addEventListener('click', e => { if (!nav.contains(e.target) && !toggle.contains(e.target)) close(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNav); else initNav();
+  const boot = () => { initNav(); initTabs(); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 
   window.Observatory = { init };
 })();

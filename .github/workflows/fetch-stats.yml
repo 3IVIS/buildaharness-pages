@@ -1,11 +1,12 @@
 name: Fetch GitHub Stats
 
-# Refreshes the live-stats JSON behind four index pages from their curated repo lists:
+# Refreshes the live-stats JSON behind five index pages from their curated repo lists:
 #
 #   repos.txt         -> data.json          AI Agent Frameworks
 #   agents-repos.txt  -> agents-data.json   AI Agents
 #   mcp-repos.txt     -> mcp-data.json      MCP Servers
 #   skills-repos.txt  -> skills-data.json   Agent Skills Libraries
+#   harness-repos.txt -> harness-data.json  Agent Harnesses
 #
 # The fetch logic lives in scripts/fetch-stats.mjs. Memory frameworks have their own
 # workflow (fetch-memory-stats.yml) because that list carries extra classification columns.
@@ -20,6 +21,7 @@ on:
       - 'agents-repos.txt'
       - 'mcp-repos.txt'
       - 'skills-repos.txt'
+      - 'harness-repos.txt'
       - 'scripts/fetch-stats.mjs'
 
 jobs:
@@ -52,6 +54,7 @@ jobs:
           node scripts/fetch-stats.mjs agents-repos.txt agents-data.json  items      || status=1
           node scripts/fetch-stats.mjs mcp-repos.txt    mcp-data.json     items      || status=1
           node scripts/fetch-stats.mjs skills-repos.txt skills-data.json  items      || status=1
+          node scripts/fetch-stats.mjs harness-repos.txt harness-data.json items     || status=1
           exit $status
 
       - name: Commit and push data files
@@ -59,7 +62,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json agents-data.json mcp-data.json skills-data.json
+          git add data.json agents-data.json mcp-data.json skills-data.json harness-data.json
           if git diff --cached --quiet; then
             echo "No changes to data files — nothing to commit"
           else

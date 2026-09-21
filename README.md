@@ -32,12 +32,13 @@ architecture, comparison, evaluation and observatory pages. Apache 2.0.
 
 ## Observatory indexes
 
-Five live indexes of open-source projects, each fed by a hand-curated list and refreshed daily from the GitHub API:
+Six live indexes of open-source projects, each fed by a hand-curated list and refreshed daily from the GitHub API:
 
 | Page | Curated list | Data file | Workflow |
 |---|---|---|---|
 | `ai_agent_frameworks.html` | `repos.txt` | `data.json` | `fetch-stats.yml` |
 | `ai_agents.html` | `agents-repos.txt` | `agents-data.json` | `fetch-stats.yml` |
+| `agent_harnesses.html` | `harness-repos.txt` (first tag = role) | `harness-data.json` | `fetch-stats.yml` |
 | `mcp_servers.html` | `mcp-repos.txt` | `mcp-data.json` | `fetch-stats.yml` |
 | `agent_skills.html` | `skills-repos.txt` | `skills-data.json` | `fetch-stats.yml` |
 | `ai_agent_memory_frameworks.html` | `memory-repos.txt` (extra classification columns) | `memory-data.json` | `fetch-memory-stats.yml` |
@@ -46,7 +47,7 @@ Five live indexes of open-source projects, each fed by a hand-curated list and r
 - **Fetch logic** lives in `scripts/fetch-stats.mjs`. Run it locally with `GITHUB_TOKEN=$(gh auth token) node scripts/fetch-stats.mjs <list> <out> [array-key]`.
 - **Review policy:** every slug should resolve to its current name and be unarchived. Remove archived repos, 404s, anything without a push for roughly 300 days, and anything that is not what the page is about. The fetch summary prints renamed slugs so the lists can be updated.
 - **Shared code:** every index page is editorial HTML plus a few lines of config. The table, filters, hero stats, sorting, search, shareable URLs and nav menu live in `assets/observatory.js`; the styles in `assets/observatory.css`. To add a column, filter or stat, add it to the registries at the top of the engine and list it in the page's `Observatory.init({...})` call. Bump the `?v=` on the asset links when you change them.
-- **Shareable views:** filter state is kept in the URL, for example `ai_agent_frameworks.html?topic=harness&sort=updated:desc` (params: `q`, `topic`, `lang`, `layer`, `maturity`, `kind`, `sort=col:dir`).
+- **Shareable views:** filter state is kept in the URL, for example `ai_agent_frameworks.html?topic=harness&sort=updated:desc` (params: `q`, `topic`, `lang`, `role`, `layer`, `maturity`, `kind`, `sort=col:dir`).
 - **Scope:** frameworks are what you *build* agents with; agents are what you *run*; MCP servers, skills libraries and memory frameworks are the pieces around them.
 - Repo names, descriptions and topics are third-party text: the pages escape them before rendering. Keep it that way if you touch the row templates.
 

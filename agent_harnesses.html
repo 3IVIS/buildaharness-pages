@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Klaro Consent Management -->
+<script type="text/javascript">
+  var klaroConfig = {
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    privacyPolicy: '/privacy.html',
+    default: false,
+    mustConsent: false,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: false,
+    noticeAsModal: false,
+    translations: {
+      en: {
+        consentModal: {
+          title: 'Build A Harness — We value your privacy',
+          description: 'Here you can see and customize the information that we collect about you.',
+        },
+        decline: 'Reject all',
+        ok: 'Accept all',
+        analytics: {
+          description: 'Collection of information about how visitors use our website.',
+        },
+        purposes: {
+          analytics: 'Analytics',
+        },
+      },
+    },
+    services: [
+      {
+        name: 'analytics',
+        title: 'Analytics & Tracking',
+        purposes: ['analytics'],
+        required: false,
+      },
+    ],
+  };
+</script>
+<script defer src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
+<!-- Google tag (gtag.js) — loaded only after analytics consent via Klaro above -->
+<script async type="text/plain" data-type="text/javascript" data-name="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-HG3KMR8T0N"></script>
+<script type="text/plain" data-type="text/javascript" data-name="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3KMR8T0N');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Harnesses — Build A Harness Observatory</title>
+
+<meta name="description" content="Curated index of open-source agent harnesses — runtimes, coding-agent harnesses and control planes — with live GitHub stats refreshed daily. Filter by role, language or topic.">
+
+<link rel="canonical" href="https://buildaharness.com/agent_harnesses.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildaharness.com/agent_harnesses.html">
+<meta property="og:site_name" content="Build A Harness">
+<meta property="og:title" content="Agent Harnesses — Build A Harness Observatory">
+<meta property="og:description" content="Curated index of open-source agent harnesses, sorted by what each one is — runtime, coding harness or control plane — with live GitHub stats refreshed daily.">
+<meta property="og:image" content="https://buildaharness.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agent harnesses — curated, searchable index.">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent Harnesses — Build A Harness Observatory">
+<meta name="twitter:description" content="Curated index of open-source agent harnesses, sorted by what each one is — runtime, coding harness or control plane — with live GitHub stats refreshed daily.">
+<meta name="twitter:image" content="https://buildaharness.com/og-image.png">
+<meta name="twitter:image:alt" content="Agent harnesses — curated, searchable index.">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="3IVIS">
+<meta name="keywords" content="agent harness, AI agent harness, harness engineering, agent runtime, coding agent harness, agent control plane, deepagents, open source, GitHub stars, build a harness">
+
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — structured summary for LLMs">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#4F46E5">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://buildaharness.com/agent_harnesses.html",
+      "name": "Agent Harnesses Observatory",
+      "description": "Curated index of open-source agent harnesses — runtimes, coding-agent harnesses and control planes — with live GitHub stats refreshed daily. Filter by role, language or topic.",
+      "url": "https://buildaharness.com/agent_harnesses.html",
+      "isPartOf": {
+        "@id": "https://buildaharness.com/#website"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "3IVIS",
+        "url": "https://buildaharness.com"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Agent harnesses",
+        "description": "Open-source harnesses that wrap AI models with tool execution, state, permissions, verification and recovery"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an agent harness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything around a model that lets it do work reliably: tool execution, state, permissions, isolation, verification, recovery and observability. The model proposes; the harness decides what actually happens and checks the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a harness the same as an agent framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A framework is a library for assembling agents. A harness is the control and execution layer around a model or agent, and can be built with or without a framework. Many products blur the two, which is why this index shows a Role for every entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do so many projects call themselves a harness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a useful word for “the part that is not the model”, so it has spread quickly and now covers runtimes, coding agents, governance layers and research code. Judge a project by what it does — the capabilities listed above — not by whether it uses the word."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I still need a harness if my agent already has one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often a control plane adds what a built-in harness lacks: state that survives across sessions, governance across several agents, or central enforcement and audit. Control planes in this index are designed to run on top of other harnesses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this relate to Build A Harness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Build A Harness is this site’s own open-source visual canvas for designing a harness and running it on several agent frameworks. Read the harness engineering guide for the discipline, and the 11-layer architecture for the layered model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are entries chosen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By hand: open source, actively maintained, and describing themselves as a harness — then read against the project’s own documentation to assign a role, and verified against the live GitHub API when the list is reviewed. Projects that only borrow the word are left out. To suggest an addition, open an issue or pull request on the buildaharness-pages repository."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How current is this list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stars, forks and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull. The list itself is reviewed by hand periodically."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/observatory.css?v=20260921">
+</head>
+<body>
+
+<!-- ── LOADING ── -->
+<div id="loading-screen">
+  <span class="loader-eyebrow">Open Source · GitHub Data</span>
+  <span class="loader-title">Agent Harnesses</span>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  <span class="loader-status" id="loader-status">Loading data…</span>
+</div>
+
+<!-- ── ERROR ── -->
+<div class="error-banner" id="error-banner">
+  ⚠ &nbsp;<span id="error-msg"></span>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">Build A Harness</a>
+  <div class="nav-right">
+    <div class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="https://myaielia.com">Aielia ↗</a>
+      <a href="/build">Build your own</a>
+      <a href="/harness-engineering">Harness Engineering</a>
+    </div>
+    <div class="freshness-nav">
+      <span class="pulse-dot unknown" id="pulse-dot"></span>
+      <span id="freshness-text">—</span>
+    </div>
+    <a href="https://github.com/3IVIS/buildaharness" class="nav-gh" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── OBSERVATORY TABS (rendered by assets/observatory.js) ── -->
+<div class="obs-tabs" id="obs-tabs"></div>
+
+<!-- ── HERO ── -->
+<header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Open Source · Self-described harnesses · Updated daily via GitHub Actions</p>
+      <h1>Agent Harnesses —<br><em>what the word covers, and what to check</em></h1>
+      <p class="hero-sub">Open-source projects that describe themselves as an agent harness, sorted by what each one actually is: runtimes that execute the agent loop, coding-agent harnesses, and control planes that sit above them. The word is used loosely, so the Role column says what you are getting. See the <a href="harness-engineering.html">harness engineering guide</a>, or the <a href="ai_agents.html">agents index</a> for ready-to-run agents.</p>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ── CONTROLS ── -->
+<div class="controls-section">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="search" placeholder="Search name, role, topic…">
+    </div>
+    <div id="filters" class="filters"></div>
+    <div class="controls-right">
+      <span class="result-count"><b id="shown-count">—</b> of <span id="total-shown">—</span></span>
+      <button class="btn-clear" id="clear-filters">✕ clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TABLE ── -->
+<div class="table-section">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr id="thead-row"></tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── WHAT IS ── -->
+<section class="content-section" id="what-is">
+  <div class="content-inner">
+    <span class="content-eyebrow">Definitions</span>
+    <h2>What is an agent harness?</h2>
+    <p>A model on its own only predicts text. Everything that turns it into something that can do work — running tools, keeping state between steps, deciding what it may and may not do, checking results, recovering when a step fails, and recording what happened — is the harness. It is the difference between a demo that works once and an agent you can hand real work to.</p>
+    <p>Lately “harness” has become a popular label, and it is used for very different things: a runtime that executes the agent loop, a coding agent, a layer that governs other agents, even a research codebase. This index lists projects that call themselves a harness and says, in the Role column, what each one actually is.</p>
+  </div>
+</section>
+
+<!-- ── ROLES ── -->
+<section class="content-section alt" id="roles">
+  <div class="content-inner">
+    <span class="content-eyebrow">Taxonomy</span>
+    <h2>Roles in this index</h2>
+    <p>Every entry has a role. Use the Role filter to isolate one — or read on for what each means.</p>
+    <div class="cat-grid">
+      <div class="cat-card"><h3>Runtime</h3><p>Executes the agent loop for you — model calls, tools, state, sandboxing and approvals — so you supply the task and the tools, not the loop.</p></div>
+      <div class="cat-card"><h3>Coding</h3><p>A harness built around a coding agent: repository access, a shell, edit-and-test cycles, and often a terminal or editor front end.</p></div>
+      <div class="cat-card"><h3>Control plane</h3><p>Sits above or around other agents and harnesses: long-horizon state, governance, enforcement, observability, credentials, parallel supervision.</p></div>
+      <div class="cat-card"><h3>Team</h3><p>Built for several people sharing one agent, for example in a chat workspace, rather than a single user at a terminal.</p></div>
+      <div class="cat-card"><h3>Security</h3><p>A harness applied to security work such as vulnerability research. Run only against systems you own or are authorized to test.</p></div>
+      <div class="cat-card"><h3>Research</h3><p>Reference code for papers and experiments on harness design. Valuable for ideas; not usually built to run in production.</p></div>
+      <div class="cat-card"><h3>Educational</h3><p>Builds a harness from scratch to show how the pieces fit. The best way to understand one before choosing one.</p></div>
+      <div class="cat-card"><h3>Directory</h3><p>Curated lists and resources on harness engineering, for discovery rather than as a tool you run.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARE ── -->
+<section class="content-section" id="compare">
+  <div class="content-inner">
+    <span class="content-eyebrow">Terminology</span>
+    <h2>Agent vs framework vs harness</h2>
+    <p>Three words for three layers that products routinely combine.</p>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Agent</h3>
+        <p>The thing a user runs to get work done. Many agents ship with a harness built in, so the two words often describe the same product.</p>
+      </div>
+      <div class="compare-card">
+        <h3>Framework</h3>
+        <p>A library for building agents of your own. A framework gives you parts; it does not decide what an agent is allowed to do. See the <a href="ai_agent_frameworks.html">frameworks index</a>.</p>
+      </div>
+      <div class="compare-card highlight">
+        <h3>Harness</h3>
+        <p>The execution and control layer around a model: permissions, isolation, state, verification, recovery and observability. See the <a href="https://myaielia.com/harness-architecture">11-layer architecture</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT TO LOOK FOR ── -->
+<section class="content-section alt" id="what-to-look-for">
+  <div class="content-inner">
+    <span class="content-eyebrow">Evaluation</span>
+    <h2>What to look for in a harness</h2>
+    <p>Eight capabilities that separate a harness from a prompt loop. Not every project needs all of them; the ones you skip should be a choice.</p>
+    <div class="choose-list">
+      <div class="choose-item"><span class="choose-num">1</span><div><h3>Permissions and approvals</h3><p>Can you say what the agent may do — allow, deny or ask first — per tool and per path? A harness that acts on everything the model asks for is a prompt loop with extra steps.</p></div></div>
+      <div class="choose-item"><span class="choose-num">2</span><div><h3>Isolation</h3><p>Does work run in a sandbox, container or worktree, or directly on your machine with your credentials? Isolation decides how bad a mistake can be.</p></div></div>
+      <div class="choose-item"><span class="choose-num">3</span><div><h3>State and recovery</h3><p>Does it checkpoint, so a crash or a rate limit resumes the interrupted step instead of starting over? Long tasks need this more than any other feature.</p></div></div>
+      <div class="choose-item"><span class="choose-num">4</span><div><h3>Verification</h3><p>Does anything check the work — tests, review passes, schema checks — before it is accepted? A harness should not take the model’s word that a step succeeded.</p></div></div>
+      <div class="choose-item"><span class="choose-num">5</span><div><h3>Context and memory</h3><p>How does it decide what the model sees each turn, and what persists between sessions? Context management is where most long-running agents quietly fail.</p></div></div>
+      <div class="choose-item"><span class="choose-num">6</span><div><h3>Observability and evaluation</h3><p>Can you see every step and replay a failure, and can you measure whether a change helped? Without this you are tuning by feel.</p></div></div>
+      <div class="choose-item"><span class="choose-num">7</span><div><h3>Extensibility</h3><p>Are tools, skills and plugins first-class? Look for open protocols such as MCP rather than a private extension format you would have to rewrite.</p></div></div>
+      <div class="choose-item"><span class="choose-num">8</span><div><h3>Model independence</h3><p>Does it work with more than one model provider, including local models? That decides cost, privacy and how easily you can move.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section" id="faq">
+  <div class="content-inner">
+    <span class="content-eyebrow">FAQ</span>
+    <h2>Questions, answered</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What is an agent harness?</h3>
+        <p>Everything around a model that lets it do work reliably: tool execution, state, permissions, isolation, verification, recovery and observability. The model proposes; the harness decides what actually happens and checks the result.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is a harness the same as an agent framework?</h3>
+        <p>No. A framework is a library for assembling agents. A harness is the control and execution layer around a model or agent, and can be built with or without a framework. Many products blur the two, which is why this index shows a Role for every entry.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why do so many projects call themselves a harness?</h3>
+        <p>It is a useful word for “the part that is not the model”, so it has spread quickly and now covers runtimes, coding agents, governance layers and research code. Judge a project by what it does — the capabilities listed above — not by whether it uses the word.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I still need a harness if my agent already has one?</h3>
+        <p>Often a control plane adds what a built-in harness lacks: state that survives across sessions, governance across several agents, or central enforcement and audit. Control planes in this index are designed to run on top of other harnesses.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does this relate to Build A Harness?</h3>
+        <p>Build A Harness is this site’s own open-source visual canvas for designing a harness and running it on several agent frameworks. Read the <a href="harness-engineering.html">harness engineering guide</a> for the discipline, and the <a href="https://myaielia.com/harness-architecture">11-layer architecture</a> for the layered model.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How are entries chosen?</h3>
+        <p>By hand: open source, actively maintained, and describing themselves as a harness — then read against the project’s own documentation to assign a role, and verified against the live GitHub API when the list is reviewed. Projects that only borrow the word are left out. To suggest an addition, open an issue or pull request on the buildaharness-pages repository.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How current is this list?</h3>
+        <p>Stars, forks and topics are refreshed daily via GitHub Actions — the freshness indicator in the nav bar shows the age of the current data pull. The list itself is reviewed by hand periodically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-row">
+      <span class="footer-logo">Build A Harness</span>
+      <nav class="flinks">
+        <a href="/">Home</a>
+        <a href="https://myaielia.com">Aielia ↗</a>
+      <a href="/build">Build your own</a>
+        <a href="ai_agent_frameworks.html">Frameworks</a>
+        <a href="ai_agents.html">Agents</a>
+        <a href="agent_harnesses.html">Harnesses</a>
+        <a href="mcp_servers.html">MCP servers</a>
+        <a href="agent_skills.html">Agent skills</a>
+        <a href="ai_agent_memory_frameworks.html">Memory</a>
+        <a href="/harness-engineering">Harness Engineering</a>
+        <a href="https://github.com/3IVIS/buildaharness" target="_blank" rel="noopener">GitHub</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
+      </nav>
+      <span class="fcopy">data refreshed daily · GitHub Actions</span>
+    </div>
+    <div class="footer-row">
+      <span class="fcopy">part of <a href="https://buildaharness.com" target="_blank" rel="noopener" style="color:var(--amber);opacity:.7;transition:opacity .18s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">buildaharness.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/observatory.js?v=20260921"></script>
+<script>
+Observatory.init({
+  data: [{"file": "harness-data.json", "key": "items"}],
+  noun: {"name": "Harness", "plural": "harnesses"},
+  columns: ["stars", "role", "language", "license", "updated", "topics"],
+  filters: ["role", "language", "topics"],
+  search: ["name", "description", "role", "language", "topics"],
+  stats: [
+    {"stat": "count", "label": "Harnesses"},
+    {"stat": "stars", "label": "Total Stars"},
+    {"stat": "roles", "label": "Roles"},
+    {"stat": "active", "label": "Active this month"},
+  ],
+});
+</script>
+</body>
+</html>
