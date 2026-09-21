@@ -1238,11 +1238,6 @@ footer{
 
     <nav class="nav" id="siteNav">
       <a href="/build">Build your own</a>
-      <a href="https://myaielia.com/harness-comparison">Comparison</a>
-      <a href="https://myaielia.com/harness-architecture">Architecture</a>
-      <a href="https://myaielia.com/harness-evaluation">Evaluation</a>
-      <a href="/ai_agent_frameworks.html">Agent frameworks</a>
-      <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
       <a href="https://myaielia.com">Aielia ↗</a>
     </nav>
 
@@ -1782,6 +1777,11 @@ footer{
     },
     {
       "@type": "Question",
+      "name": "Is there an assistant built on it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — Aielia, an open-source AI agent that takes on multi-step work while the full 11-layer harness controls what it may do, believe, and spend — and stages anything irreversible (sending email, writing a file, running a command) for your approval. It has its own site at myaielia.com; the source lives in packages/aielia of this repository." }
+    },
+    {
+      "@type": "Question",
       "name": "What's the difference between a harness and a workflow?",
       "acceptedAnswer": { "@type": "Answer", "text": "A workflow routes prompts from node to node. A harness governs what the agent believes, what it's allowed to do, how it catches its own mistakes, and what it learns for next time. The 5-tier control state knows when to slow down or stop; nine verification layers check outputs before they land; recovery strategies handle failures systematically instead of crashing." }
     },
@@ -1928,9 +1928,4 @@ footer{
 })();
 </script>
 </body>
-</html>{
-"@type": "Question",
-"name": "Is there an assistant built on it?",
-"acceptedAnswer": { "@type": "Answer", "text": "Yes — Aielia, an open-source AI agent that takes on multi-step work while the full 11-layer harness controls what it may do, believe, and spend — and stages anything irreversible (sending email, writing a file, running a command) for your approval. It has its own site at myaielia.com; the source lives in packages/aielia of this repository." }
-},
-
+</html>
