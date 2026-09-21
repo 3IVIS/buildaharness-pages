@@ -1,6 +1,6 @@
 # Build A Harness
 
-> Open-source, self-hosted AI assistant (Aielia) that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
+> Open-source, self-hosted AI agent (Aielia) that takes on real, multi-step work under an 11-layer harness that controls its tool use, beliefs and cost, and stages email, file writes and shell commands for your approval — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
 
 Build A Harness is a **working tool** (public alpha). Its front door is **Aielia**, a general-purpose chat assistant (`npx @buildaharness/aielia`, or try it in a browser at https://myaielia.com/try) that walks a complete 11-layer agent harness on every non-trivial turn: a world model, a 5-tier control state resolver, structured verification, recovery strategies, cross-run learning, and a reviewer/output gate. Underneath is a visual canvas plus four framework adapters (LangGraph, CrewAI, Mastra, MS Agent Framework) plus built-in Langfuse observability, so the same architecture can be authored and compiled rather than only used through the assistant. The npm packages (`@buildaharness/aielia`, `@buildaharness/harness`, `@buildaharness/runtime`, `@buildaharness/react`, `@buildaharness/canvas`) are published on npm (currently 0.2.x–0.3.x) under Apache 2.0.
 

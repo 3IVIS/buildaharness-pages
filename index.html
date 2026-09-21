@@ -110,7 +110,7 @@
       "installUrl": "https://myaielia.com/try",
       "programmingLanguage": ["TypeScript"],
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
-      "description": "Aielia is an open-source, self-hosted AI assistant — a Hermes / OpenClaw / Kilo Code alternative that runs an 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command.",
+      "description": "Aielia is an open-source AI agent you can hand real, multi-step work to — an 11-layer harness controls its tool use, beliefs and cost, and stages irreversible actions for approval. A Hermes / OpenClaw / Kilo Code alternative.",
       "keywords": "open source AI assistant, self-hosted AI assistant, AI assistant with approval, OpenClaw alternative, Hermes Agent alternative, human-in-the-loop AI agent, npx AI assistant",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "author": { "@id": "https://buildaharness.com/#org" },
@@ -162,7 +162,7 @@
       "url": "https://buildaharness.com/",
       "dateModified": "2026-09-04",
       "publisher": { "@id": "https://buildaharness.com/#org" },
-      "description": "Open-source AI assistant that stops before it acts, plus a visual canvas for production AI agent harnesses."
+      "description": "Open-source AI agent that does real work, held in bounds by a harness, plus a visual canvas for production AI agent harnesses."
     }
   ]
 }
@@ -1556,26 +1556,40 @@ footer{
     </h2>
 
     <p class="section-lede">
-      Aielia is a general-purpose chat assistant built on Build A Harness. It walks the full
-      11-layer harness on every real turn — a quick fact lookup stays light, and anything
-      consequential (sending an email, paying, running a shell command) pauses for approval
-      <em>before</em> a single token is spent. It is the architecture, kept honest by daily use.
+      Aielia is a general-purpose agent built on Build A Harness. Hand it multi-step work —
+      research across a list, files to go through, a message to draft and send — and the harness
+      decides, in code, what it may do next, what it may believe, and what a job may cost. Anything
+      that can't be undone is staged for your approval. It is the architecture, kept honest by daily use.
     </p>
 
     <div class="flow-grid">
 
       <div class="code-card">
-        <div class="code-bar">the risk gate, in practice</div>
-        <pre><code>&gt; What time zone is Tokyo in?
-Japan Standard Time (UTC+9).
+        <div class="code-bar">a batch job, under control (illustrative)</div>
+        <pre><code>&gt; Find the pricing page for each vendor and
+  summarise the plans:
+  - Acme
+  - Globex
+  - Initech
+  - Umbrella
+  - Hooli
 
-&gt; Send an email to my boss saying I quit.
-⚠ needs approval — this looks consequential (send).
-  Reply "approve" to proceed. No model call was made.</code></pre>
+  budget    calibrated on the first two items, per item
+  Acme      found
+  Globex    found
+  Initech   not_found — 3 dead ends in a row, moved on
+  Umbrella  found
+  Hooli     truncated_while_productive — budget reached
+  reply     built from those outcomes; nothing omitted
+
+&gt; Email that summary to the team.
+  staged — send_email waits for your approval.
+  The exact action is recorded; nothing else can
+  be swapped in after you say yes.</code></pre>
       </div>
 
       <div class="feature-box">
-        <h3>Why it's different</h3>
+        <h3>What the harness holds in place</h3>
         <div class="feature-list">
           <div class="feature-item">
             <strong>Per-tool-call control state</strong>
@@ -1687,7 +1701,7 @@ Japan Standard Time (UTC+9).
 
       <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
         <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">Is there an assistant built on it?</h3>
-        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">Yes — <a href="https://myaielia.com" style="color:var(--accent-ink);">Aielia</a>, an open-source chat assistant that runs the full 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. It has its own site at <a href="https://myaielia.com" style="color:var(--accent-ink);">myaielia.com</a>; the source lives in <code style="font-size:13px">packages/aielia</code> of this repository.</p>
+        <p style="margin:0;font-size:15px;color:var(--ink-2);line-height:1.6;">Yes — <a href="https://myaielia.com" style="color:var(--accent-ink);">Aielia</a>, an open-source AI agent that takes on multi-step work while the full 11-layer harness controls what it may do, believe, and spend — and stages anything irreversible (sending email, writing a file, running a command) for your approval. It has its own site at <a href="https://myaielia.com" style="color:var(--accent-ink);">myaielia.com</a>; the source lives in <code style="font-size:13px">packages/aielia</code> of this repository.</p>
       </div>
 <div style="padding:24px 26px;border-bottom:1px solid var(--line);background:var(--paper);">
         <h3 style="margin:0 0 8px;font-size:18px;font-weight:500;letter-spacing:-.01em;color:var(--ink);">What's the difference between a harness and a workflow?</h3>
@@ -1872,6 +1886,6 @@ Japan Standard Time (UTC+9).
 </html>{
 "@type": "Question",
 "name": "Is there an assistant built on it?",
-"acceptedAnswer": { "@type": "Answer", "text": "Yes — Aielia, an open-source chat assistant that runs the full 11-layer harness every turn and stops for your approval before it sends email, pays, or runs a command. It has its own site at myaielia.com; the source lives in packages/aielia of the Build A Harness repository." }
+"acceptedAnswer": { "@type": "Answer", "text": "Yes — Aielia, an open-source AI agent that takes on multi-step work while the full 11-layer harness controls what it may do, believe, and spend — and stages anything irreversible (sending email, writing a file, running a command) for your approval. It has its own site at myaielia.com; the source lives in packages/aielia of this repository." }
 },
 
