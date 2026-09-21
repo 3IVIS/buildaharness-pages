@@ -1,85 +1,97 @@
 # AI Agent Frameworks — Repo List
 #
 # Format:  owner/repo  [optional-tag1,optional-tag2,…]
+#
+# Scope: libraries/SDKs/platforms you BUILD agents with. Ready-made agents you run
+# (coding agents, browser agents, assistants) live in agents-repos.txt.
+#
+# Reviewed 2026-09-21 against the live GitHub API. Every slug below resolves to its
+# current name and is unarchived. Removal policy: archived, 404, >300 days without a
+# push, or not actually a framework (sample repos, benchmarks, apps).
 
 # ─── Orchestration & General ──────────────────────────────────────────
 langchain-ai/langchain              orchestration,popular
+langchain-ai/langchainjs            orchestration,typescript
 langchain-ai/langgraph              orchestration,stateful,graph,popular
+langchain-ai/deepagents             orchestration,harness,popular
 pydantic/pydantic-ai                type-safe,structured
 stanfordnlp/dspy                    research,optimisation
-prefect-archive/ControlFlow         declarative,workflow
-flux0-ai/flux0                      orchestration,deployment,stateful
 Pipelex/pipelex                     declarative,workflow,orchestration
+cloudwego/eino                      orchestration,go
+genkit-ai/genkit                    orchestration,google,multi-language
+
+# ─── Vendor SDKs ──────────────────────────────────────────────────────
+openai/openai-agents-python         multi-agent,openai,workflow
+openai/openai-agents-js             multi-agent,openai,typescript
+anthropics/claude-agent-sdk-python  anthropic,harness
+anthropics/claude-agent-sdk-typescript anthropic,harness,typescript
+google/adk-python                   google,multi-agent,evaluation
+google/adk-js                       google,typescript
+strands-agents/harness-sdk          aws,harness,model-driven
+microsoft/agent-framework           microsoft,orchestration
+microsoft/semantic-kernel           microsoft,enterprise,multi-language,popular
+i-am-bee/beeai-framework            ibm,production
 
 # ─── Multi-Agent ──────────────────────────────────────────────────────
-microsoft/autogen                   multi-agent,microsoft,popular
+microsoft/autogen                   multi-agent,microsoft,maintenance-mode
+ag2ai/ag2                           multi-agent,autogen-fork
 crewAIInc/crewAI                    multi-agent,role-playing,popular
+agentscope-ai/agentscope            multi-agent,observability
 openai/swarm                        multi-agent,openai,experimental
-openai/openai-agents-python         multi-agent,openai,workflow
 VRSEN/agency-swarm                  multi-agent,orchestration
 camel-ai/camel                      multi-agent,research,simulation
 FoundationAgents/MetaGPT            multi-agent,code-gen,popular
 agentuniverse-ai/agentUniverse      multi-agent,enterprise
 langroid/langroid                   multi-agent,message-passing
-OpenAgentsInc/openagents            multi-agent,platform
 LazyAGI/LazyLLM                     multi-agent,lightweight
-InternLM/MindSearch                 multi-agent,search
-TauricResearch/TradingAgents        multi-agent,finance
 Kocoro-lab/Shannon                  multi-agent,production
-SolaceLabs/solace-agent-mesh        multi-agent,event-driven
-codefuse-ai/CodeFuse-muAgent        multi-agent,knowledge-graph
-samholt/L2MAC                       multi-agent,automation
 patched-codes/patchwork             multi-agent,enterprise
+aden-hive/hive                      multi-agent,harness,production
+evalstate/fast-agent                mcp,multi-agent,evaluation
 
 # ─── Swarm / Collective Intelligence ──────────────────────────────────
 kyegomez/swarms                     multi-agent,swarm,popular
-FelipeDaza7/swarm-tools             multi-agent,learning
-ruvnet/ruflo                        multi-agent,platform
-The-Swarm-Corporation/swarms-rs     multi-agent,rust
-Spectral-Finance/lux                multi-agent,swarm
-kyegomez/AutoRT                     embodied,agents
+ruvnet/ruflo                        multi-agent,swarm,harness,platform
+
+# ─── TypeScript / Full-stack ──────────────────────────────────────────
+mastra-ai/mastra                    typescript,workflows,popular
+vercel/ai                           typescript,sdk,popular
+VoltAgent/voltagent                 typescript,observability
+CopilotKit/CopilotKit               frontend,generative-ui,popular
+
+# ─── Voice & Realtime ─────────────────────────────────────────────────
+livekit/agents                      voice,realtime,multimodal
+pipecat-ai/pipecat                  voice,realtime,multimodal
 
 # ─── RAG & Data (Orchestration-Relevant) ──────────────────────────────
 run-llama/llama_index               rag,data,knowledge-base,popular
 deepset-ai/haystack                 rag,search,orchestration,production
 
-# ─── No-Code / Visual ─────────────────────────────────────────────────
+# ─── No-Code / Visual / Workflow ──────────────────────────────────────
 langgenius/dify                     no-code,visual,popular
-FlowiseAI/Flowise                   no-code,visual,low-code,popular
-trypromptly/LLMStack                workflow,no-code,multimodal
+langflow-ai/langflow                no-code,visual,popular
+n8n-io/n8n                          no-code,workflow,automation,popular
+simstudioai/sim                     no-code,visual,workspace
+dataelement/bisheng                 no-code,enterprise,knowledge-base,chinese
 
 # ─── Autonomous / Pioneer ─────────────────────────────────────────────
 Significant-Gravitas/AutoGPT        autonomous,pioneer,popular
 yoheinakajima/babyagi               autonomous,pioneer,task-management
-reworkd/AgentGPT                    autonomous,web,popular
-
-# ─── Code Generation / Execution ──────────────────────────────────────
-AntonOsika/gpt-engineer             code-gen,developer,popular
-OpenInterpreter/open-interpreter    code-execution,local,developer,popular
-
-# ─── Microsoft ────────────────────────────────────────────────────────
-microsoft/semantic-kernel           microsoft,enterprise,multi-language,popular
-microsoft/TaskWeaver                microsoft,data-analytics,code-gen
-microsoft/promptflow                microsoft,mlops,evaluation
-microsoft/agent-framework           microsoft,orchestration
+bytedance/deer-flow                 autonomous,harness,research,popular
+elizaOS/eliza                       autonomous,social,typescript
+HKUDS/nanobot                       lightweight,personal-assistant,popular
 
 # ─── Memory & Stateful ────────────────────────────────────────────────
 letta-ai/letta                      memory,stateful,persistence
+julep-ai/julep                      stateful,durable-workflows
 
 # ─── Infrastructure & Tooling (Agent-Focused Only) ────────────────────
-TransformerOptimus/SuperAGI         infrastructure,autonomous,gui
-agno-agi/agno                       memory,multimodal,knowledge,database
+agno-agi/agno                       memory,multimodal,knowledge,database,popular
 ComposioHQ/composio                 tools,integrations,actions
 huggingface/smolagents              lightweight,huggingface,minimal
-BrainBlend-AI/atomic-agents         modular,predictable,minimal
-i-am-bee/beeai-framework            ibm,production
-
-# ─── Research / Experimental Frameworks ───────────────────────────────
-OpenBMB/ToolBench                   research,tools,benchmark
-xlang-ai/OpenAgents                 research,web,data-analysis
-HKUDS/AutoAgent                     research,zero-code,automated
+Eigenwise/atomic-agents             modular,predictable,minimal
+griptape-ai/griptape                modular,enterprise
+Upsonic/Upsonic                     autonomous,python
 
 # ─── Platform / Cloud ─────────────────────────────────────────────────
-dataelement/bisheng                 enterprise,knowledge-base,chinese
 ogx-ai/ogx                          meta,inference,safety
-GoogleCloudPlatform/generative-ai   google,cloud,enterprise

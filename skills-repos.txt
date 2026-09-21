@@ -1,0 +1,55 @@
+# Agent Skills Libraries — Repo List
+#
+# Format:  owner/repo  [optional-tag1,optional-tag2,…]
+#
+# Scope: libraries and collections of agent skills (SKILL.md folders and plugin bundles) that
+# Claude Code, Codex, OpenClaw and other agents load on demand, plus the specification and the
+# tooling around them. Single-purpose one-off skills are out of scope.
+#
+# Curated 2026-09-21 from GitHub topic search, then verified against the live API: every slug is
+# the current name, unarchived, and was pushed to within ~200 days.
+
+# ─── Specification & tooling ──────────────────────────────────────────
+agentskills/agentskills             spec,official
+vercel-labs/skills                  tooling,installer,popular
+NVIDIA/SkillSpector                 tooling,security,scanner
+microsoft/SkillOpt                  tooling,optimization,research
+yusufkaraaslan/Skill_Seekers        tooling,converter
+
+# ─── Official vendor libraries ────────────────────────────────────────
+anthropics/skills                   official,anthropic,popular
+anthropics/claude-plugins-official  official,anthropic,plugins
+anthropics/claude-cookbooks         official,anthropic,examples
+openai/skills                       official,openai,codex
+google/skills                       official,google
+huggingface/skills                  official,huggingface,ml
+vercel-labs/agent-skills            official,vercel,web
+android/skills                      official,android,mobile
+trailofbits/skills                  official,security,research
+github/awesome-copilot              official,github,collection
+
+# ─── Large community collections ──────────────────────────────────────
+obra/superpowers                    collection,methodology,popular
+addyosmani/agent-skills             collection,engineering,popular
+wshobson/agents                     collection,plugins,multi-harness
+sickn33/agentic-awesome-skills      collection,catalog
+alirezarezvani/claude-skills        collection,plugins
+Jeffallan/claude-skills             collection,full-stack
+phuryn/pm-skills                    collection,product-management
+Orchestra-Research/AI-Research-SKILLs collection,research,ml
+
+# ─── Domain libraries ─────────────────────────────────────────────────
+K-Dense-AI/scientific-agent-skills  domain,science,popular
+mukul975/Anthropic-Cybersecurity-Skills domain,security
+kepano/obsidian-skills              domain,notes,obsidian
+nextlevelbuilder/ui-ux-pro-max-skill domain,design
+ibelick/ui-skills                   domain,design
+AgriciDaniel/claude-ads             domain,marketing
+deanpeters/Product-Manager-Skills   domain,product-management
+
+# ─── Curated directories ("awesome" lists) ────────────────────────────
+ComposioHQ/awesome-claude-skills    directory,popular
+VoltAgent/awesome-agent-skills      directory,popular
+VoltAgent/awesome-openclaw-skills   directory,openclaw
+travisvn/awesome-claude-skills      directory
+composio-community/awesome-codex-skills directory,codex

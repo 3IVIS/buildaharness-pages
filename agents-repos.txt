@@ -1,0 +1,74 @@
+# AI Agents — Repo List
+#
+# Format:  owner/repo  [optional-tag1,optional-tag2,…]
+#
+# Scope: ready-made, open-source agents you RUN (coding agents, browser/computer-use agents,
+# research agents, personal assistants). Libraries you build agents with live in repos.txt;
+# skills libraries in skills-repos.txt; MCP servers in mcp-repos.txt.
+#
+# Curated 2026-09-21 from GitHub topic search, then verified against the live API: every
+# slug resolves to its current name, is unarchived, and was pushed to within ~300 days.
+
+# ─── Coding agents — terminal & CLI ───────────────────────────────────
+anthropics/claude-code              coding,terminal,anthropic,popular
+openai/codex                        coding,terminal,openai,popular
+google-gemini/gemini-cli            coding,terminal,google,popular
+QwenLM/qwen-code                    coding,terminal,alibaba
+anomalyco/opencode                  coding,terminal,model-agnostic,popular
+aaif-goose/goose                    coding,terminal,extensible,popular
+Aider-AI/aider                      coding,terminal,pair-programming
+charmbracelet/crush                 coding,terminal
+Hmbown/Codewhale                    coding,terminal,rust
+esengine/DeepSeek-Reasonix          coding,terminal,deepseek
+can1357/oh-my-pi                    coding,terminal,ide
+openinterpreter/openinterpreter     coding,terminal,open-models
+
+# ─── Coding agents — IDE, platform & autonomous ───────────────────────
+OpenHands/OpenHands                 coding,autonomous,platform,popular
+cline/cline                         coding,ide,popular
+Kilo-Org/kilocode                   coding,ide,platform
+continuedev/continue                coding,ide
+TabbyML/tabby                       coding,ide,self-hosted
+SWE-agent/SWE-agent                 coding,research,issue-fixing
+SWE-agent/mini-swe-agent            coding,minimal,issue-fixing
+The-PR-Agent/pr-agent               coding,code-review
+OpenBMB/ChatDev                     coding,multi-agent
+
+# ─── Agent orchestrators (run many coding agents) ─────────────────────
+stablyai/orca                       orchestrator,coding,parallel
+superset-sh/superset                orchestrator,coding,parallel
+Yeachan-Heo/oh-my-claudecode        orchestrator,coding,multi-agent
+coleam00/Archon                     orchestrator,coding,harness
+
+# ─── Personal & general-purpose assistants ────────────────────────────
+openclaw/openclaw                   personal-assistant,multi-platform,popular
+NousResearch/hermes-agent           personal-assistant,self-improving,popular
+nanocoai/nanoclaw                   personal-assistant,lightweight,sandboxed
+zhayujie/CowAgent                   personal-assistant,harness
+agentscope-ai/QwenPaw               personal-assistant,self-hosted
+leon-ai/leon                        personal-assistant,self-hosted
+tinyhumansai/openhuman              personal-assistant,harness,local-first
+kortix-ai/suna                      general-purpose,autonomous
+FoundationAgents/OpenManus          general-purpose,autonomous,popular
+Fosowl/agenticSeek                  general-purpose,local,autonomous
+
+# ─── Browser & computer-use agents ────────────────────────────────────
+browser-use/browser-use             browser,computer-use,popular
+browser-use/web-ui                  browser,ui
+Skyvern-AI/skyvern                  browser,workflow-automation
+browserbase/stagehand               browser,sdk
+trycua/cua                          computer-use,sandbox
+simular-ai/Agent-S                  computer-use,research
+bytedance/UI-TARS-desktop           computer-use,multimodal
+alibaba/page-agent                  browser,gui,in-page
+web-infra-dev/midscene              gui,testing
+
+# ─── Research agents ──────────────────────────────────────────────────
+assafelovic/gpt-researcher          research,deep-research,popular
+MiroMindAI/MiroThinker              research,deep-research
+
+# ─── Domain-specific agents ───────────────────────────────────────────
+TauricResearch/TradingAgents        finance,multi-agent
+HKUDS/Vibe-Trading                  finance
+usestrix/strix                      security,pentest
+vxcontrol/pentagi                   security,pentest,autonomous

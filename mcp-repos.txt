@@ -1,0 +1,80 @@
+# MCP Servers & Tooling — Repo List
+#
+# Format:  owner/repo  [optional-tag1,optional-tag2,…]
+#
+# Scope: Model Context Protocol servers, SDKs, frameworks, gateways/registries and directories.
+# Client applications are out of scope.
+#
+# Curated 2026-09-21 from GitHub topic search plus well-known seeds, then verified against the
+# live API: every slug is the current name, unarchived, and pushed to within ~300 days.
+# Dropped on the way: browserbase/mcp-server-browserbase, e2b-dev/mcp-server, appcypher/awesome-mcp-servers
+# (all archived), tadata-org/fastapi_mcp (stale).
+
+# ─── Specification & reference ────────────────────────────────────────
+modelcontextprotocol/modelcontextprotocol  spec,official
+modelcontextprotocol/servers        reference,official,popular
+modelcontextprotocol/inspector      testing,official
+modelcontextprotocol/registry       registry,official
+
+# ─── Official SDKs ────────────────────────────────────────────────────
+modelcontextprotocol/python-sdk     sdk,official,python
+modelcontextprotocol/typescript-sdk sdk,official,typescript
+modelcontextprotocol/java-sdk       sdk,official,java
+modelcontextprotocol/csharp-sdk     sdk,official,csharp
+modelcontextprotocol/rust-sdk       sdk,official,rust
+modelcontextprotocol/php-sdk        sdk,official,php
+
+# ─── Server frameworks ────────────────────────────────────────────────
+PrefectHQ/fastmcp                   framework,python,popular
+punkpeye/fastmcp                    framework,typescript
+mcp-use/mcp-use                     framework,typescript,apps
+
+# ─── Vendor-maintained servers — developer & cloud ────────────────────
+github/github-mcp-server            official-vendor,devtools,popular
+microsoft/playwright-mcp            official-vendor,browser,popular
+ChromeDevTools/chrome-devtools-mcp  official-vendor,browser,devtools,popular
+microsoft/mcp                       official-vendor,catalog
+awslabs/mcp                         official-vendor,cloud,aws
+cloudflare/mcp-server-cloudflare    official-vendor,cloud
+hashicorp/terraform-mcp-server      official-vendor,cloud,infrastructure
+grafana/mcp-grafana                 official-vendor,observability
+getsentry/sentry-mcp                official-vendor,observability
+getsentry/XcodeBuildMCP             official-vendor,devtools,ios
+supabase/mcp                        official-vendor,database
+googleapis/mcp-toolbox              official-vendor,database,google
+mongodb-js/mongodb-mcp-server       official-vendor,database
+
+# ─── Vendor-maintained servers — data, web & productivity ─────────────
+upstash/context7                    official-vendor,docs,popular
+firecrawl/firecrawl-mcp-server      official-vendor,web-scraping
+apify/apify-mcp-server              official-vendor,web-scraping
+exa-labs/exa-mcp-server             official-vendor,search
+makenotion/notion-mcp-server        official-vendor,productivity
+GLips/Figma-Context-MCP             design,figma
+taylorwilsdon/google_workspace_mcp  productivity,google
+czlonkowski/n8n-mcp                 automation,n8n
+
+# ─── Community servers — code intelligence & databases ────────────────
+oraios/serena                       coding,semantic-search,popular
+DeusData/codebase-memory-mcp        coding,code-intelligence
+bytebase/dbhub                      database
+21st-dev/magic-mcp                  coding,ui
+
+# ─── Community servers — creative, gamedev & reverse engineering ──────
+CoplayDev/unity-mcp                 gamedev,unity
+IvanMurzak/Unity-MCP                gamedev,unity
+ahujasid/mcp-for-blender            creative,3d
+mrexodia/ida-pro-mcp                security,reverse-engineering
+bethington/ghidra-mcp               security,reverse-engineering
+
+# ─── Gateways, aggregators & platforms ────────────────────────────────
+IBM/mcp-context-forge               gateway,registry,enterprise
+docker/mcp-gateway                  gateway,docker
+stacklok/toolhive                   gateway,enterprise,security
+activepieces/activepieces           gateway,automation,workflow
+metatool-ai/metamcp                 gateway,aggregator
+
+# ─── Directories ──────────────────────────────────────────────────────
+punkpeye/awesome-mcp-servers        directory,popular
+wong2/awesome-mcp-servers           directory
+yzfly/Awesome-MCP-ZH                directory,chinese

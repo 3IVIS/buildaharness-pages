@@ -1,6 +1,8 @@
 # AI Agent Memory Frameworks — repo list
 # Format: github_url | layer | memory_class | architecture | license | maturity
 # Used by the GitHub Actions workflow to fetch live stats + enrich with static metadata.
+# Reviewed 2026-09-21 against the live GitHub API. Removed: non-memory or dead entries (autogen, memv archived, genesys, memstate non-GitHub,
+# MemFactory/memX/ALMA/amfs near-zero adoption). Added the ones that crossed ~1k stars or come from established labs.
 
 https://github.com/mem0ai/mem0                   | Framework | Personalization + some institutional | Vector + Graph                        | Apache 2.0  | Production
 https://github.com/vectorize-io/hindsight         | Framework | Both (strong institutional)          | Multi-strategy hybrid                 | MIT         | Production
@@ -11,19 +13,22 @@ https://github.com/topoteretes/cognee             | Framework | Institutional   
 https://github.com/supermemoryai/supermemory       | Framework | Personalization + some institutional | Memory + RAG hybrid                   | MIT         | Production
 https://github.com/langchain-ai/langmem            | Framework | Personalization                      | Key-value + vector                    | MIT         | Production
 https://github.com/run-llama/llama_index           | Framework | Personalization                      | Composable buffers                    | MIT         | Production
-https://github.com/microsoft/autogen               | Framework | Both (implicit memory)               | Agent + retrieval hybrid              | MIT         | Production
 https://github.com/deepset-ai/haystack             | Framework | Institutional                        | RAG pipeline-based                    | Apache 2.0  | Production
 https://github.com/rohitg00/agentmemory            | Framework | Coding agents                        | Hybrid (KG + vector + lifecycle)      | Apache 2.0  | Emerging
 https://github.com/MemPalace/mempalace             | Framework | Personalization (verbatim-heavy)     | Structured + vector (verbatim)        | MIT         | Emerging
-https://github.com/RBKunnela/ALMA-memory           | Framework | Personalization                      | Scoped learning + anti-patterns       | MIT         | Emerging
-https://github.com/rishimeka/genesys               | Framework | Both                                 | Causal knowledge graph (ACT-R)        | MIT         | Emerging
 https://github.com/matrixorigin/Memoria            | Infra     | Personalization + coding agents      | Versioned semantic memory (git-style) | Apache 2.0  | Emerging
 https://github.com/MemTensor/MemOS                 | Infra     | Both (shared systems)                | OS-style unified memory               | Apache 2.0  | Emerging
-https://github.com/MehulG/memX                     | Infra     | Personalization + infra              | Local-first (DB-style)                | MIT         | Emerging
 https://github.com/chroma-core/chroma              | Infra     | None (storage layer)                 | Vector database                       | Apache 2.0  | Production
-https://github.com/MemTensor/MemFactory            | Research  | Both                                 | RL-driven modular (GRPO)              | Apache 2.0  | Research
 https://github.com/dolthub/dolt                    | Infra     | Both                                 | Version-controlled relational DB      | Apache 2.0  | Production
-https://github.com/vstorm-co/memv                  | Framework | Both                                 | Bi-temporal + delta-based memory      | MIT         | Experimental
-https://github.com/raia-live/amfs                  | Framework | Both                                 | Versioned + feedback-driven memory    | Unknown     | Emerging
-https://memstate.ai                                | Platform  | Both                                 | Versioned state memory (fact-based)   | Proprietary | Emerging
 https://github.com/EverMind-AI/EverOS              | Framework | Multi-type taxonomy                  | MongoDB + ES + Milvus + Redis         | None        | Emerging
+https://github.com/volcengine/OpenViking           | Infra     | Both                                 | Context database (memory + RAG + skills) | AGPL-3.0    | Emerging
+https://github.com/TencentCloud/TencentDB-Agent-Memory | Infra | Institutional (team-level)       | Shared hub: chat, skill, wiki, code-graph | Custom     | Emerging
+https://github.com/MemoriLabs/Memori               | Infra     | Institutional                        | Structured persistent state (SQL-backed) | Custom      | Production
+https://github.com/plastic-labs/honcho             | Framework | Personalization                      | Stateful-agent memory library         | AGPL-3.0    | Production
+https://github.com/thedotmack/claude-mem           | Framework | Coding agents                        | Session capture + compression + re-injection | Apache 2.0 | Emerging
+https://github.com/zilliztech/memsearch            | Framework | Coding agents                        | Markdown files + Milvus vector index  | MIT         | Emerging
+https://github.com/memvid/memvid                   | Framework | Both                                 | Single-file serverless memory (replaces RAG stack) | Apache 2.0 | Emerging
+https://github.com/basicmachines-co/basic-memory   | Framework | Personalization                      | Local-first Markdown knowledge graph  | AGPL-3.0    | Emerging
+https://github.com/Mirix-AI/MIRIX                  | Framework | Personalization                      | Multi-agent structured memory types   | Apache 2.0  | Emerging
+https://github.com/doobidoo/mcp-memory-service     | Framework | Both                                 | REST + knowledge graph + consolidation | Apache 2.0 | Emerging
+https://github.com/BAI-LAB/MemoryOS                | Research  | Personalization                      | OS-style memory hierarchy (EMNLP 2025) | Apache 2.0 | Research
