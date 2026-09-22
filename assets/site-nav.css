@@ -1,0 +1,128 @@
+/* Shared header + footer chrome: the plain inline nav (shown only above
+   760px, purely decorative — no toggle of its own), the always-on "full
+   menu" button that mirrors the footer links at every width, and the
+   footer itself. Included on every page that uses _includes/header.html
+   and/or _includes/footer.html. Relies on each page's own
+   --ink/--ink-2/--ink-3/--paper/--line custom properties. */
+
+.nav{
+  display:flex;
+  gap:22px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:var(--ink-2);
+}
+
+.nav a:hover{
+  color:var(--ink);
+}
+
+.full-nav{
+  position:relative;
+}
+
+.full-nav-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  padding:0;
+}
+
+.full-nav-toggle:hover{
+  border-color:var(--ink-2);
+}
+
+.full-nav-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:200px;
+  flex-direction:column;
+  gap:0;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:6px 0;
+  z-index:60;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+}
+
+.full-nav-menu.open{
+  display:flex;
+}
+
+.full-nav-menu a{
+  text-decoration:none;
+  color:var(--ink-2);
+  padding:9px 18px;
+  white-space:nowrap;
+}
+
+.full-nav-menu a:hover{
+  color:var(--ink);
+}
+
+@media(max-width:760px){
+  .nav{
+    display:none;
+  }
+}
+
+footer{
+  padding:32px 0;
+  border-top:1px solid var(--line);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:32px 24px;
+}
+
+.footer-col{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-width:120px;
+}
+
+.footer-col-h{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--ink-3);
+}
+
+.footer-col a{
+  text-decoration:none;
+  color:var(--ink-2);
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+}
+
+.footer-col a:hover{
+  color:var(--ink);
+}
+
+.footer-tag{
+  font-family:"Instrument Serif",serif;
+  color:var(--ink-3);
+  font-style:italic;
+}

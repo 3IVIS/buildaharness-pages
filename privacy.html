@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -132,39 +134,7 @@ h1 em {
 }
 
 footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 0;
   margin-top: 64px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--ink-2);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.footer-links a:hover { color: var(--ink); }
-
-.footer-tag {
-  font-family: "Instrument Serif", serif;
-  color: var(--ink-3);
-  font-style: italic;
 }
 
 @media (max-width: 640px) {
@@ -173,6 +143,7 @@ footer {
   .content { margin: 40px auto; }
 }
 </style>
+<link rel="stylesheet" href="/assets/site-nav.css">
 <!-- Klaro Consent Management -->
 <script type="text/javascript">
   var klaroConfig = {
@@ -265,28 +236,7 @@ footer {
   </div>
 </div>
 
-<footer>
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="https://github.com/3IVIS/buildaharness">GitHub</a>
-      <a href="https://github.com/3IVIS/buildaharness/tree/main/docs">Documentation</a>
-      <a href="https://github.com/3IVIS/buildaharness/discussions">Discussions</a>
-      <a href="https://myaielia.com">Aielia</a>
-      <a href="/build">Build your own</a>
-      <a href="https://myaielia.com/harness-comparison">Comparison</a>
-      <a href="/ai_agent_frameworks.html">Agent frameworks</a>
-      <a href="/ai_agent_memory_frameworks.html">Memory frameworks</a>
-      <a href="/ai_agents.html">AI agents</a>
-      <a href="/agent_harnesses.html">Agent harnesses</a>
-      <a href="/mcp_servers.html">MCP servers</a>
-      <a href="/agent_skills.html">Agent skills</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/impressum.html">Impressum</a>
-      <a href="#" onclick="if(window.klaro)klaro.show();return false;">Cookie Settings</a>
-    </div>
-    <div class="footer-tag">Build your harness. Ship it anywhere.</div>
-  </div>
-</footer>
+{% include footer.html %}
 
 </body>
 </html>

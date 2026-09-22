@@ -362,9 +362,9 @@
     }).join('') + '</div>';
   }
 
-  // ── nav menu (every page) ──
+  // ── full nav menu (every page) ──
   function initNav() {
-    const toggle = $('navToggle'), nav = $('navLinks') || $('siteNav');
+    const toggle = $('fullNavToggle'), nav = $('fullNavMenu');
     if (!toggle || !nav) return;
     const close = () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
     toggle.addEventListener('click', e => {
