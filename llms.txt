@@ -1,3 +1,5 @@
+---
+---
 # Build A Harness
 
 > Open-source, self-hosted AI agent (Aielia) that takes on real, multi-step work under an 11-layer harness that controls its tool use, beliefs and cost, and stages email, file writes and shell commands for your approval — plus a visual builder for the same architecture that compiles to any major AI framework. Apache 2.0.
@@ -118,7 +120,7 @@ It is **not** a low-code chatbot builder or a drag-and-drop tool for non-enginee
 ## Key facts
 
 - **License**: Apache 2.0
-- **npm packages**: `@buildaharness/aielia` (0.3.5), `@buildaharness/harness` (0.3.1), `@buildaharness/runtime` (0.3.1), `@buildaharness/react` (0.2.0), `@buildaharness/canvas` (0.2.0)
+- **npm packages**: `@buildaharness/aielia` ({{ site.data.versions.aielia }}), `@buildaharness/harness` ({{ site.data.versions.harness }}), `@buildaharness/runtime` ({{ site.data.versions.runtime }}), `@buildaharness/react` ({{ site.data.versions.react }}), `@buildaharness/canvas` ({{ site.data.versions.canvas }})
 - **Repository**: https://github.com/3IVIS/buildaharness
 - **Homepage**: https://buildaharness.com
 - **Status**: Public alpha — the assistant, canvas, 4 framework adapters, and Langfuse observability are working and ready to use

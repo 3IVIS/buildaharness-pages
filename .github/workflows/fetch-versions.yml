@@ -1,0 +1,33 @@
+name: Fetch Package Versions
+
+on:
+  schedule:
+    - cron: '30 3 * * *'   # daily, after the stats workflows
+  workflow_dispatch:
+  repository_dispatch:
+    types: [product-release]   # sent by the product repo's release workflow
+
+jobs:
+  fetch-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Fetch versions into _data/versions.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-versions.mjs
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet -- _data/versions.json || [ -n "$(git ls-files --others --exclude-standard _data/versions.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add _data/versions.json
+            git commit -m "chore: refresh package versions [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git pull --rebase origin main
+            git push
+          fi
