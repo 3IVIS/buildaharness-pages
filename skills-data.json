@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T08:38:18.848Z",
+  "fetchedAt": "2026-10-14T06:51:10.770Z",
   "count": 35,
   "items": [
     {
@@ -7,10 +7,10 @@
       "fullName": "agentskills/agentskills",
       "description": "Specification and documentation for Agent Skills",
       "url": "https://github.com/agentskills/agentskills",
-      "stars": 26087,
-      "forks": 1964,
-      "openIssues": 99,
-      "watchers": 26087,
+      "stars": 26118,
+      "forks": 1968,
+      "openIssues": 101,
+      "watchers": 26118,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -25,21 +25,21 @@
         "official",
         "agent-skills"
       ],
-      "updatedAt": "2026-10-13T07:57:33Z",
+      "updatedAt": "2026-10-14T06:25:28Z",
       "pushedAt": "2026-08-09T20:36:04Z",
       "archived": false,
       "homepage": "https://agentskills.io",
-      "lastFetchedAt": "2026-10-13T08:37:48.774Z"
+      "lastFetchedAt": "2026-10-14T06:50:47.130Z"
     },
     {
       "name": "skills",
       "fullName": "vercel-labs/skills",
       "description": "The open agent skills tool - npx skills",
       "url": "https://github.com/vercel-labs/skills",
-      "stars": 34081,
-      "forks": 2925,
-      "openIssues": 1105,
-      "watchers": 34081,
+      "stars": 34711,
+      "forks": 2964,
+      "openIssues": 1118,
+      "watchers": 34711,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -53,21 +53,21 @@
         "installer",
         "popular"
       ],
-      "updatedAt": "2026-10-13T08:37:45Z",
+      "updatedAt": "2026-10-14T06:47:31Z",
       "pushedAt": "2026-10-09T17:54:47Z",
       "archived": false,
       "homepage": "https://skills.sh",
-      "lastFetchedAt": "2026-10-13T08:37:49.567Z"
+      "lastFetchedAt": "2026-10-14T06:50:47.796Z"
     },
     {
       "name": "SkillSpector",
       "fullName": "NVIDIA/SkillSpector",
       "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
       "url": "https://github.com/NVIDIA/SkillSpector",
-      "stars": 20094,
-      "forks": 1764,
-      "openIssues": 147,
-      "watchers": 20094,
+      "stars": 20152,
+      "forks": 1774,
+      "openIssues": 136,
+      "watchers": 20152,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -104,21 +104,21 @@
         "security-workflow",
         "supply-chain-security"
       ],
-      "updatedAt": "2026-10-13T08:31:01Z",
-      "pushedAt": "2026-10-13T08:30:15Z",
+      "updatedAt": "2026-10-14T06:39:13Z",
+      "pushedAt": "2026-10-14T05:06:47Z",
       "archived": false,
       "homepage": "https://docs.nvidia.com/skills/scanning-agent-skills",
-      "lastFetchedAt": "2026-10-13T08:37:50.356Z"
+      "lastFetchedAt": "2026-10-14T06:50:48.447Z"
     },
     {
       "name": "SkillOpt",
       "fullName": "microsoft/SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
       "url": "https://github.com/microsoft/SkillOpt",
-      "stars": 18291,
-      "forks": 1729,
-      "openIssues": 53,
-      "watchers": 18291,
+      "stars": 18326,
+      "forks": 1738,
+      "openIssues": 54,
+      "watchers": 18326,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -137,21 +137,21 @@
         "agent-skills",
         "self-evolving-agents"
       ],
-      "updatedAt": "2026-10-13T07:41:59Z",
+      "updatedAt": "2026-10-14T06:24:36Z",
       "pushedAt": "2026-10-06T17:42:32Z",
       "archived": false,
       "homepage": "https://aka.ms/skillopt",
-      "lastFetchedAt": "2026-10-13T08:37:51.116Z"
+      "lastFetchedAt": "2026-10-14T06:50:49.137Z"
     },
     {
       "name": "Skill_Seekers",
       "fullName": "yusufkaraaslan/Skill_Seekers",
       "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection",
       "url": "https://github.com/yusufkaraaslan/Skill_Seekers",
-      "stars": 15138,
-      "forks": 1540,
+      "stars": 15143,
+      "forks": 1548,
       "openIssues": 49,
-      "watchers": 15138,
+      "watchers": 15143,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -200,21 +200,21 @@
         "github-scraper",
         "multi-source"
       ],
-      "updatedAt": "2026-10-13T07:54:04Z",
+      "updatedAt": "2026-10-14T03:33:14Z",
       "pushedAt": "2026-09-30T18:49:17Z",
       "archived": false,
       "homepage": "https://skillseekersweb.com/",
-      "lastFetchedAt": "2026-10-13T08:37:51.935Z"
+      "lastFetchedAt": "2026-10-14T06:50:49.791Z"
     },
     {
       "name": "skills",
       "fullName": "anthropics/skills",
       "description": "Public repository for Agent Skills",
       "url": "https://github.com/anthropics/skills",
-      "stars": 180808,
-      "forks": 21425,
-      "openIssues": 1405,
-      "watchers": 180808,
+      "stars": 180986,
+      "forks": 21449,
+      "openIssues": 1407,
+      "watchers": 180986,
       "language": "Python",
       "license": "None",
       "manualTags": [
@@ -231,21 +231,21 @@
         "popular",
         "agent-skills"
       ],
-      "updatedAt": "2026-10-13T08:36:50Z",
+      "updatedAt": "2026-10-14T06:44:38Z",
       "pushedAt": "2026-10-09T18:45:52Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:37:52.785Z"
+      "lastFetchedAt": "2026-10-14T06:50:50.560Z"
     },
     {
       "name": "claude-plugins-official",
       "fullName": "anthropics/claude-plugins-official",
       "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
       "url": "https://github.com/anthropics/claude-plugins-official",
-      "stars": 37769,
-      "forks": 4256,
-      "openIssues": 1241,
-      "watchers": 37769,
+      "stars": 37886,
+      "forks": 4260,
+      "openIssues": 1245,
+      "watchers": 37886,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -266,21 +266,21 @@
         "mcp",
         "skills"
       ],
-      "updatedAt": "2026-10-13T08:21:32Z",
-      "pushedAt": "2026-10-13T07:57:35Z",
+      "updatedAt": "2026-10-14T06:50:32Z",
+      "pushedAt": "2026-10-14T04:54:10Z",
       "archived": false,
       "homepage": "https://code.claude.com/docs/en/plugins",
-      "lastFetchedAt": "2026-10-13T08:37:53.654Z"
+      "lastFetchedAt": "2026-10-14T06:50:51.227Z"
     },
     {
       "name": "claude-cookbooks",
       "fullName": "anthropics/claude-cookbooks",
       "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
       "url": "https://github.com/anthropics/claude-cookbooks",
-      "stars": 53395,
-      "forks": 6431,
+      "stars": 53418,
+      "forks": 6433,
       "openIssues": 357,
-      "watchers": 53395,
+      "watchers": 53418,
       "language": "Jupyter Notebook",
       "license": "MIT",
       "manualTags": [
@@ -294,21 +294,21 @@
         "anthropic",
         "examples"
       ],
-      "updatedAt": "2026-10-13T07:46:40Z",
-      "pushedAt": "2026-10-10T09:24:55Z",
+      "updatedAt": "2026-10-14T06:25:59Z",
+      "pushedAt": "2026-10-14T03:41:44Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:37:54.401Z"
+      "lastFetchedAt": "2026-10-14T06:50:51.884Z"
     },
     {
       "name": "skills",
       "fullName": "openai/skills",
       "description": "Skills Catalog for Codex",
       "url": "https://github.com/openai/skills",
-      "stars": 28038,
-      "forks": 1923,
+      "stars": 28058,
+      "forks": 1927,
       "openIssues": 295,
-      "watchers": 28038,
+      "watchers": 28058,
       "language": "Python",
       "license": "None",
       "manualTags": [
@@ -322,21 +322,21 @@
         "openai",
         "codex"
       ],
-      "updatedAt": "2026-10-13T08:31:15Z",
+      "updatedAt": "2026-10-14T06:11:50Z",
       "pushedAt": "2026-09-08T20:35:26Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:37:55.171Z"
+      "lastFetchedAt": "2026-10-14T06:50:52.694Z"
     },
     {
       "name": "skills",
       "fullName": "google/skills",
       "description": "Agent Skills for Google products and technologies",
       "url": "https://github.com/google/skills",
-      "stars": 21231,
-      "forks": 1776,
+      "stars": 21263,
+      "forks": 1780,
       "openIssues": 22,
-      "watchers": 21231,
+      "watchers": 21263,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -354,21 +354,21 @@
         "googlecloud",
         "skills"
       ],
-      "updatedAt": "2026-10-13T08:23:43Z",
-      "pushedAt": "2026-10-13T04:44:26Z",
+      "updatedAt": "2026-10-14T06:39:29Z",
+      "pushedAt": "2026-10-14T06:26:01Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:37:56.179Z"
+      "lastFetchedAt": "2026-10-14T06:50:53.395Z"
     },
     {
       "name": "skills",
       "fullName": "huggingface/skills",
       "description": "Give your agents the power of the Hugging Face ecosystem",
       "url": "https://github.com/huggingface/skills",
-      "stars": 11161,
-      "forks": 765,
+      "stars": 11166,
+      "forks": 766,
       "openIssues": 62,
-      "watchers": 11161,
+      "watchers": 11166,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -382,21 +382,21 @@
         "huggingface",
         "ml"
       ],
-      "updatedAt": "2026-10-13T05:44:09Z",
+      "updatedAt": "2026-10-14T05:01:39Z",
       "pushedAt": "2026-10-08T15:30:08Z",
       "archived": false,
       "homepage": "https://huggingface.co",
-      "lastFetchedAt": "2026-10-13T08:37:56.930Z"
+      "lastFetchedAt": "2026-10-14T06:50:54.058Z"
     },
     {
       "name": "agent-skills",
       "fullName": "vercel-labs/agent-skills",
       "description": "Vercel's official collection of agent skills",
       "url": "https://github.com/vercel-labs/agent-skills",
-      "stars": 32320,
-      "forks": 2824,
-      "openIssues": 180,
-      "watchers": 32320,
+      "stars": 32379,
+      "forks": 2826,
+      "openIssues": 179,
+      "watchers": 32379,
       "language": "JavaScript",
       "license": "None",
       "manualTags": [
@@ -410,21 +410,21 @@
         "vercel",
         "web"
       ],
-      "updatedAt": "2026-10-13T08:29:27Z",
+      "updatedAt": "2026-10-14T06:37:40Z",
       "pushedAt": "2026-08-28T13:36:31Z",
       "archived": false,
       "homepage": "https://skills.sh/vercel-labs/agent-skills",
-      "lastFetchedAt": "2026-10-13T08:37:57.636Z"
+      "lastFetchedAt": "2026-10-14T06:50:54.727Z"
     },
     {
       "name": "skills",
       "fullName": "android/skills",
       "description": "",
       "url": "https://github.com/android/skills",
-      "stars": 7784,
-      "forks": 514,
-      "openIssues": 35,
-      "watchers": 7784,
+      "stars": 7792,
+      "forks": 515,
+      "openIssues": 36,
+      "watchers": 7792,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -441,21 +441,21 @@
         "mobile",
         "skills"
       ],
-      "updatedAt": "2026-10-13T05:45:00Z",
+      "updatedAt": "2026-10-14T06:33:52Z",
       "pushedAt": "2026-10-12T10:07:19Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:37:59.451Z"
+      "lastFetchedAt": "2026-10-14T06:50:55.418Z"
     },
     {
       "name": "skills",
       "fullName": "trailofbits/skills",
       "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows",
       "url": "https://github.com/trailofbits/skills",
-      "stars": 7502,
-      "forks": 639,
-      "openIssues": 40,
-      "watchers": 7502,
+      "stars": 7519,
+      "forks": 643,
+      "openIssues": 55,
+      "watchers": 7519,
       "language": "Python",
       "license": "CC-BY-SA-4.0",
       "manualTags": [
@@ -472,21 +472,21 @@
         "research",
         "agent-skills"
       ],
-      "updatedAt": "2026-10-13T07:23:17Z",
-      "pushedAt": "2026-10-13T06:39:29Z",
+      "updatedAt": "2026-10-14T03:46:09Z",
+      "pushedAt": "2026-10-13T17:33:22Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:00.316Z"
+      "lastFetchedAt": "2026-10-14T06:50:56.175Z"
     },
     {
       "name": "awesome-copilot",
       "fullName": "github/awesome-copilot",
       "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
       "url": "https://github.com/github/awesome-copilot",
-      "stars": 39973,
-      "forks": 5107,
-      "openIssues": 60,
-      "watchers": 39973,
+      "stars": 39997,
+      "forks": 5116,
+      "openIssues": 55,
+      "watchers": 39997,
       "language": "JavaScript",
       "license": "MIT",
       "manualTags": [
@@ -517,21 +517,21 @@
         "awesome",
         "custom-agents"
       ],
-      "updatedAt": "2026-10-13T07:59:03Z",
-      "pushedAt": "2026-10-13T05:24:58Z",
+      "updatedAt": "2026-10-14T05:52:25Z",
+      "pushedAt": "2026-10-14T00:57:41Z",
       "archived": false,
       "homepage": "https://awesome-copilot.github.com/",
-      "lastFetchedAt": "2026-10-13T08:38:01.150Z"
+      "lastFetchedAt": "2026-10-14T06:50:56.835Z"
     },
     {
       "name": "superpowers",
       "fullName": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "url": "https://github.com/obra/superpowers",
-      "stars": 298364,
-      "forks": 26663,
-      "openIssues": 334,
-      "watchers": 298364,
+      "stars": 298801,
+      "forks": 26712,
+      "openIssues": 341,
+      "watchers": 298801,
       "language": "Shell",
       "license": "MIT",
       "manualTags": [
@@ -562,21 +562,21 @@
         "superpowers",
         "subagent-driven-development"
       ],
-      "updatedAt": "2026-10-13T08:37:53Z",
+      "updatedAt": "2026-10-14T06:50:09Z",
       "pushedAt": "2026-10-10T03:03:30Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:01.892Z"
+      "lastFetchedAt": "2026-10-14T06:50:57.469Z"
     },
     {
       "name": "agent-skills",
       "fullName": "addyosmani/agent-skills",
       "description": "Production-grade engineering skills for AI coding agents.",
       "url": "https://github.com/addyosmani/agent-skills",
-      "stars": 105834,
-      "forks": 11041,
-      "openIssues": 131,
-      "watchers": 105834,
+      "stars": 106351,
+      "forks": 11084,
+      "openIssues": 118,
+      "watchers": 106351,
       "language": "JavaScript",
       "license": "MIT",
       "manualTags": [
@@ -603,21 +603,21 @@
         "skills",
         "codex"
       ],
-      "updatedAt": "2026-10-13T08:35:17Z",
-      "pushedAt": "2026-10-10T08:28:49Z",
+      "updatedAt": "2026-10-14T06:49:44Z",
+      "pushedAt": "2026-10-13T20:24:07Z",
       "archived": false,
       "homepage": "https://skills.addy.ie",
-      "lastFetchedAt": "2026-10-13T08:38:02.797Z"
+      "lastFetchedAt": "2026-10-14T06:50:58.147Z"
     },
     {
       "name": "agents",
       "fullName": "wshobson/agents",
       "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
       "url": "https://github.com/wshobson/agents",
-      "stars": 40552,
-      "forks": 4314,
-      "openIssues": 7,
-      "watchers": 40552,
+      "stars": 40651,
+      "forks": 4320,
+      "openIssues": 10,
+      "watchers": 40651,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -672,21 +672,21 @@
         "pi-coding-agent",
         "coding-agents"
       ],
-      "updatedAt": "2026-10-13T08:27:25Z",
+      "updatedAt": "2026-10-14T06:43:27Z",
       "pushedAt": "2026-10-12T03:07:19Z",
       "archived": false,
       "homepage": "https://sethhobson.com",
-      "lastFetchedAt": "2026-10-13T08:38:03.520Z"
+      "lastFetchedAt": "2026-10-14T06:50:58.771Z"
     },
     {
       "name": "agentic-awesome-skills",
       "fullName": "sickn33/agentic-awesome-skills",
       "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,400+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
       "url": "https://github.com/sickn33/agentic-awesome-skills",
-      "stars": 47529,
-      "forks": 6930,
-      "openIssues": 3,
-      "watchers": 47529,
+      "stars": 47565,
+      "forks": 6935,
+      "openIssues": 1,
+      "watchers": 47565,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -739,21 +739,21 @@
         "cursor",
         "kiro"
       ],
-      "updatedAt": "2026-10-13T08:27:58Z",
-      "pushedAt": "2026-10-12T20:25:47Z",
+      "updatedAt": "2026-10-14T06:42:29Z",
+      "pushedAt": "2026-10-14T06:04:15Z",
       "archived": false,
       "homepage": "https://aaskills.tech/",
-      "lastFetchedAt": "2026-10-13T08:38:05.247Z"
+      "lastFetchedAt": "2026-10-14T06:50:59.442Z"
     },
     {
       "name": "claude-skills",
       "fullName": "alirezarezvani/claude-skills",
       "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
       "url": "https://github.com/alirezarezvani/claude-skills",
-      "stars": 28095,
-      "forks": 3935,
+      "stars": 28154,
+      "forks": 3942,
       "openIssues": 33,
-      "watchers": 28095,
+      "watchers": 28154,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -806,21 +806,21 @@
         "openclaw-skills",
         "openclaw-plugins"
       ],
-      "updatedAt": "2026-10-13T07:56:16Z",
+      "updatedAt": "2026-10-14T06:50:52Z",
       "pushedAt": "2026-08-30T09:46:16Z",
       "archived": false,
       "homepage": "https://alirezarezvani.medium.com/",
-      "lastFetchedAt": "2026-10-13T08:38:06.050Z"
+      "lastFetchedAt": "2026-10-14T06:51:00.102Z"
     },
     {
       "name": "claude-skills",
       "fullName": "Jeffallan/claude-skills",
       "description": "67 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.",
       "url": "https://github.com/Jeffallan/claude-skills",
-      "stars": 11849,
-      "forks": 1137,
-      "openIssues": 32,
-      "watchers": 11849,
+      "stars": 11862,
+      "forks": 1143,
+      "openIssues": 33,
+      "watchers": 11862,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -843,21 +843,21 @@
         "claude-marketplace",
         "claude-skills"
       ],
-      "updatedAt": "2026-10-13T06:25:56Z",
-      "pushedAt": "2026-10-03T15:49:55Z",
+      "updatedAt": "2026-10-14T06:50:06Z",
+      "pushedAt": "2026-10-14T02:35:48Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:06.898Z"
+      "lastFetchedAt": "2026-10-14T06:51:00.759Z"
     },
     {
       "name": "pm-skills",
       "fullName": "phuryn/pm-skills",
       "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
       "url": "https://github.com/phuryn/pm-skills",
-      "stars": 26940,
-      "forks": 2848,
+      "stars": 26979,
+      "forks": 2850,
       "openIssues": 43,
-      "watchers": 26940,
+      "watchers": 26979,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -883,21 +883,21 @@
         "claude-code-plugins",
         "claude-cowork-plugin"
       ],
-      "updatedAt": "2026-10-13T07:36:11Z",
+      "updatedAt": "2026-10-14T06:48:10Z",
       "pushedAt": "2026-10-10T10:56:32Z",
       "archived": false,
       "homepage": "https://www.productcompass.pm/p/pm-skills-2-red-team-ship",
-      "lastFetchedAt": "2026-10-13T08:38:07.692Z"
+      "lastFetchedAt": "2026-10-14T06:51:01.379Z"
     },
     {
       "name": "AI-Research-SKILLs",
       "fullName": "Orchestra-Research/AI-Research-SKILLs",
       "description": "Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your claude code/codex/gemini agent will be an AI research agent with full horsepower. Maintained by Orchestra Research.",
       "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-      "stars": 13515,
-      "forks": 954,
+      "stars": 13544,
+      "forks": 957,
       "openIssues": 23,
-      "watchers": 13515,
+      "watchers": 13544,
       "language": "TeX",
       "license": "MIT",
       "manualTags": [
@@ -940,21 +940,21 @@
         "skills",
         "vllm"
       ],
-      "updatedAt": "2026-10-13T08:32:13Z",
+      "updatedAt": "2026-10-14T06:42:16Z",
       "pushedAt": "2026-10-11T02:56:34Z",
       "archived": false,
       "homepage": "http://orchestra-research.com",
-      "lastFetchedAt": "2026-10-13T08:38:08.497Z"
+      "lastFetchedAt": "2026-10-14T06:51:02.050Z"
     },
     {
       "name": "scientific-agent-skills",
       "fullName": "K-Dense-AI/scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "stars": 48648,
-      "forks": 4369,
-      "openIssues": 24,
-      "watchers": 48648,
+      "stars": 48779,
+      "forks": 4382,
+      "openIssues": 23,
+      "watchers": 48779,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1003,21 +1003,21 @@
         "scientific-visualization",
         "agent-skills"
       ],
-      "updatedAt": "2026-10-13T08:31:24Z",
+      "updatedAt": "2026-10-14T06:48:07Z",
       "pushedAt": "2026-10-12T09:43:31Z",
       "archived": false,
       "homepage": "https://arxiv.org/abs/2609.00065",
-      "lastFetchedAt": "2026-10-13T08:38:09.303Z"
+      "lastFetchedAt": "2026-10-14T06:51:02.811Z"
     },
     {
       "name": "Anthropic-Cybersecurity-Skills",
       "fullName": "mukul975/Anthropic-Cybersecurity-Skills",
       "description": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
       "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
-      "stars": 34343,
-      "forks": 4175,
-      "openIssues": 61,
-      "watchers": 34343,
+      "stars": 34410,
+      "forks": 4184,
+      "openIssues": 62,
+      "watchers": 34410,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1069,21 +1069,21 @@
         "nist-csf",
         "threat-hunting"
       ],
-      "updatedAt": "2026-10-13T08:32:16Z",
+      "updatedAt": "2026-10-14T06:07:56Z",
       "pushedAt": "2026-08-31T04:32:44Z",
       "archived": false,
       "homepage": "https://mahipal.engineer/Anthropic-Cybersecurity-Skills/",
-      "lastFetchedAt": "2026-10-13T08:38:10.093Z"
+      "lastFetchedAt": "2026-10-14T06:51:03.517Z"
     },
     {
       "name": "obsidian-skills",
       "fullName": "kepano/obsidian-skills",
       "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
       "url": "https://github.com/kepano/obsidian-skills",
-      "stars": 49483,
-      "forks": 3505,
+      "stars": 49525,
+      "forks": 3511,
       "openIssues": 75,
-      "watchers": 49483,
+      "watchers": 49525,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -1131,21 +1131,21 @@
         "hermes",
         "knap"
       ],
-      "updatedAt": "2026-10-13T08:38:08Z",
+      "updatedAt": "2026-10-14T06:49:53Z",
       "pushedAt": "2026-09-15T14:43:57Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:10.870Z"
+      "lastFetchedAt": "2026-10-14T06:51:04.157Z"
     },
     {
       "name": "ui-ux-pro-max-skill",
       "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 135301,
-      "forks": 14374,
-      "openIssues": 91,
-      "watchers": 135301,
+      "stars": 135611,
+      "forks": 14418,
+      "openIssues": 93,
+      "watchers": 135611,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1196,21 +1196,21 @@
         "qoder",
         "trae"
       ],
-      "updatedAt": "2026-10-13T08:36:17Z",
+      "updatedAt": "2026-10-14T06:44:59Z",
       "pushedAt": "2026-10-12T11:08:03Z",
       "archived": false,
       "homepage": "https://www.uupm.cc/",
-      "lastFetchedAt": "2026-10-13T08:38:11.700Z"
+      "lastFetchedAt": "2026-10-14T06:51:04.951Z"
     },
     {
       "name": "ui-skills",
       "fullName": "ibelick/ui-skills",
       "description": "Skills for Design Engineers",
       "url": "https://github.com/ibelick/ui-skills",
-      "stars": 9654,
+      "stars": 9716,
       "forks": 453,
       "openIssues": 17,
-      "watchers": 9654,
+      "watchers": 9716,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1227,21 +1227,21 @@
         "skills",
         "ui-skills"
       ],
-      "updatedAt": "2026-10-13T07:44:57Z",
-      "pushedAt": "2026-10-12T16:28:03Z",
+      "updatedAt": "2026-10-14T06:48:57Z",
+      "pushedAt": "2026-10-13T09:55:18Z",
       "archived": false,
       "homepage": "https://www.ui-skills.com/",
-      "lastFetchedAt": "2026-10-13T08:38:12.520Z"
+      "lastFetchedAt": "2026-10-14T06:51:05.621Z"
     },
     {
       "name": "claude-ads",
       "fullName": "AgriciDaniel/claude-ads",
       "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X): source-grounded audits, deterministic scoring, versioned JSON reports, and capability-gated account changes.",
       "url": "https://github.com/AgriciDaniel/claude-ads",
-      "stars": 9940,
-      "forks": 1469,
+      "stars": 9969,
+      "forks": 1472,
       "openIssues": 27,
-      "watchers": 9940,
+      "watchers": 9969,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1276,21 +1276,21 @@
         "paid-advertising",
         "ppc"
       ],
-      "updatedAt": "2026-10-13T08:28:33Z",
+      "updatedAt": "2026-10-14T06:14:54Z",
       "pushedAt": "2026-10-07T17:11:47Z",
       "archived": false,
       "homepage": "https://claude-ads.md",
-      "lastFetchedAt": "2026-10-13T08:38:13.307Z"
+      "lastFetchedAt": "2026-10-14T06:51:06.389Z"
     },
     {
       "name": "Product-Manager-Skills",
       "fullName": "deanpeters/Product-Manager-Skills",
       "description": "Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.",
       "url": "https://github.com/deanpeters/Product-Manager-Skills",
-      "stars": 7321,
-      "forks": 870,
+      "stars": 7352,
+      "forks": 877,
       "openIssues": 9,
-      "watchers": 7321,
+      "watchers": 7352,
       "language": "Shell",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1312,21 +1312,21 @@
         "claude-skills",
         "pm-frameworks"
       ],
-      "updatedAt": "2026-10-13T08:17:27Z",
+      "updatedAt": "2026-10-14T06:40:02Z",
       "pushedAt": "2026-09-01T22:34:38Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:14.175Z"
+      "lastFetchedAt": "2026-10-14T06:51:07.107Z"
     },
     {
       "name": "awesome-claude-skills",
       "fullName": "ComposioHQ/awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "stars": 76974,
-      "forks": 9069,
-      "openIssues": 1709,
-      "watchers": 76974,
+      "stars": 77047,
+      "forks": 9087,
+      "openIssues": 1718,
+      "watchers": 77047,
       "language": "Python",
       "license": "None",
       "manualTags": [
@@ -1373,21 +1373,21 @@
         "developer-tools",
         "openai-codex"
       ],
-      "updatedAt": "2026-10-13T08:14:06Z",
+      "updatedAt": "2026-10-14T06:41:12Z",
       "pushedAt": "2026-09-18T07:16:11Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:15.266Z"
+      "lastFetchedAt": "2026-10-14T06:51:07.791Z"
     },
     {
       "name": "awesome-agent-skills",
       "fullName": "VoltAgent/awesome-agent-skills",
       "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
       "url": "https://github.com/VoltAgent/awesome-agent-skills",
-      "stars": 35616,
-      "forks": 3851,
+      "stars": 35674,
+      "forks": 3857,
       "openIssues": 41,
-      "watchers": 35616,
+      "watchers": 35674,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -1428,21 +1428,21 @@
         "codex",
         "cursor"
       ],
-      "updatedAt": "2026-10-13T08:24:16Z",
-      "pushedAt": "2026-10-12T13:14:08Z",
+      "updatedAt": "2026-10-14T06:29:12Z",
+      "pushedAt": "2026-10-13T12:33:05Z",
       "archived": false,
       "homepage": "https://officialskills.sh/",
-      "lastFetchedAt": "2026-10-13T08:38:16.186Z"
+      "lastFetchedAt": "2026-10-14T06:51:08.457Z"
     },
     {
       "name": "awesome-openclaw-skills",
       "fullName": "VoltAgent/awesome-openclaw-skills",
       "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
       "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
-      "stars": 53100,
-      "forks": 5050,
-      "openIssues": 1,
-      "watchers": 53100,
+      "stars": 53126,
+      "forks": 5051,
+      "openIssues": 3,
+      "watchers": 53126,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -1478,21 +1478,21 @@
         "awesome",
         "awesome-lists"
       ],
-      "updatedAt": "2026-10-13T07:14:31Z",
+      "updatedAt": "2026-10-14T06:36:05Z",
       "pushedAt": "2026-10-11T08:22:20Z",
       "archived": false,
       "homepage": "https://clawskills.sh/",
-      "lastFetchedAt": "2026-10-13T08:38:16.969Z"
+      "lastFetchedAt": "2026-10-14T06:51:09.120Z"
     },
     {
       "name": "awesome-claude-skills",
       "fullName": "travisvn/awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows — particularly Claude Code",
       "url": "https://github.com/travisvn/awesome-claude-skills",
-      "stars": 15385,
+      "stars": 15396,
       "forks": 2032,
-      "openIssues": 864,
-      "watchers": 15385,
+      "openIssues": 862,
+      "watchers": 15396,
       "language": "Unknown",
       "license": "None",
       "manualTags": [
@@ -1525,21 +1525,21 @@
         "anthropic",
         "awesome-lists"
       ],
-      "updatedAt": "2026-10-13T07:29:14Z",
+      "updatedAt": "2026-10-14T05:29:17Z",
       "pushedAt": "2026-04-28T19:30:24Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:17.780Z"
+      "lastFetchedAt": "2026-10-14T06:51:09.797Z"
     },
     {
       "name": "awesome-codex-skills",
       "fullName": "composio-community/awesome-codex-skills",
       "description": "A curated list of practical Codex skills for automating workflows across the Codex CLI and API.",
       "url": "https://github.com/composio-community/awesome-codex-skills",
-      "stars": 16885,
-      "forks": 1664,
+      "stars": 16893,
+      "forks": 1668,
       "openIssues": 256,
-      "watchers": 16885,
+      "watchers": 16893,
       "language": "Python",
       "license": "None",
       "manualTags": [
@@ -1575,11 +1575,11 @@
         "awesome-lists",
         "awesome-resources"
       ],
-      "updatedAt": "2026-10-13T08:12:08Z",
+      "updatedAt": "2026-10-14T06:41:49Z",
       "pushedAt": "2026-07-26T01:14:54Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-10-13T08:38:18.597Z"
+      "lastFetchedAt": "2026-10-14T06:51:10.519Z"
     }
   ]
 }
