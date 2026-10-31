@@ -13,7 +13,7 @@ architecture, comparison, evaluation and observatory pages. Apache 2.0.
 
 ## What the product ships today
 
-- **Aielia**, the reference assistant — `npx @buildaharness/personal-assistant`, or the
+- **Aielia**, the reference assistant — `npx @buildaharness/aielia`, or the
   hosted browser build at https://myaielia.com/try (see the note above)
 - Visual canvas with 27 node types (14 execution + 13 harness)
 - FlowSpec v1.0.0 — open, portable JSON format
