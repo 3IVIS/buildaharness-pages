@@ -1,18 +1,18 @@
 {
-  "fetchedAt": "2026-11-04T08:15:14.243Z",
+  "fetchedAt": "2026-11-05T08:41:22.922Z",
   "count": 37,
   "partial": true,
-  "partialReason": "Rate limited at 2026-11-04T08:15:13.992Z — remaining repos deferred to next run",
+  "partialReason": "Rate limited at 2026-11-05T08:41:22.671Z — remaining repos deferred to next run",
   "items": [
     {
       "name": "deepagents",
       "fullName": "langchain-ai/deepagents",
       "description": "The batteries-included agent harness.",
       "url": "https://github.com/langchain-ai/deepagents",
-      "stars": 30975,
-      "forks": 4354,
-      "openIssues": 236,
-      "watchers": 30975,
+      "stars": 30995,
+      "forks": 4360,
+      "openIssues": 234,
+      "watchers": 30995,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -42,11 +42,11 @@
         "harness",
         "harness-engineering"
       ],
-      "updatedAt": "2026-11-04T08:13:53Z",
-      "pushedAt": "2026-11-04T08:13:50Z",
+      "updatedAt": "2026-11-05T08:19:11Z",
+      "pushedAt": "2026-11-05T08:22:06Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/deepagents",
-      "lastFetchedAt": "2026-11-04T08:15:02.141Z"
+      "lastFetchedAt": "2026-11-05T08:41:10.712Z"
     },
     {
       "name": "deepagentsjs",
@@ -54,8 +54,8 @@
       "description": "The batteries included agent harness.",
       "url": "https://github.com/langchain-ai/deepagentsjs",
       "stars": 1634,
-      "forks": 298,
-      "openIssues": 125,
+      "forks": 299,
+      "openIssues": 128,
       "watchers": 1634,
       "language": "TypeScript",
       "license": "MIT",
@@ -79,21 +79,21 @@
         "langchain",
         "langgraph"
       ],
-      "updatedAt": "2026-11-04T07:57:26Z",
-      "pushedAt": "2026-11-04T02:59:49Z",
+      "updatedAt": "2026-11-04T23:48:04Z",
+      "pushedAt": "2026-11-04T23:48:29Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/oss/javascript/deepagents/overview",
-      "lastFetchedAt": "2026-11-04T08:15:03.111Z"
+      "lastFetchedAt": "2026-11-05T08:41:11.577Z"
     },
     {
       "name": "harness-sdk",
       "fullName": "strands-agents/harness-sdk",
       "description": "Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python & TypeScript - any model, any cloud.",
       "url": "https://github.com/strands-agents/harness-sdk",
-      "stars": 9041,
-      "forks": 1467,
-      "openIssues": 1104,
-      "watchers": 9041,
+      "stars": 9052,
+      "forks": 1472,
+      "openIssues": 1126,
+      "watchers": 9052,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -146,21 +146,21 @@
         "typescript",
         "harness"
       ],
-      "updatedAt": "2026-11-04T06:48:47Z",
-      "pushedAt": "2026-11-04T07:56:34Z",
+      "updatedAt": "2026-11-05T07:01:38Z",
+      "pushedAt": "2026-11-05T07:58:21Z",
       "archived": false,
       "homepage": "http://strandsagents.com/",
-      "lastFetchedAt": "2026-11-04T08:15:04.017Z"
+      "lastFetchedAt": "2026-11-05T08:41:12.618Z"
     },
     {
       "name": "trueforge",
       "fullName": "truefoundry/trueforge",
       "description": "The open-source agent harness - the runtime layer that turns an LLM into a working agent.",
       "url": "https://github.com/truefoundry/trueforge",
-      "stars": 6437,
-      "forks": 553,
-      "openIssues": 116,
-      "watchers": 6437,
+      "stars": 6439,
+      "forks": 554,
+      "openIssues": 109,
+      "watchers": 6439,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -187,21 +187,21 @@
         "harness",
         "harness-engineering"
       ],
-      "updatedAt": "2026-11-03T23:00:45Z",
-      "pushedAt": "2026-11-04T07:31:15Z",
+      "updatedAt": "2026-11-05T08:38:22Z",
+      "pushedAt": "2026-11-05T08:40:37Z",
       "archived": false,
       "homepage": "https://trueforge.dev",
-      "lastFetchedAt": "2026-11-04T08:15:04.925Z"
+      "lastFetchedAt": "2026-11-05T08:41:13.404Z"
     },
     {
       "name": "deepseek-harness",
       "fullName": "deepseek-ai/deepseek-harness",
       "description": "DeepSeek Harness: Everything is a Plugin.",
       "url": "https://github.com/deepseek-ai/deepseek-harness",
-      "stars": 271713,
-      "forks": 33076,
+      "stars": 273156,
+      "forks": 33292,
       "openIssues": 0,
-      "watchers": 271713,
+      "watchers": 273156,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -224,21 +224,21 @@
         "dsh-plugin",
         "ai-agents"
       ],
-      "updatedAt": "2026-11-04T08:14:22Z",
-      "pushedAt": "2026-11-03T07:58:43Z",
+      "updatedAt": "2026-11-05T08:39:32Z",
+      "pushedAt": "2026-11-04T13:06:39Z",
       "archived": false,
       "homepage": "https://deepseek.com/harness",
-      "lastFetchedAt": "2026-11-04T08:15:05.734Z"
+      "lastFetchedAt": "2026-11-05T08:41:14.392Z"
     },
     {
       "name": "deer-flow",
       "fullName": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "url": "https://github.com/bytedance/deer-flow",
-      "stars": 84968,
-      "forks": 11936,
-      "openIssues": 1052,
-      "watchers": 84968,
+      "stars": 85016,
+      "forks": 11942,
+      "openIssues": 1038,
+      "watchers": 85016,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -289,21 +289,21 @@
         "harness",
         "superagent"
       ],
-      "updatedAt": "2026-11-04T07:39:23Z",
-      "pushedAt": "2026-11-04T06:51:10Z",
+      "updatedAt": "2026-11-05T08:31:14Z",
+      "pushedAt": "2026-11-05T08:06:20Z",
       "archived": false,
       "homepage": "https://deerflow.tech",
-      "lastFetchedAt": "2026-11-04T08:15:06.510Z"
+      "lastFetchedAt": "2026-11-05T08:41:15.275Z"
     },
     {
       "name": "hive",
       "fullName": "aden-hive/hive",
       "description": "Multi-Agent Harness for Production AI",
       "url": "https://github.com/aden-hive/hive",
-      "stars": 11142,
-      "forks": 5639,
+      "stars": 11141,
+      "forks": 5637,
       "openIssues": 1094,
-      "watchers": 11142,
+      "watchers": 11141,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -346,21 +346,21 @@
         "harness",
         "harness-engineering"
       ],
-      "updatedAt": "2026-11-04T06:06:16Z",
+      "updatedAt": "2026-11-05T05:28:15Z",
       "pushedAt": "2026-11-02T10:07:20Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:15:07.396Z"
+      "lastFetchedAt": "2026-11-05T08:41:16.211Z"
     },
     {
       "name": "ruflo",
       "fullName": "ruvnet/ruflo",
       "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
       "url": "https://github.com/ruvnet/ruflo",
-      "stars": 80823,
-      "forks": 9488,
-      "openIssues": 997,
-      "watchers": 80823,
+      "stars": 80915,
+      "forks": 9514,
+      "openIssues": 1074,
+      "watchers": 80915,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -413,21 +413,21 @@
         "dsh-plugin",
         "claude"
       ],
-      "updatedAt": "2026-11-04T07:58:01Z",
-      "pushedAt": "2026-11-04T07:58:18Z",
+      "updatedAt": "2026-11-05T07:48:34Z",
+      "pushedAt": "2026-11-05T04:50:54Z",
       "archived": false,
       "homepage": "https://Cognitum.One",
-      "lastFetchedAt": "2026-11-04T08:15:08.255Z"
+      "lastFetchedAt": "2026-11-05T08:41:16.994Z"
     },
     {
       "name": "go-micro",
       "fullName": "micro/go-micro",
       "description": "A framework for agents, tools and services",
       "url": "https://github.com/micro/go-micro",
-      "stars": 23084,
-      "forks": 2432,
+      "stars": 23085,
+      "forks": 2431,
       "openIssues": 4,
-      "watchers": 23084,
+      "watchers": 23085,
       "language": "Go",
       "license": "Apache-2.0",
       "manualTags": [
@@ -447,21 +447,21 @@
         "golang",
         "micro"
       ],
-      "updatedAt": "2026-11-04T06:34:23Z",
+      "updatedAt": "2026-11-05T01:14:05Z",
       "pushedAt": "2026-10-29T17:43:16Z",
       "archived": false,
       "homepage": "https://go-micro.dev",
-      "lastFetchedAt": "2026-11-04T08:15:09.032Z"
+      "lastFetchedAt": "2026-11-05T08:41:17.788Z"
     },
     {
       "name": "exo",
       "fullName": "exoharness/exo",
       "description": "Exo is an agent + harness architecture that is fully recursive, able to safely edit all aspects of itself at runtime to get better at your tasks.",
       "url": "https://github.com/exoharness/exo",
-      "stars": 1596,
+      "stars": 1603,
       "forks": 125,
-      "openIssues": 117,
-      "watchers": 1596,
+      "openIssues": 114,
+      "watchers": 1603,
       "language": "Rust",
       "license": "MIT",
       "manualTags": [
@@ -480,11 +480,11 @@
         "harness",
         "self-evolution"
       ],
-      "updatedAt": "2026-11-04T01:33:15Z",
+      "updatedAt": "2026-11-04T20:57:37Z",
       "pushedAt": "2026-11-03T06:35:12Z",
       "archived": false,
       "homepage": "https://exoharness.ai/",
-      "lastFetchedAt": "2026-11-04T08:15:09.850Z"
+      "lastFetchedAt": "2026-11-05T08:41:18.634Z"
     },
     {
       "name": "thClaws",
@@ -492,8 +492,8 @@
       "description": "Open-source AI agent harness in native Rust — GUI, CLI, headless, and webapp from one binary. Multi-provider, MCP, skills, plugins, agent teams.",
       "url": "https://github.com/thClaws/thClaws",
       "stars": 1251,
-      "forks": 188,
-      "openIssues": 4,
+      "forks": 189,
+      "openIssues": 5,
       "watchers": 1251,
       "language": "Rust",
       "license": "Apache-2.0",
@@ -552,17 +552,17 @@
       "pushedAt": "2026-11-01T22:44:14Z",
       "archived": false,
       "homepage": "https://thclaws.ai",
-      "lastFetchedAt": "2026-11-04T08:15:10.639Z"
+      "lastFetchedAt": "2026-11-05T08:41:19.517Z"
     },
     {
       "name": "OpenHarness",
       "fullName": "HKUDS/OpenHarness",
       "description": "\"OpenHarness: Open Agent Harness with a Built-in Personal Agent--Ohmo!\"",
       "url": "https://github.com/HKUDS/OpenHarness",
-      "stars": 16164,
-      "forks": 2606,
+      "stars": 16166,
+      "forks": 2609,
       "openIssues": 98,
-      "watchers": 16164,
+      "watchers": 16166,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -574,21 +574,21 @@
         "runtime",
         "personal-assistant"
       ],
-      "updatedAt": "2026-11-04T03:04:10Z",
+      "updatedAt": "2026-11-05T08:18:06Z",
       "pushedAt": "2026-06-04T02:42:40Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:15:11.443Z"
+      "lastFetchedAt": "2026-11-05T08:41:20.313Z"
     },
     {
       "name": "openhuman",
       "fullName": "tinyhumansai/openhuman",
       "description": "The fastest, cheapest, most efficient open-source agent harness. Run more than 500 agents on a $10 VPS.",
       "url": "https://github.com/tinyhumansai/openhuman",
-      "stars": 42530,
+      "stars": 42554,
       "forks": 4209,
-      "openIssues": 320,
-      "watchers": 42530,
+      "openIssues": 317,
+      "watchers": 42554,
       "language": "Rust",
       "license": "GPL-3.0",
       "manualTags": [
@@ -626,21 +626,21 @@
         "second-brain",
         "tauri"
       ],
-      "updatedAt": "2026-11-04T07:53:01Z",
-      "pushedAt": "2026-11-04T07:52:54Z",
+      "updatedAt": "2026-11-05T08:18:44Z",
+      "pushedAt": "2026-11-05T02:54:31Z",
       "archived": false,
       "homepage": "https://tinyhumans.ai/openhuman",
-      "lastFetchedAt": "2026-11-04T08:15:12.316Z"
+      "lastFetchedAt": "2026-11-05T08:41:21.085Z"
     },
     {
       "name": "CowAgent",
       "fullName": "zhayujie/CowAgent",
       "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
       "url": "https://github.com/zhayujie/CowAgent",
-      "stars": 47778,
-      "forks": 10413,
-      "openIssues": 55,
-      "watchers": 47778,
+      "stars": 47801,
+      "forks": 10416,
+      "openIssues": 41,
+      "watchers": 47801,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -687,21 +687,21 @@
         "multi-agent",
         "personal-agent"
       ],
-      "updatedAt": "2026-11-04T07:40:22Z",
-      "pushedAt": "2026-11-03T12:35:25Z",
+      "updatedAt": "2026-11-05T08:38:42Z",
+      "pushedAt": "2026-11-04T10:55:36Z",
       "archived": false,
       "homepage": "https://cowagent.ai",
-      "lastFetchedAt": "2026-11-04T08:15:13.135Z"
+      "lastFetchedAt": "2026-11-05T08:41:21.917Z"
     },
     {
       "name": "grok-build",
       "fullName": "xai-org/grok-build",
       "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
       "url": "https://github.com/xai-org/grok-build",
-      "stars": 27675,
-      "forks": 5231,
+      "stars": 27690,
+      "forks": 5236,
       "openIssues": 0,
-      "watchers": 27675,
+      "watchers": 27690,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -715,11 +715,11 @@
         "terminal",
         "tui"
       ],
-      "updatedAt": "2026-11-04T07:17:22Z",
+      "updatedAt": "2026-11-05T07:45:35Z",
       "pushedAt": "2026-09-29T16:57:13Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:15:13.992Z"
+      "lastFetchedAt": "2026-11-05T08:41:22.671Z"
     },
     {
       "name": "ZCode",
@@ -1714,112 +1714,112 @@
   "fetchErrors": [
     {
       "slug": "zai-org/ZCode",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "HKUDS/DeepCode",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "mindfold-ai/Trellis",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "code-yeongyu/lazycodex",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Waishnav/devspace",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "maxritter/pilot-shell",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "first-fluke/oh-my-agent",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "teaql/teaql-agent-kit",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "QoderAI/better-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Prism-Shadow/penguin-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "loopx-project/loopx",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "FailproofAI/failproofai",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Untrivial-ai/agent-orchestrator",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "chaitanyagiri/munder-difflin",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "onecli/onecli",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Infisical/agent-vault",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "yc-software/qm",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "visa/visa-vulnerability-agentic-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "stanford-iris-lab/meta-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "NVlabs/SoL-Pi",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "shareAI-lab/learn-claude-code",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "ai-boost/awesome-harness-engineering",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-04T08:15:13.992Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-05T08:41:22.671Z)",
       "status": "skipped-rate-limit"
     }
   ]

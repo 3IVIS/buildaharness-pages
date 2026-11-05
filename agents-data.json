@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-04T08:13:49.225Z",
+  "fetchedAt": "2026-11-05T08:39:56.455Z",
   "count": 52,
   "items": [
     {
@@ -7,10 +7,10 @@
       "fullName": "anthropics/claude-code",
       "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
       "url": "https://github.com/anthropics/claude-code",
-      "stars": 154461,
-      "forks": 25557,
-      "openIssues": 16379,
-      "watchers": 154461,
+      "stars": 154592,
+      "forks": 25565,
+      "openIssues": 16460,
+      "watchers": 154592,
       "language": "TypeScript",
       "license": "None",
       "manualTags": [
@@ -26,21 +26,21 @@
         "anthropic",
         "popular"
       ],
-      "updatedAt": "2026-11-04T08:06:36Z",
+      "updatedAt": "2026-11-05T08:24:27Z",
       "pushedAt": "2026-11-04T00:02:45Z",
       "archived": false,
       "homepage": "https://code.claude.com/docs/en/overview",
-      "lastFetchedAt": "2026-11-04T08:13:04.650Z"
+      "lastFetchedAt": "2026-11-05T08:39:12.112Z"
     },
     {
       "name": "codex",
       "fullName": "openai/codex",
       "description": "Lightweight coding agent that runs in your terminal",
       "url": "https://github.com/openai/codex",
-      "stars": 133079,
-      "forks": 21069,
-      "openIssues": 26336,
-      "watchers": 133079,
+      "stars": 133267,
+      "forks": 21108,
+      "openIssues": 26514,
+      "watchers": 133267,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -56,21 +56,21 @@
         "openai",
         "popular"
       ],
-      "updatedAt": "2026-11-04T08:01:43Z",
-      "pushedAt": "2026-11-04T08:01:41Z",
+      "updatedAt": "2026-11-05T08:24:37Z",
+      "pushedAt": "2026-11-05T08:11:04Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:13:05.424Z"
+      "lastFetchedAt": "2026-11-05T08:39:12.909Z"
     },
     {
       "name": "gemini-cli",
       "fullName": "google-gemini/gemini-cli",
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "url": "https://github.com/google-gemini/gemini-cli",
-      "stars": 108715,
+      "stars": 108733,
       "forks": 14917,
-      "openIssues": 771,
-      "watchers": 108715,
+      "openIssues": 780,
+      "watchers": 108733,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -101,21 +101,21 @@
         "mcp-client",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-04T07:24:54Z",
-      "pushedAt": "2026-11-04T01:20:49Z",
+      "updatedAt": "2026-11-05T08:19:48Z",
+      "pushedAt": "2026-11-05T01:15:47Z",
       "archived": false,
       "homepage": "https://geminicli.com",
-      "lastFetchedAt": "2026-11-04T08:13:06.246Z"
+      "lastFetchedAt": "2026-11-05T08:39:13.846Z"
     },
     {
       "name": "qwen-code",
       "fullName": "QwenLM/qwen-code",
       "description": "An open-source AI coding agent that lives in your terminal.",
       "url": "https://github.com/QwenLM/qwen-code",
-      "stars": 28989,
-      "forks": 3307,
-      "openIssues": 2119,
-      "watchers": 28989,
+      "stars": 29018,
+      "forks": 3315,
+      "openIssues": 2122,
+      "watchers": 29018,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -153,21 +153,21 @@
         "qwen",
         "typescript"
       ],
-      "updatedAt": "2026-11-04T07:50:04Z",
-      "pushedAt": "2026-11-04T08:09:11Z",
+      "updatedAt": "2026-11-05T08:27:23Z",
+      "pushedAt": "2026-11-05T08:35:50Z",
       "archived": false,
       "homepage": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
-      "lastFetchedAt": "2026-11-04T08:13:07.280Z"
+      "lastFetchedAt": "2026-11-05T08:39:14.646Z"
     },
     {
       "name": "opencode",
       "fullName": "anomalyco/opencode",
       "description": "The open source coding agent.",
       "url": "https://github.com/anomalyco/opencode",
-      "stars": 224446,
-      "forks": 30223,
-      "openIssues": 3988,
-      "watchers": 224446,
+      "stars": 224672,
+      "forks": 30281,
+      "openIssues": 4038,
+      "watchers": 224672,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -183,21 +183,21 @@
         "model-agnostic",
         "popular"
       ],
-      "updatedAt": "2026-11-04T08:08:21Z",
-      "pushedAt": "2026-11-04T08:11:33Z",
+      "updatedAt": "2026-11-05T08:37:05Z",
+      "pushedAt": "2026-11-05T08:39:02Z",
       "archived": false,
       "homepage": "https://opencode.ai",
-      "lastFetchedAt": "2026-11-04T08:13:08.166Z"
+      "lastFetchedAt": "2026-11-05T08:39:15.488Z"
     },
     {
       "name": "goose",
       "fullName": "aaif-goose/goose",
       "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
       "url": "https://github.com/aaif-goose/goose",
-      "stars": 56201,
-      "forks": 6558,
-      "openIssues": 550,
-      "watchers": 56201,
+      "stars": 56240,
+      "forks": 6556,
+      "openIssues": 560,
+      "watchers": 56240,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -222,21 +222,21 @@
         "ai",
         "ai-agents"
       ],
-      "updatedAt": "2026-11-04T08:06:46Z",
-      "pushedAt": "2026-11-04T08:11:26Z",
+      "updatedAt": "2026-11-05T08:26:09Z",
+      "pushedAt": "2026-11-04T21:01:37Z",
       "archived": false,
       "homepage": "https://goose-docs.ai/",
-      "lastFetchedAt": "2026-11-04T08:13:09.001Z"
+      "lastFetchedAt": "2026-11-05T08:39:16.274Z"
     },
     {
       "name": "aider",
       "fullName": "Aider-AI/aider",
       "description": "aider is AI pair programming in your terminal",
       "url": "https://github.com/Aider-AI/aider",
-      "stars": 49936,
-      "forks": 5135,
-      "openIssues": 1946,
-      "watchers": 49936,
+      "stars": 49958,
+      "forks": 5138,
+      "openIssues": 1944,
+      "watchers": 49958,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -277,21 +277,21 @@
         "llama",
         "sonnet"
       ],
-      "updatedAt": "2026-11-04T07:59:51Z",
+      "updatedAt": "2026-11-05T06:48:10Z",
       "pushedAt": "2026-05-22T14:02:20Z",
       "archived": false,
       "homepage": "https://aider.chat/",
-      "lastFetchedAt": "2026-11-04T08:13:09.909Z"
+      "lastFetchedAt": "2026-11-05T08:39:17.121Z"
     },
     {
       "name": "crush",
       "fullName": "charmbracelet/crush",
       "description": "Glamourous agentic coding for all 💘",
       "url": "https://github.com/charmbracelet/crush",
-      "stars": 28945,
+      "stars": 28963,
       "forks": 2351,
-      "openIssues": 537,
-      "watchers": 28945,
+      "openIssues": 539,
+      "watchers": 28963,
       "language": "Go",
       "license": "NOASSERTION",
       "manualTags": [
@@ -312,21 +312,21 @@
         "llms",
         "ravishing"
       ],
-      "updatedAt": "2026-11-04T05:12:40Z",
-      "pushedAt": "2026-11-03T13:31:53Z",
+      "updatedAt": "2026-11-05T08:27:30Z",
+      "pushedAt": "2026-11-05T00:35:40Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:13:10.744Z"
+      "lastFetchedAt": "2026-11-05T08:39:17.942Z"
     },
     {
       "name": "Codewhale",
       "fullName": "codewhale-hq/Codewhale",
       "description": "Open-source agent for the terminal written in Rust. Use any provider or model. Issues & PRs always welcome",
       "url": "https://github.com/codewhale-hq/Codewhale",
-      "stars": 41159,
-      "forks": 3568,
-      "openIssues": 67,
-      "watchers": 41159,
+      "stars": 41156,
+      "forks": 3569,
+      "openIssues": 74,
+      "watchers": 41156,
       "language": "Rust",
       "license": "MIT",
       "manualTags": [
@@ -367,21 +367,21 @@
         "codewhale",
         "developer-tools"
       ],
-      "updatedAt": "2026-11-04T07:31:18Z",
-      "pushedAt": "2026-11-04T07:23:57Z",
+      "updatedAt": "2026-11-05T08:38:05Z",
+      "pushedAt": "2026-11-05T04:32:26Z",
       "archived": false,
       "homepage": "https://codewhale.net/",
-      "lastFetchedAt": "2026-11-04T08:13:12.146Z"
+      "lastFetchedAt": "2026-11-05T08:39:19.296Z"
     },
     {
       "name": "DeepSeek-Reasonix",
       "fullName": "esengine/DeepSeek-Reasonix",
       "description": "A reliable coding agent for complex software engineering tasks.",
       "url": "https://github.com/esengine/DeepSeek-Reasonix",
-      "stars": 36070,
-      "forks": 2503,
-      "openIssues": 649,
-      "watchers": 36070,
+      "stars": 36080,
+      "forks": 2502,
+      "openIssues": 650,
+      "watchers": 36080,
       "language": "Go",
       "license": "MIT",
       "manualTags": [
@@ -430,21 +430,21 @@
         "dsh",
         "dsh-plugin"
       ],
-      "updatedAt": "2026-11-04T08:05:25Z",
-      "pushedAt": "2026-11-04T07:04:23Z",
+      "updatedAt": "2026-11-05T08:17:06Z",
+      "pushedAt": "2026-11-05T08:37:00Z",
       "archived": false,
       "homepage": "http://reasonix.io/",
-      "lastFetchedAt": "2026-11-04T08:13:12.969Z"
+      "lastFetchedAt": "2026-11-05T08:39:20.082Z"
     },
     {
       "name": "oh-my-pi",
       "fullName": "can1357/oh-my-pi",
       "description": "⌥ Coding agent with the IDE wired in. Built by Stencil Labs.",
       "url": "https://github.com/can1357/oh-my-pi",
-      "stars": 37724,
-      "forks": 4250,
-      "openIssues": 4597,
-      "watchers": 37724,
+      "stars": 37870,
+      "forks": 4272,
+      "openIssues": 4622,
+      "watchers": 37870,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -488,21 +488,21 @@
         "rust",
         "tui"
       ],
-      "updatedAt": "2026-11-04T08:09:42Z",
-      "pushedAt": "2026-11-04T07:01:43Z",
+      "updatedAt": "2026-11-05T08:36:28Z",
+      "pushedAt": "2026-11-05T08:31:47Z",
       "archived": false,
       "homepage": "https://omp.sh",
-      "lastFetchedAt": "2026-11-04T08:13:13.818Z"
+      "lastFetchedAt": "2026-11-05T08:39:20.880Z"
     },
     {
       "name": "openinterpreter",
       "fullName": "openinterpreter/openinterpreter",
       "description": "A coding agent for open models like Kimi K3 and GLM 5.3",
       "url": "https://github.com/openinterpreter/openinterpreter",
-      "stars": 68790,
-      "forks": 5937,
+      "stars": 68794,
+      "forks": 5934,
       "openIssues": 34,
-      "watchers": 68790,
+      "watchers": 68794,
       "language": "Rust",
       "license": "Apache-2.0",
       "manualTags": [
@@ -531,21 +531,21 @@
         "acp",
         "python"
       ],
-      "updatedAt": "2026-11-04T07:06:44Z",
+      "updatedAt": "2026-11-05T07:55:25Z",
       "pushedAt": "2026-11-04T01:39:11Z",
       "archived": false,
       "homepage": "http://openinterpreter.com/",
-      "lastFetchedAt": "2026-11-04T08:13:14.665Z"
+      "lastFetchedAt": "2026-11-05T08:39:21.792Z"
     },
     {
       "name": "pi",
       "fullName": "earendil-works/pi",
       "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
       "url": "https://github.com/earendil-works/pi",
-      "stars": 119922,
-      "forks": 15400,
-      "openIssues": 312,
-      "watchers": 119922,
+      "stars": 120174,
+      "forks": 15449,
+      "openIssues": 263,
+      "watchers": 120174,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -561,21 +561,21 @@
         "openrouter",
         "popular"
       ],
-      "updatedAt": "2026-11-04T08:10:48Z",
-      "pushedAt": "2026-11-04T07:46:55Z",
+      "updatedAt": "2026-11-05T08:39:21Z",
+      "pushedAt": "2026-11-05T08:33:09Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:13:15.487Z"
+      "lastFetchedAt": "2026-11-05T08:39:22.699Z"
     },
     {
       "name": "OpenHands",
       "fullName": "OpenHands/OpenHands",
       "description": "🙌 OpenHands: AI-Driven Development",
       "url": "https://github.com/OpenHands/OpenHands",
-      "stars": 92609,
-      "forks": 12353,
-      "openIssues": 1195,
-      "watchers": 92609,
+      "stars": 92693,
+      "forks": 12365,
+      "openIssues": 1150,
+      "watchers": 92693,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -610,21 +610,21 @@
         "gpt",
         "openai"
       ],
-      "updatedAt": "2026-11-04T08:10:28Z",
-      "pushedAt": "2026-11-04T06:43:27Z",
+      "updatedAt": "2026-11-05T08:24:23Z",
+      "pushedAt": "2026-11-05T04:18:46Z",
       "archived": false,
       "homepage": "https://openhands.dev",
-      "lastFetchedAt": "2026-11-04T08:13:16.311Z"
+      "lastFetchedAt": "2026-11-05T08:39:23.602Z"
     },
     {
       "name": "cline",
       "fullName": "cline/cline",
       "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
       "url": "https://github.com/cline/cline",
-      "stars": 71283,
-      "forks": 7848,
-      "openIssues": 1759,
-      "watchers": 71283,
+      "stars": 71331,
+      "forks": 7863,
+      "openIssues": 1760,
+      "watchers": 71331,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -638,21 +638,21 @@
         "ide",
         "popular"
       ],
-      "updatedAt": "2026-11-04T07:51:36Z",
-      "pushedAt": "2026-11-04T05:52:06Z",
+      "updatedAt": "2026-11-05T07:53:33Z",
+      "pushedAt": "2026-11-05T07:31:13Z",
       "archived": false,
       "homepage": "https://cline.bot",
-      "lastFetchedAt": "2026-11-04T08:13:17.094Z"
+      "lastFetchedAt": "2026-11-05T08:39:24.413Z"
     },
     {
       "name": "kilocode",
       "fullName": "Kilo-Org/kilocode",
       "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
       "url": "https://github.com/Kilo-Org/kilocode",
-      "stars": 27853,
-      "forks": 3335,
-      "openIssues": 877,
-      "watchers": 27853,
+      "stars": 27866,
+      "forks": 3336,
+      "openIssues": 885,
+      "watchers": 27866,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -691,21 +691,21 @@
         "cli",
         "jetbrains"
       ],
-      "updatedAt": "2026-11-04T07:06:04Z",
-      "pushedAt": "2026-11-04T07:12:48Z",
+      "updatedAt": "2026-11-05T08:16:52Z",
+      "pushedAt": "2026-11-05T08:37:25Z",
       "archived": false,
       "homepage": "https://kilo.ai/",
-      "lastFetchedAt": "2026-11-04T08:13:17.967Z"
+      "lastFetchedAt": "2026-11-05T08:39:25.320Z"
     },
     {
       "name": "continue",
       "fullName": "continuedev/continue",
       "description": "open-source coding agent",
       "url": "https://github.com/continuedev/continue",
-      "stars": 36404,
-      "forks": 5547,
-      "openIssues": 870,
-      "watchers": 36404,
+      "stars": 36408,
+      "forks": 5550,
+      "openIssues": 864,
+      "watchers": 36408,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -728,11 +728,11 @@
         "agent",
         "cli"
       ],
-      "updatedAt": "2026-11-04T06:32:21Z",
-      "pushedAt": "2026-11-03T06:12:56Z",
+      "updatedAt": "2026-11-05T06:18:46Z",
+      "pushedAt": "2026-11-05T05:28:23Z",
       "archived": false,
       "homepage": "https://continue.dev",
-      "lastFetchedAt": "2026-11-04T08:13:18.806Z"
+      "lastFetchedAt": "2026-11-05T08:39:26.099Z"
     },
     {
       "name": "tabby",
@@ -774,21 +774,21 @@
         "gen-ai",
         "llms"
       ],
-      "updatedAt": "2026-11-04T07:57:55Z",
+      "updatedAt": "2026-11-05T05:49:56Z",
       "pushedAt": "2026-06-30T20:38:02Z",
       "archived": false,
       "homepage": "https://tabbyml.com",
-      "lastFetchedAt": "2026-11-04T08:13:19.620Z"
+      "lastFetchedAt": "2026-11-05T08:39:26.887Z"
     },
     {
       "name": "SWE-agent",
       "fullName": "SWE-agent/SWE-agent",
       "description": "SWE-agent takes a GitHub issue and tries to automatically fix it, using your LM of choice. It can also be employed for offensive cybersecurity or competitive coding challenges. [NeurIPS 2024] ",
       "url": "https://github.com/SWE-agent/SWE-agent",
-      "stars": 20718,
+      "stars": 20728,
       "forks": 2263,
       "openIssues": 173,
-      "watchers": 20718,
+      "watchers": 20728,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -817,21 +817,21 @@
         "lms",
         "cybersecurity"
       ],
-      "updatedAt": "2026-11-04T07:42:16Z",
+      "updatedAt": "2026-11-05T06:18:30Z",
       "pushedAt": "2026-11-02T23:40:08Z",
       "archived": false,
       "homepage": "https://swe-agent.com",
-      "lastFetchedAt": "2026-11-04T08:13:20.444Z"
+      "lastFetchedAt": "2026-11-05T08:39:27.687Z"
     },
     {
       "name": "mini-swe-agent",
       "fullName": "SWE-agent/mini-swe-agent",
       "description": "The 100 line AI agent that solves GitHub issues or helps you in your command line. Radically simple, no huge configs, no giant monorepo—but scores >74% on SWE-bench verified!",
       "url": "https://github.com/SWE-agent/mini-swe-agent",
-      "stars": 9074,
-      "forks": 1267,
-      "openIssues": 133,
-      "watchers": 9074,
+      "stars": 9101,
+      "forks": 1269,
+      "openIssues": 135,
+      "watchers": 9101,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -858,21 +858,21 @@
         "ai-agent",
         "textual"
       ],
-      "updatedAt": "2026-11-04T07:44:04Z",
+      "updatedAt": "2026-11-05T08:05:06Z",
       "pushedAt": "2026-11-02T23:40:17Z",
       "archived": false,
       "homepage": "https://mini-swe-agent.com",
-      "lastFetchedAt": "2026-11-04T08:13:21.286Z"
+      "lastFetchedAt": "2026-11-05T08:39:28.473Z"
     },
     {
       "name": "pr-agent",
       "fullName": "The-PR-Agent/pr-agent",
       "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
       "url": "https://github.com/The-PR-Agent/pr-agent",
-      "stars": 14476,
-      "forks": 2066,
+      "stars": 14941,
+      "forks": 2102,
       "openIssues": 51,
-      "watchers": 14476,
+      "watchers": 14941,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -902,21 +902,21 @@
         "anthropic",
         "ollama"
       ],
-      "updatedAt": "2026-11-04T08:08:53Z",
-      "pushedAt": "2026-11-03T19:36:35Z",
+      "updatedAt": "2026-11-05T08:38:07Z",
+      "pushedAt": "2026-11-05T08:37:25Z",
       "archived": false,
       "homepage": "https://www.pr-agent.ai",
-      "lastFetchedAt": "2026-11-04T08:13:22.151Z"
+      "lastFetchedAt": "2026-11-05T08:39:29.366Z"
     },
     {
       "name": "ChatDev",
       "fullName": "OpenBMB/ChatDev",
       "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
       "url": "https://github.com/OpenBMB/ChatDev",
-      "stars": 34649,
-      "forks": 4336,
+      "stars": 34676,
+      "forks": 4340,
       "openIssues": 105,
-      "watchers": 34649,
+      "watchers": 34676,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -928,21 +928,21 @@
         "coding",
         "multi-agent"
       ],
-      "updatedAt": "2026-11-04T08:02:31Z",
+      "updatedAt": "2026-11-05T08:33:07Z",
       "pushedAt": "2026-10-30T12:36:43Z",
       "archived": false,
       "homepage": "https://arxiv.org/abs/2307.07924",
-      "lastFetchedAt": "2026-11-04T08:13:22.908Z"
+      "lastFetchedAt": "2026-11-05T08:39:30.144Z"
     },
     {
       "name": "orca",
       "fullName": "stablyai/orca",
-      "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "description": "Orca is the place for working with a fleet of coding agents (e.g. Claude Code, Codex). Run any agent with your own subscription. Available on desktop, mobile and remote runtime.",
       "url": "https://github.com/stablyai/orca",
-      "stars": 114848,
-      "forks": 7246,
-      "openIssues": 8094,
-      "watchers": 114848,
+      "stars": 115919,
+      "forks": 7320,
+      "openIssues": 8241,
+      "watchers": 115919,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -997,23 +997,23 @@
         "openclaw",
         "runtime"
       ],
-      "updatedAt": "2026-11-04T08:13:15Z",
-      "pushedAt": "2026-11-04T08:10:16Z",
+      "updatedAt": "2026-11-05T08:37:33Z",
+      "pushedAt": "2026-11-05T08:39:07Z",
       "archived": false,
       "homepage": "https://orca.dev",
-      "lastFetchedAt": "2026-11-04T08:13:23.906Z"
+      "lastFetchedAt": "2026-11-05T08:39:30.969Z"
     },
     {
       "name": "Paradev",
       "fullName": "ParadevAI/Paradev",
-      "description": "Paradev (formerly Superset) is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.",
+      "description": "Paradev is an open-source Codex App and Conductor alternative. Orchestrate an army coding agents in parallel with your own subscriptions.",
       "url": "https://github.com/ParadevAI/Paradev",
-      "stars": 15888,
-      "forks": 1417,
+      "stars": 15950,
+      "forks": 1425,
       "openIssues": 1162,
-      "watchers": 15888,
+      "watchers": 15950,
       "language": "TypeScript",
-      "license": "NOASSERTION",
+      "license": "MIT",
       "manualTags": [
         "orchestrator",
         "coding",
@@ -1033,13 +1033,13 @@
         "coding-agents",
         "developer-tools",
         "ade",
-        "devtools",
         "ide",
         "yc-backed",
-        "agent",
         "agent-orchestration",
         "ai-coding",
-        "macos"
+        "macos",
+        "agent",
+        "devtools"
       ],
       "topics": [
         "orchestrator",
@@ -1058,29 +1058,29 @@
         "coding-agents",
         "developer-tools",
         "ade",
-        "devtools",
         "ide",
         "yc-backed",
-        "agent",
         "agent-orchestration",
         "ai-coding",
-        "macos"
+        "macos",
+        "agent",
+        "devtools"
       ],
-      "updatedAt": "2026-11-04T08:08:06Z",
-      "pushedAt": "2026-11-04T08:08:00Z",
+      "updatedAt": "2026-11-05T08:38:30Z",
+      "pushedAt": "2026-11-05T07:39:07Z",
       "archived": false,
       "homepage": "https://paradev.com",
-      "lastFetchedAt": "2026-11-04T08:13:25.244Z"
+      "lastFetchedAt": "2026-11-05T08:39:32.253Z"
     },
     {
       "name": "oh-my-claudecode",
       "fullName": "Yeachan-Heo/oh-my-claudecode",
       "description": "Teams-first Multi-agent orchestration for Claude Code",
       "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
-      "stars": 40553,
-      "forks": 3631,
-      "openIssues": 30,
-      "watchers": 40553,
+      "stars": 40597,
+      "forks": 3634,
+      "openIssues": 34,
+      "watchers": 40597,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1115,21 +1115,21 @@
         "multi-agent-systems",
         "parallel-execution"
       ],
-      "updatedAt": "2026-11-04T07:22:53Z",
+      "updatedAt": "2026-11-05T08:33:44Z",
       "pushedAt": "2026-11-03T08:27:46Z",
       "archived": false,
       "homepage": "https://oh-my-claudecode.dev",
-      "lastFetchedAt": "2026-11-04T08:13:26.084Z"
+      "lastFetchedAt": "2026-11-05T08:39:33.090Z"
     },
     {
       "name": "Archon",
       "fullName": "coleam00/Archon",
       "description": "The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
       "url": "https://github.com/coleam00/Archon",
-      "stars": 23823,
-      "forks": 3522,
-      "openIssues": 177,
-      "watchers": 23823,
+      "stars": 23829,
+      "forks": 3523,
+      "openIssues": 161,
+      "watchers": 23829,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1164,21 +1164,21 @@
         "workflow-engine",
         "yaml"
       ],
-      "updatedAt": "2026-11-04T03:56:27Z",
-      "pushedAt": "2026-11-03T18:50:26Z",
+      "updatedAt": "2026-11-05T07:45:37Z",
+      "pushedAt": "2026-11-04T16:53:59Z",
       "archived": false,
       "homepage": "https://archon.diy",
-      "lastFetchedAt": "2026-11-04T08:13:26.841Z"
+      "lastFetchedAt": "2026-11-05T08:39:33.922Z"
     },
     {
       "name": "openclaw",
       "fullName": "openclaw/openclaw",
       "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
       "url": "https://github.com/openclaw/openclaw",
-      "stars": 393870,
-      "forks": 82778,
-      "openIssues": 7807,
-      "watchers": 393870,
+      "stars": 393935,
+      "forks": 82784,
+      "openIssues": 7684,
+      "watchers": 393935,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1207,21 +1207,21 @@
         "molty",
         "openclaw"
       ],
-      "updatedAt": "2026-11-04T08:12:12Z",
-      "pushedAt": "2026-11-04T08:10:36Z",
+      "updatedAt": "2026-11-05T08:32:44Z",
+      "pushedAt": "2026-11-05T08:38:17Z",
       "archived": false,
       "homepage": "https://openclaw.ai",
-      "lastFetchedAt": "2026-11-04T08:13:27.655Z"
+      "lastFetchedAt": "2026-11-05T08:39:34.714Z"
     },
     {
       "name": "hermes-agent",
       "fullName": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "url": "https://github.com/NousResearch/hermes-agent",
-      "stars": 260338,
-      "forks": 57382,
-      "openIssues": 52706,
-      "watchers": 260338,
+      "stars": 260694,
+      "forks": 57507,
+      "openIssues": 52968,
+      "watchers": 260694,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1262,21 +1262,21 @@
         "nous-research",
         "openai"
       ],
-      "updatedAt": "2026-11-04T08:13:19Z",
-      "pushedAt": "2026-11-04T06:44:08Z",
+      "updatedAt": "2026-11-05T08:36:45Z",
+      "pushedAt": "2026-11-05T08:17:01Z",
       "archived": false,
       "homepage": "https://hermes-agent.nousresearch.com",
-      "lastFetchedAt": "2026-11-04T08:13:28.429Z"
+      "lastFetchedAt": "2026-11-05T08:39:35.598Z"
     },
     {
       "name": "nanoclaw",
       "fullName": "nanocoai/nanoclaw",
       "description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
       "url": "https://github.com/nanocoai/nanoclaw",
-      "stars": 31077,
-      "forks": 12676,
-      "openIssues": 1034,
-      "watchers": 31077,
+      "stars": 31086,
+      "forks": 12673,
+      "openIssues": 1038,
+      "watchers": 31086,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1301,21 +1301,21 @@
         "claude-skills",
         "openclaw"
       ],
-      "updatedAt": "2026-11-04T02:55:52Z",
-      "pushedAt": "2026-11-04T06:30:28Z",
+      "updatedAt": "2026-11-05T07:37:05Z",
+      "pushedAt": "2026-11-05T06:30:32Z",
       "archived": false,
       "homepage": "https://nanoclaw.dev",
-      "lastFetchedAt": "2026-11-04T08:13:29.349Z"
+      "lastFetchedAt": "2026-11-05T08:39:36.480Z"
     },
     {
       "name": "CowAgent",
       "fullName": "zhayujie/CowAgent",
       "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
       "url": "https://github.com/zhayujie/CowAgent",
-      "stars": 47778,
-      "forks": 10413,
-      "openIssues": 55,
-      "watchers": 47778,
+      "stars": 47801,
+      "forks": 10416,
+      "openIssues": 41,
+      "watchers": 47801,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1361,21 +1361,21 @@
         "multi-agent",
         "personal-agent"
       ],
-      "updatedAt": "2026-11-04T07:40:22Z",
-      "pushedAt": "2026-11-03T12:35:25Z",
+      "updatedAt": "2026-11-05T08:38:42Z",
+      "pushedAt": "2026-11-04T10:55:36Z",
       "archived": false,
       "homepage": "https://cowagent.ai",
-      "lastFetchedAt": "2026-11-04T08:13:30.119Z"
+      "lastFetchedAt": "2026-11-05T08:39:37.212Z"
     },
     {
       "name": "QwenPaw",
       "fullName": "agentscope-ai/QwenPaw",
       "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
       "url": "https://github.com/agentscope-ai/QwenPaw",
-      "stars": 37326,
-      "forks": 3258,
-      "openIssues": 1128,
-      "watchers": 37326,
+      "stars": 37378,
+      "forks": 3260,
+      "openIssues": 1124,
+      "watchers": 37378,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1419,21 +1419,21 @@
         "webui",
         "mcp"
       ],
-      "updatedAt": "2026-11-04T08:07:04Z",
-      "pushedAt": "2026-11-04T08:06:58Z",
+      "updatedAt": "2026-11-05T08:38:20Z",
+      "pushedAt": "2026-11-05T06:14:09Z",
       "archived": false,
       "homepage": "http://qwenpaw.agentscope.io/",
-      "lastFetchedAt": "2026-11-04T08:13:30.882Z"
+      "lastFetchedAt": "2026-11-05T08:39:38.012Z"
     },
     {
       "name": "leon",
       "fullName": "leon-ai/leon",
       "description": "🧠 Leon is your open-source personal assistant.",
       "url": "https://github.com/leon-ai/leon",
-      "stars": 17638,
-      "forks": 1479,
+      "stars": 17644,
+      "forks": 1478,
       "openIssues": 115,
-      "watchers": 17638,
+      "watchers": 17644,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1485,21 +1485,21 @@
         "ai-assistant",
         "ai-agent"
       ],
-      "updatedAt": "2026-11-04T08:07:48Z",
-      "pushedAt": "2026-11-04T01:51:55Z",
+      "updatedAt": "2026-11-05T07:28:46Z",
+      "pushedAt": "2026-11-04T15:58:43Z",
       "archived": false,
       "homepage": "https://getleon.ai",
-      "lastFetchedAt": "2026-11-04T08:13:31.737Z"
+      "lastFetchedAt": "2026-11-05T08:39:38.929Z"
     },
     {
       "name": "openhuman",
       "fullName": "tinyhumansai/openhuman",
       "description": "The fastest, cheapest, most efficient open-source agent harness. Run more than 500 agents on a $10 VPS.",
       "url": "https://github.com/tinyhumansai/openhuman",
-      "stars": 42530,
+      "stars": 42554,
       "forks": 4209,
-      "openIssues": 320,
-      "watchers": 42530,
+      "openIssues": 317,
+      "watchers": 42554,
       "language": "Rust",
       "license": "GPL-3.0",
       "manualTags": [
@@ -1537,21 +1537,21 @@
         "second-brain",
         "tauri"
       ],
-      "updatedAt": "2026-11-04T07:53:01Z",
-      "pushedAt": "2026-11-04T07:52:54Z",
+      "updatedAt": "2026-11-05T08:18:44Z",
+      "pushedAt": "2026-11-05T02:54:31Z",
       "archived": false,
       "homepage": "https://tinyhumans.ai/openhuman",
-      "lastFetchedAt": "2026-11-04T08:13:32.544Z"
+      "lastFetchedAt": "2026-11-05T08:39:39.768Z"
     },
     {
       "name": "CompanyOS",
       "fullName": "kortix-ai/CompanyOS",
       "description": "Kortix CompanyOS – the open-source operating system for your company. Multiplayer AI agents, your company as code, sovereign on your infrastructure or ours.",
       "url": "https://github.com/kortix-ai/CompanyOS",
-      "stars": 20369,
-      "forks": 3443,
-      "openIssues": 59,
-      "watchers": 20369,
+      "stars": 20385,
+      "forks": 3442,
+      "openIssues": 57,
+      "watchers": 20385,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1582,21 +1582,21 @@
         "company-os",
         "companyos"
       ],
-      "updatedAt": "2026-11-04T07:44:19Z",
-      "pushedAt": "2026-11-04T08:06:01Z",
+      "updatedAt": "2026-11-05T07:35:15Z",
+      "pushedAt": "2026-11-05T06:11:32Z",
       "archived": false,
       "homepage": "https://kortix.com",
-      "lastFetchedAt": "2026-11-04T08:13:33.871Z"
+      "lastFetchedAt": "2026-11-05T08:39:41.205Z"
     },
     {
       "name": "OpenManus",
       "fullName": "FoundationAgents/OpenManus",
       "description": "No fortress, purely open ground.  OpenManus is Coming.",
       "url": "https://github.com/FoundationAgents/OpenManus",
-      "stars": 58868,
-      "forks": 10219,
-      "openIssues": 445,
-      "watchers": 58868,
+      "stars": 58875,
+      "forks": 10224,
+      "openIssues": 446,
+      "watchers": 58875,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1610,21 +1610,21 @@
         "autonomous",
         "popular"
       ],
-      "updatedAt": "2026-11-04T07:39:36Z",
+      "updatedAt": "2026-11-05T08:34:32Z",
       "pushedAt": "2026-11-02T08:38:21Z",
       "archived": false,
       "homepage": "https://openmanus.github.io/",
-      "lastFetchedAt": "2026-11-04T08:13:34.661Z"
+      "lastFetchedAt": "2026-11-05T08:39:42.022Z"
     },
     {
       "name": "agenticSeek",
       "fullName": "Fosowl/agenticSeek",
       "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity.",
       "url": "https://github.com/Fosowl/agenticSeek",
-      "stars": 27614,
-      "forks": 3100,
+      "stars": 27625,
+      "forks": 3103,
       "openIssues": 30,
-      "watchers": 27614,
+      "watchers": 27625,
       "language": "Python",
       "license": "GPL-3.0",
       "manualTags": [
@@ -1655,21 +1655,21 @@
         "voice-assistant",
         "autonomous-agents"
       ],
-      "updatedAt": "2026-11-04T06:09:25Z",
+      "updatedAt": "2026-11-05T08:30:13Z",
       "pushedAt": "2026-10-22T16:22:32Z",
       "archived": false,
       "homepage": "http://agenticseek.tech",
-      "lastFetchedAt": "2026-11-04T08:13:35.671Z"
+      "lastFetchedAt": "2026-11-05T08:39:42.799Z"
     },
     {
       "name": "agent-zero",
       "fullName": "agent0ai/agent-zero",
       "description": "Agent Zero AI framework",
       "url": "https://github.com/agent0ai/agent-zero",
-      "stars": 19707,
-      "forks": 3859,
-      "openIssues": 145,
-      "watchers": 19707,
+      "stars": 19730,
+      "forks": 3864,
+      "openIssues": 146,
+      "watchers": 19730,
       "language": "Python",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1695,21 +1695,21 @@
         "linux",
         "zero"
       ],
-      "updatedAt": "2026-11-04T08:10:21Z",
-      "pushedAt": "2026-11-01T23:18:27Z",
+      "updatedAt": "2026-11-05T06:02:20Z",
+      "pushedAt": "2026-11-05T08:29:37Z",
       "archived": false,
       "homepage": "https://agent-zero.ai",
-      "lastFetchedAt": "2026-11-04T08:13:36.520Z"
+      "lastFetchedAt": "2026-11-05T08:39:43.614Z"
     },
     {
       "name": "browser-use",
       "fullName": "browser-use/browser-use",
       "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
       "url": "https://github.com/browser-use/browser-use",
-      "stars": 119980,
-      "forks": 13375,
-      "openIssues": 627,
-      "watchers": 119980,
+      "stars": 120079,
+      "forks": 13395,
+      "openIssues": 635,
+      "watchers": 120079,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1757,11 +1757,11 @@
         "web-automation",
         "web-scraping"
       ],
-      "updatedAt": "2026-11-04T07:57:55Z",
-      "pushedAt": "2026-11-02T01:31:56Z",
+      "updatedAt": "2026-11-05T08:33:40Z",
+      "pushedAt": "2026-11-05T08:33:41Z",
       "archived": false,
       "homepage": "https://browser-use.com",
-      "lastFetchedAt": "2026-11-04T08:13:37.386Z"
+      "lastFetchedAt": "2026-11-05T08:39:44.447Z"
     },
     {
       "name": "web-ui",
@@ -1792,21 +1792,21 @@
         "browser-use-box",
         "cloud-browser"
       ],
-      "updatedAt": "2026-11-03T06:36:30Z",
+      "updatedAt": "2026-11-05T04:47:30Z",
       "pushedAt": "2026-09-25T03:56:21Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-04T08:13:38.239Z"
+      "lastFetchedAt": "2026-11-05T08:39:45.198Z"
     },
     {
       "name": "skyvern",
       "fullName": "Skyvern-AI/skyvern",
       "description": "Automate browser based workflows with AI",
       "url": "https://github.com/Skyvern-AI/skyvern",
-      "stars": 23337,
-      "forks": 2236,
-      "openIssues": 291,
-      "watchers": 23337,
+      "stars": 23340,
+      "forks": 2235,
+      "openIssues": 292,
+      "watchers": 23340,
       "language": "Python",
       "license": "AGPL-3.0",
       "manualTags": [
@@ -1850,21 +1850,21 @@
         "puppeteer",
         "selenium"
       ],
-      "updatedAt": "2026-11-04T06:07:08Z",
-      "pushedAt": "2026-11-04T03:53:50Z",
+      "updatedAt": "2026-11-05T01:21:54Z",
+      "pushedAt": "2026-11-05T03:57:40Z",
       "archived": false,
       "homepage": "https://www.skyvern.com",
-      "lastFetchedAt": "2026-11-04T08:13:39.055Z"
+      "lastFetchedAt": "2026-11-05T08:39:46.124Z"
     },
     {
       "name": "stagehand",
       "fullName": "browserbase/stagehand",
       "description": "The SDK to extract data and interact with any site on the web. Get started with Claude Code, Codex, Eve, Mastra, and more.",
       "url": "https://github.com/browserbase/stagehand",
-      "stars": 25936,
-      "forks": 1809,
-      "openIssues": 412,
-      "watchers": 25936,
+      "stars": 25952,
+      "forks": 1811,
+      "openIssues": 416,
+      "watchers": 25952,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1905,21 +1905,21 @@
         "web-automation",
         "web-scraping"
       ],
-      "updatedAt": "2026-11-04T05:47:54Z",
-      "pushedAt": "2026-11-04T07:57:04Z",
+      "updatedAt": "2026-11-05T08:31:06Z",
+      "pushedAt": "2026-11-05T01:39:09Z",
       "archived": false,
       "homepage": "https://stagehand.dev",
-      "lastFetchedAt": "2026-11-04T08:13:39.942Z"
+      "lastFetchedAt": "2026-11-05T08:39:46.978Z"
     },
     {
       "name": "cua",
       "fullName": "trycua/cua",
       "description": "Scale computer-use 2.0 with open-source drivers, cross-OS sandboxes, and benchmarks for training, evaluation, and data generation.",
       "url": "https://github.com/trycua/cua",
-      "stars": 31701,
-      "forks": 2349,
-      "openIssues": 1410,
-      "watchers": 31701,
+      "stars": 31776,
+      "forks": 2360,
+      "openIssues": 1392,
+      "watchers": 31776,
       "language": "Rust",
       "license": "MIT",
       "manualTags": [
@@ -1967,21 +1967,21 @@
         "computer-use-agent",
         "desktop-automation"
       ],
-      "updatedAt": "2026-11-04T08:12:18Z",
-      "pushedAt": "2026-11-04T08:12:06Z",
+      "updatedAt": "2026-11-05T08:33:17Z",
+      "pushedAt": "2026-11-05T08:19:11Z",
       "archived": false,
       "homepage": "https://cua.ai",
-      "lastFetchedAt": "2026-11-04T08:13:40.727Z"
+      "lastFetchedAt": "2026-11-05T08:39:47.760Z"
     },
     {
       "name": "Agent-S",
       "fullName": "simular-ai/Agent-S",
       "description": "Agent S: the state-of-the-art open source computer use agents",
       "url": "https://github.com/simular-ai/Agent-S",
-      "stars": 12867,
-      "forks": 1503,
-      "openIssues": 75,
-      "watchers": 12867,
+      "stars": 12879,
+      "forks": 1502,
+      "openIssues": 77,
+      "watchers": 12879,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2019,21 +2019,21 @@
         "computer-use-agent",
         "cua"
       ],
-      "updatedAt": "2026-11-04T04:53:13Z",
+      "updatedAt": "2026-11-05T07:10:48Z",
       "pushedAt": "2026-10-30T20:56:06Z",
       "archived": false,
       "homepage": "https://www.simular.ai",
-      "lastFetchedAt": "2026-11-04T08:13:41.499Z"
+      "lastFetchedAt": "2026-11-05T08:39:48.563Z"
     },
     {
       "name": "UI-TARS-desktop",
       "fullName": "bytedance/UI-TARS-desktop",
       "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
       "url": "https://github.com/bytedance/UI-TARS-desktop",
-      "stars": 39541,
-      "forks": 4021,
+      "stars": 39550,
+      "forks": 4023,
       "openIssues": 507,
-      "watchers": 39541,
+      "watchers": 39550,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2072,21 +2072,21 @@
         "agent-tars",
         "cowork"
       ],
-      "updatedAt": "2026-11-04T07:50:24Z",
+      "updatedAt": "2026-11-05T06:59:34Z",
       "pushedAt": "2026-10-09T01:29:53Z",
       "archived": false,
       "homepage": "https://agent-tars.com",
-      "lastFetchedAt": "2026-11-04T08:13:42.323Z"
+      "lastFetchedAt": "2026-11-05T08:39:49.361Z"
     },
     {
       "name": "page-agent",
       "fullName": "alibaba/page-agent",
       "description": "JavaScript in-page GUI agent. Control web interfaces with natural language.",
       "url": "https://github.com/alibaba/page-agent",
-      "stars": 29626,
-      "forks": 2643,
+      "stars": 29633,
+      "forks": 2641,
       "openIssues": 120,
-      "watchers": 29626,
+      "watchers": 29633,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -2117,21 +2117,21 @@
         "browser-automation",
         "mcp"
       ],
-      "updatedAt": "2026-11-04T06:57:01Z",
+      "updatedAt": "2026-11-05T06:56:13Z",
       "pushedAt": "2026-11-04T05:41:21Z",
       "archived": false,
       "homepage": "https://alibaba.github.io/page-agent/",
-      "lastFetchedAt": "2026-11-04T08:13:43.134Z"
+      "lastFetchedAt": "2026-11-05T08:39:50.154Z"
     },
     {
       "name": "midscene",
       "fullName": "web-infra-dev/midscene",
       "description": "See interfaces like a human. E2E testing in natural language.",
       "url": "https://github.com/web-infra-dev/midscene",
-      "stars": 15493,
-      "forks": 1216,
-      "openIssues": 106,
-      "watchers": 15493,
+      "stars": 15504,
+      "forks": 1215,
+      "openIssues": 105,
+      "watchers": 15504,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -2159,21 +2159,21 @@
         "e2e-testing",
         "gui-agent"
       ],
-      "updatedAt": "2026-11-04T07:59:18Z",
-      "pushedAt": "2026-11-04T07:27:26Z",
+      "updatedAt": "2026-11-05T08:32:33Z",
+      "pushedAt": "2026-11-05T08:32:28Z",
       "archived": false,
       "homepage": "https://midscenejs.com",
-      "lastFetchedAt": "2026-11-04T08:13:44.052Z"
+      "lastFetchedAt": "2026-11-05T08:39:51.104Z"
     },
     {
       "name": "gpt-researcher",
       "fullName": "assafelovic/gpt-researcher",
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "url": "https://github.com/assafelovic/gpt-researcher",
-      "stars": 30472,
-      "forks": 4166,
-      "openIssues": 74,
-      "watchers": 30472,
+      "stars": 30494,
+      "forks": 4172,
+      "openIssues": 77,
+      "watchers": 30494,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2209,21 +2209,21 @@
         "mcp",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-04T07:39:21Z",
+      "updatedAt": "2026-11-05T08:00:22Z",
       "pushedAt": "2026-10-10T22:03:53Z",
       "archived": false,
       "homepage": "https://gptr.dev",
-      "lastFetchedAt": "2026-11-04T08:13:44.826Z"
+      "lastFetchedAt": "2026-11-05T08:39:51.926Z"
     },
     {
       "name": "MiroThinker",
       "fullName": "MiroMindAI/MiroThinker",
       "description": "MiroThinker is a deep research agent optimized for complex research and prediction tasks. Our latest models, MiroThinker-1.7, achieves 74.0 and 75.3 on the BrowseComp and BrowseComp Zh, respectively.",
       "url": "https://github.com/MiroMindAI/MiroThinker",
-      "stars": 8434,
+      "stars": 8438,
       "forks": 648,
       "openIssues": 5,
-      "watchers": 8434,
+      "watchers": 8438,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2255,21 +2255,21 @@
         "agent-framework",
         "search-agent"
       ],
-      "updatedAt": "2026-11-04T03:18:21Z",
+      "updatedAt": "2026-11-05T06:02:41Z",
       "pushedAt": "2026-07-06T14:50:39Z",
       "archived": false,
       "homepage": "https://miromind.ai/",
-      "lastFetchedAt": "2026-11-04T08:13:45.633Z"
+      "lastFetchedAt": "2026-11-05T08:39:52.729Z"
     },
     {
       "name": "TradingAgents",
       "fullName": "TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "url": "https://github.com/TauricResearch/TradingAgents",
-      "stars": 120469,
-      "forks": 23028,
-      "openIssues": 118,
-      "watchers": 120469,
+      "stars": 120713,
+      "forks": 23071,
+      "openIssues": 123,
+      "watchers": 120713,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2291,21 +2291,21 @@
         "multiagent",
         "trading"
       ],
-      "updatedAt": "2026-11-04T08:13:12Z",
-      "pushedAt": "2026-10-27T08:43:04Z",
+      "updatedAt": "2026-11-05T08:37:01Z",
+      "pushedAt": "2026-11-04T10:13:58Z",
       "archived": false,
-      "homepage": "https://arxiv.org/pdf/2412.20138",
-      "lastFetchedAt": "2026-11-04T08:13:46.449Z"
+      "homepage": "https://tauric.ai",
+      "lastFetchedAt": "2026-11-05T08:39:53.619Z"
     },
     {
       "name": "Vibe-Trading",
       "fullName": "HKUDS/Vibe-Trading",
       "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
       "url": "https://github.com/HKUDS/Vibe-Trading",
-      "stars": 37595,
-      "forks": 6088,
-      "openIssues": 36,
-      "watchers": 37595,
+      "stars": 37679,
+      "forks": 6102,
+      "openIssues": 6,
+      "watchers": 37679,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -2336,21 +2336,21 @@
         "mcp",
         "python"
       ],
-      "updatedAt": "2026-11-04T08:07:27Z",
-      "pushedAt": "2026-11-02T18:53:08Z",
+      "updatedAt": "2026-11-05T08:34:28Z",
+      "pushedAt": "2026-11-05T08:14:15Z",
       "archived": false,
       "homepage": "https://vibetrading.wiki/",
-      "lastFetchedAt": "2026-11-04T08:13:47.243Z"
+      "lastFetchedAt": "2026-11-05T08:39:54.561Z"
     },
     {
       "name": "strix",
       "fullName": "usestrix/strix",
       "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "url": "https://github.com/usestrix/strix",
-      "stars": 73650,
-      "forks": 8295,
-      "openIssues": 541,
-      "watchers": 73650,
+      "stars": 73831,
+      "forks": 8324,
+      "openIssues": 536,
+      "watchers": 73831,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -2402,21 +2402,21 @@
         "ai-hacking",
         "hacking"
       ],
-      "updatedAt": "2026-11-04T08:11:47Z",
-      "pushedAt": "2026-11-04T04:21:17Z",
+      "updatedAt": "2026-11-05T08:39:28Z",
+      "pushedAt": "2026-11-05T00:46:17Z",
       "archived": false,
       "homepage": "https://strix.ai",
-      "lastFetchedAt": "2026-11-04T08:13:48.018Z"
+      "lastFetchedAt": "2026-11-05T08:39:55.398Z"
     },
     {
       "name": "pentagi",
       "fullName": "vxcontrol/pentagi",
       "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
       "url": "https://github.com/vxcontrol/pentagi",
-      "stars": 33237,
-      "forks": 5185,
-      "openIssues": 66,
-      "watchers": 33237,
+      "stars": 33361,
+      "forks": 5209,
+      "openIssues": 67,
+      "watchers": 33361,
       "language": "Go",
       "license": "MIT",
       "manualTags": [
@@ -2467,11 +2467,11 @@
         "penetration-testing",
         "self-hosted"
       ],
-      "updatedAt": "2026-11-04T08:07:16Z",
+      "updatedAt": "2026-11-05T08:22:43Z",
       "pushedAt": "2026-10-22T23:26:13Z",
       "archived": false,
       "homepage": "https://pentagi.com",
-      "lastFetchedAt": "2026-11-04T08:13:48.974Z"
+      "lastFetchedAt": "2026-11-05T08:39:56.204Z"
     }
   ],
   "slugRedirects": [
