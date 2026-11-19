@@ -1,18 +1,18 @@
 {
-  "fetchedAt": "2026-11-18T09:23:18.237Z",
+  "fetchedAt": "2026-11-19T09:37:43.699Z",
   "count": 37,
   "partial": true,
-  "partialReason": "Rate limited at 2026-11-18T09:23:17.986Z — remaining repos deferred to next run",
+  "partialReason": "Rate limited at 2026-11-19T09:37:43.448Z — remaining repos deferred to next run",
   "items": [
     {
       "name": "deepagents",
       "fullName": "langchain-ai/deepagents",
       "description": "The batteries-included agent harness.",
       "url": "https://github.com/langchain-ai/deepagents",
-      "stars": 31388,
-      "forks": 4431,
-      "openIssues": 250,
-      "watchers": 31388,
+      "stars": 31433,
+      "forks": 4437,
+      "openIssues": 247,
+      "watchers": 31433,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -42,21 +42,21 @@
         "harness",
         "harness-engineering"
       ],
-      "updatedAt": "2026-11-18T09:04:11Z",
-      "pushedAt": "2026-11-18T09:15:41Z",
+      "updatedAt": "2026-11-19T09:23:08Z",
+      "pushedAt": "2026-11-19T09:09:55Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/deepagents",
-      "lastFetchedAt": "2026-11-18T09:23:07.024Z"
+      "lastFetchedAt": "2026-11-19T09:37:41.041Z"
     },
     {
       "name": "deepagentsjs",
       "fullName": "langchain-ai/deepagentsjs",
       "description": "The batteries included agent harness.",
       "url": "https://github.com/langchain-ai/deepagentsjs",
-      "stars": 1647,
-      "forks": 306,
-      "openIssues": 133,
-      "watchers": 1647,
+      "stars": 1649,
+      "forks": 307,
+      "openIssues": 136,
+      "watchers": 1649,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -79,21 +79,21 @@
         "langchain",
         "langgraph"
       ],
-      "updatedAt": "2026-11-17T17:31:38Z",
-      "pushedAt": "2026-11-18T04:41:22Z",
+      "updatedAt": "2026-11-19T00:45:27Z",
+      "pushedAt": "2026-11-19T01:28:39Z",
       "archived": false,
       "homepage": "https://docs.langchain.com/oss/javascript/deepagents/overview",
-      "lastFetchedAt": "2026-11-18T09:23:07.856Z"
+      "lastFetchedAt": "2026-11-19T09:37:41.852Z"
     },
     {
       "name": "harness-sdk",
       "fullName": "strands-agents/harness-sdk",
       "description": "Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python & TypeScript - any model, any cloud.",
       "url": "https://github.com/strands-agents/harness-sdk",
-      "stars": 9240,
-      "forks": 1531,
-      "openIssues": 1280,
-      "watchers": 9240,
+      "stars": 9253,
+      "forks": 1538,
+      "openIssues": 1284,
+      "watchers": 9253,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -146,21 +146,21 @@
         "typescript",
         "harness"
       ],
-      "updatedAt": "2026-11-18T05:53:08Z",
-      "pushedAt": "2026-11-18T08:02:05Z",
+      "updatedAt": "2026-11-19T08:46:09Z",
+      "pushedAt": "2026-11-19T09:11:53Z",
       "archived": false,
       "homepage": "http://strandsagents.com/",
-      "lastFetchedAt": "2026-11-18T09:23:08.775Z"
+      "lastFetchedAt": "2026-11-19T09:37:42.664Z"
     },
     {
       "name": "trueforge",
       "fullName": "truefoundry/trueforge",
       "description": "The open-source agent harness - the runtime layer that turns an LLM into a working agent.",
       "url": "https://github.com/truefoundry/trueforge",
-      "stars": 6502,
-      "forks": 565,
-      "openIssues": 120,
-      "watchers": 6502,
+      "stars": 6511,
+      "forks": 568,
+      "openIssues": 116,
+      "watchers": 6511,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -169,31 +169,18 @@
         "sandbox",
         "mcp"
       ],
-      "githubTopics": [
-        "agent",
-        "agentic-ai",
-        "agents",
-        "harness",
-        "harness-engineering",
-        "engineering-team"
-      ],
+      "githubTopics": [],
       "topics": [
         "runtime",
         "approvals",
         "sandbox",
-        "mcp",
-        "agent",
-        "agentic-ai",
-        "agents",
-        "harness",
-        "harness-engineering",
-        "engineering-team"
+        "mcp"
       ],
-      "updatedAt": "2026-11-18T09:02:42Z",
-      "pushedAt": "2026-11-18T09:17:23Z",
+      "updatedAt": "2026-11-19T09:14:15Z",
+      "pushedAt": "2026-11-19T09:16:06Z",
       "archived": false,
       "homepage": "https://trueforge.dev",
-      "lastFetchedAt": "2026-11-18T09:23:09.628Z"
+      "lastFetchedAt": "2026-11-19T09:37:43.448Z"
     },
     {
       "name": "deepseek-harness",
@@ -1715,113 +1702,168 @@
   ],
   "fetchErrors": [
     {
+      "slug": "deepseek-ai/deepseek-harness",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "bytedance/deer-flow",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "aden-hive/hive",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "ruvnet/ruflo",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "micro/go-micro",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "exoharness/exo",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "thClaws/thClaws",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "HKUDS/OpenHarness",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "tinyhumansai/openhuman",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "zhayujie/CowAgent",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
+      "slug": "xai-org/grok-build",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
+      "status": "skipped-rate-limit"
+    },
+    {
       "slug": "zai-org/ZCode",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "HKUDS/DeepCode",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "mindfold-ai/Trellis",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "code-yeongyu/lazycodex",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Waishnav/devspace",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "maxritter/pilot-shell",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "first-fluke/oh-my-agent",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "teaql/teaql-agent-kit",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "QoderAI/better-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Prism-Shadow/penguin-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "loopx-project/loopx",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "FailproofAI/failproofai",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Untrivial-ai/agent-orchestrator",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "chaitanyagiri/munder-difflin",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "onecli/onecli",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "Infisical/agent-vault",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "yc-software/qm",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "visa/visa-vulnerability-agentic-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "stanford-iris-lab/meta-harness",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "NVlabs/SoL-Pi",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "shareAI-lab/learn-claude-code",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     },
     {
       "slug": "ai-boost/awesome-harness-engineering",
-      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-18T09:23:17.986Z)",
+      "reason": "Skipped — rate limited before this repo was reached (limit hit at 2026-11-19T09:37:43.448Z)",
       "status": "skipped-rate-limit"
     }
   ]
