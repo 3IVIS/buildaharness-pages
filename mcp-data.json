@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T10:14:17.691Z",
+  "fetchedAt": "2026-11-28T09:32:44.055Z",
   "count": 51,
   "items": [
     {
@@ -7,10 +7,10 @@
       "fullName": "modelcontextprotocol/modelcontextprotocol",
       "description": "Specification and documentation for the Model Context Protocol",
       "url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
-      "stars": 9778,
-      "forks": 1928,
-      "openIssues": 127,
-      "watchers": 9778,
+      "stars": 9785,
+      "forks": 1930,
+      "openIssues": 100,
+      "watchers": 9785,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -31,21 +31,21 @@
         "mcp",
         "docs"
       ],
-      "updatedAt": "2026-11-27T06:56:27Z",
-      "pushedAt": "2026-11-26T20:04:05Z",
+      "updatedAt": "2026-11-28T08:51:48Z",
+      "pushedAt": "2026-11-27T21:20:51Z",
       "archived": false,
       "homepage": "https://modelcontextprotocol.io",
-      "lastFetchedAt": "2026-11-27T10:13:38.064Z"
+      "lastFetchedAt": "2026-11-28T09:32:06.787Z"
     },
     {
       "name": "servers",
       "fullName": "modelcontextprotocol/servers",
       "description": "Model Context Protocol Reference Servers",
       "url": "https://github.com/modelcontextprotocol/servers",
-      "stars": 92295,
-      "forks": 11996,
-      "openIssues": 27,
-      "watchers": 92295,
+      "stars": 92309,
+      "forks": 11999,
+      "openIssues": 32,
+      "watchers": 92309,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -59,21 +59,21 @@
         "official",
         "popular"
       ],
-      "updatedAt": "2026-11-27T10:07:12Z",
-      "pushedAt": "2026-11-27T09:51:34Z",
+      "updatedAt": "2026-11-28T08:40:28Z",
+      "pushedAt": "2026-11-27T10:34:05Z",
       "archived": false,
       "homepage": "https://modelcontextprotocol.io",
-      "lastFetchedAt": "2026-11-27T10:13:38.853Z"
+      "lastFetchedAt": "2026-11-28T09:32:07.478Z"
     },
     {
       "name": "inspector",
       "fullName": "modelcontextprotocol/inspector",
       "description": "Deterministic testing tools for MCP servers",
       "url": "https://github.com/modelcontextprotocol/inspector",
-      "stars": 11373,
-      "forks": 1590,
-      "openIssues": 19,
-      "watchers": 11373,
+      "stars": 11377,
+      "forks": 1591,
+      "openIssues": 31,
+      "watchers": 11377,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -98,21 +98,21 @@
         "tui",
         "web"
       ],
-      "updatedAt": "2026-11-27T09:01:14Z",
+      "updatedAt": "2026-11-27T20:54:00Z",
       "pushedAt": "2026-11-27T09:36:58Z",
       "archived": false,
       "homepage": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector",
-      "lastFetchedAt": "2026-11-27T10:13:39.588Z"
+      "lastFetchedAt": "2026-11-28T09:32:08.316Z"
     },
     {
       "name": "registry",
       "fullName": "modelcontextprotocol/registry",
       "description": "A community driven registry service for Model Context Protocol (MCP) servers.",
       "url": "https://github.com/modelcontextprotocol/registry",
-      "stars": 7501,
+      "stars": 7504,
       "forks": 1065,
-      "openIssues": 132,
-      "watchers": 7501,
+      "openIssues": 131,
+      "watchers": 7504,
       "language": "Go",
       "license": "NOASSERTION",
       "manualTags": [
@@ -129,21 +129,21 @@
         "mcp",
         "mcp-servers"
       ],
-      "updatedAt": "2026-11-27T01:48:53Z",
-      "pushedAt": "2026-11-27T00:58:32Z",
+      "updatedAt": "2026-11-28T08:40:25Z",
+      "pushedAt": "2026-11-27T23:02:30Z",
       "archived": false,
       "homepage": "https://github.com/modelcontextprotocol/registry/tree/main/docs",
-      "lastFetchedAt": "2026-11-27T10:13:40.294Z"
+      "lastFetchedAt": "2026-11-28T09:32:09.100Z"
     },
     {
       "name": "python-sdk",
       "fullName": "modelcontextprotocol/python-sdk",
       "description": "The official Python SDK for Model Context Protocol servers and clients",
       "url": "https://github.com/modelcontextprotocol/python-sdk",
-      "stars": 24991,
-      "forks": 4180,
-      "openIssues": 437,
-      "watchers": 24991,
+      "stars": 24996,
+      "forks": 4184,
+      "openIssues": 436,
+      "watchers": 24996,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -165,21 +165,21 @@
         "mcp-server",
         "mcp-client"
       ],
-      "updatedAt": "2026-11-27T08:18:12Z",
+      "updatedAt": "2026-11-28T04:35:20Z",
       "pushedAt": "2026-11-17T09:38:48Z",
       "archived": false,
       "homepage": "https://py.sdk.modelcontextprotocol.io/",
-      "lastFetchedAt": "2026-11-27T10:13:41.128Z"
+      "lastFetchedAt": "2026-11-28T09:32:09.786Z"
     },
     {
       "name": "typescript-sdk",
       "fullName": "modelcontextprotocol/typescript-sdk",
       "description": "The official TypeScript SDK for Model Context Protocol servers and clients",
       "url": "https://github.com/modelcontextprotocol/typescript-sdk",
-      "stars": 13830,
-      "forks": 2442,
-      "openIssues": 723,
-      "watchers": 13830,
+      "stars": 13834,
+      "forks": 2444,
+      "openIssues": 722,
+      "watchers": 13834,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -201,21 +201,21 @@
         "mcp-server",
         "mcp-client"
       ],
-      "updatedAt": "2026-11-27T09:46:15Z",
-      "pushedAt": "2026-11-27T00:07:32Z",
+      "updatedAt": "2026-11-28T03:39:16Z",
+      "pushedAt": "2026-11-27T11:15:16Z",
       "archived": false,
       "homepage": "https://ts.sdk.modelcontextprotocol.io/v2",
-      "lastFetchedAt": "2026-11-27T10:13:41.894Z"
+      "lastFetchedAt": "2026-11-28T09:32:10.485Z"
     },
     {
       "name": "java-sdk",
       "fullName": "modelcontextprotocol/java-sdk",
       "description": "The official Java SDK for Model Context Protocol servers and clients. Maintained in collaboration with Spring AI",
       "url": "https://github.com/modelcontextprotocol/java-sdk",
-      "stars": 3780,
-      "forks": 1104,
+      "stars": 3779,
+      "forks": 1100,
       "openIssues": 285,
-      "watchers": 3780,
+      "watchers": 3779,
       "language": "Java",
       "license": "MIT",
       "manualTags": [
@@ -237,21 +237,21 @@
         "mcp-server",
         "mcp-client"
       ],
-      "updatedAt": "2026-11-27T09:46:13Z",
+      "updatedAt": "2026-11-28T04:31:34Z",
       "pushedAt": "2026-11-26T16:23:20Z",
       "archived": false,
       "homepage": "https://java.sdk.modelcontextprotocol.io/latest/",
-      "lastFetchedAt": "2026-11-27T10:13:42.746Z"
+      "lastFetchedAt": "2026-11-28T09:32:11.241Z"
     },
     {
       "name": "csharp-sdk",
       "fullName": "modelcontextprotocol/csharp-sdk",
       "description": "The official C# SDK for Model Context Protocol servers and clients. Maintained in collaboration with Microsoft.",
       "url": "https://github.com/modelcontextprotocol/csharp-sdk",
-      "stars": 4659,
-      "forks": 858,
+      "stars": 4660,
+      "forks": 860,
       "openIssues": 246,
-      "watchers": 4659,
+      "watchers": 4660,
       "language": "C#",
       "license": "NOASSERTION",
       "manualTags": [
@@ -277,21 +277,21 @@
         "mcp-server",
         "modelcontextprotocol"
       ],
-      "updatedAt": "2026-11-27T01:49:01Z",
+      "updatedAt": "2026-11-28T03:00:10Z",
       "pushedAt": "2026-11-24T16:13:18Z",
       "archived": false,
       "homepage": "https://csharp.sdk.modelcontextprotocol.io/",
-      "lastFetchedAt": "2026-11-27T10:13:43.473Z"
+      "lastFetchedAt": "2026-11-28T09:32:12.015Z"
     },
     {
       "name": "rust-sdk",
       "fullName": "modelcontextprotocol/rust-sdk",
       "description": "The official Rust SDK for the Model Context Protocol",
       "url": "https://github.com/modelcontextprotocol/rust-sdk",
-      "stars": 4152,
-      "forks": 733,
-      "openIssues": 76,
-      "watchers": 4152,
+      "stars": 4157,
+      "forks": 734,
+      "openIssues": 77,
+      "watchers": 4157,
       "language": "Rust",
       "license": "NOASSERTION",
       "manualTags": [
@@ -313,21 +313,21 @@
         "mcp-server",
         "mcp-client"
       ],
-      "updatedAt": "2026-11-27T08:50:21Z",
+      "updatedAt": "2026-11-28T05:39:21Z",
       "pushedAt": "2026-11-26T15:34:24Z",
       "archived": false,
       "homepage": "https://docs.rs/rmcp",
-      "lastFetchedAt": "2026-11-27T10:13:44.226Z"
+      "lastFetchedAt": "2026-11-28T09:32:12.776Z"
     },
     {
       "name": "php-sdk",
       "fullName": "modelcontextprotocol/php-sdk",
       "description": "The official PHP SDK for Model Context Protocol servers and clients. Maintained in collaboration with The PHP Foundation.",
       "url": "https://github.com/modelcontextprotocol/php-sdk",
-      "stars": 1686,
-      "forks": 214,
-      "openIssues": 62,
-      "watchers": 1686,
+      "stars": 1685,
+      "forks": 213,
+      "openIssues": 61,
+      "watchers": 1685,
       "language": "PHP",
       "license": "NOASSERTION",
       "manualTags": [
@@ -349,21 +349,21 @@
         "mcp-server",
         "mcp-client"
       ],
-      "updatedAt": "2026-11-27T01:50:21Z",
-      "pushedAt": "2026-11-26T14:27:15Z",
+      "updatedAt": "2026-11-28T04:28:20Z",
+      "pushedAt": "2026-11-27T14:01:53Z",
       "archived": false,
       "homepage": "https://php.sdk.modelcontextprotocol.io",
-      "lastFetchedAt": "2026-11-27T10:13:44.965Z"
+      "lastFetchedAt": "2026-11-28T09:32:13.508Z"
     },
     {
       "name": "fastmcp",
       "fullName": "PrefectHQ/fastmcp",
       "description": "🚀 The fast, Pythonic way to build MCP servers and clients.",
       "url": "https://github.com/PrefectHQ/fastmcp",
-      "stars": 28782,
-      "forks": 2655,
-      "openIssues": 148,
-      "watchers": 28782,
+      "stars": 28793,
+      "forks": 2664,
+      "openIssues": 155,
+      "watchers": 28793,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -395,11 +395,11 @@
         "mcp-servers",
         "mcp-tools"
       ],
-      "updatedAt": "2026-11-27T09:55:08Z",
-      "pushedAt": "2026-11-27T09:42:38Z",
+      "updatedAt": "2026-11-28T02:27:24Z",
+      "pushedAt": "2026-11-28T09:16:35Z",
       "archived": false,
       "homepage": "https://gofastmcp.com",
-      "lastFetchedAt": "2026-11-27T10:13:45.714Z"
+      "lastFetchedAt": "2026-11-28T09:32:14.384Z"
     },
     {
       "name": "fastmcp",
@@ -408,7 +408,7 @@
       "url": "https://github.com/punkpeye/fastmcp",
       "stars": 3290,
       "forks": 346,
-      "openIssues": 2,
+      "openIssues": 0,
       "watchers": 3290,
       "language": "TypeScript",
       "license": "MIT",
@@ -427,20 +427,20 @@
         "sse"
       ],
       "updatedAt": "2026-11-25T20:47:21Z",
-      "pushedAt": "2026-11-26T20:30:52Z",
+      "pushedAt": "2026-11-28T06:55:23Z",
       "archived": false,
       "homepage": "https://glama.ai/mcp/servers",
-      "lastFetchedAt": "2026-11-27T10:13:46.481Z"
+      "lastFetchedAt": "2026-11-28T09:32:15.080Z"
     },
     {
       "name": "mcp-use",
       "fullName": "mcp-use/mcp-use",
       "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.",
       "url": "https://github.com/mcp-use/mcp-use",
-      "stars": 11015,
-      "forks": 1563,
+      "stars": 11016,
+      "forks": 1564,
       "openIssues": 144,
-      "watchers": 11015,
+      "watchers": 11016,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -495,21 +495,21 @@
         "claude-connectors",
         "agent-plugins"
       ],
-      "updatedAt": "2026-11-27T03:53:04Z",
-      "pushedAt": "2026-11-27T03:35:13Z",
+      "updatedAt": "2026-11-28T06:26:03Z",
+      "pushedAt": "2026-11-28T00:28:59Z",
       "archived": false,
       "homepage": "https://manufact.com",
-      "lastFetchedAt": "2026-11-27T10:13:47.283Z"
+      "lastFetchedAt": "2026-11-28T09:32:15.880Z"
     },
     {
       "name": "github-mcp-server",
       "fullName": "github/github-mcp-server",
       "description": "GitHub's official MCP Server",
       "url": "https://github.com/github/github-mcp-server",
-      "stars": 34797,
-      "forks": 5429,
-      "openIssues": 486,
-      "watchers": 34797,
+      "stars": 34813,
+      "forks": 5437,
+      "openIssues": 489,
+      "watchers": 34813,
       "language": "Go",
       "license": "MIT",
       "manualTags": [
@@ -530,21 +530,21 @@
         "mcp",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-27T09:16:53Z",
-      "pushedAt": "2026-11-27T10:06:04Z",
+      "updatedAt": "2026-11-28T09:03:55Z",
+      "pushedAt": "2026-11-27T13:10:50Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:48.079Z"
+      "lastFetchedAt": "2026-11-28T09:32:16.599Z"
     },
     {
       "name": "playwright-mcp",
       "fullName": "microsoft/playwright-mcp",
       "description": "Playwright MCP server",
       "url": "https://github.com/microsoft/playwright-mcp",
-      "stars": 40199,
-      "forks": 3498,
-      "openIssues": 2,
-      "watchers": 40199,
+      "stars": 40234,
+      "forks": 3502,
+      "openIssues": 3,
+      "watchers": 40234,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -563,21 +563,21 @@
         "mcp",
         "playwright"
       ],
-      "updatedAt": "2026-11-27T09:25:46Z",
-      "pushedAt": "2026-11-18T18:50:37Z",
+      "updatedAt": "2026-11-28T09:28:21Z",
+      "pushedAt": "2026-11-27T22:43:57Z",
       "archived": false,
       "homepage": "https://www.npmjs.com/package/@playwright/mcp",
-      "lastFetchedAt": "2026-11-27T10:13:48.824Z"
+      "lastFetchedAt": "2026-11-28T09:32:17.299Z"
     },
     {
       "name": "chrome-devtools-mcp",
       "fullName": "ChromeDevTools/chrome-devtools-mcp",
       "description": "Chrome DevTools for coding agents",
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-      "stars": 59561,
-      "forks": 4901,
-      "openIssues": 115,
-      "watchers": 59561,
+      "stars": 59668,
+      "forks": 4850,
+      "openIssues": 114,
+      "watchers": 59668,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -608,21 +608,21 @@
         "debugging",
         "mcp"
       ],
-      "updatedAt": "2026-11-27T10:11:06Z",
-      "pushedAt": "2026-11-27T05:12:45Z",
+      "updatedAt": "2026-11-28T09:25:55Z",
+      "pushedAt": "2026-11-27T14:34:29Z",
       "archived": false,
       "homepage": "https://developer.chrome.com/docs/devtools/agents",
-      "lastFetchedAt": "2026-11-27T10:13:49.704Z"
+      "lastFetchedAt": "2026-11-28T09:32:18.080Z"
     },
     {
       "name": "mcp",
       "fullName": "microsoft/mcp",
       "description": "Catalog of official Microsoft MCP (Model Context Protocol) server implementations for AI-powered data access and tool integration",
       "url": "https://github.com/microsoft/mcp",
-      "stars": 3897,
-      "forks": 685,
-      "openIssues": 353,
-      "watchers": 3897,
+      "stars": 3901,
+      "forks": 686,
+      "openIssues": 354,
+      "watchers": 3901,
       "language": "C#",
       "license": "MIT",
       "manualTags": [
@@ -634,21 +634,21 @@
         "official-vendor",
         "catalog"
       ],
-      "updatedAt": "2026-11-26T14:46:07Z",
-      "pushedAt": "2026-11-26T04:06:39Z",
+      "updatedAt": "2026-11-28T08:30:55Z",
+      "pushedAt": "2026-11-28T09:16:41Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:50.453Z"
+      "lastFetchedAt": "2026-11-28T09:32:18.826Z"
     },
     {
       "name": "mcp",
       "fullName": "awslabs/mcp",
       "description": "Open source MCP Servers for AWS",
       "url": "https://github.com/awslabs/mcp",
-      "stars": 9962,
+      "stars": 9963,
       "forks": 1902,
-      "openIssues": 312,
-      "watchers": 9962,
+      "openIssues": 316,
+      "watchers": 9963,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -680,21 +680,21 @@
         "mcp-tools",
         "modelcontextprotocol"
       ],
-      "updatedAt": "2026-11-27T09:08:16Z",
-      "pushedAt": "2026-11-26T02:42:47Z",
+      "updatedAt": "2026-11-28T08:31:08Z",
+      "pushedAt": "2026-11-27T18:57:41Z",
       "archived": false,
       "homepage": "https://awslabs.github.io/mcp/",
-      "lastFetchedAt": "2026-11-27T10:13:51.273Z"
+      "lastFetchedAt": "2026-11-28T09:32:19.634Z"
     },
     {
       "name": "mcp-server-cloudflare",
       "fullName": "cloudflare/mcp-server-cloudflare",
       "description": "Product specific Cloudflare MCP servers",
       "url": "https://github.com/cloudflare/mcp-server-cloudflare",
-      "stars": 4498,
-      "forks": 584,
+      "stars": 4501,
+      "forks": 586,
       "openIssues": 63,
-      "watchers": 4498,
+      "watchers": 4501,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -706,11 +706,11 @@
         "official-vendor",
         "cloud"
       ],
-      "updatedAt": "2026-11-27T01:09:32Z",
+      "updatedAt": "2026-11-28T09:29:16Z",
       "pushedAt": "2026-10-22T15:21:16Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:52.047Z"
+      "lastFetchedAt": "2026-11-28T09:32:20.314Z"
     },
     {
       "name": "terraform-mcp-server",
@@ -718,8 +718,8 @@
       "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
       "url": "https://github.com/hashicorp/terraform-mcp-server",
       "stars": 1563,
-      "forks": 202,
-      "openIssues": 38,
+      "forks": 203,
+      "openIssues": 39,
       "watchers": 1563,
       "language": "Go",
       "license": "MPL-2.0",
@@ -738,17 +738,17 @@
       "pushedAt": "2026-11-25T12:13:46Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:52.805Z"
+      "lastFetchedAt": "2026-11-28T09:32:21.033Z"
     },
     {
       "name": "mcp-grafana",
       "fullName": "grafana/mcp-grafana",
       "description": "MCP server for Grafana",
       "url": "https://github.com/grafana/mcp-grafana",
-      "stars": 3705,
-      "forks": 508,
-      "openIssues": 103,
-      "watchers": 3705,
+      "stars": 3706,
+      "forks": 507,
+      "openIssues": 101,
+      "watchers": 3706,
       "language": "Go",
       "license": "Apache-2.0",
       "manualTags": [
@@ -760,21 +760,21 @@
         "official-vendor",
         "observability"
       ],
-      "updatedAt": "2026-11-27T06:09:47Z",
-      "pushedAt": "2026-11-27T10:10:39Z",
+      "updatedAt": "2026-11-27T12:49:19Z",
+      "pushedAt": "2026-11-27T14:35:22Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:53.479Z"
+      "lastFetchedAt": "2026-11-28T09:32:21.733Z"
     },
     {
       "name": "toolkit",
       "fullName": "getsentry/toolkit",
       "description": "Agentic tooling for Sentry",
       "url": "https://github.com/getsentry/toolkit",
-      "stars": 975,
+      "stars": 976,
       "forks": 189,
-      "openIssues": 342,
-      "watchers": 975,
+      "openIssues": 346,
+      "watchers": 976,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -795,21 +795,21 @@
         "agentic-workflow",
         "cli"
       ],
-      "updatedAt": "2026-11-27T01:09:35Z",
-      "pushedAt": "2026-11-27T08:30:22Z",
+      "updatedAt": "2026-11-27T21:26:29Z",
+      "pushedAt": "2026-11-28T02:19:24Z",
       "archived": false,
       "homepage": "https://mcp.sentry.dev",
-      "lastFetchedAt": "2026-11-27T10:13:54.663Z"
+      "lastFetchedAt": "2026-11-28T09:32:22.791Z"
     },
     {
       "name": "MobileBuildMCP",
       "fullName": "getsentry/MobileBuildMCP",
       "description": "A Model Context Protocol (MCP) server and CLI that provides tools for agent use when working on iOS and macOS projects.",
       "url": "https://github.com/getsentry/MobileBuildMCP",
-      "stars": 6606,
+      "stars": 6611,
       "forks": 329,
       "openIssues": 24,
-      "watchers": 6606,
+      "watchers": 6611,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -838,21 +838,21 @@
         "xcodebuild",
         "tag-non-production"
       ],
-      "updatedAt": "2026-11-26T17:39:49Z",
+      "updatedAt": "2026-11-28T07:36:17Z",
       "pushedAt": "2026-11-19T03:33:58Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:55.885Z"
+      "lastFetchedAt": "2026-11-28T09:32:23.833Z"
     },
     {
       "name": "mcp",
       "fullName": "supabase/mcp",
       "description": "Connect Supabase to your AI assistants",
       "url": "https://github.com/supabase/mcp",
-      "stars": 3024,
-      "forks": 444,
-      "openIssues": 107,
-      "watchers": 3024,
+      "stars": 3026,
+      "forks": 445,
+      "openIssues": 112,
+      "watchers": 3026,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "manualTags": [
@@ -864,21 +864,21 @@
         "official-vendor",
         "database"
       ],
-      "updatedAt": "2026-11-26T18:34:13Z",
-      "pushedAt": "2026-11-27T06:16:03Z",
+      "updatedAt": "2026-11-28T01:26:25Z",
+      "pushedAt": "2026-11-28T06:14:09Z",
       "archived": false,
       "homepage": "https://supabase.com/mcp",
-      "lastFetchedAt": "2026-11-27T10:13:56.628Z"
+      "lastFetchedAt": "2026-11-28T09:32:24.584Z"
     },
     {
       "name": "mcp-toolbox",
       "fullName": "googleapis/mcp-toolbox",
       "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
       "url": "https://github.com/googleapis/mcp-toolbox",
-      "stars": 16973,
-      "forks": 1813,
-      "openIssues": 453,
-      "watchers": 16973,
+      "stars": 16978,
+      "forks": 1817,
+      "openIssues": 455,
+      "watchers": 16978,
       "language": "Go",
       "license": "Apache-2.0",
       "manualTags": [
@@ -932,11 +932,11 @@
         "tidb",
         "cockroachdb"
       ],
-      "updatedAt": "2026-11-27T10:09:46Z",
-      "pushedAt": "2026-11-26T16:55:59Z",
+      "updatedAt": "2026-11-28T09:00:13Z",
+      "pushedAt": "2026-11-27T17:40:03Z",
       "archived": false,
       "homepage": "https://mcp-toolbox.dev/documentation/introduction/",
-      "lastFetchedAt": "2026-11-27T10:13:57.383Z"
+      "lastFetchedAt": "2026-11-28T09:32:25.305Z"
     },
     {
       "name": "mongodb-mcp-server",
@@ -945,7 +945,7 @@
       "url": "https://github.com/mongodb-js/mongodb-mcp-server",
       "stars": 1165,
       "forks": 299,
-      "openIssues": 28,
+      "openIssues": 30,
       "watchers": 1165,
       "language": "TypeScript",
       "license": "Apache-2.0",
@@ -970,20 +970,20 @@
         "mongodb-database"
       ],
       "updatedAt": "2026-11-27T03:29:13Z",
-      "pushedAt": "2026-11-26T13:16:34Z",
+      "pushedAt": "2026-11-27T23:04:38Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:13:58.184Z"
+      "lastFetchedAt": "2026-11-28T09:32:26.039Z"
     },
     {
       "name": "context7",
       "fullName": "upstash/context7",
       "description": "Context7 Platform -- Up-to-date docs for AI agents",
       "url": "https://github.com/upstash/context7",
-      "stars": 65534,
-      "forks": 3273,
-      "openIssues": 63,
-      "watchers": 65534,
+      "stars": 65564,
+      "forks": 3279,
+      "openIssues": 55,
+      "watchers": 65564,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1006,21 +1006,21 @@
         "mcp-server",
         "vibe-coding"
       ],
-      "updatedAt": "2026-11-27T09:58:55Z",
-      "pushedAt": "2026-11-27T09:37:46Z",
+      "updatedAt": "2026-11-28T09:17:34Z",
+      "pushedAt": "2026-11-28T07:44:45Z",
       "archived": false,
       "homepage": "https://context7.com",
-      "lastFetchedAt": "2026-11-27T10:13:58.900Z"
+      "lastFetchedAt": "2026-11-28T09:32:26.726Z"
     },
     {
       "name": "firecrawl-mcp-server",
       "fullName": "firecrawl/firecrawl-mcp-server",
       "description": "Official Firecrawl MCP server, the context API for AI agents: search, scrape, and interact with the web, plus parse, crawl, map, Agent and Monitor, from any MCP client.",
       "url": "https://github.com/firecrawl/firecrawl-mcp-server",
-      "stars": 7926,
-      "forks": 949,
-      "openIssues": 195,
-      "watchers": 7926,
+      "stars": 7936,
+      "forks": 951,
+      "openIssues": 194,
+      "watchers": 7936,
       "language": "JavaScript",
       "license": "MIT",
       "manualTags": [
@@ -1062,21 +1062,21 @@
         "mcp",
         "gemini-cli-extension"
       ],
-      "updatedAt": "2026-11-27T06:08:22Z",
-      "pushedAt": "2026-11-27T08:22:02Z",
+      "updatedAt": "2026-11-28T05:55:59Z",
+      "pushedAt": "2026-11-27T18:43:32Z",
       "archived": false,
       "homepage": "https://firecrawl.dev",
-      "lastFetchedAt": "2026-11-27T10:13:59.696Z"
+      "lastFetchedAt": "2026-11-28T09:32:27.404Z"
     },
     {
       "name": "apify-mcp-server",
       "fullName": "apify/apify-mcp-server",
       "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
       "url": "https://github.com/apify/apify-mcp-server",
-      "stars": 18111,
-      "forks": 490,
+      "stars": 18237,
+      "forks": 494,
       "openIssues": 277,
-      "watchers": 18111,
+      "watchers": 18237,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1097,21 +1097,21 @@
         "mcp",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-27T10:09:54Z",
-      "pushedAt": "2026-11-27T01:31:27Z",
+      "updatedAt": "2026-11-28T09:31:46Z",
+      "pushedAt": "2026-11-27T13:42:51Z",
       "archived": false,
       "homepage": "https://mcp.apify.com",
-      "lastFetchedAt": "2026-11-27T10:14:00.445Z"
+      "lastFetchedAt": "2026-11-28T09:32:28.124Z"
     },
     {
       "name": "exa-mcp-server",
       "fullName": "exa-labs/exa-mcp-server",
       "description": "Exa MCP for web search and web crawling!",
       "url": "https://github.com/exa-labs/exa-mcp-server",
-      "stars": 5274,
-      "forks": 413,
-      "openIssues": 7,
-      "watchers": 5274,
+      "stars": 5275,
+      "forks": 414,
+      "openIssues": 9,
+      "watchers": 5275,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1140,21 +1140,21 @@
         "web-search",
         "websearch"
       ],
-      "updatedAt": "2026-11-27T07:35:28Z",
+      "updatedAt": "2026-11-28T03:40:02Z",
       "pushedAt": "2026-11-21T00:16:23Z",
       "archived": false,
       "homepage": "https://exa.ai/docs/reference/exa-mcp",
-      "lastFetchedAt": "2026-11-27T10:14:01.283Z"
+      "lastFetchedAt": "2026-11-28T09:32:28.836Z"
     },
     {
       "name": "notion-mcp-server",
       "fullName": "makenotion/notion-mcp-server",
       "description": "Official Notion MCP Server",
       "url": "https://github.com/makenotion/notion-mcp-server",
-      "stars": 4727,
-      "forks": 653,
+      "stars": 4729,
+      "forks": 654,
       "openIssues": 218,
-      "watchers": 4727,
+      "watchers": 4729,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1166,21 +1166,21 @@
         "official-vendor",
         "productivity"
       ],
-      "updatedAt": "2026-11-27T03:57:40Z",
+      "updatedAt": "2026-11-27T18:26:41Z",
       "pushedAt": "2026-10-29T16:10:22Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:14:02.016Z"
+      "lastFetchedAt": "2026-11-28T09:32:29.555Z"
     },
     {
       "name": "Figma-Context-MCP",
       "fullName": "GLips/Figma-Context-MCP",
       "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
       "url": "https://github.com/GLips/Figma-Context-MCP",
-      "stars": 16328,
+      "stars": 16332,
       "forks": 1301,
       "openIssues": 30,
-      "watchers": 16328,
+      "watchers": 16332,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1202,11 +1202,11 @@
         "mcp",
         "typescript"
       ],
-      "updatedAt": "2026-11-27T10:02:28Z",
+      "updatedAt": "2026-11-27T20:14:22Z",
       "pushedAt": "2026-11-15T22:22:42Z",
       "archived": false,
       "homepage": "https://www.framelink.ai/",
-      "lastFetchedAt": "2026-11-27T10:14:02.743Z"
+      "lastFetchedAt": "2026-11-28T09:32:30.268Z"
     },
     {
       "name": "google_workspace_mcp",
@@ -1214,8 +1214,8 @@
       "description": "Control Gmail, Google Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search & Drive with AI - Comprehensive Google Workspace MCP Server & CLI Tool",
       "url": "https://github.com/taylorwilsdon/google_workspace_mcp",
       "stars": 3597,
-      "forks": 1138,
-      "openIssues": 94,
+      "forks": 1142,
+      "openIssues": 97,
       "watchers": 3597,
       "language": "Python",
       "license": "MIT",
@@ -1273,17 +1273,17 @@
       "pushedAt": "2026-11-26T16:46:39Z",
       "archived": false,
       "homepage": "https://workspacemcp.com",
-      "lastFetchedAt": "2026-11-27T10:14:03.495Z"
+      "lastFetchedAt": "2026-11-28T09:32:31.010Z"
     },
     {
       "name": "n8n-mcp",
       "fullName": "czlonkowski/n8n-mcp",
       "description": "MCP server that lets Claude, ChatGPT, Cursor and other AI assistants operate n8n: debug, edit, validate, test and build workflows on any n8n instance",
       "url": "https://github.com/czlonkowski/n8n-mcp",
-      "stars": 23316,
-      "forks": 3678,
-      "openIssues": 56,
-      "watchers": 23316,
+      "stars": 23317,
+      "forks": 3677,
+      "openIssues": 54,
+      "watchers": 23317,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1303,21 +1303,21 @@
         "mcp-server",
         "workflows"
       ],
-      "updatedAt": "2026-11-27T04:06:10Z",
-      "pushedAt": "2026-11-27T09:57:48Z",
+      "updatedAt": "2026-11-27T20:25:42Z",
+      "pushedAt": "2026-11-27T15:02:04Z",
       "archived": false,
       "homepage": "https://www.n8n-mcp.com/",
-      "lastFetchedAt": "2026-11-27T10:14:04.242Z"
+      "lastFetchedAt": "2026-11-28T09:32:31.714Z"
     },
     {
       "name": "serena",
       "fullName": "oraios/serena",
       "description": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
       "url": "https://github.com/oraios/serena",
-      "stars": 31741,
-      "forks": 2172,
+      "stars": 31774,
+      "forks": 2174,
       "openIssues": 153,
-      "watchers": 31741,
+      "watchers": 31774,
       "language": "Python",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1356,21 +1356,21 @@
         "ide",
         "jetbrains"
       ],
-      "updatedAt": "2026-11-27T09:50:06Z",
-      "pushedAt": "2026-11-24T17:24:36Z",
+      "updatedAt": "2026-11-28T09:07:16Z",
+      "pushedAt": "2026-11-27T15:52:21Z",
       "archived": false,
       "homepage": "https://oraios.github.io/serena",
-      "lastFetchedAt": "2026-11-27T10:14:05.011Z"
+      "lastFetchedAt": "2026-11-28T09:32:32.371Z"
     },
     {
       "name": "codebase-memory-mcp",
       "fullName": "DeusData/codebase-memory-mcp",
       "description": "Local code intelligence for developers and AI agents. Connect code, docs and infrastructure in a persistent graph, with CBM Lens, MCP tools, agent integrations and change-aware test selection.",
       "url": "https://github.com/DeusData/codebase-memory-mcp",
-      "stars": 49239,
-      "forks": 4099,
-      "openIssues": 576,
-      "watchers": 49239,
+      "stars": 49269,
+      "forks": 4100,
+      "openIssues": 568,
+      "watchers": 49269,
       "language": "C",
       "license": "MIT",
       "manualTags": [
@@ -1422,21 +1422,21 @@
         "ast",
         "cypher"
       ],
-      "updatedAt": "2026-11-27T10:05:40Z",
-      "pushedAt": "2026-11-27T06:25:27Z",
+      "updatedAt": "2026-11-28T09:18:22Z",
+      "pushedAt": "2026-11-28T05:43:55Z",
       "archived": false,
       "homepage": "https://deusdata.github.io/codebase-memory-mcp/",
-      "lastFetchedAt": "2026-11-27T10:14:05.781Z"
+      "lastFetchedAt": "2026-11-28T09:32:33.166Z"
     },
     {
       "name": "dbhub",
       "fullName": "bytebase/dbhub",
       "description": "Token conscious database MCP server for Postgres, MySQL, SQL Server, Oracle, MariaDB, SQLite, ClickHouse.",
       "url": "https://github.com/bytebase/dbhub",
-      "stars": 4004,
+      "stars": 4011,
       "forks": 368,
       "openIssues": 8,
-      "watchers": 4004,
+      "watchers": 4011,
       "language": "TypeScript",
       "license": "MIT",
       "manualTags": [
@@ -1486,21 +1486,21 @@
         "clickhouse",
         "claude-code"
       ],
-      "updatedAt": "2026-11-27T07:16:40Z",
+      "updatedAt": "2026-11-28T07:55:15Z",
       "pushedAt": "2026-11-25T09:41:22Z",
       "archived": false,
       "homepage": "https://dbhub.ai",
-      "lastFetchedAt": "2026-11-27T10:14:06.615Z"
+      "lastFetchedAt": "2026-11-28T09:32:33.877Z"
     },
     {
       "name": "magic-mcp",
       "fullName": "21st-dev/magic-mcp",
       "description": "It's like v0, but in your Cursor / Claude Code / Windsurf: search 10,000+ React/Tailwind components, generate new UI with AI, and publish your own — right from your editor. Magic MCP is now the 21st MCP; this package keeps old configs working. Setup: 21st.dev/mcp",
       "url": "https://github.com/21st-dev/magic-mcp",
-      "stars": 6680,
+      "stars": 6688,
       "forks": 554,
       "openIssues": 8,
-      "watchers": 6680,
+      "watchers": 6688,
       "language": "TypeScript",
       "license": "ISC",
       "manualTags": [
@@ -1529,21 +1529,21 @@
         "tailwindcss",
         "ui-components"
       ],
-      "updatedAt": "2026-11-27T07:04:09Z",
+      "updatedAt": "2026-11-28T06:10:42Z",
       "pushedAt": "2026-09-09T20:38:22Z",
       "archived": false,
       "homepage": "https://21st.dev/mcp",
-      "lastFetchedAt": "2026-11-27T10:14:07.422Z"
+      "lastFetchedAt": "2026-11-28T09:32:34.585Z"
     },
     {
       "name": "unity-mcp",
       "fullName": "CoplayDev/unity-mcp",
       "description": "Unity MCP acts as a bridge between AI assistants and your Unity Editor. Give your LLM tools to manage assets, control scenes, edit scripts, and automate tasks within Unity.",
       "url": "https://github.com/CoplayDev/unity-mcp",
-      "stars": 16234,
-      "forks": 1660,
+      "stars": 16247,
+      "forks": 1661,
       "openIssues": 134,
-      "watchers": 16234,
+      "watchers": 16247,
       "language": "C#",
       "license": "MIT",
       "manualTags": [
@@ -1586,21 +1586,21 @@
         "unity3d",
         "videogames"
       ],
-      "updatedAt": "2026-11-27T09:34:31Z",
+      "updatedAt": "2026-11-28T08:43:07Z",
       "pushedAt": "2026-11-17T15:17:43Z",
       "archived": false,
       "homepage": "https://coplaydev.github.io/unity-mcp/",
-      "lastFetchedAt": "2026-11-27T10:14:08.251Z"
+      "lastFetchedAt": "2026-11-28T09:32:35.327Z"
     },
     {
       "name": "Unity-MCP",
       "fullName": "IvanMurzak/Unity-MCP",
       "description": "AI Skills, MCP Tools, and CLI for Unity Engine. Full AI develop and test loop. Use cli for quick setup. Efficient token usage, advanced tools. Any C# method may be turned into a tool by a single line. Works with Claude Code, Gemini, Copilot, Cursor and any other absolutely for free.",
       "url": "https://github.com/IvanMurzak/Unity-MCP",
-      "stars": 4705,
-      "forks": 421,
-      "openIssues": 60,
-      "watchers": 4705,
+      "stars": 4712,
+      "forks": 422,
+      "openIssues": 62,
+      "watchers": 4712,
       "language": "C#",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1649,21 +1649,21 @@
         "anthropic",
         "cli"
       ],
-      "updatedAt": "2026-11-27T07:28:48Z",
-      "pushedAt": "2026-11-24T22:25:50Z",
+      "updatedAt": "2026-11-28T01:02:39Z",
+      "pushedAt": "2026-11-28T09:30:31Z",
       "archived": false,
       "homepage": "https://ai-game.dev",
-      "lastFetchedAt": "2026-11-27T10:14:08.977Z"
+      "lastFetchedAt": "2026-11-28T09:32:36.077Z"
     },
     {
       "name": "mcp-for-blender",
       "fullName": "ahujasid/mcp-for-blender",
       "description": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
       "url": "https://github.com/ahujasid/mcp-for-blender",
-      "stars": 35967,
-      "forks": 3315,
-      "openIssues": 69,
-      "watchers": 35967,
+      "stars": 36082,
+      "forks": 3326,
+      "openIssues": 71,
+      "watchers": 36082,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1698,21 +1698,21 @@
         "python",
         "blender-mcp"
       ],
-      "updatedAt": "2026-11-27T10:06:26Z",
+      "updatedAt": "2026-11-28T09:06:35Z",
       "pushedAt": "2026-11-26T16:55:20Z",
       "archived": false,
       "homepage": "https://www.mcp-for-blender.com/",
-      "lastFetchedAt": "2026-11-27T10:14:09.749Z"
+      "lastFetchedAt": "2026-11-28T09:32:36.788Z"
     },
     {
       "name": "ida-pro-mcp",
       "fullName": "mrexodia/ida-pro-mcp",
       "description": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
       "url": "https://github.com/mrexodia/ida-pro-mcp",
-      "stars": 13599,
-      "forks": 1673,
+      "stars": 13607,
+      "forks": 1675,
       "openIssues": 59,
-      "watchers": 13599,
+      "watchers": 13607,
       "language": "Python",
       "license": "MIT",
       "manualTags": [
@@ -1742,21 +1742,21 @@
         "aiagent",
         "binary-analysis"
       ],
-      "updatedAt": "2026-11-27T08:36:41Z",
+      "updatedAt": "2026-11-28T04:44:49Z",
       "pushedAt": "2026-11-12T11:01:58Z",
       "archived": false,
       "homepage": "https://plugins.hex-rays.com/mrexodia/ida-pro-mcp",
-      "lastFetchedAt": "2026-11-27T10:14:10.692Z"
+      "lastFetchedAt": "2026-11-28T09:32:37.472Z"
     },
     {
       "name": "ghidra-mcp",
       "fullName": "bethington/ghidra-mcp",
       "description": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations, Ghidra Server integration, and Docker deployment.",
       "url": "https://github.com/bethington/ghidra-mcp",
-      "stars": 6379,
-      "forks": 406,
-      "openIssues": 26,
-      "watchers": 6379,
+      "stars": 6384,
+      "forks": 407,
+      "openIssues": 19,
+      "watchers": 6384,
       "language": "Java",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1790,21 +1790,21 @@
         "ghidra-extension",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-27T09:11:33Z",
-      "pushedAt": "2026-11-27T01:17:22Z",
+      "updatedAt": "2026-11-28T04:12:48Z",
+      "pushedAt": "2026-11-28T09:07:39Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:14:11.498Z"
+      "lastFetchedAt": "2026-11-28T09:32:38.182Z"
     },
     {
       "name": "mcp-context-forge",
       "fullName": "IBM/mcp-context-forge",
       "description": "An AI Gateway, registry, and proxy that sits in front of any MCP, A2A, or REST/gRPC APIs, exposing a unified endpoint with centralized discovery, guardrails and management. Optimizes Agent & Tool calling, and supports plugins.",
       "url": "https://github.com/IBM/mcp-context-forge",
-      "stars": 4894,
-      "forks": 995,
-      "openIssues": 1009,
-      "watchers": 4894,
+      "stars": 4904,
+      "forks": 996,
+      "openIssues": 1008,
+      "watchers": 4904,
       "language": "Python",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1858,21 +1858,21 @@
         "python",
         "tools"
       ],
-      "updatedAt": "2026-11-27T08:40:30Z",
-      "pushedAt": "2026-11-27T10:09:18Z",
+      "updatedAt": "2026-11-28T08:31:40Z",
+      "pushedAt": "2026-11-27T18:49:44Z",
       "archived": false,
       "homepage": "https://ibm.github.io/mcp-context-forge/",
-      "lastFetchedAt": "2026-11-27T10:14:12.278Z"
+      "lastFetchedAt": "2026-11-28T09:32:38.862Z"
     },
     {
       "name": "mcp-gateway",
       "fullName": "docker/mcp-gateway",
       "description": "docker mcp CLI plugin / MCP Gateway",
       "url": "https://github.com/docker/mcp-gateway",
-      "stars": 1650,
-      "forks": 298,
+      "stars": 1652,
+      "forks": 299,
       "openIssues": 181,
-      "watchers": 1650,
+      "watchers": 1652,
       "language": "Go",
       "license": "MIT",
       "manualTags": [
@@ -1884,21 +1884,21 @@
         "gateway",
         "docker"
       ],
-      "updatedAt": "2026-11-26T17:36:01Z",
+      "updatedAt": "2026-11-28T02:31:47Z",
       "pushedAt": "2026-11-19T17:01:41Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:14:13.130Z"
+      "lastFetchedAt": "2026-11-28T09:32:39.548Z"
     },
     {
       "name": "toolhive",
       "fullName": "stacklok/toolhive",
       "description": "ToolHive is an enterprise-grade platform for running and managing Model Context Protocol (MCP) servers.",
       "url": "https://github.com/stacklok/toolhive",
-      "stars": 2357,
-      "forks": 343,
-      "openIssues": 396,
-      "watchers": 2357,
+      "stars": 2359,
+      "forks": 344,
+      "openIssues": 391,
+      "watchers": 2359,
       "language": "Go",
       "license": "Apache-2.0",
       "manualTags": [
@@ -1934,21 +1934,21 @@
         "kubernetes",
         "model-context-protocol"
       ],
-      "updatedAt": "2026-11-27T04:23:05Z",
-      "pushedAt": "2026-11-27T10:03:53Z",
+      "updatedAt": "2026-11-28T07:48:36Z",
+      "pushedAt": "2026-11-28T05:04:12Z",
       "archived": false,
       "homepage": "https://stacklok.com/download/",
-      "lastFetchedAt": "2026-11-27T10:14:13.834Z"
+      "lastFetchedAt": "2026-11-28T09:32:40.312Z"
     },
     {
       "name": "activepieces",
       "fullName": "activepieces/activepieces",
       "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
       "url": "https://github.com/activepieces/activepieces",
-      "stars": 25753,
-      "forks": 4523,
-      "openIssues": 1033,
-      "watchers": 25753,
+      "stars": 25765,
+      "forks": 4530,
+      "openIssues": 950,
+      "watchers": 25765,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "manualTags": [
@@ -1988,11 +1988,11 @@
         "ai-agents-framework",
         "mcp-server"
       ],
-      "updatedAt": "2026-11-27T09:41:42Z",
-      "pushedAt": "2026-11-27T09:34:50Z",
+      "updatedAt": "2026-11-28T08:28:13Z",
+      "pushedAt": "2026-11-28T01:04:38Z",
       "archived": false,
       "homepage": "https://www.activepieces.com",
-      "lastFetchedAt": "2026-11-27T10:14:14.559Z"
+      "lastFetchedAt": "2026-11-28T09:32:41.037Z"
     },
     {
       "name": "metamcp",
@@ -2049,17 +2049,17 @@
       "pushedAt": "2026-11-12T03:16:39Z",
       "archived": true,
       "homepage": "https://docs.metamcp.com",
-      "lastFetchedAt": "2026-11-27T10:14:15.269Z"
+      "lastFetchedAt": "2026-11-28T09:32:41.775Z"
     },
     {
       "name": "awesome-mcp-servers",
       "fullName": "punkpeye/awesome-mcp-servers",
       "description": "A collection of MCP servers.",
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
-      "stars": 98564,
-      "forks": 21022,
-      "openIssues": 5460,
-      "watchers": 98564,
+      "stars": 98589,
+      "forks": 21111,
+      "openIssues": 5563,
+      "watchers": 98589,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -2076,11 +2076,11 @@
         "ai",
         "mcp"
       ],
-      "updatedAt": "2026-11-27T09:39:25Z",
+      "updatedAt": "2026-11-28T08:42:52Z",
       "pushedAt": "2026-11-26T22:26:12Z",
       "archived": false,
       "homepage": "https://glama.ai/mcp/servers",
-      "lastFetchedAt": "2026-11-27T10:14:16.016Z"
+      "lastFetchedAt": "2026-11-28T09:32:42.481Z"
     },
     {
       "name": "awesome-mcp-servers",
@@ -2088,7 +2088,7 @@
       "description": "A curated list of Model Context Protocol (MCP) servers",
       "url": "https://github.com/wong2/awesome-mcp-servers",
       "stars": 4422,
-      "forks": 2340,
+      "forks": 2352,
       "openIssues": 34,
       "watchers": 4422,
       "language": "Unknown",
@@ -2104,17 +2104,17 @@
       "pushedAt": "2026-07-13T12:44:30Z",
       "archived": false,
       "homepage": "https://mcpservers.org",
-      "lastFetchedAt": "2026-11-27T10:14:16.706Z"
+      "lastFetchedAt": "2026-11-28T09:32:43.158Z"
     },
     {
       "name": "Awesome-MCP-ZH",
       "fullName": "yzfly/Awesome-MCP-ZH",
       "description": "MCP 资源精选， MCP指南，Claude MCP，MCP Servers, MCP Clients",
       "url": "https://github.com/yzfly/Awesome-MCP-ZH",
-      "stars": 7873,
-      "forks": 1240,
-      "openIssues": 156,
-      "watchers": 7873,
+      "stars": 7872,
+      "forks": 1255,
+      "openIssues": 172,
+      "watchers": 7872,
       "language": "Unknown",
       "license": "MIT",
       "manualTags": [
@@ -2151,11 +2151,11 @@
         "qwen-mcp",
         "mcp-servers-directory"
       ],
-      "updatedAt": "2026-11-27T00:59:38Z",
+      "updatedAt": "2026-11-28T04:05:41Z",
       "pushedAt": "2026-11-14T04:16:03Z",
       "archived": false,
       "homepage": "",
-      "lastFetchedAt": "2026-11-27T10:14:17.440Z"
+      "lastFetchedAt": "2026-11-28T09:32:43.805Z"
     }
   ],
   "slugRedirects": [
